@@ -1,6 +1,7 @@
 ﻿using EnvanteriX.Application.Bases;
 using EnvanteriX.Application.Features.Exceptions.AuthExceptions;
 using EnvanteriX.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace EnvanteriX.Application.Features.Rules.AuthRules
 {
@@ -32,6 +33,11 @@ namespace EnvanteriX.Application.Features.Rules.AuthRules
             if (user is null) throw new EmailAddressShouldBeValidException();
             return Task.CompletedTask;
         }
-        
+        public Task UserShouldBeActive(User user)
+        {
+            if (!user.IsActive) // varsayalım IdentityUser'da IsActive bool özelliği var
+                throw new UserInactiveException();
+            return Task.CompletedTask;
+        }
     }
 }

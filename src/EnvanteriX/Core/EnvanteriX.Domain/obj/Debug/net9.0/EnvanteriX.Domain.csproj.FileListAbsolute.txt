@@ -11,3 +11,16 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\AundeHanaProjelerim\_deneme\EnvanteriX\Cor
 C:\Users\MBEYAZBULUT\Documents\GitHub\AundeHanaProjelerim\_deneme\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\refint\EnvanteriX.Domain.dll
 C:\Users\MBEYAZBULUT\Documents\GitHub\AundeHanaProjelerim\_deneme\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\EnvanteriX.Domain.pdb
 C:\Users\MBEYAZBULUT\Documents\GitHub\AundeHanaProjelerim\_deneme\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\ref\EnvanteriX.Domain.dll
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\bin\Debug\net9.0\EnvanteriX.Domain.deps.json
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\bin\Debug\net9.0\EnvanteriX.Domain.dll
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\bin\Debug\net9.0\EnvanteriX.Domain.pdb
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\EnvanteriX.Domain.csproj.AssemblyReference.cache
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\EnvanteriX.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\EnvanteriX.Domain.AssemblyInfoInputs.cache
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\EnvanteriX.Domain.AssemblyInfo.cs
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\EnvanteriX.Domain.csproj.CoreCompileInputs.cache
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\EnvanteriX.Domain.sourcelink.json
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\EnvanteriX.Domain.dll
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\refint\EnvanteriX.Domain.dll
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\EnvanteriX.Domain.pdb
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Core\EnvanteriX.Domain\obj\Debug\net9.0\ref\EnvanteriX.Domain.dll

@@ -35,6 +35,7 @@ namespace EnvanteriX.Application.Features.Handlers.AuthHandlers
             //kod açıklamaları
             User user = await userManager.FindByEmailAsync(request.Email); // kullanıcıyı email adresine göre buluyoruz
             await authRules.UserShouldExist(user); //kullanıcı yoksa hata fırlat
+            await authRules.UserShouldBeActive(user); // kullanıcı aktif değilse hata fırlatıyoruz
             bool checkPassword = await userManager.CheckPasswordAsync(user, request.Password); // kullanıcının şifresini kontrol ediyoruz
 
             await authRules.EmailOrPasswordShouldNotBeInvalid(user, checkPassword); // email veya şifre hatalı ise hata fırlatıyoruz
