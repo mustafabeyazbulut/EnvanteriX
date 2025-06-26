@@ -38,11 +38,3 @@ Welcome to the **Inventory and Service Tracking System**, a comprehensive soluti
 ## Getting Started
 
 *Instructions for installation, configuration, and running the application will go here.*
-
-## Contributing
-
-*Guidelines for contributing to the project.*
-
-## License
-
-*Specify the project license here.*
