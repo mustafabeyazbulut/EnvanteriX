@@ -1,0 +1,6 @@
+@EnvanteriX.WebApi_HostAddress = http://localhost:5181
+
+GET {{EnvanteriX.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

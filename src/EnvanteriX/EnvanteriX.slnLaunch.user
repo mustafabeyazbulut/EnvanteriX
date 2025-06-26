@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Presentation\\EnvanteriX.WebApi\\EnvanteriX.WebApi.csproj",
+        "Action": "Start",
+        "DebugTarget": "EnvanteriX.Development"
+      },
+      {
+        "Path": "Presentation\\EnvanteriX.WebUI\\EnvanteriX.WebUI.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      }
+    ]
+  }
+]

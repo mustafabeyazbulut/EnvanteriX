@@ -1,0 +1,94 @@
+﻿@model List<CompanyViewModel>
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex align-items-center">
+                <h4 class="card-title">Şirket Listesi</h4>
+                <button class="btn btn-primary btn-round ms-auto" onclick="window.location.href='/Company/Add';">
+                    <i class="fa fa-plus"></i>
+                    Yeni Şirket
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="multi-filter-select"
+                       class="display table table-striped table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Şirket Adı</th>
+                            <th>Oluşturma Tarihi</th>
+                            <th>Aktif Mi</th>
+                            <th style="width: 15%">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Şirket Adı</th>
+                            <th>Oluşturma Tarihi</th>
+                            <th>Aktif Mi</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.CreatedDate</td>
+                                <td>
+                                    @if (!item.IsDeleted)
+                                    {
+                                        <i class="fa fa-check"></i> <!-- "tick" simgesi -->
+                                    }
+                                    else
+                                    {
+                                        <i class="fa fa-times"></i> <!-- "x" simgesi -->
+                                    }
+                                </td>
+                                <td>
+                                    <div class="form-button-action">
+                                        <button type="button"
+                                                data-bs-toggle="tooltip"
+                                                title="Edit"
+                                                class="btn btn-link btn-primary btn-lg"
+                                                data-original-title="Edit Task"
+                                                onclick="window.location.href='@Url.Content("~/Company/Edit/" + item.Id)';">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button"
+                                                id="confirm-btn"
+                                                data-bs-toggle="tooltip"
+                                                title="Remove"
+                                                class="btn btn-link btn-danger confirm-btn"
+                                                data-url="@Url.Content("~/Company/Remove/" + item.Id)">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                        <button type="button"
+                                                id="confirm-btn"
+                                                data-bs-toggle="tooltip"
+                                                title="Active"
+                                                class="btn btn-link btn-danger confirm-btn"
+                                                data-url="@Url.Content("~/Company/Active/" + item.Id)">
+                                            <i class="fa fa-check"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

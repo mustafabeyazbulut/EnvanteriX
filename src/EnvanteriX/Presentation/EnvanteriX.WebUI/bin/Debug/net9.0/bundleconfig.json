@@ -1,0 +1,22 @@
+[
+  {
+    "outputFileName": "wwwroot/css/zero.min.css",
+    "inputFiles": [
+      "wwwroot/css/zero.css"
+    ],
+    "minify": { "enabled": true }
+  },
+  {
+    "outputFileName": "wwwroot/css/plugins.min.css",
+    "inputFiles": [
+      "wwwroot/css/plugins.css"
+    ],
+    "minify": { "enabled": true }
+  },
+  {
+    "outputFileName": "wwwroot/js/zero.min.js",
+    "inputFiles": [
+      "wwwroot/js/zero.js"
+    ]
+  }
+]

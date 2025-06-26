@@ -1,0 +1,1557 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\EnvanteriX.WebUI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\EnvanteriX.WebUI.ftsj48y7zj.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\fonts.min.css",
+      "PackagePath": "staticwebassets\\css\\fonts.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\icons\\tabler-icons\\fonts\\tabler-icons.eot",
+      "PackagePath": "staticwebassets\\css\\icons\\tabler-icons\\fonts\\tabler-icons.eot"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\icons\\tabler-icons\\fonts\\tabler-icons.svg",
+      "PackagePath": "staticwebassets\\css\\icons\\tabler-icons\\fonts\\tabler-icons.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\icons\\tabler-icons\\fonts\\tabler-icons.ttf",
+      "PackagePath": "staticwebassets\\css\\icons\\tabler-icons\\fonts\\tabler-icons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\icons\\tabler-icons\\fonts\\tabler-icons.woff",
+      "PackagePath": "staticwebassets\\css\\icons\\tabler-icons\\fonts\\tabler-icons.woff"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\icons\\tabler-icons\\fonts\\tabler-icons.woff2",
+      "PackagePath": "staticwebassets\\css\\icons\\tabler-icons\\fonts\\tabler-icons.woff2"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\icons\\tabler-icons\\tabler-icons.css",
+      "PackagePath": "staticwebassets\\css\\icons\\tabler-icons\\tabler-icons.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\plugins.css",
+      "PackagePath": "staticwebassets\\css\\plugins.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\plugins.css.map",
+      "PackagePath": "staticwebassets\\css\\plugins.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\plugins.min.css",
+      "PackagePath": "staticwebassets\\css\\plugins.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\simplebar.css",
+      "PackagePath": "staticwebassets\\css\\simplebar.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\simplebar.min.css",
+      "PackagePath": "staticwebassets\\css\\simplebar.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\styles.min.css",
+      "PackagePath": "staticwebassets\\css\\styles.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\zero.css",
+      "PackagePath": "staticwebassets\\css\\zero.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\css\\zero.min.css",
+      "PackagePath": "staticwebassets\\css\\zero.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-brands-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-brands-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-brands-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-regular-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-regular-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-regular-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-solid-900.eot"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-solid-900.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-solid-900.woff"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\fontawesome\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\simple-line-icons\\Simple-Line-Icons.eot",
+      "PackagePath": "staticwebassets\\fonts\\simple-line-icons\\Simple-Line-Icons.eot"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\simple-line-icons\\Simple-Line-Icons.svg",
+      "PackagePath": "staticwebassets\\fonts\\simple-line-icons\\Simple-Line-Icons.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\simple-line-icons\\Simple-Line-Icons.ttf",
+      "PackagePath": "staticwebassets\\fonts\\simple-line-icons\\Simple-Line-Icons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\simple-line-icons\\Simple-Line-Icons.woff",
+      "PackagePath": "staticwebassets\\fonts\\simple-line-icons\\Simple-Line-Icons.woff"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\simple-line-icons\\Simple-Line-Icons.woff2",
+      "PackagePath": "staticwebassets\\fonts\\simple-line-icons\\Simple-Line-Icons.woff2"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\summernote\\summernote.eot",
+      "PackagePath": "staticwebassets\\fonts\\summernote\\summernote.eot"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\summernote\\summernote.ttf",
+      "PackagePath": "staticwebassets\\fonts\\summernote\\summernote.ttf"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\summernote\\summernote.woff",
+      "PackagePath": "staticwebassets\\fonts\\summernote\\summernote.woff"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\fonts\\summernote\\summernote.woff2",
+      "PackagePath": "staticwebassets\\fonts\\summernote\\summernote.woff2"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\html\\authentication-login.html",
+      "PackagePath": "staticwebassets\\html\\authentication-login.html"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\html\\authentication-register.html",
+      "PackagePath": "staticwebassets\\html\\authentication-register.html"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\html\\icon-tabler.html",
+      "PackagePath": "staticwebassets\\html\\icon-tabler.html"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\html\\index.html",
+      "PackagePath": "staticwebassets\\html\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\html\\sample-page.html",
+      "PackagePath": "staticwebassets\\html\\sample-page.html"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\html\\ui-alerts.html",
+      "PackagePath": "staticwebassets\\html\\ui-alerts.html"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\html\\ui-buttons.html",
+      "PackagePath": "staticwebassets\\html\\ui-buttons.html"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\html\\ui-card.html",
+      "PackagePath": "staticwebassets\\html\\ui-card.html"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\html\\ui-forms.html",
+      "PackagePath": "staticwebassets\\html\\ui-forms.html"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\html\\ui-typography.html",
+      "PackagePath": "staticwebassets\\html\\ui-typography.html"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ad.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ad.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ae.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ae.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\af.png",
+      "PackagePath": "staticwebassets\\images\\flags\\af.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ag.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ag.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ai.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ai.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\al.png",
+      "PackagePath": "staticwebassets\\images\\flags\\al.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\am.png",
+      "PackagePath": "staticwebassets\\images\\flags\\am.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\an.png",
+      "PackagePath": "staticwebassets\\images\\flags\\an.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ao.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ao.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ar.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ar.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\as.png",
+      "PackagePath": "staticwebassets\\images\\flags\\as.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\at.png",
+      "PackagePath": "staticwebassets\\images\\flags\\at.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\au.png",
+      "PackagePath": "staticwebassets\\images\\flags\\au.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\aw.png",
+      "PackagePath": "staticwebassets\\images\\flags\\aw.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ax.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ax.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\az.png",
+      "PackagePath": "staticwebassets\\images\\flags\\az.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ba.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ba.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bb.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bb.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bd.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bd.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\be.png",
+      "PackagePath": "staticwebassets\\images\\flags\\be.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bf.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bf.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bg.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bg.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bh.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bh.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bi.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bi.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bj.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bj.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bm.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bm.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bn.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bn.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bo.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bo.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\br.png",
+      "PackagePath": "staticwebassets\\images\\flags\\br.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bs.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bs.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bt.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bt.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bv.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bv.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bw.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bw.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\by.png",
+      "PackagePath": "staticwebassets\\images\\flags\\by.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\bz.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bz.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ca.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ca.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\catalonia.png",
+      "PackagePath": "staticwebassets\\images\\flags\\catalonia.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cc.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cc.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cd.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cd.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cf.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cf.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cg.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cg.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ch.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ch.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ci.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ci.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ck.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ck.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cl.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cl.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cm.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cm.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cn.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cn.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\co.png",
+      "PackagePath": "staticwebassets\\images\\flags\\co.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cr.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cr.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cs.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cs.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cu.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cu.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cv.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cv.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cx.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cx.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cy.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cy.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\cz.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cz.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\de.png",
+      "PackagePath": "staticwebassets\\images\\flags\\de.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\dj.png",
+      "PackagePath": "staticwebassets\\images\\flags\\dj.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\dk.png",
+      "PackagePath": "staticwebassets\\images\\flags\\dk.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\dm.png",
+      "PackagePath": "staticwebassets\\images\\flags\\dm.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\do.png",
+      "PackagePath": "staticwebassets\\images\\flags\\do.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\dz.png",
+      "PackagePath": "staticwebassets\\images\\flags\\dz.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ec.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ec.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ee.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ee.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\eg.png",
+      "PackagePath": "staticwebassets\\images\\flags\\eg.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\eh.png",
+      "PackagePath": "staticwebassets\\images\\flags\\eh.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\england.png",
+      "PackagePath": "staticwebassets\\images\\flags\\england.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\er.png",
+      "PackagePath": "staticwebassets\\images\\flags\\er.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\es.png",
+      "PackagePath": "staticwebassets\\images\\flags\\es.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\et.png",
+      "PackagePath": "staticwebassets\\images\\flags\\et.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\europeanunion.png",
+      "PackagePath": "staticwebassets\\images\\flags\\europeanunion.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\fam.png",
+      "PackagePath": "staticwebassets\\images\\flags\\fam.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\fi.png",
+      "PackagePath": "staticwebassets\\images\\flags\\fi.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\fj.png",
+      "PackagePath": "staticwebassets\\images\\flags\\fj.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\fk.png",
+      "PackagePath": "staticwebassets\\images\\flags\\fk.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\fm.png",
+      "PackagePath": "staticwebassets\\images\\flags\\fm.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\fo.png",
+      "PackagePath": "staticwebassets\\images\\flags\\fo.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\fr.png",
+      "PackagePath": "staticwebassets\\images\\flags\\fr.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ga.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ga.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gb.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gb.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gd.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gd.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ge.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ge.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gf.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gf.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gh.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gh.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gi.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gi.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gl.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gl.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gm.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gm.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gn.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gn.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gp.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gp.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gq.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gq.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gr.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gr.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gs.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gs.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gt.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gt.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gu.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gu.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gw.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gw.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\gy.png",
+      "PackagePath": "staticwebassets\\images\\flags\\gy.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\hk.png",
+      "PackagePath": "staticwebassets\\images\\flags\\hk.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\hm.png",
+      "PackagePath": "staticwebassets\\images\\flags\\hm.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\hn.png",
+      "PackagePath": "staticwebassets\\images\\flags\\hn.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\hr.png",
+      "PackagePath": "staticwebassets\\images\\flags\\hr.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ht.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ht.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\hu.png",
+      "PackagePath": "staticwebassets\\images\\flags\\hu.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\id.png",
+      "PackagePath": "staticwebassets\\images\\flags\\id.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ie.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ie.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\il.png",
+      "PackagePath": "staticwebassets\\images\\flags\\il.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\in.png",
+      "PackagePath": "staticwebassets\\images\\flags\\in.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\io.png",
+      "PackagePath": "staticwebassets\\images\\flags\\io.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\iq.png",
+      "PackagePath": "staticwebassets\\images\\flags\\iq.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ir.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ir.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\is.png",
+      "PackagePath": "staticwebassets\\images\\flags\\is.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\it.png",
+      "PackagePath": "staticwebassets\\images\\flags\\it.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\jm.png",
+      "PackagePath": "staticwebassets\\images\\flags\\jm.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\jo.png",
+      "PackagePath": "staticwebassets\\images\\flags\\jo.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\jp.png",
+      "PackagePath": "staticwebassets\\images\\flags\\jp.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ke.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ke.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\kg.png",
+      "PackagePath": "staticwebassets\\images\\flags\\kg.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\kh.png",
+      "PackagePath": "staticwebassets\\images\\flags\\kh.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ki.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ki.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\km.png",
+      "PackagePath": "staticwebassets\\images\\flags\\km.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\kn.png",
+      "PackagePath": "staticwebassets\\images\\flags\\kn.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\kp.png",
+      "PackagePath": "staticwebassets\\images\\flags\\kp.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\kr.png",
+      "PackagePath": "staticwebassets\\images\\flags\\kr.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\kw.png",
+      "PackagePath": "staticwebassets\\images\\flags\\kw.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ky.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ky.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\kz.png",
+      "PackagePath": "staticwebassets\\images\\flags\\kz.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\la.png",
+      "PackagePath": "staticwebassets\\images\\flags\\la.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\lb.png",
+      "PackagePath": "staticwebassets\\images\\flags\\lb.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\lc.png",
+      "PackagePath": "staticwebassets\\images\\flags\\lc.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\li.png",
+      "PackagePath": "staticwebassets\\images\\flags\\li.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\lk.png",
+      "PackagePath": "staticwebassets\\images\\flags\\lk.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\lr.png",
+      "PackagePath": "staticwebassets\\images\\flags\\lr.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ls.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ls.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\lt.png",
+      "PackagePath": "staticwebassets\\images\\flags\\lt.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\lu.png",
+      "PackagePath": "staticwebassets\\images\\flags\\lu.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\lv.png",
+      "PackagePath": "staticwebassets\\images\\flags\\lv.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ly.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ly.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ma.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ma.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mc.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mc.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\md.png",
+      "PackagePath": "staticwebassets\\images\\flags\\md.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\me.png",
+      "PackagePath": "staticwebassets\\images\\flags\\me.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mg.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mg.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mh.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mh.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mk.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mk.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ml.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ml.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mm.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mm.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mn.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mn.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mo.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mo.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mp.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mp.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mq.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mq.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mr.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mr.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ms.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ms.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mt.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mt.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mu.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mu.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mv.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mv.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mw.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mw.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mx.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mx.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\my.png",
+      "PackagePath": "staticwebassets\\images\\flags\\my.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\mz.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mz.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\na.png",
+      "PackagePath": "staticwebassets\\images\\flags\\na.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\nc.png",
+      "PackagePath": "staticwebassets\\images\\flags\\nc.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ne.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ne.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\nf.png",
+      "PackagePath": "staticwebassets\\images\\flags\\nf.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ng.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ng.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ni.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ni.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\nl.png",
+      "PackagePath": "staticwebassets\\images\\flags\\nl.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\no.png",
+      "PackagePath": "staticwebassets\\images\\flags\\no.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\np.png",
+      "PackagePath": "staticwebassets\\images\\flags\\np.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\nr.png",
+      "PackagePath": "staticwebassets\\images\\flags\\nr.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\nu.png",
+      "PackagePath": "staticwebassets\\images\\flags\\nu.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\nz.png",
+      "PackagePath": "staticwebassets\\images\\flags\\nz.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\om.png",
+      "PackagePath": "staticwebassets\\images\\flags\\om.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\pa.png",
+      "PackagePath": "staticwebassets\\images\\flags\\pa.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\pe.png",
+      "PackagePath": "staticwebassets\\images\\flags\\pe.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\pf.png",
+      "PackagePath": "staticwebassets\\images\\flags\\pf.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\pg.png",
+      "PackagePath": "staticwebassets\\images\\flags\\pg.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ph.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ph.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\pk.png",
+      "PackagePath": "staticwebassets\\images\\flags\\pk.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\pl.png",
+      "PackagePath": "staticwebassets\\images\\flags\\pl.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\pm.png",
+      "PackagePath": "staticwebassets\\images\\flags\\pm.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\pn.png",
+      "PackagePath": "staticwebassets\\images\\flags\\pn.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\pr.png",
+      "PackagePath": "staticwebassets\\images\\flags\\pr.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ps.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ps.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\pt.png",
+      "PackagePath": "staticwebassets\\images\\flags\\pt.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\pw.png",
+      "PackagePath": "staticwebassets\\images\\flags\\pw.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\py.png",
+      "PackagePath": "staticwebassets\\images\\flags\\py.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\qa.png",
+      "PackagePath": "staticwebassets\\images\\flags\\qa.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\re.png",
+      "PackagePath": "staticwebassets\\images\\flags\\re.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\readme.txt",
+      "PackagePath": "staticwebassets\\images\\flags\\readme.txt"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ro.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ro.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\rs.png",
+      "PackagePath": "staticwebassets\\images\\flags\\rs.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ru.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ru.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\rw.png",
+      "PackagePath": "staticwebassets\\images\\flags\\rw.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sa.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sa.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sb.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sb.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sc.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sc.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\scotland.png",
+      "PackagePath": "staticwebassets\\images\\flags\\scotland.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sd.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sd.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\se.png",
+      "PackagePath": "staticwebassets\\images\\flags\\se.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sg.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sg.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sh.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sh.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\si.png",
+      "PackagePath": "staticwebassets\\images\\flags\\si.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sj.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sj.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sk.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sk.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sl.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sl.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sm.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sm.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sn.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sn.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\so.png",
+      "PackagePath": "staticwebassets\\images\\flags\\so.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sr.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sr.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\st.png",
+      "PackagePath": "staticwebassets\\images\\flags\\st.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sv.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sv.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sy.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sy.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\sz.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sz.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tc.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tc.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\td.png",
+      "PackagePath": "staticwebassets\\images\\flags\\td.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tf.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tf.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tg.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tg.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\th.png",
+      "PackagePath": "staticwebassets\\images\\flags\\th.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tj.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tj.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tk.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tk.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tl.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tl.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tm.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tm.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tn.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tn.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\to.png",
+      "PackagePath": "staticwebassets\\images\\flags\\to.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tr.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tr.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tt.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tt.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tv.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tv.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tw.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tw.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\tz.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tz.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ua.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ua.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ug.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ug.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\um.png",
+      "PackagePath": "staticwebassets\\images\\flags\\um.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\us.png",
+      "PackagePath": "staticwebassets\\images\\flags\\us.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\uy.png",
+      "PackagePath": "staticwebassets\\images\\flags\\uy.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\uz.png",
+      "PackagePath": "staticwebassets\\images\\flags\\uz.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\va.png",
+      "PackagePath": "staticwebassets\\images\\flags\\va.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\vc.png",
+      "PackagePath": "staticwebassets\\images\\flags\\vc.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ve.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ve.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\vg.png",
+      "PackagePath": "staticwebassets\\images\\flags\\vg.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\vi.png",
+      "PackagePath": "staticwebassets\\images\\flags\\vi.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\vn.png",
+      "PackagePath": "staticwebassets\\images\\flags\\vn.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\vu.png",
+      "PackagePath": "staticwebassets\\images\\flags\\vu.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\wales.png",
+      "PackagePath": "staticwebassets\\images\\flags\\wales.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\wf.png",
+      "PackagePath": "staticwebassets\\images\\flags\\wf.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ws.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ws.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\ye.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ye.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\yt.png",
+      "PackagePath": "staticwebassets\\images\\flags\\yt.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\za.png",
+      "PackagePath": "staticwebassets\\images\\flags\\za.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\zm.png",
+      "PackagePath": "staticwebassets\\images\\flags\\zm.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\flags\\zw.png",
+      "PackagePath": "staticwebassets\\images\\flags\\zw.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\logos\\AundeEnvanter.png",
+      "PackagePath": "staticwebassets\\images\\logos\\AundeEnvanter.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\logos\\EnvanterAunde.png",
+      "PackagePath": "staticwebassets\\images\\logos\\EnvanterAunde.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\logos\\Untitled-1.psd",
+      "PackagePath": "staticwebassets\\images\\logos\\Untitled-1.psd"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\logos\\aunde.svg",
+      "PackagePath": "staticwebassets\\images\\logos\\aunde.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\logos\\dark-logo.svg",
+      "PackagePath": "staticwebassets\\images\\logos\\dark-logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\logos\\fav.png",
+      "PackagePath": "staticwebassets\\images\\logos\\fav.png"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\profile\\user-1.jpg",
+      "PackagePath": "staticwebassets\\images\\profile\\user-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\undraw\\undraw_Hello_qnas.svg",
+      "PackagePath": "staticwebassets\\images\\undraw\\undraw_Hello_qnas.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\undraw\\undraw_Taken_if77.svg",
+      "PackagePath": "staticwebassets\\images\\undraw\\undraw_Taken_if77.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\undraw\\undraw_blank_canvas_3rbb.svg",
+      "PackagePath": "staticwebassets\\images\\undraw\\undraw_blank_canvas_3rbb.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\undraw\\undraw_creative_team_r90h.svg",
+      "PackagePath": "staticwebassets\\images\\undraw\\undraw_creative_team_r90h.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\undraw\\undraw_empty_xct9.svg",
+      "PackagePath": "staticwebassets\\images\\undraw\\undraw_empty_xct9.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\undraw\\undraw_no_data_qbuo.svg",
+      "PackagePath": "staticwebassets\\images\\undraw\\undraw_no_data_qbuo.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\undraw\\undraw_not_found_60pq.svg",
+      "PackagePath": "staticwebassets\\images\\undraw\\undraw_not_found_60pq.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\undraw\\undraw_page_not_found_su7k.svg",
+      "PackagePath": "staticwebassets\\images\\undraw\\undraw_page_not_found_su7k.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\undraw\\undraw_sign_in_e6hj.svg",
+      "PackagePath": "staticwebassets\\images\\undraw\\undraw_sign_in_e6hj.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\undraw\\undraw_tabs_jf82.svg",
+      "PackagePath": "staticwebassets\\images\\undraw\\undraw_tabs_jf82.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\undraw\\undraw_update_uxn2.svg",
+      "PackagePath": "staticwebassets\\images\\undraw\\undraw_update_uxn2.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\images\\undraw\\undraw_upgrade_06a0.svg",
+      "PackagePath": "staticwebassets\\images\\undraw\\undraw_upgrade_06a0.svg"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\app.min.js",
+      "PackagePath": "staticwebassets\\js\\app.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\dashboard.js",
+      "PackagePath": "staticwebassets\\js\\dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\datatables\\datatables.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\datatables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\sidebarmenu.js",
+      "PackagePath": "staticwebassets\\js\\sidebarmenu.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\simplebar.esm.js",
+      "PackagePath": "staticwebassets\\js\\simplebar.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\simplebar.esm.js.map",
+      "PackagePath": "staticwebassets\\js\\simplebar.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\simplebar.js",
+      "PackagePath": "staticwebassets\\js\\simplebar.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\simplebar.min.js",
+      "PackagePath": "staticwebassets\\js\\simplebar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\simplebar.umd.js",
+      "PackagePath": "staticwebassets\\js\\simplebar.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\sweetalert\\sweetalert.min.js",
+      "PackagePath": "staticwebassets\\js\\sweetalert\\sweetalert.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\webfont\\webfont.min.js",
+      "PackagePath": "staticwebassets\\js\\webfont\\webfont.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\zero.js",
+      "PackagePath": "staticwebassets\\js\\zero.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\js\\zero.min.js",
+      "PackagePath": "staticwebassets\\js\\zero.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\bootstrap\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\jquery\\core.js",
+      "PackagePath": "staticwebassets\\libs\\jquery\\core.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\jquery\\jquery.js",
+      "PackagePath": "staticwebassets\\libs\\jquery\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\libs\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\jquery\\jquery.min.map",
+      "PackagePath": "staticwebassets\\libs\\jquery\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\jquery\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\libs\\jquery\\jquery.slim.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\jquery\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\libs\\jquery\\jquery.slim.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\AundeHanaProjelerim\\_deneme\\EnvanteriX\\Presentation\\EnvanteriX.WebUI\\wwwroot\\libs\\jquery\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\libs\\jquery\\jquery.slim.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.EnvanteriX.WebUI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.EnvanteriX.WebUI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.EnvanteriX.WebUI.props",
+      "PackagePath": "build\\EnvanteriX.WebUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.EnvanteriX.WebUI.props",
+      "PackagePath": "buildMultiTargeting\\EnvanteriX.WebUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.EnvanteriX.WebUI.props",
+      "PackagePath": "buildTransitive\\EnvanteriX.WebUI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

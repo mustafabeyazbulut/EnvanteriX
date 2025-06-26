@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "bp58FTZFi5v4JzraEXfClkQEuXiNm+rBUjPfPjs0S5w=",
+  "Source": "EnvanteriX.WebApi",
+  "BasePath": "_content/EnvanteriX.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

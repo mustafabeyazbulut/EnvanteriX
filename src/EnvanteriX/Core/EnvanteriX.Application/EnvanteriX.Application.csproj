@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SendGrid" Version="9.29.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EnvanteriX.Domain\EnvanteriX.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Exceptions\AssetExceptions\" />
+    <Folder Include="Features\Exceptions\AssetMovementExceptions\" />
+    <Folder Include="Features\Exceptions\AssetTypeExceptions\" />
+    <Folder Include="Features\Exceptions\BrandExceptions\" />
+    <Folder Include="Features\Exceptions\LocationExceptions\" />
+    <Folder Include="Features\Exceptions\MaintenanceRecordExceptions\" />
+    <Folder Include="Features\Exceptions\ModelExceptions\" />
+    <Folder Include="Features\Exceptions\VendorExceptions\" />
+    <Folder Include="Features\Exceptions\SoftwareLicenseExceptions\" />
+    <Folder Include="Features\Rules\AssetRules\" />
+    <Folder Include="Features\Rules\AssetMovementRules\" />
+    <Folder Include="Features\Rules\AssetTypeRules\" />
+    <Folder Include="Features\Rules\BrandRules\" />
+    <Folder Include="Features\Rules\LocationRules\" />
+    <Folder Include="Features\Rules\MaintenanceRecordRules\" />
+    <Folder Include="Features\Rules\ModelRules\" />
+    <Folder Include="Features\Rules\VendorRules\" />
+    <Folder Include="Features\Rules\SoftwareLicenseRules\" />
+    <Folder Include="Features\Validators\AssetValidators\" />
+    <Folder Include="Features\Validators\AssetMovementValidators\" />
+    <Folder Include="Features\Validators\AssetTypeValidators\" />
+    <Folder Include="Features\Validators\BrandValidators\" />
+    <Folder Include="Features\Validators\LocationValidators\" />
+    <Folder Include="Features\Validators\MaintenanceRecordValidators\" />
+    <Folder Include="Features\Validators\ModelValidators\" />
+    <Folder Include="Features\Validators\VendorValidators\" />
+    <Folder Include="Features\Validators\SoftwareLicenseValidators\" />
+  </ItemGroup>
+
+</Project>

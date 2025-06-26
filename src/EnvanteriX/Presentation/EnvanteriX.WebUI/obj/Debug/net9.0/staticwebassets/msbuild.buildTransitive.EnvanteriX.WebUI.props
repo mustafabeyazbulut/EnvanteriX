@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\EnvanteriX.WebUI.props" />
+</Project>
