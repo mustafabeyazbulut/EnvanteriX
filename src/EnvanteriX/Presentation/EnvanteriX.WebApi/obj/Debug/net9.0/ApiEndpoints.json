@@ -555,33 +555,12 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
-    "Method": "GetById",
-    "RelativePath": "api/role/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
     "Method": "Update",
-    "RelativePath": "api/role/{id}",
+    "RelativePath": "api/role",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
       {
         "Name": "command",
         "Type": "EnvanteriX.Application.Features.Commands.RoleCommands.UpdateRoleCommand",
@@ -593,8 +572,24 @@
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
     "Method": "Delete",
-    "RelativePath": "api/role/{id}",
+    "RelativePath": "api/role",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EnvanteriX.Application.Features.Commands.RoleCommands.DeleteRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
+    "Method": "GetById",
+    "RelativePath": "api/role/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

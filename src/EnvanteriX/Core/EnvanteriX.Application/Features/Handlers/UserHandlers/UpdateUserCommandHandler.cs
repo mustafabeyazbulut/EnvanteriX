@@ -1,8 +1,10 @@
 ﻿using EnvanteriX.Application.Features.Commands.UserCommands;
+using EnvanteriX.Application.Features.Rules.RoleRules;
 using EnvanteriX.Application.Features.Rules.UserRules;
 using EnvanteriX.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using System.Data;
 
 namespace EnvanteriX.Application.Features.Handlers.UserHandlers
 {
@@ -22,6 +24,16 @@ namespace EnvanteriX.Application.Features.Handlers.UserHandlers
             var user = await _userManager.FindByIdAsync(request.UserId.ToString());
             await _userRules.UserShouldExist(user); //kullanıcı var mı yok mu kontrolü
 
+            if (!string.Equals(user.UserName, request.UserName, StringComparison.OrdinalIgnoreCase))
+            {
+                var existingRole = await _userManager.FindByNameAsync(request.UserName);
+                await _userRules.UserAlreadyExists(existingRole); // aynı isimde rol olmaması için kontrol
+            }
+            if (!string.Equals(user.Email, request.Email, StringComparison.OrdinalIgnoreCase))
+            {
+                var existingRole = await _userManager.FindByEmailAsync(request.Email);
+                await _userRules.UserAlreadyExists(existingRole); // aynı isimde rol olmaması için kontrol
+            }
             user.FullName = request.FullName;
             user.UserName = request.UserName;
             user.Email = request.Email;

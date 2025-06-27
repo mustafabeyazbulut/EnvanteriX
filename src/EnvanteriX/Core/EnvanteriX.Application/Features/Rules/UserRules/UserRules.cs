@@ -11,6 +11,10 @@ namespace EnvanteriX.Application.Features.Rules.UserRules
             if (user is null) throw new UserNotFoundException();
             return Task.CompletedTask;
         }
-       
+        public Task UserAlreadyExists(User? model)
+        {
+            if (model is not null) throw new UserAlreadyExistsException(model.UserName);
+            return Task.CompletedTask;
+        }
     }
 }

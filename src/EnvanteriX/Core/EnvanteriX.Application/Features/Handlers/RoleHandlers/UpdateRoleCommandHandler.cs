@@ -1,5 +1,4 @@
 ﻿using EnvanteriX.Application.Features.Commands.RoleCommands;
-using EnvanteriX.Application.Features.Results.RoleResults;
 using EnvanteriX.Application.Features.Rules.RoleRules;
 using EnvanteriX.Domain.Entities;
 using MediatR;
@@ -7,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace EnvanteriX.Application.Features.Handlers.RoleHandlers
 {
-    public class UpdateRoleCommandHandler : IRequestHandler<UpdateRoleCommand, UpdateRoleCommandResult>
+    public class UpdateRoleCommandHandler : IRequestHandler<UpdateRoleCommand, Unit>
     {
         private readonly RoleManager<Role> _roleManager;
         private readonly RoleRules _roleRules;
@@ -18,23 +17,25 @@ namespace EnvanteriX.Application.Features.Handlers.RoleHandlers
             _roleRules = roleRules;
         }
 
-        public async Task<UpdateRoleCommandResult> Handle(UpdateRoleCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(UpdateRoleCommand request, CancellationToken cancellationToken)
         {
-            var role = await _roleManager.FindByIdAsync(request.RoleId.ToString());
+            var role = await _roleManager.FindByIdAsync(request.Id.ToString());
             await _roleRules.RoleShouldExistRule(role);
 
-            role.Name = request.RoleName;
-            role.NormalizedName = request.RoleName.ToUpper();
+            if (!string.Equals(role.Name, request.Name, StringComparison.OrdinalIgnoreCase))
+            {
+                var existingRole = await _roleManager.FindByNameAsync(request.Name);
+                await _roleRules.RoleAlreadyExists(existingRole); // aynı isimde rol olmaması için kontrol
+            }
+
+            role.Name = request.Name;
+            role.NormalizedName = request.Name.ToUpper();
 
             var result = await _roleManager.UpdateAsync(role);
             if (!result.Succeeded)
                 throw new System.Exception("Role update failed: " + string.Join(", ", result.Errors.Select(e => e.Description)));
 
-            return new UpdateRoleCommandResult
-            {
-                RoleId = role.Id,
-                RoleName = role.Name
-            };
+           return Unit.Value;
         }
     }
 }

@@ -12,5 +12,16 @@ namespace EnvanteriX.Application.Features.Rules.RoleRules
                 throw new RoleShouldExistException();
             return Task.CompletedTask;
         }
+        public Task RoleAlreadyExists(Role? model)
+        {
+            if (model is not null) throw new RoleAlreadyExistsException(model.Name);
+            return Task.CompletedTask;
+        }
+
+        public async Task RoleShouldNotBeAssignedToUsersRule(IList<User> usersInRole,string name)
+        {
+            if (usersInRole.Any())
+                throw new RoleAssignedToUsersException(name);
+        }
     }
 }

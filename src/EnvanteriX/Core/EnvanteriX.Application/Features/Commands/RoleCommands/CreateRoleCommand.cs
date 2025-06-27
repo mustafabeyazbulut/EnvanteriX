@@ -5,6 +5,6 @@ namespace EnvanteriX.Application.Features.Commands.RoleCommands
 {
     public class CreateRoleCommand : IRequest<CreateRoleCommandResult>
     {
-        public string RoleName { get; set; }
+        public string Name { get; set; }
     }
 }

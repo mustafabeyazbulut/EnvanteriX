@@ -7,7 +7,7 @@ namespace EnvanteriX.Application.Features.Validators.RoleValidators
     {
         public DeleteRoleCommandValidator()
         {
-            RuleFor(x => x.RoleId)
+            RuleFor(x => x.Id)
                  .NotEmpty().WithMessage("Rol ID boş olamaz.") 
                  .GreaterThan(0).WithMessage("Geçerli bir Rol ID giriniz.")
                  .WithName("Rol ID");

@@ -10,17 +10,23 @@ namespace EnvanteriX.Application.Features.Handlers.RoleHandlers
     {
         private readonly RoleManager<Role> _roleManager;
         private readonly RoleRules _roleRules;
+        private readonly UserManager<User> _userManager;
 
-        public DeleteRoleCommandHandler(RoleManager<Role> roleManager, RoleRules roleRules)
+        public DeleteRoleCommandHandler(RoleManager<Role> roleManager, RoleRules roleRules, UserManager<User> userManager)
         {
             _roleManager = roleManager;
             _roleRules = roleRules;
+            _userManager = userManager;
         }
 
         public async Task<Unit> Handle(DeleteRoleCommand request, CancellationToken cancellationToken)
         {
-            var role = await _roleManager.FindByIdAsync(request.RoleId.ToString());
+            var role = await _roleManager.FindByIdAsync(request.Id.ToString());
             await _roleRules.RoleShouldExistRule(role);
+
+           
+            var usersInRole = await _userManager.GetUsersInRoleAsync(role.Name);
+            await _roleRules.RoleShouldNotBeAssignedToUsersRule(usersInRole,role.Name);  // rol kullanıcıda tanımlıysa hata ver
 
             var result = await _roleManager.DeleteAsync(role);
             if (!result.Succeeded)
