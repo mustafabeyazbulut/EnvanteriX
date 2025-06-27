@@ -3,7 +3,7 @@ using AutoMapper.Internal;
 
 namespace EnvanteriX.Infrastructure.AutoMapper
 {
-    public class Mapper : Application.Interfaces.AutoMapper.IMapper
+    public class Mapper : EnvanteriX.Application.Interfaces.AutoMapper.IMapper
     {
         public static List<TypePair> typePairs = new();
         private IMapper MapperContainer;

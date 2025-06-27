@@ -13,7 +13,6 @@ namespace EnvanteriX.Infrastructure
     {
         public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<IMapper, AutoMapper.Mapper>();
             services.Configure<TokenSettings>(configuration.GetSection("JWT"));
             services.AddTransient<ITokenService, TokenService>();
 
@@ -36,6 +35,8 @@ namespace EnvanteriX.Infrastructure
                     ClockSkew = TimeSpan.Zero,
                 };
             });
+
+            services.AddSingleton<IMapper, AutoMapper.Mapper>();
         }
     }
 }

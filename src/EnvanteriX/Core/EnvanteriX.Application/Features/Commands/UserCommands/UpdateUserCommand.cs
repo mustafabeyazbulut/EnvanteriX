@@ -1,9 +1,8 @@
-﻿using EnvanteriX.Application.Features.Results.UserResults;
-using MediatR;
+﻿using MediatR;
 
 namespace EnvanteriX.Application.Features.Commands.UserCommands
 {
-    public class UpdateUserCommand : IRequest<UpdateUserCommandResult>
+    public class UpdateUserCommand : IRequest<Unit>
     {
         public int UserId { get; set; }
         public string FullName { get; set; }

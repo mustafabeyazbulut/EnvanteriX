@@ -26,7 +26,6 @@
     <Folder Include="Features\Exceptions\AssetExceptions\" />
     <Folder Include="Features\Exceptions\AssetMovementExceptions\" />
     <Folder Include="Features\Exceptions\AssetTypeExceptions\" />
-    <Folder Include="Features\Exceptions\BrandExceptions\" />
     <Folder Include="Features\Exceptions\LocationExceptions\" />
     <Folder Include="Features\Exceptions\MaintenanceRecordExceptions\" />
     <Folder Include="Features\Exceptions\ModelExceptions\" />
@@ -35,7 +34,6 @@
     <Folder Include="Features\Rules\AssetRules\" />
     <Folder Include="Features\Rules\AssetMovementRules\" />
     <Folder Include="Features\Rules\AssetTypeRules\" />
-    <Folder Include="Features\Rules\BrandRules\" />
     <Folder Include="Features\Rules\LocationRules\" />
     <Folder Include="Features\Rules\MaintenanceRecordRules\" />
     <Folder Include="Features\Rules\ModelRules\" />
@@ -44,7 +42,6 @@
     <Folder Include="Features\Validators\AssetValidators\" />
     <Folder Include="Features\Validators\AssetMovementValidators\" />
     <Folder Include="Features\Validators\AssetTypeValidators\" />
-    <Folder Include="Features\Validators\BrandValidators\" />
     <Folder Include="Features\Validators\LocationValidators\" />
     <Folder Include="Features\Validators\MaintenanceRecordValidators\" />
     <Folder Include="Features\Validators\ModelValidators\" />

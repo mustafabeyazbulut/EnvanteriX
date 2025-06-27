@@ -28,10 +28,9 @@ public class BrandController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
     }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateBrandCommand command)
+    [HttpPut]
+    public async Task<IActionResult> Update( UpdateBrandCommand command)
     {
-        if (id != command.Id) return BadRequest();
         var result = await _mediator.Send(command);
         return result == null ? NotFound() : Ok(result);
     }

@@ -1,7 +1,6 @@
 ﻿using EnvanteriX.Application.Bases;
 using EnvanteriX.Application.Features.Exceptions.AuthExceptions;
 using EnvanteriX.Domain.Entities;
-using Microsoft.AspNetCore.Identity;
 
 namespace EnvanteriX.Application.Features.Rules.AuthRules
 {

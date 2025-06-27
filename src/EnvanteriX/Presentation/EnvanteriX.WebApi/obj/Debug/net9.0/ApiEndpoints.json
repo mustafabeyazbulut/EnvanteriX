@@ -328,6 +328,22 @@
   },
   {
     "ContainingType": "BrandController",
+    "Method": "Update",
+    "RelativePath": "api/brand",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.BrandCommands.UpdateBrandCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BrandController",
     "Method": "GetById",
     "RelativePath": "api/brand/{id}",
     "HttpMethod": "GET",
@@ -337,27 +353,6 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BrandController",
-    "Method": "Update",
-    "RelativePath": "api/brand/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.BrandCommands.UpdateBrandCommand",
         "IsRequired": true
       }
     ],

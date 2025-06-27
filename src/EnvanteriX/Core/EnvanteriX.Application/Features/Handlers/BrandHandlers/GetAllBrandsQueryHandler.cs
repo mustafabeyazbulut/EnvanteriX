@@ -19,7 +19,8 @@ namespace EnvanteriX.Application.Features.Handlers.BrandHandlers
         public async Task<List<GetAllBrandsQueryResult>> Handle(GetAllBrandsQuery request, CancellationToken cancellationToken)
         {
             var brands = await _unitOfWork.GetReadRepository<Brand>().GetAllAsync(x => !x.IsDeleted);
-            return _mapper.Map<List<GetAllBrandsQueryResult>>(brands);
+            var map = _mapper.Map<GetAllBrandsQueryResult, Brand>(brands);
+            return map.ToList();
         }
     }
 }
