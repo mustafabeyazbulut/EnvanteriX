@@ -8,39 +8,36 @@ namespace EnvanteriX.Infrastructure.AutoMapper
         public static List<TypePair> typePairs = new();
         private IMapper MapperContainer;
 
-        public TDestination Map<TDestination, TSource>(TSource source, string? ignore = null)
+        public TDestination Map<TDestination, TSource>(TSource source, string? ignore = null, Action<IMapperConfigurationExpression>? config = null)
         {
-            Config<TDestination, TSource>(5, ignore);
-
+            Config<TDestination, TSource>(5, ignore, config);
             return MapperContainer.Map<TSource, TDestination>(source);
         }
 
-        public IList<TDestination> Map<TDestination, TSource>(IList<TSource> source, string? ignore = null)
+        public IList<TDestination> Map<TDestination, TSource>(IList<TSource> source, string? ignore = null, Action<IMapperConfigurationExpression>? config = null)
         {
-            Config<TDestination, TSource>(5, ignore);
-
+            Config<TDestination, TSource>(5, ignore, config);
             return MapperContainer.Map<IList<TSource>, IList<TDestination>>(source);
         }
 
-        public TDestination Map<TDestination>(object source, string? ignore = null)
+        public TDestination Map<TDestination>(object source, string? ignore = null, Action<IMapperConfigurationExpression>? config = null)
         {
-            Config<TDestination, object>(5, ignore);
-
+            Config<TDestination, object>(5, ignore, config);
             return MapperContainer.Map<TDestination>(source);
         }
 
-        public IList<TDestination> Map<TDestination>(IList<object> source, string? ignore = null)
+        public IList<TDestination> Map<TDestination>(IList<object> source, string? ignore = null, Action<IMapperConfigurationExpression>? config = null)
         {
-            Config<TDestination, IList<object>>(5, ignore);
-
+            Config<TDestination, IList<object>>(5, ignore, config);
             return MapperContainer.Map<IList<TDestination>>(source);
         }
 
-        protected void Config<TDestination, TSoruce>(int depth = 5, string? ignore = null)
+        protected void Config<TDestination, TSoruce>(int depth = 5, string? ignore = null, Action<IMapperConfigurationExpression>? customConfig = null)
         {
             var typePair = new TypePair(typeof(TSoruce), typeof(TDestination));
 
-            if (typePairs.Any(a => a.DestinationType == typePair.DestinationType && a.SourceType == typePair.SourceType) && ignore is null) return;
+            if (typePairs.Any(a => a.DestinationType == typePair.DestinationType && a.SourceType == typePair.SourceType) && ignore is null && customConfig == null)
+                return;
 
             typePairs.Add(typePair);
 
@@ -53,6 +50,9 @@ namespace EnvanteriX.Infrastructure.AutoMapper
                     else
                         cfg.CreateMap(item.SourceType, item.DestinationType).MaxDepth(depth).ReverseMap();
                 }
+
+                // Dışarıdan gelen özel config varsa uygula
+                customConfig?.Invoke(cfg);
             });
 
             MapperContainer = config.CreateMapper();

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "q32yEndBi4Y=",
+  "dgSpecHash": "q7w16Ba9Dl4=",
   "success": true,
   "projectFilePath": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\EnvanteriX\\src\\EnvanteriX\\Infrastructure\\EnvanteriX.Persistence\\EnvanteriX.Persistence.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\MBEYAZBULUT\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\MBEYAZBULUT\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\MBEYAZBULUT\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\MBEYAZBULUT\\.nuget\\packages\\bogus\\35.6.2\\bogus.35.6.2.nupkg.sha512",

@@ -24,8 +24,7 @@ namespace EnvanteriX.Application.Features.Handlers.BrandHandlers
             var existingBrand = await _unitOfWork.GetReadRepository<Brand>()
                 .GetAsync(b => b.BrandName.ToLower() == request.BrandName.ToLower());
             await _brandRules.BrandAlreadyExists(existingBrand);
-
-            var brand = new Brand { BrandName = request.BrandName };
+            var brand = _mapper.Map<Brand, CreateBrandCommand>(request);
             await _unitOfWork.GetWriteRepository<Brand>().AddAsync(brand);
             await _unitOfWork.SaveAsync();
             var map = _mapper.Map<CreateBrandCommandResult, Brand>(brand);

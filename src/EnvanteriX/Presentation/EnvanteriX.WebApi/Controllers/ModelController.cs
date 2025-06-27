@@ -27,34 +27,28 @@ namespace EnvanteriX.WebApi.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var result = await _mediator.Send(new GetModelByIdQuery(id));
-            if (result == null) return NotFound();
-
             return Ok(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateModelCommand command)
+        public async Task<IActionResult> Create(CreateModelCommand command)
         {
             var result = await _mediator.Send(command);
-            return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
+            return StatusCode(StatusCodes.Status201Created, result);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] UpdateModelCommand command)
+        [HttpPut]
+        public async Task<IActionResult> Update(UpdateModelCommand command)
         {
-            if (id != command.Id) return BadRequest("ID uyuşmuyor.");
-
-            var result = await _mediator.Send(command);
-            if (result == null) return NotFound();
-
-            return Ok(result);
+            await _mediator.Send(command);
+            return StatusCode(StatusCodes.Status200OK);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        [HttpDelete]
+        public async Task<IActionResult> Delete(DeleteModelCommand request)
         {
-           await _mediator.Send(new DeleteModelCommand(id));
-            return NoContent();
+            await _mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK);
         }
     }
 }

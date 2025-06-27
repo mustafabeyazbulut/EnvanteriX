@@ -3,7 +3,7 @@ using MediatR;
 
 namespace EnvanteriX.Application.Features.Commands.ModelCommands
 {
-    public class UpdateModelCommand : IRequest<UpdateModelCommandResult>
+    public class UpdateModelCommand : IRequest<Unit>
     {
         public int Id { get; set; }
         public string ModelName { get; set; }

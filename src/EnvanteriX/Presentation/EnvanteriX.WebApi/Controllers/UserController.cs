@@ -27,38 +27,32 @@ namespace EnvanteriX.WebApi.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var result = await _mediator.Send(new GetUserByIdQuery(id));
-            if (result == null)
-                return NotFound();
-
             return Ok(result);
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update( UpdateUserCommand command)
+        public async Task<IActionResult> Update(UpdateUserCommand command)
         {
-            var result = await _mediator.Send(command);
-            if (result == null)
-                return NotFound();
-
-            return Ok(result);
+            await _mediator.Send(command);
+            return StatusCode(StatusCodes.Status200OK);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        [HttpDelete]
+        public async Task<IActionResult> Delete(DeleteUserCommand request)
         {
-            await _mediator.Send(new DeleteUserCommand(id));
-            return NoContent();
+            await _mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK);
         }
 
         [HttpPost("remove-role")]
         public async Task<IActionResult> RemoveRole(RemoveUserRoleCommand command)
         {
-             await _mediator.Send(command);
+            await _mediator.Send(command);
             return StatusCode(StatusCodes.Status200OK);
         }
 
         [HttpPost("add-role")]
-        public async Task<IActionResult> RemoveRole(AddUserRoleCommand command)
+        public async Task<IActionResult> AddRole(AddUserRoleCommand command)
         {
             await _mediator.Send(command);
             return StatusCode(StatusCodes.Status200OK);

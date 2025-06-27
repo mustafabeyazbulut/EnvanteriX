@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "afdmMB1d/kg=",
+  "dgSpecHash": "iVjErOznPqY=",
   "success": true,
   "projectFilePath": "C:\\Users\\MBEYAZBULUT\\Documents\\GitHub\\EnvanteriX\\src\\EnvanteriX\\Core\\EnvanteriX.Application\\EnvanteriX.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\MBEYAZBULUT\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\MBEYAZBULUT\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\MBEYAZBULUT\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "C:\\Users\\MBEYAZBULUT\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",

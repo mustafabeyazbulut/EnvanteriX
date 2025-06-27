@@ -18,27 +18,27 @@ public class BrandController : ControllerBase
     public async Task<IActionResult> GetById(int id)
     {
         var result = await _mediator.Send(new GetBrandByIdQuery(id));
-        return result == null ? NotFound() : Ok(result);
+        return Ok(result);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] CreateBrandCommand command)
+    public async Task<IActionResult> Create(CreateBrandCommand command)
     {
         var result = await _mediator.Send(command);
-        return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
+        return StatusCode(StatusCodes.Status201Created, result);
     }
 
     [HttpPut]
-    public async Task<IActionResult> Update( UpdateBrandCommand command)
+    public async Task<IActionResult> Update(UpdateBrandCommand command)
     {
-        var result = await _mediator.Send(command);
-        return result == null ? NotFound() : Ok(result);
+        await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK);
     }
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
+    [HttpDelete]
+    public async Task<IActionResult> Delete(DeleteBrandCommand request)
     {
-         await _mediator.Send(new DeleteBrandCommand (id));
-        return NoContent() ;
+        await _mediator.Send(request);
+        return StatusCode(StatusCodes.Status200OK);
     }
 }

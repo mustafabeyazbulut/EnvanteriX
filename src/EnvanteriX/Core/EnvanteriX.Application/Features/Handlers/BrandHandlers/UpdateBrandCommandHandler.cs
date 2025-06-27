@@ -32,6 +32,7 @@ namespace EnvanteriX.Application.Features.Handlers.BrandHandlers
             }
 
             brand.BrandName = request.BrandName;
+            await _unitOfWork.GetWriteRepository<Brand>().UpdateAsync(brand);
             await _unitOfWork.SaveAsync();
             return Unit.Value;
         }

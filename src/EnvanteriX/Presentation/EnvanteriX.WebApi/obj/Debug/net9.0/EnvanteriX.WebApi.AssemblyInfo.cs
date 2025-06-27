@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EnvanteriX.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8da49ec95002704a74327b9d65029ccecef75d8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7478b2eb58dd10337563a6a2c40120b4f05f60f8")]
 [assembly: System.Reflection.AssemblyProductAttribute("EnvanteriX.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EnvanteriX.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

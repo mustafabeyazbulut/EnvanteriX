@@ -16,5 +16,12 @@ namespace EnvanteriX.Application.Features.Rules.BrandRules
             if (brand is not null) throw new BrandAlreadyExistsException(brand.BrandName);
             return Task.CompletedTask;
         }
+        public async Task BrandShouldNotHaveAnyModel(Brand? brand)
+        {
+            if (brand is null) throw new BrandNotFoundException();
+
+            if (brand.Models!=null && brand.Models.Any())
+                throw new BrandShouldNotHaveAnyModelException(brand.BrandName);
+        }
     }
 }

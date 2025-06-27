@@ -6,6 +6,7 @@ using EnvanteriX.Application.Interfaces.UnitOfWorks;
 using EnvanteriX.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace EnvanteriX.Application.Features.Handlers.ModelHandlers
@@ -19,15 +20,16 @@ namespace EnvanteriX.Application.Features.Handlers.ModelHandlers
         public async Task<List<GetAllModelsQueryResult>> Handle(GetAllModelsQuery request, CancellationToken cancellationToken)
         {
             var models = await _unitOfWork.GetReadRepository<Model>()
-                .GetAllAsync(x => !x.IsDeleted);
-
-            return models.Select(model => new GetAllModelsQueryResult
+                        .GetAllAsync(
+                            predicate: x => !x.IsDeleted,
+                            include: x => x.Include(m => m.Brand)
+                        );
+            var map = _mapper.Map<GetAllModelsQueryResult, Model>(models, config: cfg =>
             {
-                Id = model.Id,
-                ModelName = model.ModelName,
-                BrandId = model.BrandId,
-                BrandName = model.Brand?.BrandName
-            }).ToList();
+                cfg.CreateMap<Model, GetAllModelsQueryResult>()
+                   .ForMember(dest => dest.BrandName, opt => opt.MapFrom(src => src.Brand.BrandName));
+            });
+            return map.ToList();
         }
     }
 }

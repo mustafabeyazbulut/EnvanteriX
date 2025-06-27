@@ -72,5 +72,10 @@ namespace EnvanteriX.Persistence.Repositories
 
             return Table.Where(predicate);
         }
+
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await Table.AnyAsync(predicate);
+        }
     }
 }

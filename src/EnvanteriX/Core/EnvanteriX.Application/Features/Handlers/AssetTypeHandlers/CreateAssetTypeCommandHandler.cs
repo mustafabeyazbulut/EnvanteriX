@@ -1,6 +1,5 @@
 ﻿using EnvanteriX.Application.Bases;
 using EnvanteriX.Application.Features.Commands.AssetTypeCommands;
-using EnvanteriX.Application.Features.Results.AssetTypeResults;
 using EnvanteriX.Application.Interfaces.AutoMapper;
 using EnvanteriX.Application.Interfaces.UnitOfWorks;
 using EnvanteriX.Domain.Entities;
