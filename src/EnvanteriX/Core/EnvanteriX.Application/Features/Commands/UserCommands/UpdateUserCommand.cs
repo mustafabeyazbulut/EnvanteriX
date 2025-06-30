@@ -8,15 +8,13 @@ namespace EnvanteriX.Application.Features.Commands.UserCommands
         public string FullName { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
-        public bool IsActive { get; set; }
 
-        public UpdateUserCommand(int userId, string fullName, string userName, string email, bool isActive)
+        public UpdateUserCommand(int userId, string fullName, string userName, string email)
         {
             UserId = userId;
             FullName = fullName;
             UserName = userName;
             Email = email;
-            IsActive = isActive;
         }
     }
 }

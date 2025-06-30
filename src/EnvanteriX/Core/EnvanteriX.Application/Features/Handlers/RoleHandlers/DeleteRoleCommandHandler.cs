@@ -24,7 +24,6 @@ namespace EnvanteriX.Application.Features.Handlers.RoleHandlers
             var role = await _roleManager.FindByIdAsync(request.Id.ToString());
             await _roleRules.RoleShouldExistRule(role);
 
-           
             var usersInRole = await _userManager.GetUsersInRoleAsync(role.Name);
             await _roleRules.RoleShouldNotBeAssignedToUsersRule(usersInRole,role.Name);  // rol kullanıcıda tanımlıysa hata ver
 

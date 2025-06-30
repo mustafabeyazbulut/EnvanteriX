@@ -1,10 +1,8 @@
 ﻿using EnvanteriX.Application.Features.Commands.UserCommands;
-using EnvanteriX.Application.Features.Rules.RoleRules;
 using EnvanteriX.Application.Features.Rules.UserRules;
 using EnvanteriX.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
-using System.Data;
 
 namespace EnvanteriX.Application.Features.Handlers.UserHandlers
 {
@@ -37,8 +35,6 @@ namespace EnvanteriX.Application.Features.Handlers.UserHandlers
             user.FullName = request.FullName;
             user.UserName = request.UserName;
             user.Email = request.Email;
-            user.IsActive = request.IsActive;
-
             var result = await _userManager.UpdateAsync(user);
             if (!result.Succeeded)
                 throw new System.Exception(string.Join(", ", result.Errors));

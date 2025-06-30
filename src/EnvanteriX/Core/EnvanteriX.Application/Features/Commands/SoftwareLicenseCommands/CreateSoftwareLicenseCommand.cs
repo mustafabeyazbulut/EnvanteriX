@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using EnvanteriX.Application.Features.Results.SoftwareLicenseResults;
-using System;
 
 namespace EnvanteriX.Application.Features.Commands.SoftwareLicenseCommands
 {
@@ -14,6 +13,5 @@ namespace EnvanteriX.Application.Features.Commands.SoftwareLicenseCommands
         public DateTime PurchaseDate { get; set; }
         public DateTime ExpiryDate { get; set; }
         public int? AssignedUserId { get; set; }
-        public bool IsActive { get; set; } = true;
     }
 }

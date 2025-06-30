@@ -16,5 +16,15 @@ namespace EnvanteriX.Application.Features.Rules.UserRules
             if (model is not null) throw new UserAlreadyExistsException(model.UserName);
             return Task.CompletedTask;
         }
+        public Task UserHasAssetMovements(bool hasMovements)
+        {
+            if (hasMovements) throw new UserHasAssetMovementsException();
+            return Task.CompletedTask;
+        }
+        public Task UserDoesNotHaveRoleException(bool isInRole,string roleName)
+        {
+            if (!isInRole) throw new UserDoesNotHaveRoleException(roleName);
+            return Task.CompletedTask;
+        }
     }
 }

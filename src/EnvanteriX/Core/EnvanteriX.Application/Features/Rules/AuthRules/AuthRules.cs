@@ -34,7 +34,7 @@ namespace EnvanteriX.Application.Features.Rules.AuthRules
         }
         public Task UserShouldBeActive(User user)
         {
-            if (!user.IsActive) // varsayalım IdentityUser'da IsActive bool özelliği var
+            if (user.IsDeleted) // varsayalım IdentityUser'da IsActive bool özelliği var
                 throw new UserInactiveException();
             return Task.CompletedTask;
         }

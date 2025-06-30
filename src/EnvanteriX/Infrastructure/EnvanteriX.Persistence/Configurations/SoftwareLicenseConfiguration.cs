@@ -25,8 +25,8 @@ namespace EnvanteriX.Persistence.Configurations
             builder.Property(x => x.ExpiryDate)
                 .IsRequired();
 
-            builder.Property(x => x.IsActive)
-                .HasDefaultValue(true);
+            builder.Property(x => x.IsDeleted)
+                .HasDefaultValue(false);
 
             // İlişkiler
             builder.HasOne(x => x.Asset)

@@ -11,6 +11,6 @@
         public System.DateTime PurchaseDate { get; set; }
         public System.DateTime ExpiryDate { get; set; }
         public int? AssignedUserId { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }

@@ -34,7 +34,6 @@ namespace EnvanteriX.Application.Features.Handlers.SoftwareLicenseHandlers
             license.PurchaseDate = request.PurchaseDate;
             license.ExpiryDate = request.ExpiryDate;
             license.AssignedUserId = request.AssignedUserId;
-            license.IsActive = request.IsActive;
 
           await  _unitOfWork.GetWriteRepository<SoftwareLicense>().UpdateAsync(license);
             await _unitOfWork.SaveAsync();

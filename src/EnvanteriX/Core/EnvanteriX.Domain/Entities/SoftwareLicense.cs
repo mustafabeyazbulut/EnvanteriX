@@ -15,6 +15,5 @@ namespace EnvanteriX.Domain.Entities
         public DateTime ExpiryDate { get; set; }
         public int? AssignedUserId { get; set; }
         public User AssignedUser { get; set; }
-        public bool IsActive { get; set; } = true;
     }
 }

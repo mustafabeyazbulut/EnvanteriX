@@ -24,7 +24,6 @@ namespace EnvanteriX.Application.Features.Handlers.UserHandlers
             var result=await _userManager.Users.ToListAsync();
             var map = _mapper.Map<GetAllUsersQueryResult, User>(result);
             return map.ToList();
-
         }
     }
 }

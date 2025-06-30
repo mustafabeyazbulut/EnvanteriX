@@ -5,7 +5,6 @@ using EnvanteriX.Application.Interfaces.AutoMapper;
 using EnvanteriX.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
-using Newtonsoft.Json.Linq;
 
 namespace EnvanteriX.Application.Features.Handlers.UserHandlers
 {

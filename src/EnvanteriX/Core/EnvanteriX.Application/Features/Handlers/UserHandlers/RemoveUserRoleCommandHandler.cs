@@ -23,10 +23,7 @@ namespace EnvanteriX.Application.Features.Handlers.UserHandlers
             await _userRules.UserShouldExist(user); //kullanıcı var mı yok mu kontrolü
 
             var isInRole = await _userManager.IsInRoleAsync(user, request.RoleName);
-            if (!isInRole)
-            {
-                throw new InvalidOperationException($"Kullanıcı zaten '{request.RoleName}' rolüne sahip değil.");
-            }
+            await _userRules.UserDoesNotHaveRoleException(isInRole, request.RoleName); //kullanıcı rolü var mı yok mu kontrolü
 
             var result = await _userManager.RemoveFromRoleAsync(user, request.RoleName);
             if (!result.Succeeded)

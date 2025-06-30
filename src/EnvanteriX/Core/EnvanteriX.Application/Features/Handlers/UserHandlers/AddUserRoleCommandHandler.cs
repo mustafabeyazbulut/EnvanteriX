@@ -29,7 +29,7 @@ namespace EnvanteriX.Application.Features.Handlers.UserHandlers
             await _userRules.UserShouldExist(user); //kullanıcı var mı yok mu kontrolü
 
             var isRole = await _roleManager.FindByNameAsync(request.RoleName);
-            await _roleRules.RoleShouldExistRule(isRole);
+            await _roleRules.RoleShouldExistRule(isRole); // role var mı kontrolü
 
             var isInRole = await _userManager.IsInRoleAsync(user, request.RoleName);
             if (isInRole)

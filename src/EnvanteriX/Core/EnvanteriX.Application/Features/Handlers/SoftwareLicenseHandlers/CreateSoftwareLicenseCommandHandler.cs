@@ -28,8 +28,7 @@ namespace EnvanteriX.Application.Features.Handlers.SoftwareLicenseHandlers
                 VendorId = request.VendorId,
                 PurchaseDate = request.PurchaseDate,
                 ExpiryDate = request.ExpiryDate,
-                AssignedUserId = request.AssignedUserId,
-                IsActive = request.IsActive
+                AssignedUserId = request.AssignedUserId
             };
 
             await _unitOfWork.GetWriteRepository<SoftwareLicense>().AddAsync(license);
