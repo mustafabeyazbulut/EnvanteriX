@@ -2,6 +2,7 @@
 
 namespace EnvanteriX.Domain.Entities
 {
+    // +
     public class Role : IdentityRole<int>
     {
         public DateTime CreatedDate { get; set; } = DateTime.Now;

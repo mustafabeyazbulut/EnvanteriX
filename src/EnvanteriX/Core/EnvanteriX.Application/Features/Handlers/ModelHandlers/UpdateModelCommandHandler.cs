@@ -1,6 +1,5 @@
 ﻿using EnvanteriX.Application.Bases;
 using EnvanteriX.Application.Features.Commands.ModelCommands;
-using EnvanteriX.Application.Features.Results.ModelResults;
 using EnvanteriX.Application.Features.Rules.BrandRules;
 using EnvanteriX.Application.Features.Rules.ModelRules;
 using EnvanteriX.Application.Interfaces.AutoMapper;
@@ -24,7 +23,7 @@ namespace EnvanteriX.Application.Features.Handlers.ModelHandlers
 
         public async Task<Unit> Handle(UpdateModelCommand request, CancellationToken cancellationToken)
         {
-            var model = await _unitOfWork.GetReadRepository<Model>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
+            var model = await _unitOfWork.GetReadRepository<Model>().GetAsync(x => x.Id == request.Id );
             await _modelRules.ModelShouldExist(model);
 
             var brand = await _unitOfWork.GetReadRepository<Brand>().GetAsync(x => x.Id == request.BrandId && !x.IsDeleted);

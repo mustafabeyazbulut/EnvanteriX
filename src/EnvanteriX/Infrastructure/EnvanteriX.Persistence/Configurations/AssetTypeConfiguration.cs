@@ -11,6 +11,8 @@ namespace EnvanteriX.Persistence.Configurations
             builder.Property(x => x.TypeName)
                 .IsRequired()           // Required olduğu için bunu belirtmek iyi olur
                 .HasMaxLength(100);
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+
         }
     }
 }

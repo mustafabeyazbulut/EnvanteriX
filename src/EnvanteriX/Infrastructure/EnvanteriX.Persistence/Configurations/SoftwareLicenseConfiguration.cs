@@ -43,6 +43,8 @@ namespace EnvanteriX.Persistence.Configurations
                 .WithMany()
                 .HasForeignKey(x => x.AssignedUserId)
                 .OnDelete(DeleteBehavior.SetNull);
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+
         }
     }
 }

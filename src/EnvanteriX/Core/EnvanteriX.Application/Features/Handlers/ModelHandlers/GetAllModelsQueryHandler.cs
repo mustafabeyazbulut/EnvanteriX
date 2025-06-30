@@ -19,9 +19,8 @@ namespace EnvanteriX.Application.Features.Handlers.ModelHandlers
 
         public async Task<List<GetAllModelsQueryResult>> Handle(GetAllModelsQuery request, CancellationToken cancellationToken)
         {
-            var models = await _unitOfWork.GetReadRepository<Model>()
+            var models = await _unitOfWork.GetReadRepository<Model>() //predicate:
                         .GetAllAsync(
-                            predicate: x => !x.IsDeleted,
                             include: x => x.Include(m => m.Brand)
                         );
             var map = _mapper.Map<GetAllModelsQueryResult, Model>(models, config: cfg =>

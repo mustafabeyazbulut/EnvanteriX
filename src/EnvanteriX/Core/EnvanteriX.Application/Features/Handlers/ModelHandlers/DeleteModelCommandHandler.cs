@@ -20,14 +20,12 @@ namespace EnvanteriX.Application.Features.Handlers.ModelHandlers
 
         public async Task<Unit> Handle(DeleteModelCommand request, CancellationToken cancellationToken)
         {
-            var model = await _unitOfWork.GetReadRepository<Model>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
+            var model = await _unitOfWork.GetReadRepository<Model>().GetAsync(x => x.Id == request.Id );
             await _modelRules.ModelShouldExist(model);
             var hasAnyAsset = await _unitOfWork.GetReadRepository<Asset>().AnyAsync(a => a.ModelId == model.Id && !a.IsDeleted); //asset içinde kullanılmış mı diye kontrol ediyoruz.
             await _modelRules.ModelShouldNotHaveAnyModel(model, hasAnyAsset);
-            model.IsDeleted = true;
-            await _unitOfWork.GetWriteRepository<Model>().UpdateAsync(model);
+            await _unitOfWork.GetWriteRepository<Model>().HardDeleteAsync(model);
             await _unitOfWork.SaveAsync();
-
             return Unit.Value;
         }
     }

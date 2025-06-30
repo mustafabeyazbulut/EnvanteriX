@@ -2,6 +2,7 @@
 
 namespace EnvanteriX.Domain.Entities
 {
+    // +
     public class Model : EntityBase, IEntityBase
     {
         public string ModelName { get; set; }

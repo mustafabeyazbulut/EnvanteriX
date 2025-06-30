@@ -12,6 +12,8 @@ namespace EnvanteriX.Persistence.Configurations
             builder.Property(x => x.UserName).HasMaxLength(50);
             builder.Property(x => x.Email).HasMaxLength(100);
             builder.Property(x => x.PasswordHash).HasMaxLength(100);
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+
         }
     }
 }

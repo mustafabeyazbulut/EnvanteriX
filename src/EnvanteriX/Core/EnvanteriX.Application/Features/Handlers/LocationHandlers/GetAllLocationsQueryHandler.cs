@@ -16,8 +16,8 @@ namespace EnvanteriX.Application.Features.Handlers.LocationHandlers
 
         public async Task<List<GetAllLocationsQueryResult>> Handle(GetAllLocationsQuery request, CancellationToken cancellationToken)
         {
-            var locations = await _unitOfWork.GetReadRepository<Location>().GetAllAsync(x => !x.IsDeleted);
-            return _mapper.Map<List<GetAllLocationsQueryResult>>(locations);
+            var locations = await _unitOfWork.GetReadRepository<Location>().GetAllAsync();
+            return _mapper.Map<GetAllLocationsQueryResult, Location>(locations).ToList();
         }
     }
 }

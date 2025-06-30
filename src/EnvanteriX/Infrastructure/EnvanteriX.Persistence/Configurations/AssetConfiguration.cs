@@ -15,6 +15,7 @@ namespace EnvanteriX.Persistence.Configurations
             builder.Property(x => x.SerialNumber).HasMaxLength(100);
             builder.Property(x => x.Description).HasMaxLength(255);
             builder.Property(x => x.Status).HasMaxLength(50);
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
         }
     }
 }

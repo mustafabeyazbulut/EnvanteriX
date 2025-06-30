@@ -36,6 +36,8 @@ namespace EnvanteriX.Persistence.Configurations
                 .WithOne(m => m.Vendor)
                 .HasForeignKey(m => m.VendorId)
                 .OnDelete(DeleteBehavior.Restrict);
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+
         }
     }
 }

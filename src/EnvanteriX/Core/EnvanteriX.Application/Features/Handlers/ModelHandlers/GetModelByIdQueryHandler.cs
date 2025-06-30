@@ -24,7 +24,7 @@ namespace EnvanteriX.Application.Features.Handlers.ModelHandlers
         {
             var model = await _unitOfWork.GetReadRepository<Model>()
                 .GetAsync(
-                predicate: x => x.Id == request.Id && !x.IsDeleted,
+                predicate: x => x.Id == request.Id ,
                 include: x => x.Include(m => m.Brand)
                 );
             await _modelRules.ModelShouldExist(model);

@@ -10,6 +10,8 @@ namespace EnvanteriX.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.Property(x => x.Name).HasMaxLength(50);
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+
         }
     }
 }

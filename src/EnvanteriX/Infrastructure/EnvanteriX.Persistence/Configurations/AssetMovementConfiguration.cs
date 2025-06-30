@@ -40,6 +40,8 @@ namespace EnvanteriX.Persistence.Configurations
 
             builder.Property(x => x.Note)
                 .HasMaxLength(255);
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+
         }
     }
 }

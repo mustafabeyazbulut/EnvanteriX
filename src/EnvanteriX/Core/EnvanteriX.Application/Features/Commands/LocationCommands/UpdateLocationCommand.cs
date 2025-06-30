@@ -1,9 +1,8 @@
 ﻿using MediatR;
-using EnvanteriX.Application.Features.Results.LocationResults;
 
 namespace EnvanteriX.Application.Features.Commands.LocationCommands
 {
-    public class UpdateLocationCommand : IRequest<UpdateLocationCommandResult>
+    public class UpdateLocationCommand : IRequest<Unit>
     {
         public int Id { get; set; }
         public string Building { get; set; }

@@ -2,7 +2,6 @@
 
 namespace EnvanteriX.Application.Features.Exceptions.BrandExceptions
 {
-   
     public class BrandShouldNotHaveAnyModelException : BaseException
     {
         public BrandShouldNotHaveAnyModelException(string brandName)

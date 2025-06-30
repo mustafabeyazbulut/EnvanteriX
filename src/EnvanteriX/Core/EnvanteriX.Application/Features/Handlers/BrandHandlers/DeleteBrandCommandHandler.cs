@@ -27,7 +27,6 @@ namespace EnvanteriX.Application.Features.Handlers.BrandHandlers
                                 include: x => x.Include(b => b.Models)
                             );
             await _brandRules.BrandShouldExist(brand);
-            brand.IsDeleted = true;
             await _brandRules.BrandShouldNotHaveAnyModel(brand); //eğer bir modelle eşlenmişse hata fırlatıyoruz. Önce modeller silinmelidir.
             await _unitOfWork.GetWriteRepository<Brand>().HardDeleteAsync(brand);
             await _unitOfWork.SaveAsync();

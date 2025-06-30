@@ -20,10 +20,12 @@ namespace EnvanteriX.Persistence.Configurations
             builder.Property(x => x.Description)
                 .HasMaxLength(255);
 
-            // İstersen Assets koleksiyonu için ilişki kurulabilir ama zorunlu değil
-            // builder.HasMany(x => x.Assets)
-            //       .WithOne(a => a.Location)
-            //       .HasForeignKey(a => a.LocationId);
+            // Location birçok varlığa sahip olabilir, bu nedenle varlıkların Location ile ilişkisini tanımlıyoruz.
+            builder.HasMany(x => x.Assets)
+                  .WithOne(a => a.Location)
+                  .HasForeignKey(a => a.LocationId);
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+
         }
     }
 }

@@ -17,7 +17,8 @@ namespace EnvanteriX.Persistence.Configurations
                 .HasForeignKey(x => x.BrandId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Assets koleksiyonu navigation property, konfigürasyona gerek yoksa bırakabilirsin
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+
         }
     }
 }
