@@ -10,59 +10,38 @@ namespace EnvanteriX.WebApi.Controllers
     public class AssetTypeController : ControllerBase
     {
         private readonly IMediator _mediator;
+        public AssetTypeController(IMediator mediator) => _mediator = mediator;
 
-        public AssetTypeController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
-        // GET: api/AssetType
         [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            var result = await _mediator.Send(new GetAllAssetTypesQuery());
-            return Ok(result);
-        }
+        public async Task<IActionResult> GetAll() =>
+            Ok(await _mediator.Send(new GetAllAssetTypesQuery()));
 
-        // GET: api/AssetType/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var result = await _mediator.Send(new GetAssetTypeByIdQuery(id));
-            if (result == null)
-                return NotFound();
-
             return Ok(result);
         }
 
-        // POST: api/AssetType
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateAssetTypeCommand command)
+        public async Task<IActionResult> Create(CreateAssetTypeCommand command)
         {
             var result = await _mediator.Send(command);
-            return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
+            return StatusCode(StatusCodes.Status201Created, result);
         }
 
-        // PUT: api/AssetType/{id}
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] UpdateAssetTypeCommand command)
+        [HttpPut]
+        public async Task<IActionResult> Update(UpdateAssetTypeCommand command)
         {
-            if (id != command.Id)
-                return BadRequest("ID uyuşmuyor.");
-
-            var result = await _mediator.Send(command);
-            if (result == null)
-                return NotFound();
-
-            return Ok(result);
+            await _mediator.Send(command);
+            return StatusCode(StatusCodes.Status200OK);
         }
 
-        // DELETE: api/AssetType/{id}
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        [HttpDelete]
+        public async Task<IActionResult> Delete(DeleteAssetTypeCommand request)
         {
-             await _mediator.Send(new DeleteAssetTypeCommand(id));
-            return NoContent() ;
+            await _mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK);
         }
     }
 }

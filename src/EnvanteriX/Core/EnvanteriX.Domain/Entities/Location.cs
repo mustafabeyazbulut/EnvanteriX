@@ -2,6 +2,7 @@
 
 namespace EnvanteriX.Domain.Entities
 {
+    // +
     public class Location : EntityBase, IEntityBase
     {
         public string Building { get; set; }

@@ -7,7 +7,6 @@ using EnvanteriX.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 
-
 namespace EnvanteriX.Application.Features.Handlers.AssetTypeHandlers
 {
     public class GetAllAssetTypesQueryHandler :BaseHandler, IRequestHandler<GetAllAssetTypesQuery, List<GetAllAssetTypesQueryResult>>
@@ -15,14 +14,10 @@ namespace EnvanteriX.Application.Features.Handlers.AssetTypeHandlers
         public GetAllAssetTypesQueryHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
-
         public async Task<List<GetAllAssetTypesQueryResult>> Handle(GetAllAssetTypesQuery request, CancellationToken cancellationToken)
         {
-            var assetTypes = await _unitOfWork.GetReadRepository<AssetType>()
-                                              .GetAllAsync(x => !x.IsDeleted);
-
-            var result = _mapper.Map<List<GetAllAssetTypesQueryResult>>(assetTypes);
-            return result;
+            var assetTypes = await _unitOfWork.GetReadRepository<AssetType>().GetAllAsync();
+            return _mapper.Map<GetAllAssetTypesQueryResult, AssetType>(assetTypes).ToList();
         }
     }
 }
