@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EnvanteriX.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a3821e276b79b2e7cf08b5f734372cdca14494a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+552d42314eb16a1edf5758a323af0820ead7da63")]
 [assembly: System.Reflection.AssemblyProductAttribute("EnvanteriX.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EnvanteriX.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -24,7 +24,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetTypeHandlers
                                          .AnyAsync(at => at.TypeName.ToUpper() == request.TypeName.ToUpper());
             await _assetTypeRules.AssetTypeAlreadyExists(assetTypeExists, request.TypeName);
             var assetType=_mapper.Map<AssetType, CreateAssetTypeCommand>(request);
-
+            assetType.IsDeleted = false;
             await _unitOfWork.GetWriteRepository<AssetType>().AddAsync(assetType);
             await _unitOfWork.SaveAsync();
             var result = _mapper.Map<CreateAssetTypeCommandResult, AssetType>(assetType);

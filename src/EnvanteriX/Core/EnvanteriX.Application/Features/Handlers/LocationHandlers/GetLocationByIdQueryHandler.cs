@@ -21,7 +21,7 @@ namespace EnvanteriX.Application.Features.Handlers.LocationHandlers
 
         public async Task<GetLocationByIdQueryResult> Handle(GetLocationByIdQuery request, CancellationToken cancellationToken)
         {
-            var location = await _unitOfWork.GetReadRepository<Location>().GetAsync(x => x.Id == request.Id &&);
+            var location = await _unitOfWork.GetReadRepository<Location>().GetAsync(x => x.Id == request.Id);
             await _locationRules.LocationShouldExist(location);
             return _mapper.Map<GetLocationByIdQueryResult, Location>(location);
         }
