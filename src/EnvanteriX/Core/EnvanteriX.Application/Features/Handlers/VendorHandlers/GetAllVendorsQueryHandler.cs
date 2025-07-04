@@ -19,11 +19,8 @@ namespace EnvanteriX.Application.Features.Handlers.VendorHandlers
 
         public async Task<List<GetAllVendorsQueryResult>> Handle(GetAllVendorsQuery request, CancellationToken cancellationToken)
         {
-            var vendors = await _unitOfWork.GetReadRepository<Vendor>()
-                .GetAllAsync(x => !x.IsDeleted);
-
-            var result = _mapper.Map<List<GetAllVendorsQueryResult>>(vendors);
-            return result;
+            var vendors = await _unitOfWork.GetReadRepository<Vendor>().GetAllAsync();
+            return _mapper.Map<GetAllVendorsQueryResult, Vendor>(vendors).ToList();
         }
     }
 }

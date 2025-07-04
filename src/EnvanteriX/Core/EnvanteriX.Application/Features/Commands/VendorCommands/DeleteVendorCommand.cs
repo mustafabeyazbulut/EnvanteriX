@@ -4,11 +4,11 @@ namespace EnvanteriX.Application.Features.Commands.VendorCommands
 {
     public class DeleteVendorCommand : IRequest<Unit>
     {
-        public int VendorId { get; set; }
+        public int Id { get; set; }
 
         public DeleteVendorCommand(int id)
         {
-            VendorId = id;
+            this.Id = id;
         }
     }
 }

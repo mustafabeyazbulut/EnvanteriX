@@ -21,7 +21,11 @@ namespace EnvanteriX.Persistence.Configurations
             builder.Property(x => x.Email)
                 .HasMaxLength(100);
 
-            // İlişkiler (Opsiyonel, eğer Fluent API ile konfigüre etmek isterseniz)
+        
+            // Vendor ile Asset, SoftwareLicense ve MaintenanceRecord arasındaki ilişkileri yapılandırır.
+            // Vendor, Asset, SoftwareLicense ve MaintenanceRecord ile ilişkili varlıkları içerir.
+            // Asset, SoftwareLicense ve MaintenanceRecord ile Vendor arasındaki ilişki, bir vendor'ın birden fazla varlığa sahip olabileceğini belirtir.
+            // OnDelete(DeleteBehavior.Restrict) ifadesi, vendor silindiğinde ilişkili varlıkların silinmeyeceğini belirtir.
             builder.HasMany(v => v.Assets)
                 .WithOne(a => a.Vendor)
                 .HasForeignKey(a => a.VendorId)

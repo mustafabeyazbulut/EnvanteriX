@@ -11,6 +11,7 @@ namespace EnvanteriX.Persistence.Configurations
             builder.Property(x => x.BrandName)
                 .IsRequired()
                 .HasMaxLength(100);
+
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
 
         }

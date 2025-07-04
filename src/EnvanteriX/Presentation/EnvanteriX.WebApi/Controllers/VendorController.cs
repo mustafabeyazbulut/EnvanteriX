@@ -2,7 +2,6 @@
 using EnvanteriX.Application.Features.Queries.VendorQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace EnvanteriX.WebApi.Controllers
 {
@@ -11,50 +10,38 @@ namespace EnvanteriX.WebApi.Controllers
     public class VendorController : ControllerBase
     {
         private readonly IMediator _mediator;
-
-        public VendorController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
+        public VendorController(IMediator mediator) => _mediator = mediator;
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            var vendors = await _mediator.Send(new GetAllVendorsQuery());
-            return Ok(vendors);
-        }
+        public async Task<IActionResult> GetAll() =>
+            Ok(await _mediator.Send(new GetAllVendorsQuery()));
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var vendor = await _mediator.Send(new GetVendorByIdQuery(id));
-            if (vendor == null) return NotFound();
-            return Ok(vendor);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateVendorCommand command)
-        {
-            var result = await _mediator.Send(command);
-            return CreatedAtAction(nameof(GetById), new { id = result.VendorId }, result);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] UpdateVendorCommand command)
-        {
-            if (id != command.VendorId) return BadRequest("ID uyuşmuyor.");
-
-            var result = await _mediator.Send(command);
-            if (result == null) return NotFound();
-
+            var result = await _mediator.Send(new GetVendorByIdQuery(id));
             return Ok(result);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateVendorCommand command)
         {
-            await _mediator.Send(new DeleteVendorCommand(id));
-            return NoContent();
+            var result = await _mediator.Send(command);
+            return StatusCode(StatusCodes.Status201Created, result);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update(UpdateVendorCommand command)
+        {
+            await _mediator.Send(command);
+            return StatusCode(StatusCodes.Status200OK);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(DeleteVendorCommand request)
+        {
+            await _mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK);
         }
     }
 }

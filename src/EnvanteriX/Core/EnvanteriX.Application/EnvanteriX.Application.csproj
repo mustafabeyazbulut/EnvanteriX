@@ -37,7 +37,6 @@
     <Folder Include="Features\Validators\AssetValidators\" />
     <Folder Include="Features\Validators\AssetMovementValidators\" />
     <Folder Include="Features\Validators\MaintenanceRecordValidators\" />
-    <Folder Include="Features\Validators\VendorValidators\" />
     <Folder Include="Features\Validators\SoftwareLicenseValidators\" />
   </ItemGroup>
 

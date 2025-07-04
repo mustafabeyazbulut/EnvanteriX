@@ -8,8 +8,6 @@ namespace EnvanteriX.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<AssetMovement> builder)
         {
-            // Birincil anahtar (base class EntityBase'den geliyorsa zaten vardır,
-            // eğer yoksa eklemelisin, örneğin Id)
             builder.HasKey(x => x.Id);
 
             // İlişkiler (opsiyonel, ama tavsiye edilir)

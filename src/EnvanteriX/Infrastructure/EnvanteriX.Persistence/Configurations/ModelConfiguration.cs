@@ -12,6 +12,11 @@ namespace EnvanteriX.Persistence.Configurations
                 .IsRequired()
                 .HasMaxLength(100);
 
+            // bu alttaki kod
+            // Model ile Brand arasındaki ilişkiyi yapılandırır.
+            // Model, BrandId ile Brand'a bağlıdır.
+            // Brand ile Model arasındaki ilişki, bir markanın birden fazla modele sahip olabileceğini belirtir.
+            // OnDelete(DeleteBehavior.Cascade) ifadesi, bir marka silindiğinde ilişkili tüm modellerin de silineceğini belirtir.
             builder.HasOne(x => x.Brand)
                 .WithMany(b => b.Models)
                 .HasForeignKey(x => x.BrandId)
