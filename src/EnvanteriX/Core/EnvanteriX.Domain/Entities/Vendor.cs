@@ -2,6 +2,7 @@
 
 namespace EnvanteriX.Domain.Entities
 {
+    // +
     public class Vendor : EntityBase, IEntityBase
     {
         public string VendorName { get; set; }

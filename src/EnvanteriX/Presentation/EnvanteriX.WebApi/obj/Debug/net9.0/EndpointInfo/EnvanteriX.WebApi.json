@@ -1538,44 +1538,10 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/vendor/{id}": {
-      "get": {
-        "tags": [
-          "Vendor"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       },
       "put": {
         "tags": [
           "Vendor"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
         ],
         "requestBody": {
           "content": {
@@ -1603,6 +1569,37 @@
         }
       },
       "delete": {
+        "tags": [
+          "Vendor"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteVendorCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteVendorCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteVendorCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/vendor/{id}": {
+      "get": {
         "tags": [
           "Vendor"
         ],
@@ -1941,6 +1938,16 @@
         "type": "object",
         "properties": {
           "userId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteVendorCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
             "type": "integer",
             "format": "int32"
           }
@@ -2312,7 +2319,7 @@
       "UpdateVendorCommand": {
         "type": "object",
         "properties": {
-          "vendorId": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },

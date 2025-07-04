@@ -19,16 +19,16 @@ namespace EnvanteriX.Application.Features.Handlers.VendorHandlers
 
         public async Task<Unit> Handle(DeleteVendorCommand request, CancellationToken cancellationToken)
         {
-            var vendor = await _unitOfWork.GetReadRepository<Vendor>().GetAsync(x => x.Id == request.Id;
+            var vendor = await _unitOfWork.GetReadRepository<Vendor>().GetAsync(x => x.Id == request.Id);
             await _vendorRules.VendorShouldExist(vendor);
             var hasAnyAsset = await _unitOfWork.GetReadRepository<Asset>().AnyAsync(x => x.VendorId == request.Id );
-            await _vendorRules.VendorShouldNotHaveAnyAsset(hasAnyAsset, vendor.Name);
+            await _vendorRules.VendorShouldNotHaveAnyAsset(hasAnyAsset, vendor.VendorName);
 
             var hasAnySoftwareLicense = await _unitOfWork.GetReadRepository<SoftwareLicense>().AnyAsync(x => x.VendorId == request.Id );
-            await _vendorRules.VendorShouldNotHaveAnySoftwareLicense(hasAnySoftwareLicense, vendor.Name);
+            await _vendorRules.VendorShouldNotHaveAnySoftwareLicense(hasAnySoftwareLicense, vendor.VendorName);
 
             var hasAnyMaintenanceRecord = await _unitOfWork.GetReadRepository<MaintenanceRecord>().AnyAsync(x => x.VendorId == request.Id );
-            await _vendorRules.VendorShouldNotHaveAnyMaintenanceRecord(hasAnyMaintenanceRecord, vendor.Name);
+            await _vendorRules.VendorShouldNotHaveAnyMaintenanceRecord(hasAnyMaintenanceRecord, vendor.VendorName);
 
             await _unitOfWork.GetWriteRepository<Vendor>().HardDeleteAsync(vendor);
             await _unitOfWork.SaveAsync();

@@ -1,14 +1,12 @@
-﻿using EnvanteriX.Domain.Entities;
-
-namespace EnvanteriX.Application.Features.Results.VendorResults
+﻿namespace EnvanteriX.Application.Features.Results.VendorResults
 {
     public class CreateVendorCommandResult
     {
-        public int VendorId { get; set; }
+        public int Id { get; set; }
 
-        public CreateVendorCommandResult(Vendor vendor)
+        public CreateVendorCommandResult(int id)
         {
-            VendorId = vendor.Id;
+            this.Id = id;
         }
     }
 }

@@ -27,12 +27,10 @@
     <Folder Include="Features\Exceptions\AssetExceptions\" />
     <Folder Include="Features\Exceptions\AssetMovementExceptions\" />
     <Folder Include="Features\Exceptions\MaintenanceRecordExceptions\" />
-    <Folder Include="Features\Exceptions\VendorExceptions\" />
     <Folder Include="Features\Exceptions\SoftwareLicenseExceptions\" />
     <Folder Include="Features\Rules\AssetRules\" />
     <Folder Include="Features\Rules\AssetMovementRules\" />
     <Folder Include="Features\Rules\MaintenanceRecordRules\" />
-    <Folder Include="Features\Rules\VendorRules\" />
     <Folder Include="Features\Rules\SoftwareLicenseRules\" />
     <Folder Include="Features\Validators\AssetValidators\" />
     <Folder Include="Features\Validators\AssetMovementValidators\" />

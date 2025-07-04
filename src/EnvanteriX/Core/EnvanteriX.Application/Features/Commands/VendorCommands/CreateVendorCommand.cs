@@ -9,5 +9,6 @@ namespace EnvanteriX.Application.Features.Commands.VendorCommands
         public string ContactPerson { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
+            
     }
 }

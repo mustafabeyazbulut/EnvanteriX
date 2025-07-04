@@ -867,33 +867,12 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
-    "Method": "GetById",
-    "RelativePath": "api/vendor/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
     "Method": "Update",
-    "RelativePath": "api/vendor/{id}",
+    "RelativePath": "api/vendor",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
       {
         "Name": "command",
         "Type": "EnvanteriX.Application.Features.Commands.VendorCommands.UpdateVendorCommand",
@@ -905,8 +884,24 @@
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
     "Method": "Delete",
-    "RelativePath": "api/vendor/{id}",
+    "RelativePath": "api/vendor",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EnvanteriX.Application.Features.Commands.VendorCommands.DeleteVendorCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
+    "Method": "GetById",
+    "RelativePath": "api/vendor/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
