@@ -22,6 +22,10 @@ namespace EnvanteriX.Persistence.Configurations
                 .HasForeignKey(x => x.BrandId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            builder.HasMany(x => x.Assets)
+                   .WithOne(a => a.Model)
+                   .HasForeignKey(a => a.ModelId);
+
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
 
         }

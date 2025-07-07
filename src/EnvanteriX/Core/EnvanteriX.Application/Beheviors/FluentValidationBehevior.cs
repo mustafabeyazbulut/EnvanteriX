@@ -1,32 +1,42 @@
 ﻿using FluentValidation;
 using MediatR;
 
-namespace EnvanteriX.Application.Beheviors
+namespace EnvanteriX.Application.Behaviors
 {
-    public class FluentValidationBehevior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    public class FluentValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>
     {
-        private readonly IEnumerable<IValidator<TRequest>> validator;
+        private readonly IEnumerable<IValidator<TRequest>> _validators;
 
-        public FluentValidationBehevior(IEnumerable<IValidator<TRequest>> validator)
+        public FluentValidationBehavior(IEnumerable<IValidator<TRequest>> validators)
         {
-            this.validator = validator;
+            _validators = validators;
         }
-        public Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
+
+        public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
-            var context = new ValidationContext<TRequest>(request);
-            var failtures = validator
-                .Select(v => v.Validate(context))
-                .SelectMany(result => result.Errors)
-                .GroupBy(x => x.ErrorMessage)
-                .Select(x => x.First())
-                .Where(f => f != null)
-                .ToList();
+            if (_validators.Any())
+            {
+                var context = new ValidationContext<TRequest>(request);
 
-            if (failtures.Any())
-                throw new ValidationException(failtures);
+                var validationResults = await Task.WhenAll(
+                    _validators.Select(v => v.ValidateAsync(context, cancellationToken))
+                );
 
-            return next();
+                var failures = validationResults
+                    .SelectMany(r => r.Errors)
+                    .Where(f => f != null)
+                    .GroupBy(f => f.ErrorMessage) // aynı mesajları birleştir
+                    .Select(g => g.First()) // tekrarlayan mesajları önle
+                    .ToList();
+
+                if (failures.Any())
+                {
+                    throw new ValidationException(failures);
+                }
+            }
+
+            return await next();
         }
     }
 }

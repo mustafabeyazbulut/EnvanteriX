@@ -17,7 +17,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
 
         public async Task<Unit> Handle(DeleteAssetCommand request, CancellationToken cancellationToken)
         {
-            var asset = await _unitOfWork.GetReadRepository<Asset>().GetAsync(x => x.Id == request.AssetId);
+            var asset = await _unitOfWork.GetReadRepository<Asset>().GetAsync(x => x.Id == request.Id);
             if (asset == null) return Unit.Value;
             await _unitOfWork.GetWriteRepository<Asset>().HardDeleteAsync(asset);
             await _unitOfWork.SaveAsync();

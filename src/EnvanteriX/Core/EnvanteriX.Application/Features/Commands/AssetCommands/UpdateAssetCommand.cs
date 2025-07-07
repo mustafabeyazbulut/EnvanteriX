@@ -1,11 +1,10 @@
-﻿using EnvanteriX.Application.Features.Results.AssetResults;
-using MediatR;
+﻿using MediatR;
 
 namespace EnvanteriX.Application.Features.Commands.AssetCommands
 {
-    public class UpdateAssetCommand : IRequest<UpdateAssetCommandResult>
+    public class UpdateAssetCommand : IRequest<Unit>
     {
-        public int AssetId { get; set; }
+        public int Id { get; set; }
         public string AssetTag { get; set; }
         public string SerialNumber { get; set; }
         public int AssetTypeId { get; set; }

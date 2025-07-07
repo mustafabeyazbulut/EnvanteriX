@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
 using EnvanteriX.Application.Bases;
-using EnvanteriX.Application.Beheviors;
 using EnvanteriX.Application.Exceptions;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Globalization;
 using System.Reflection;
+using EnvanteriX.Application.Behaviors;
 
 namespace EnvanteriX.Application
 {
@@ -26,7 +26,8 @@ namespace EnvanteriX.Application
             services.AddValidatorsFromAssembly(assembly);
             ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("tr");
 
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>)); //
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehavior<,>));
+
         }
         // tüm rule'ları register etmek için
         private static IServiceCollection AddRulesFromAssemblyContaining(

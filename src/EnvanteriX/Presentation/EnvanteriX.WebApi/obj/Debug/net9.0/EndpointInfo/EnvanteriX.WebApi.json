@@ -6,10 +6,10 @@
     "version": "v1"
   },
   "paths": {
-    "/api/assest": {
+    "/api/asset": {
       "get": {
         "tags": [
-          "Assest"
+          "Asset"
         ],
         "responses": {
           "200": {
@@ -19,7 +19,7 @@
       },
       "post": {
         "tags": [
-          "Assest"
+          "Asset"
         ],
         "requestBody": {
           "content": {
@@ -45,44 +45,10 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/assest/{id}": {
-      "get": {
-        "tags": [
-          "Assest"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       },
       "put": {
         "tags": [
-          "Assest"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
+          "Asset"
         ],
         "requestBody": {
           "content": {
@@ -111,19 +77,27 @@
       },
       "delete": {
         "tags": [
-          "Assest"
+          "Asset"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteAssetCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteAssetCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteAssetCommand"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -131,14 +105,14 @@
         }
       }
     },
-    "/api/assest/type/{assetTypeId}": {
+    "/api/asset/{id}": {
       "get": {
         "tags": [
-          "Assest"
+          "Asset"
         ],
         "parameters": [
           {
-            "name": "assetTypeId",
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
@@ -1884,6 +1858,10 @@
         },
         "additionalProperties": false
       },
+      "DeleteAssetCommand": {
+        "type": "object",
+        "additionalProperties": false
+      },
       "DeleteAssetTypeCommand": {
         "type": "object",
         "properties": {
@@ -2037,7 +2015,7 @@
       "UpdateAssetCommand": {
         "type": "object",
         "properties": {
-          "assetId": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },

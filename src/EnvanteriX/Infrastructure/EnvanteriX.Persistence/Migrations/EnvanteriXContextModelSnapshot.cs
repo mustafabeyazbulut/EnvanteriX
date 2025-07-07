@@ -656,23 +656,24 @@ namespace EnvanteriX.Persistence.Migrations
                     b.HasOne("EnvanteriX.Domain.Entities.AssetType", "AssetType")
                         .WithMany("Assets")
                         .HasForeignKey("AssetTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("EnvanteriX.Domain.Entities.User", "AssignedUser")
                         .WithMany()
-                        .HasForeignKey("AssignedUserId");
+                        .HasForeignKey("AssignedUserId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("EnvanteriX.Domain.Entities.Location", "Location")
                         .WithMany("Assets")
                         .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("EnvanteriX.Domain.Entities.Model", "Model")
                         .WithMany("Assets")
                         .HasForeignKey("ModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("EnvanteriX.Domain.Entities.Vendor", "Vendor")

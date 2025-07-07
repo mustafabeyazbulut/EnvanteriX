@@ -9,17 +9,17 @@ using Microsoft.AspNetCore.Http;
 
 namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
 {
-    public class UpdateAssetCommandHandler : BaseHandler, IRequestHandler<UpdateAssetCommand, UpdateAssetCommandResult>
+    public class UpdateAssetCommandHandler : BaseHandler, IRequestHandler<UpdateAssetCommand, Unit>
     {
         public UpdateAssetCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) 
             : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
 
-        public async Task<UpdateAssetCommandResult> Handle(UpdateAssetCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(UpdateAssetCommand request, CancellationToken cancellationToken)
         {
-            var asset=await _unitOfWork.GetReadRepository<Asset>().GetAsync(x=>x.Id==request.AssetId);
-            if (asset == null) return null;
+            var asset=await _unitOfWork.GetReadRepository<Asset>().GetAsync(x=>x.Id==request.Id);
+            //if (asset == null) return null;
 
             asset.AssetTag = request.AssetTag;
             asset.SerialNumber = request.SerialNumber;
@@ -36,7 +36,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
 
             await _unitOfWork.GetWriteRepository<Asset>().UpdateAsync(asset);
             await _unitOfWork.SaveAsync();
-            return new UpdateAssetCommandResult(asset);
+            return Unit.Value;
         }
     }
 }
