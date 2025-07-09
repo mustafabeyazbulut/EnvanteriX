@@ -15,7 +15,7 @@ public class BrandController : ControllerBase
         Ok(await _mediator.Send(new GetAllBrandsQuery()));
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(int id)
+    public async Task<IActionResult> GetById( int id)
     {
         var result = await _mediator.Send(new GetBrandByIdQuery(id));
         return Ok(result);

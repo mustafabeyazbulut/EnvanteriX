@@ -23,7 +23,7 @@ namespace EnvanteriX.Application.Features.Handlers.BrandHandlers
         {
             var brand = await _unitOfWork.GetReadRepository<Brand>()
                             .GetAsync(
-                                predicate: x => x.Id == request.Id && !x.IsDeleted,
+                                predicate: x => x.Id == request.Id ,
                                 include: x => x.Include(b => b.Models)
                             );
             await _brandRules.BrandShouldExist(brand);
