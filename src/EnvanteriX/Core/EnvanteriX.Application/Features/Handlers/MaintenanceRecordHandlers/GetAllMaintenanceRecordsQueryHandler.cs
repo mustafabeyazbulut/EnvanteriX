@@ -6,6 +6,7 @@ using EnvanteriX.Application.Interfaces.UnitOfWorks;
 using EnvanteriX.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace EnvanteriX.Application.Features.Handlers.MaintenanceRecordHandlers
@@ -17,11 +18,18 @@ namespace EnvanteriX.Application.Features.Handlers.MaintenanceRecordHandlers
 
         public async Task<List<GetAllMaintenanceRecordsQueryResult>> Handle(GetAllMaintenanceRecordsQuery request, CancellationToken cancellationToken)
         {
-            var repository = _unitOfWork.GetReadRepository<MaintenanceRecord>();
-            var entities = await repository.GetAllAsync(x => !x.IsDeleted);
-
-            var result = _mapper.Map<List<GetAllMaintenanceRecordsQueryResult>>(entities);
-            return result;
+            var models = await _unitOfWork.GetReadRepository<MaintenanceRecord>().GetAllAsync(
+                include: x => x.Include(m => m.Asset).ThenInclude(m=>m.Model).ThenInclude(x=>x.Brand)
+                            .Include(m => m.Vendor)
+                );
+            var map = _mapper.Map<GetAllMaintenanceRecordsQueryResult, MaintenanceRecord>(models, config: cfg =>
+            {
+                cfg.CreateMap<MaintenanceRecord, GetAllMaintenanceRecordsQueryResult>()
+                   .ForMember(dest => dest.AssetName, opt => opt.MapFrom(src => $"Marka: {src.Asset.Model.Brand.BrandName}, " +
+                    $"Model: {src.Asset.Model.ModelName}, SeriNo: {src.Asset.SerialNumber}, Key: {src.Asset.AssetTag}"))
+                     .ForMember(dest => dest.VendorName, opt => opt.MapFrom(src => src.Vendor != null ? src.Vendor.VendorName : "Bilinmiyor"));
+            });
+            return map.ToList();
         }
     }
 }

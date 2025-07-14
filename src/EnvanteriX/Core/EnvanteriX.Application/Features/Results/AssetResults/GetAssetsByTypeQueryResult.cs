@@ -1,4 +1,5 @@
 ﻿using EnvanteriX.Domain.Entities;
+using EnvanteriX.Domain.Enums;
 
 namespace EnvanteriX.Application.Features.Results.AssetResults
 {
@@ -17,7 +18,7 @@ namespace EnvanteriX.Application.Features.Results.AssetResults
         public string LocationName { get; set; }
         public string AssignedUserName { get; set; }
         public string Description { get; set; }
-        public string Status { get; set; }
+        public StatusEnum Status { get; set; }
 
         public GetAssetsByTypeQueryResult(Asset asset)
         {

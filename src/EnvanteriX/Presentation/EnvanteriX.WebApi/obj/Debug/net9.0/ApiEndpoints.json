@@ -85,33 +85,12 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
-    "Method": "GetById",
-    "RelativePath": "api/asset-movement/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
     "Method": "Update",
-    "RelativePath": "api/asset-movement/{id}",
+    "RelativePath": "api/asset-movement",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
       {
         "Name": "command",
         "Type": "EnvanteriX.Application.Features.Commands.AssetMovementCommands.UpdateAssetMovementCommand",
@@ -123,8 +102,24 @@
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
     "Method": "Delete",
-    "RelativePath": "api/asset-movement/{id}",
+    "RelativePath": "api/asset-movement",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
+    "Method": "GetById",
+    "RelativePath": "api/asset-movement/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -450,33 +445,12 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
-    "Method": "GetById",
-    "RelativePath": "api/maintenance-record/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
     "Method": "Update",
-    "RelativePath": "api/maintenance-record/{id}",
+    "RelativePath": "api/maintenance-record",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
       {
         "Name": "command",
         "Type": "EnvanteriX.Application.Features.Commands.MaintenanceRecordCommands.UpdateMaintenanceRecordCommand",
@@ -488,8 +462,24 @@
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
     "Method": "Delete",
-    "RelativePath": "api/maintenance-record/{id}",
+    "RelativePath": "api/maintenance-record",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EnvanteriX.Application.Features.Commands.MaintenanceRecordCommands.DeleteMaintenanceRecordCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
+    "Method": "GetById",
+    "RelativePath": "api/maintenance-record/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

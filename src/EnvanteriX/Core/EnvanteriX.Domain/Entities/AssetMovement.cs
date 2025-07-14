@@ -2,6 +2,7 @@
 
 namespace EnvanteriX.Domain.Entities
 {
+    // +
     public class AssetMovement : EntityBase, IEntityBase
     {
         public int AssetId { get; set; }

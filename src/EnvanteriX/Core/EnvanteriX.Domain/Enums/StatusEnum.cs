@@ -8,12 +8,12 @@ namespace EnvanteriX.Domain.Enums
         Stokta = 1,
 
         [Description("Ürün şu anda kullanımda.")]
-        Kullanımda = 2,
+        Kullanimda = 2,
 
         [Description("Ürün tamirde.")]
         Tamirde = 3,
 
         [Description("Ürün artık kullanım dışı.")]
-        KullanımDışı = 4
+        KullanimDisi = 4
     }
 }

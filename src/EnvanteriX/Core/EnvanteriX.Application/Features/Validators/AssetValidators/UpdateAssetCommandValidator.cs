@@ -55,7 +55,8 @@ namespace EnvanteriX.Application.Features.Validators.AssetValidators
                 .MaximumLength(255).WithMessage("Açıklama en fazla 255 karakter olabilir.");
 
             RuleFor(x => x.Status)
-                .MaximumLength(50).WithMessage("Durum en fazla 50 karakter olabilir.");
+            .IsInEnum()
+            .WithMessage("Geçersiz durum değeri.");
 
         }
         private async Task<bool> AssetTypeExists(int assetTypeId, CancellationToken cancellationToken)

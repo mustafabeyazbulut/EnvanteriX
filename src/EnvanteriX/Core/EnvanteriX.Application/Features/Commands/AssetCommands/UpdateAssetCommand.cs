@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using EnvanteriX.Domain.Enums;
+using MediatR;
 
 namespace EnvanteriX.Application.Features.Commands.AssetCommands
 {
@@ -16,7 +17,7 @@ namespace EnvanteriX.Application.Features.Commands.AssetCommands
         public int LocationId { get; set; }
         public int? AssignedUserId { get; set; }
         public string Description { get; set; }
-        public string Status { get; set; }
+        public StatusEnum Status { get; set; }
     }
 
 }

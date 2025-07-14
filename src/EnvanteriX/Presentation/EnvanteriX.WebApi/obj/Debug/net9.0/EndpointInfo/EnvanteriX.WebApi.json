@@ -167,44 +167,10 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/asset-movement/{id}": {
-      "get": {
-        "tags": [
-          "AssetMovement"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       },
       "put": {
         "tags": [
           "AssetMovement"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
         ],
         "requestBody": {
           "content": {
@@ -232,6 +198,28 @@
         }
       },
       "delete": {
+        "tags": [
+          "AssetMovement"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/asset-movement/{id}": {
+      "get": {
         "tags": [
           "AssetMovement"
         ],
@@ -863,44 +851,10 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/maintenance-record/{id}": {
-      "get": {
-        "tags": [
-          "MaintenanceRecord"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       },
       "put": {
         "tags": [
           "MaintenanceRecord"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
         ],
         "requestBody": {
           "content": {
@@ -928,6 +882,37 @@
         }
       },
       "delete": {
+        "tags": [
+          "MaintenanceRecord"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteMaintenanceRecordCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteMaintenanceRecordCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteMaintenanceRecordCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/maintenance-record/{id}": {
+      "get": {
         "tags": [
           "MaintenanceRecord"
         ],
@@ -1659,10 +1644,6 @@
           "description": {
             "type": "string",
             "nullable": true
-          },
-          "status": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1750,21 +1731,9 @@
             "type": "integer",
             "format": "int32"
           },
-          "maintenanceDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "performedBy": {
+          "preServiceDescription": {
             "type": "string",
             "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "cost": {
-            "type": "number",
-            "format": "double"
           },
           "vendorId": {
             "type": "integer",
@@ -1898,6 +1867,16 @@
         },
         "additionalProperties": false
       },
+      "DeleteMaintenanceRecordCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "DeleteModelCommand": {
         "type": "object",
         "properties": {
@@ -2018,6 +1997,16 @@
         },
         "additionalProperties": false
       },
+      "StatusEnum": {
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "UpdateAssetCommand": {
         "type": "object",
         "properties": {
@@ -2071,8 +2060,7 @@
             "nullable": true
           },
           "status": {
-            "type": "string",
-            "nullable": true
+            "$ref": "#/components/schemas/StatusEnum"
           }
         },
         "additionalProperties": false
@@ -2180,15 +2168,15 @@
             "type": "integer",
             "format": "int32"
           },
-          "maintenanceDate": {
-            "type": "string",
-            "format": "date-time"
-          },
           "performedBy": {
             "type": "string",
             "nullable": true
           },
-          "description": {
+          "preServiceDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "postServiceDescription": {
             "type": "string",
             "nullable": true
           },

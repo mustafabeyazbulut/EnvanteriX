@@ -1,6 +1,6 @@
 ﻿using EnvanteriX.Application.Bases;
 using EnvanteriX.Application.Features.Commands.MaintenanceRecordCommands;
-using EnvanteriX.Application.Features.Results.MaintenanceRecordResults;
+using EnvanteriX.Application.Features.Rules.MaintenanceRecordRules;
 using EnvanteriX.Application.Interfaces.AutoMapper;
 using EnvanteriX.Application.Interfaces.UnitOfWorks;
 using EnvanteriX.Domain.Entities;
@@ -9,34 +9,28 @@ using Microsoft.AspNetCore.Http;
 
 namespace EnvanteriX.Application.Features.Handlers.MaintenanceRecordHandlers
 {
-    public class UpdateMaintenanceRecordCommandHandler : BaseHandler, IRequestHandler<UpdateMaintenanceRecordCommand, UpdateMaintenanceRecordCommandResult>
+    public class UpdateMaintenanceRecordCommandHandler : BaseHandler, IRequestHandler<UpdateMaintenanceRecordCommand, Unit>
     {
-        public UpdateMaintenanceRecordCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
-            : base(mapper, unitOfWork, httpContextAccessor) { }
-
-        public async Task<UpdateMaintenanceRecordCommandResult> Handle(UpdateMaintenanceRecordCommand request, CancellationToken cancellationToken)
+        private readonly MaintenanceRecordRules _maintenanceRecordRules;
+        public UpdateMaintenanceRecordCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, MaintenanceRecordRules maintenanceRecordRules)
+            : base(mapper, unitOfWork, httpContextAccessor)
         {
-            var repository = _unitOfWork.GetReadRepository<MaintenanceRecord>();
-            var entity = await repository.GetAsync(x => x.Id == request.Id && !x.IsDeleted);
+            _maintenanceRecordRules = maintenanceRecordRules;
+        }
+        public async Task<Unit> Handle(UpdateMaintenanceRecordCommand request, CancellationToken cancellationToken)
+        {
+            var model = await _unitOfWork.GetReadRepository<MaintenanceRecord>().GetAsync(x => x.Id == request.Id);
+            await _maintenanceRecordRules.MaintenanceRecordShouldExist(model);
 
-            if (entity == null) 
-                throw new Exception("Maintenance record not found or has been deleted.");
-
-            entity.AssetId = request.AssetId;
-            entity.MaintenanceDate = request.MaintenanceDate;
-            entity.PerformedBy = request.PerformedBy;
-            entity.Description = request.Description;
-            entity.Cost = request.Cost;
-            entity.VendorId = request.VendorId;
-
-          await  _unitOfWork.GetWriteRepository<MaintenanceRecord>().UpdateAsync(entity);
+            model.AssetId = request.AssetId;
+            model.PerformedBy = request.PerformedBy;
+            model.Cost = request.Cost;
+            model.VendorId = request.VendorId;
+            model.PreServiceDescription = request.PreServiceDescription;
+            model.PostServiceDescription = request.PostServiceDescription;
+            await _unitOfWork.GetWriteRepository<MaintenanceRecord>().UpdateAsync(model);
             await _unitOfWork.SaveAsync();
-
-            return new UpdateMaintenanceRecordCommandResult
-            {
-                Id = entity.Id,
-                AssetId = entity.AssetId
-            };
+            return Unit.Value;
         }
     }
 }

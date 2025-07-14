@@ -73,8 +73,9 @@ namespace EnvanteriX.Persistence.Migrations
 
                     b.Property<string>("Status")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(max)")
+                        .HasDefaultValue("Stokta");
 
                     b.Property<int>("VendorId")
                         .HasColumnType("int");
@@ -108,9 +109,6 @@ namespace EnvanteriX.Persistence.Migrations
                     b.Property<int>("AssetId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("AssetId1")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -139,8 +137,6 @@ namespace EnvanteriX.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AssetId");
-
-                    b.HasIndex("AssetId1");
 
                     b.HasIndex("FromLocationId");
 
@@ -257,38 +253,45 @@ namespace EnvanteriX.Persistence.Migrations
                     b.Property<int>("AssetId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Cost")
+                    b.Property<decimal?>("Cost")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
-                    b.Property<DateTime>("MaintenanceDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("PerformedBy")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PostServiceDescription")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("PreServiceDescription")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("VendorId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AssetId");
-
                     b.HasIndex("VendorId");
+
+                    b.HasIndex("AssetId", "StartDate")
+                        .IsUnique();
 
                     b.ToTable("MaintenanceRecords");
                 });
@@ -696,14 +699,10 @@ namespace EnvanteriX.Persistence.Migrations
             modelBuilder.Entity("EnvanteriX.Domain.Entities.AssetMovement", b =>
                 {
                     b.HasOne("EnvanteriX.Domain.Entities.Asset", "Asset")
-                        .WithMany()
+                        .WithMany("AssetMovements")
                         .HasForeignKey("AssetId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("EnvanteriX.Domain.Entities.Asset", null)
-                        .WithMany("AssetMovements")
-                        .HasForeignKey("AssetId1");
 
                     b.HasOne("EnvanteriX.Domain.Entities.Location", "FromLocation")
                         .WithMany()

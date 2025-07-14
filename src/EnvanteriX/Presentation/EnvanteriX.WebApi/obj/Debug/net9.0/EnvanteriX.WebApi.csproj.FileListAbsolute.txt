@@ -370,7 +370,6 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\Env
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\EnvanteriX.WebApi.AssemblyInfoInputs.cache
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\EnvanteriX.WebApi.AssemblyInfo.cs
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\EnvanteriX.WebApi.csproj.CoreCompileInputs.cache
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\EnvanteriX.WebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\EnvanteriX.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\EnvanteriX.WebApi.sourcelink.json
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\scopedcss\bundle\EnvanteriX.WebApi.styles.css

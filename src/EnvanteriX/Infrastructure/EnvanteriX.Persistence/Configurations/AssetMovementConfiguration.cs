@@ -11,10 +11,11 @@ namespace EnvanteriX.Persistence.Configurations
             builder.HasKey(x => x.Id);
 
             // İlişkiler (opsiyonel, ama tavsiye edilir)
-            builder.HasOne(x => x.Asset)
-                .WithMany()   // Eğer Asset tarafında ICollection<AssetMovement> varsa onu yazabilirsin
-                .HasForeignKey(x => x.AssetId)
-                .OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(x => x.Asset) // AssetMovement bir Asset'e ait
+                     .WithMany(x => x.AssetMovements) // Asset birçok AssetMovement'a sahip olabilir
+                     .HasForeignKey(x => x.AssetId) // AssetMovement tablosunda AssetId foreign key olarak kullanılacak
+                     .OnDelete(DeleteBehavior.Restrict); // Asset silinince AssetMovement'lar silinmesin
+
 
             builder.HasOne(x => x.FromUser)
                 .WithMany()

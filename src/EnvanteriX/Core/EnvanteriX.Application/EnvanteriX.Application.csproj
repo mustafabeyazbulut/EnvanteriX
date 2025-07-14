@@ -24,14 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Exceptions\AssetMovementExceptions\" />
-    <Folder Include="Features\Exceptions\MaintenanceRecordExceptions\" />
     <Folder Include="Features\Exceptions\SoftwareLicenseExceptions\" />
-    <Folder Include="Features\Rules\AssetMovementRules\" />
-    <Folder Include="Features\Rules\MaintenanceRecordRules\" />
     <Folder Include="Features\Rules\SoftwareLicenseRules\" />
-    <Folder Include="Features\Validators\AssetMovementValidators\" />
-    <Folder Include="Features\Validators\MaintenanceRecordValidators\" />
     <Folder Include="Features\Validators\SoftwareLicenseValidators\" />
   </ItemGroup>
 

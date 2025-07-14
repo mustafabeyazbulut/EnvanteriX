@@ -8,17 +8,25 @@ namespace EnvanteriX.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<MaintenanceRecord> builder)
         {
+            builder.HasIndex(x => new { x.AssetId, x.StartDate })
+                     .IsUnique();
+
             builder.Property(x => x.PerformedBy)
                 .HasMaxLength(100);
 
-            builder.Property(x => x.Description)
+            builder.Property(x => x.PreServiceDescription)
                 .HasMaxLength(255);
+
+            builder.Property(x => x.PostServiceDescription)
+               .HasMaxLength(255);
 
             builder.Property(x => x.Cost)
                 .HasColumnType("decimal(18,2)");
 
-            builder.Property(x => x.MaintenanceDate)
+            builder.Property(x => x.StartDate)
                 .IsRequired();
+
+            builder.Property(x => x.EndDate);
 
             // İlişkiler (opsiyonel ama tavsiye edilir)
             builder.HasOne(x => x.Asset)

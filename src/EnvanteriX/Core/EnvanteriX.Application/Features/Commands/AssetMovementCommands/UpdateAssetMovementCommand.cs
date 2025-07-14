@@ -1,9 +1,8 @@
-﻿using EnvanteriX.Application.Features.Results.AssetMovementResults;
-using MediatR;
+﻿using MediatR;
 
 namespace EnvanteriX.Application.Features.Commands.AssetMovementCommands
 {
-    public class UpdateAssetMovementCommand : IRequest<UpdateAssetMovementCommandResult>
+    public class UpdateAssetMovementCommand : IRequest<Unit>
     {
         public int Id { get; set; }
         public int AssetId { get; set; }

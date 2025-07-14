@@ -5,7 +5,6 @@
         public int Id { get; set; }
         public int AssetId { get; set; }
         public string AssetName { get; set; }
-        public string AssetCode { get; set; }
         public int? FromUserId { get; set; }
         public string FromUserFullName { get; set; }
         public int? ToUserId { get; set; }

@@ -1,6 +1,7 @@
 ﻿using EnvanteriX.Domain.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+using EnvanteriX.Domain.Enums;
 
 namespace EnvanteriX.Persistence.Configurations
 {
@@ -16,10 +17,11 @@ namespace EnvanteriX.Persistence.Configurations
                    .HasMaxLength(100);
 
             builder.Property(x => x.Description)
-                   .HasMaxLength(255);
+            .HasMaxLength(255);
 
-            builder.Property(x => x.Status)
-                   .HasMaxLength(50);
+            builder.Property(a => a.Status)
+                   .HasConversion<string>()
+                   .HasDefaultValue(StatusEnum.Stokta);
 
             builder.Property(x => x.IsDeleted)
                    .IsRequired()

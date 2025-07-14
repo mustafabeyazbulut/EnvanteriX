@@ -1,7 +1,9 @@
 ﻿using EnvanteriX.Domain.Common;
+using EnvanteriX.Domain.Enums;
 
 namespace EnvanteriX.Domain.Entities
 {
+    // +
     public class Asset : EntityBase, IEntityBase
     {
         public string AssetTag { get; set; }
@@ -20,7 +22,7 @@ namespace EnvanteriX.Domain.Entities
         public int? AssignedUserId { get; set; }
         public User AssignedUser { get; set; }
         public string Description { get; set; }
-        public string Status { get; set; }
+        public StatusEnum Status { get; set; }
 
         public ICollection<SoftwareLicense> SoftwareLicenses { get; set; }
         public ICollection<AssetMovement> AssetMovements { get; set; }

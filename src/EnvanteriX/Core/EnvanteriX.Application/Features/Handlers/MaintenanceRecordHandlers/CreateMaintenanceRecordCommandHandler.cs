@@ -1,6 +1,7 @@
 ﻿using EnvanteriX.Application.Bases;
 using EnvanteriX.Application.Features.Commands.MaintenanceRecordCommands;
 using EnvanteriX.Application.Features.Results.MaintenanceRecordResults;
+using EnvanteriX.Application.Features.Rules.MaintenanceRecordRules;
 using EnvanteriX.Application.Interfaces.AutoMapper;
 using EnvanteriX.Application.Interfaces.UnitOfWorks;
 using EnvanteriX.Domain.Entities;
@@ -11,29 +12,29 @@ namespace EnvanteriX.Application.Features.Handlers.MaintenanceRecordHandlers
 {
     public class CreateMaintenanceRecordCommandHandler : BaseHandler, IRequestHandler<CreateMaintenanceRecordCommand, CreateMaintenanceRecordCommandResult>
     {
-        public CreateMaintenanceRecordCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
-            : base(mapper, unitOfWork, httpContextAccessor) { }
+        private readonly MaintenanceRecordRules _maintenanceRecordRules;
+        public CreateMaintenanceRecordCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, MaintenanceRecordRules maintenanceRecordRules)
+            : base(mapper, unitOfWork, httpContextAccessor)
+        {
+            _maintenanceRecordRules = maintenanceRecordRules;
+        }
 
         public async Task<CreateMaintenanceRecordCommandResult> Handle(CreateMaintenanceRecordCommand request, CancellationToken cancellationToken)
         {
-            var entity = new MaintenanceRecord
-            {
-                AssetId = request.AssetId,
-                MaintenanceDate = request.MaintenanceDate,
-                PerformedBy = request.PerformedBy,
-                Description = request.Description,
-                Cost = request.Cost,
-                VendorId = request.VendorId
-            };
+            var existingRecord = await _unitOfWork.GetReadRepository<MaintenanceRecord>().GetAsync(m =>
+                            m.AssetId == request.AssetId &&
+                            (m.EndDate == null || m.EndDate == DateTime.MinValue)
+                        );
+            await _maintenanceRecordRules.MaintenanceRecordAlreadyExists(existingRecord);
 
-            await _unitOfWork.GetWriteRepository<MaintenanceRecord>().AddAsync(entity);
+            var model= _mapper.Map<MaintenanceRecord, CreateMaintenanceRecordCommand>(request);
+
+            model.StartDate = DateTime.UtcNow;
+           
+            await _unitOfWork.GetWriteRepository<MaintenanceRecord>().AddAsync(model);
             await _unitOfWork.SaveAsync();
 
-            return new CreateMaintenanceRecordCommandResult
-            {
-                Id = entity.Id,
-                AssetId = entity.AssetId
-            };
+            return _mapper.Map<CreateMaintenanceRecordCommandResult, MaintenanceRecord>(model);
         }
     }
 }

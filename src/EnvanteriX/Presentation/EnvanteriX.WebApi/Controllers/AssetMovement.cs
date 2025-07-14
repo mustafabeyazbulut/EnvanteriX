@@ -60,33 +60,26 @@ namespace EnvanteriX.WebApi.Controllers
 
         // Yeni hareket oluştur
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateAssetMovementCommand command)
+        public async Task<IActionResult> Create(CreateAssetMovementCommand command)
         {
             var result = await _mediator.Send(command);
-            return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
+            return StatusCode(StatusCodes.Status201Created, result);
         }
 
         // Mevcut hareketi güncelle
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] UpdateAssetMovementCommand command)
+        [HttpPut]
+        public async Task<IActionResult> Update( UpdateAssetMovementCommand command)
         {
-            if (id != command.Id)
-                return BadRequest("ID uyuşmuyor.");
-
-            var result = await _mediator.Send(command);
-            if (result == null)
-                return NotFound();
-
-            return Ok(result);
+            await _mediator.Send(command);
+            return StatusCode(StatusCodes.Status200OK);
         }
 
         // Hareketi sil
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
             var success = await _mediator.Send(new DeleteAssetMovementCommand (id));
-
-            return NoContent();
+            return StatusCode(StatusCodes.Status200OK);
         }
     }
 }
