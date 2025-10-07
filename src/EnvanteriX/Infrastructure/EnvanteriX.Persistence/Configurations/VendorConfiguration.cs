@@ -31,11 +31,6 @@ namespace EnvanteriX.Persistence.Configurations
                 .HasForeignKey(a => a.VendorId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasMany(v => v.Licenses)
-                .WithOne(l => l.Vendor)
-                .HasForeignKey(l => l.VendorId)
-                .OnDelete(DeleteBehavior.Restrict);
-
             builder.HasMany(v => v.MaintenanceRecords)
                 .WithOne(m => m.Vendor)
                 .HasForeignKey(m => m.VendorId)

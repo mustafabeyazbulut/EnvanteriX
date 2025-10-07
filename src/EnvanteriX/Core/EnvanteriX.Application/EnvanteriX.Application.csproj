@@ -24,8 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Exceptions\SoftwareLicenseExceptions\" />
-    <Folder Include="Features\Rules\SoftwareLicenseRules\" />
     <Folder Include="Features\Validators\SoftwareLicenseValidators\" />
   </ItemGroup>
 

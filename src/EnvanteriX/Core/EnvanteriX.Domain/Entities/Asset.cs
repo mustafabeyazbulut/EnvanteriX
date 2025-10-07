@@ -24,7 +24,6 @@ namespace EnvanteriX.Domain.Entities
         public string Description { get; set; }
         public StatusEnum Status { get; set; }
 
-        public ICollection<SoftwareLicense> SoftwareLicenses { get; set; }
         public ICollection<AssetMovement> AssetMovements { get; set; }
         public ICollection<MaintenanceRecord> MaintenanceRecords { get; set; }
     }

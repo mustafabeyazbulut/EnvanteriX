@@ -26,8 +26,6 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
             var hasAnyAssetMovement = await _unitOfWork.GetReadRepository<AssetMovement>().AnyAsync(x => x.AssetId == request.Id);
             await _assetRules.AssetShouldNotHaveAnyAssetMovement(hasAnyAssetMovement, asset.SerialNumber);
 
-            var hasAnySoftwareLicense = await _unitOfWork.GetReadRepository<SoftwareLicense>().AnyAsync(x => x.AssetId == request.Id);
-            await _assetRules.AssetShouldNotHaveAnySoftwareLicense(hasAnySoftwareLicense, asset.SerialNumber);
 
             var hasAnyMaintenanceRecord = await _unitOfWork.GetReadRepository<MaintenanceRecord>().AnyAsync(x => x.AssetId == request.Id);
             await _assetRules.AssetShouldNotHaveAnyMaintenanceRecord(hasAnyMaintenanceRecord, asset.SerialNumber);

@@ -24,8 +24,6 @@ namespace EnvanteriX.Application.Features.Handlers.VendorHandlers
             var hasAnyAsset = await _unitOfWork.GetReadRepository<Asset>().AnyAsync(x => x.VendorId == request.Id );
             await _vendorRules.VendorShouldNotHaveAnyAsset(hasAnyAsset, vendor.VendorName);
 
-            var hasAnySoftwareLicense = await _unitOfWork.GetReadRepository<SoftwareLicense>().AnyAsync(x => x.VendorId == request.Id );
-            await _vendorRules.VendorShouldNotHaveAnySoftwareLicense(hasAnySoftwareLicense, vendor.VendorName);
 
             var hasAnyMaintenanceRecord = await _unitOfWork.GetReadRepository<MaintenanceRecord>().AnyAsync(x => x.VendorId == request.Id );
             await _vendorRules.VendorShouldNotHaveAnyMaintenanceRecord(hasAnyMaintenanceRecord, vendor.VendorName);

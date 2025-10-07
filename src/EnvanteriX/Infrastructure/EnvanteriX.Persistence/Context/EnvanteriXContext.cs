@@ -24,7 +24,6 @@ namespace EnvanteriX.Persistence.Context
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Model> Models { get; set; }
         public DbSet<Asset> Assets { get; set; }
-        public DbSet<SoftwareLicense> SoftwareLicenses { get; set; }
         public DbSet<AssetMovement> AssetMovements { get; set; }
         public DbSet<MaintenanceRecord> MaintenanceRecords { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
