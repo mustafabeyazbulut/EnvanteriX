@@ -1,11 +1,12 @@
-﻿using EnvanteriX.Application.Features.Commands.VendorCommands;
+﻿using EnvanteriX.Application.Features.Commands.AssetCommands;
+using EnvanteriX.Application.Features.Commands.VendorCommands;
 using EnvanteriX.Application.Features.Queries.VendorQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]/[action]")]
     [ApiController]
     public class VendorController : ControllerBase
     {
@@ -41,6 +42,19 @@ namespace EnvanteriX.WebApi.Controllers
         public async Task<IActionResult> Delete(DeleteVendorCommand request)
         {
             await _mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Active(int id)
+        {
+            await _mediator.Send(new ActiveVendorCommand { Id=id});
+            return StatusCode(StatusCodes.Status200OK);
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeActive(int id)
+        {
+            await _mediator.Send(new DeActiveVendorCommand { Id=id});
             return StatusCode(StatusCodes.Status200OK);
         }
     }

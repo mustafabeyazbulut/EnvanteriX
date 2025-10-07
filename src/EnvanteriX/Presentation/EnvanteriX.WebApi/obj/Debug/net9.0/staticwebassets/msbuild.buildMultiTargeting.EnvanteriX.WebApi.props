@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\EnvanteriX.WebApi.props" />
-</Project>

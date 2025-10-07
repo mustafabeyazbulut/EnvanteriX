@@ -398,7 +398,6 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\Env
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\bin\Debug\net9.0\System.Reflection.MetadataLoadContext.dll
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\bin\Debug\net9.0\System.Text.Json.dll
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\bin\Debug\net9.0\af\Humanizer.resources.dll
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\bin\Debug\net9.0\ar\Humanizer.resources.dll
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\bin\Debug\net9.0\az\Humanizer.resources.dll
@@ -661,12 +660,6 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\Env
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\staticwebassets\msbuild.EnvanteriX.WebUI.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\staticwebassets\msbuild.EnvanteriX.WebUI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\staticwebassets\msbuild.build.EnvanteriX.WebUI.props
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.EnvanteriX.WebUI.props
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.EnvanteriX.WebUI.props
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\staticwebassets.pack.json
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\Envanter.E28C732A.Up2Date
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\EnvanteriX.WebUI.dll
@@ -674,3 +667,8 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\Env
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\EnvanteriX.WebUI.pdb
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\EnvanteriX.WebUI.genruntimeconfig.cache
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\ref\EnvanteriX.WebUI.dll
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\staticwebassets.build.json.cache

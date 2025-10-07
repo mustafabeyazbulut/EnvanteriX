@@ -3,7 +3,7 @@ using EnvanteriX.Application.Features.Queries.BrandQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-[Route("api/[controller]")]
+[Route("[controller]/[action]")]
 [ApiController]
 public class BrandController : ControllerBase
 {

@@ -1,185 +1,5 @@
 [
   {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
-    "Method": "GetAll",
-    "RelativePath": "api/asset",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
-    "Method": "Create",
-    "RelativePath": "api/asset",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "CreateAssetCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
-    "Method": "Update",
-    "RelativePath": "api/asset",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.AssetCommands.UpdateAssetCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
-    "Method": "Delete",
-    "RelativePath": "api/asset",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "EnvanteriX.Application.Features.Commands.AssetCommands.DeleteAssetCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
-    "Method": "GetAll",
-    "RelativePath": "api/asset-movement",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
-    "Method": "Create",
-    "RelativePath": "api/asset-movement",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.AssetMovementCommands.CreateAssetMovementCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
-    "Method": "Update",
-    "RelativePath": "api/asset-movement",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.AssetMovementCommands.UpdateAssetMovementCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
-    "Method": "Delete",
-    "RelativePath": "api/asset-movement",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
-    "Method": "GetById",
-    "RelativePath": "api/asset-movement/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
-    "Method": "GetByAssetId",
-    "RelativePath": "api/asset-movement/asset/{assetId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "assetId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
-    "Method": "GetByLocationId",
-    "RelativePath": "api/asset-movement/location/{locationId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "locationId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
-    "Method": "GetByUserId",
-    "RelativePath": "api/asset-movement/user/{userId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "EnvanteriX.WebApi.Controllers.AssetTypeController",
     "Method": "GetAll",
     "RelativePath": "api/asset-type",
@@ -254,9 +74,173 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
+    "Method": "Create",
+    "RelativePath": "asset-movement/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.AssetMovementCommands.CreateAssetMovementCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
+    "Method": "Delete",
+    "RelativePath": "asset-movement/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
+    "Method": "GetAll",
+    "RelativePath": "asset-movement/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
+    "Method": "GetByAssetId",
+    "RelativePath": "asset-movement/get-by-asset-id/asset/{assetId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "assetId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
+    "Method": "GetById",
+    "RelativePath": "asset-movement/get-by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
+    "Method": "GetByLocationId",
+    "RelativePath": "asset-movement/get-by-location-id/location/{locationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "locationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
+    "Method": "GetByUserId",
+    "RelativePath": "asset-movement/get-by-user-id/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
+    "Method": "Update",
+    "RelativePath": "asset-movement/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.AssetMovementCommands.UpdateAssetMovementCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
+    "Method": "Create",
+    "RelativePath": "asset/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "CreateAssetCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
+    "Method": "Delete",
+    "RelativePath": "asset/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EnvanteriX.Application.Features.Commands.AssetCommands.DeleteAssetCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
+    "Method": "GetAll",
+    "RelativePath": "asset/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
     "Method": "GetById",
-    "RelativePath": "api/asset/{id}",
+    "RelativePath": "asset/get-by-id/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -270,613 +254,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BrandController",
-    "Method": "GetAll",
-    "RelativePath": "api/brand",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BrandController",
-    "Method": "Create",
-    "RelativePath": "api/brand",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.BrandCommands.CreateBrandCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BrandController",
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
     "Method": "Update",
-    "RelativePath": "api/brand",
+    "RelativePath": "asset/update",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.BrandCommands.UpdateBrandCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BrandController",
-    "Method": "Delete",
-    "RelativePath": "api/brand",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "EnvanteriX.Application.Features.Commands.BrandCommands.DeleteBrandCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BrandController",
-    "Method": "GetById",
-    "RelativePath": "api/brand/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
-    "Method": "GetAll",
-    "RelativePath": "api/location",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
-    "Method": "Create",
-    "RelativePath": "api/location",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.LocationCommands.CreateLocationCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
-    "Method": "Update",
-    "RelativePath": "api/location",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.LocationCommands.UpdateLocationCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
-    "Method": "Delete",
-    "RelativePath": "api/location",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "EnvanteriX.Application.Features.Commands.LocationCommands.DeleteLocationCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
-    "Method": "GetById",
-    "RelativePath": "api/location/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
-    "Method": "GetAll",
-    "RelativePath": "api/maintenance-record",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
-    "Method": "Create",
-    "RelativePath": "api/maintenance-record",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.MaintenanceRecordCommands.CreateMaintenanceRecordCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
-    "Method": "Update",
-    "RelativePath": "api/maintenance-record",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.MaintenanceRecordCommands.UpdateMaintenanceRecordCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
-    "Method": "Delete",
-    "RelativePath": "api/maintenance-record",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "EnvanteriX.Application.Features.Commands.MaintenanceRecordCommands.DeleteMaintenanceRecordCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
-    "Method": "GetById",
-    "RelativePath": "api/maintenance-record/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.ModelController",
-    "Method": "GetAll",
-    "RelativePath": "api/model",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.ModelController",
-    "Method": "Create",
-    "RelativePath": "api/model",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.ModelCommands.CreateModelCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.ModelController",
-    "Method": "Update",
-    "RelativePath": "api/model",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.ModelCommands.UpdateModelCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.ModelController",
-    "Method": "Delete",
-    "RelativePath": "api/model",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "EnvanteriX.Application.Features.Commands.ModelCommands.DeleteModelCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.ModelController",
-    "Method": "GetById",
-    "RelativePath": "api/model/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
-    "Method": "GetAll",
-    "RelativePath": "api/role",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
-    "Method": "Create",
-    "RelativePath": "api/role",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.RoleCommands.CreateRoleCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
-    "Method": "Update",
-    "RelativePath": "api/role",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.RoleCommands.UpdateRoleCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
-    "Method": "Delete",
-    "RelativePath": "api/role",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "EnvanteriX.Application.Features.Commands.RoleCommands.DeleteRoleCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
-    "Method": "GetById",
-    "RelativePath": "api/role/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.SoftwareLicenseController",
-    "Method": "GetAll",
-    "RelativePath": "api/software-license",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.SoftwareLicenseController",
-    "Method": "Create",
-    "RelativePath": "api/software-license",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.SoftwareLicenseCommands.CreateSoftwareLicenseCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.SoftwareLicenseController",
-    "Method": "GetById",
-    "RelativePath": "api/software-license/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.SoftwareLicenseController",
-    "Method": "Update",
-    "RelativePath": "api/software-license/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.SoftwareLicenseCommands.UpdateSoftwareLicenseCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.SoftwareLicenseController",
-    "Method": "Delete",
-    "RelativePath": "api/software-license/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
-    "Method": "GetAll",
-    "RelativePath": "api/user",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
-    "Method": "Update",
-    "RelativePath": "api/user",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.UserCommands.UpdateUserCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
-    "Method": "Delete",
-    "RelativePath": "api/user",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "EnvanteriX.Application.Features.Commands.UserCommands.DeleteUserCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
-    "Method": "GetById",
-    "RelativePath": "api/user/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
-    "Method": "AddRole",
-    "RelativePath": "api/user/add-role",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.UserCommands.AddUserRoleCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
-    "Method": "RemoveRole",
-    "RelativePath": "api/user/remove-role",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.UserCommands.RemoveUserRoleCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
-    "Method": "GetAll",
-    "RelativePath": "api/vendor",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
-    "Method": "Create",
-    "RelativePath": "api/vendor",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.VendorCommands.CreateVendorCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
-    "Method": "Update",
-    "RelativePath": "api/vendor",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "EnvanteriX.Application.Features.Commands.VendorCommands.UpdateVendorCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
-    "Method": "Delete",
-    "RelativePath": "api/vendor",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "EnvanteriX.Application.Features.Commands.VendorCommands.DeleteVendorCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
-    "Method": "GetById",
-    "RelativePath": "api/vendor/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Type": "EnvanteriX.Application.Features.Commands.AssetCommands.UpdateAssetCommand",
         "IsRequired": true
       }
     ],
@@ -954,6 +341,651 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BrandController",
+    "Method": "Create",
+    "RelativePath": "brand/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.BrandCommands.CreateBrandCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BrandController",
+    "Method": "Delete",
+    "RelativePath": "brand/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EnvanteriX.Application.Features.Commands.BrandCommands.DeleteBrandCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BrandController",
+    "Method": "GetAll",
+    "RelativePath": "brand/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BrandController",
+    "Method": "GetById",
+    "RelativePath": "brand/get-by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BrandController",
+    "Method": "Update",
+    "RelativePath": "brand/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.BrandCommands.UpdateBrandCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
+    "Method": "Create",
+    "RelativePath": "location/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.LocationCommands.CreateLocationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
+    "Method": "Delete",
+    "RelativePath": "location/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EnvanteriX.Application.Features.Commands.LocationCommands.DeleteLocationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
+    "Method": "GetAll",
+    "RelativePath": "location/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
+    "Method": "GetById",
+    "RelativePath": "location/get-by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
+    "Method": "Update",
+    "RelativePath": "location/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.LocationCommands.UpdateLocationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
+    "Method": "Create",
+    "RelativePath": "maintenance-record/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.MaintenanceRecordCommands.CreateMaintenanceRecordCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
+    "Method": "Delete",
+    "RelativePath": "maintenance-record/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EnvanteriX.Application.Features.Commands.MaintenanceRecordCommands.DeleteMaintenanceRecordCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
+    "Method": "GetAll",
+    "RelativePath": "maintenance-record/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
+    "Method": "GetById",
+    "RelativePath": "maintenance-record/get-by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
+    "Method": "Update",
+    "RelativePath": "maintenance-record/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.MaintenanceRecordCommands.UpdateMaintenanceRecordCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.ModelController",
+    "Method": "Create",
+    "RelativePath": "model/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.ModelCommands.CreateModelCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.ModelController",
+    "Method": "Delete",
+    "RelativePath": "model/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EnvanteriX.Application.Features.Commands.ModelCommands.DeleteModelCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.ModelController",
+    "Method": "GetAll",
+    "RelativePath": "model/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.ModelController",
+    "Method": "GetById",
+    "RelativePath": "model/get-by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.ModelController",
+    "Method": "Update",
+    "RelativePath": "model/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.ModelCommands.UpdateModelCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
+    "Method": "Create",
+    "RelativePath": "role/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.RoleCommands.CreateRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
+    "Method": "Delete",
+    "RelativePath": "role/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EnvanteriX.Application.Features.Commands.RoleCommands.DeleteRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
+    "Method": "GetAll",
+    "RelativePath": "role/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
+    "Method": "GetById",
+    "RelativePath": "role/get-by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
+    "Method": "Update",
+    "RelativePath": "role/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.RoleCommands.UpdateRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.SoftwareLicenseController",
+    "Method": "Create",
+    "RelativePath": "software-license/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.SoftwareLicenseCommands.CreateSoftwareLicenseCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.SoftwareLicenseController",
+    "Method": "Delete",
+    "RelativePath": "software-license/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.SoftwareLicenseController",
+    "Method": "GetAll",
+    "RelativePath": "software-license/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.SoftwareLicenseController",
+    "Method": "GetById",
+    "RelativePath": "software-license/get-by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.SoftwareLicenseController",
+    "Method": "Update",
+    "RelativePath": "software-license/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.SoftwareLicenseCommands.UpdateSoftwareLicenseCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
+    "Method": "AddRole",
+    "RelativePath": "user/add-role/add-role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.UserCommands.AddUserRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
+    "Method": "Delete",
+    "RelativePath": "user/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EnvanteriX.Application.Features.Commands.UserCommands.DeleteUserCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
+    "Method": "GetAll",
+    "RelativePath": "user/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
+    "Method": "GetById",
+    "RelativePath": "user/get-by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
+    "Method": "RemoveRole",
+    "RelativePath": "user/remove-role/remove-role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.UserCommands.RemoveUserRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
+    "Method": "Update",
+    "RelativePath": "user/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.UserCommands.UpdateUserCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
+    "Method": "Active",
+    "RelativePath": "vendor/active/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
+    "Method": "Create",
+    "RelativePath": "vendor/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.VendorCommands.CreateVendorCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
+    "Method": "DeActive",
+    "RelativePath": "vendor/de-active/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
+    "Method": "Delete",
+    "RelativePath": "vendor/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EnvanteriX.Application.Features.Commands.VendorCommands.DeleteVendorCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
+    "Method": "GetAll",
+    "RelativePath": "vendor/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
+    "Method": "GetById",
+    "RelativePath": "vendor/get-by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
+    "Method": "Update",
+    "RelativePath": "vendor/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.VendorCommands.UpdateVendorCommand",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

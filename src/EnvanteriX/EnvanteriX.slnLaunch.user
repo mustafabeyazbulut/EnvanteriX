@@ -10,7 +10,7 @@
       {
         "Path": "Presentation\\EnvanteriX.WebUI\\EnvanteriX.WebUI.csproj",
         "Action": "Start",
-        "DebugTarget": "http"
+        "DebugTarget": "https"
       }
     ]
   }

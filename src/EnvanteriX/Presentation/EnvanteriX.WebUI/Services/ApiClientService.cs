@@ -101,10 +101,10 @@ namespace EnvanteriX.WebUI.Services
                 }
             }
         }
-        public async Task<T> DeleteAsync<T>(string endpoint, int data)
+        public async Task<T> DeleteAsync<T>(string endpoint)
         {
             var client = await GetHttpClientWithTokenAsync();
-            var url = $"{_apiSettings.BaseUrl.TrimEnd('/')}/{endpoint.TrimStart('/')}/{data}";
+            var url = $"{_apiSettings.BaseUrl.TrimEnd('/')}/{endpoint.TrimStart('/')}";
             var response = await client.DeleteAsync(url);
 
             if (response.IsSuccessStatusCode)

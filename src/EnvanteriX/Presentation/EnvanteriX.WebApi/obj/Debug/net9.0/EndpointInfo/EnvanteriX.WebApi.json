@@ -6,7 +6,7 @@
     "version": "v1"
   },
   "paths": {
-    "/api/asset": {
+    "/asset/get-all": {
       "get": {
         "tags": [
           "Asset"
@@ -16,7 +16,32 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/asset/get-by-id/{id}": {
+      "get": {
+        "tags": [
+          "Asset"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/asset/create": {
       "post": {
         "tags": [
           "Asset"
@@ -45,7 +70,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/asset/update": {
       "put": {
         "tags": [
           "Asset"
@@ -74,7 +101,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/asset/delete": {
       "delete": {
         "tags": [
           "Asset"
@@ -105,30 +134,7 @@
         }
       }
     },
-    "/api/asset/{id}": {
-      "get": {
-        "tags": [
-          "Asset"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/asset-movement": {
+    "/asset-movement/get-all": {
       "get": {
         "tags": [
           "AssetMovement"
@@ -138,87 +144,9 @@
             "description": "OK"
           }
         }
-      },
-      "post": {
-        "tags": [
-          "AssetMovement"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateAssetMovementCommand"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateAssetMovementCommand"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateAssetMovementCommand"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "AssetMovement"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateAssetMovementCommand"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateAssetMovementCommand"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateAssetMovementCommand"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "AssetMovement"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       }
     },
-    "/api/asset-movement/{id}": {
+    "/asset-movement/get-by-id/{id}": {
       "get": {
         "tags": [
           "AssetMovement"
@@ -241,7 +169,7 @@
         }
       }
     },
-    "/api/asset-movement/asset/{assetId}": {
+    "/asset-movement/get-by-asset-id/asset/{assetId}": {
       "get": {
         "tags": [
           "AssetMovement"
@@ -264,7 +192,7 @@
         }
       }
     },
-    "/api/asset-movement/location/{locationId}": {
+    "/asset-movement/get-by-location-id/location/{locationId}": {
       "get": {
         "tags": [
           "AssetMovement"
@@ -287,7 +215,7 @@
         }
       }
     },
-    "/api/asset-movement/user/{userId}": {
+    "/asset-movement/get-by-user-id/user/{userId}": {
       "get": {
         "tags": [
           "AssetMovement"
@@ -297,6 +225,90 @@
             "name": "userId",
             "in": "path",
             "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/asset-movement/create": {
+      "post": {
+        "tags": [
+          "AssetMovement"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAssetMovementCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAssetMovementCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAssetMovementCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/asset-movement/update": {
+      "put": {
+        "tags": [
+          "AssetMovement"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAssetMovementCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAssetMovementCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAssetMovementCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/asset-movement/delete": {
+      "delete": {
+        "tags": [
+          "AssetMovement"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -568,7 +580,7 @@
         }
       }
     },
-    "/api/brand": {
+    "/brand/get-all": {
       "get": {
         "tags": [
           "Brand"
@@ -578,7 +590,32 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/brand/get-by-id/{id}": {
+      "get": {
+        "tags": [
+          "Brand"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/brand/create": {
       "post": {
         "tags": [
           "Brand"
@@ -607,7 +644,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/brand/update": {
       "put": {
         "tags": [
           "Brand"
@@ -636,7 +675,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/brand/delete": {
       "delete": {
         "tags": [
           "Brand"
@@ -667,10 +708,22 @@
         }
       }
     },
-    "/api/brand/{id}": {
+    "/location/get-all": {
       "get": {
         "tags": [
-          "Brand"
+          "Location"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/location/get-by-id/{id}": {
+      "get": {
+        "tags": [
+          "Location"
         ],
         "parameters": [
           {
@@ -690,17 +743,7 @@
         }
       }
     },
-    "/api/location": {
-      "get": {
-        "tags": [
-          "Location"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/location/create": {
       "post": {
         "tags": [
           "Location"
@@ -729,7 +772,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/location/update": {
       "put": {
         "tags": [
           "Location"
@@ -758,7 +803,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/location/delete": {
       "delete": {
         "tags": [
           "Location"
@@ -789,10 +836,22 @@
         }
       }
     },
-    "/api/location/{id}": {
+    "/maintenance-record/get-all": {
       "get": {
         "tags": [
-          "Location"
+          "MaintenanceRecord"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/maintenance-record/get-by-id/{id}": {
+      "get": {
+        "tags": [
+          "MaintenanceRecord"
         ],
         "parameters": [
           {
@@ -812,17 +871,7 @@
         }
       }
     },
-    "/api/maintenance-record": {
-      "get": {
-        "tags": [
-          "MaintenanceRecord"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/maintenance-record/create": {
       "post": {
         "tags": [
           "MaintenanceRecord"
@@ -851,7 +900,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/maintenance-record/update": {
       "put": {
         "tags": [
           "MaintenanceRecord"
@@ -880,7 +931,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/maintenance-record/delete": {
       "delete": {
         "tags": [
           "MaintenanceRecord"
@@ -911,10 +964,22 @@
         }
       }
     },
-    "/api/maintenance-record/{id}": {
+    "/model/get-all": {
       "get": {
         "tags": [
-          "MaintenanceRecord"
+          "Model"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/model/get-by-id/{id}": {
+      "get": {
+        "tags": [
+          "Model"
         ],
         "parameters": [
           {
@@ -934,17 +999,7 @@
         }
       }
     },
-    "/api/model": {
-      "get": {
-        "tags": [
-          "Model"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/model/create": {
       "post": {
         "tags": [
           "Model"
@@ -973,7 +1028,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/model/update": {
       "put": {
         "tags": [
           "Model"
@@ -1002,7 +1059,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/model/delete": {
       "delete": {
         "tags": [
           "Model"
@@ -1033,10 +1092,22 @@
         }
       }
     },
-    "/api/model/{id}": {
+    "/role/get-all": {
       "get": {
         "tags": [
-          "Model"
+          "Role"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/role/get-by-id/{id}": {
+      "get": {
+        "tags": [
+          "Role"
         ],
         "parameters": [
           {
@@ -1056,17 +1127,7 @@
         }
       }
     },
-    "/api/role": {
-      "get": {
-        "tags": [
-          "Role"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/role/create": {
       "post": {
         "tags": [
           "Role"
@@ -1095,7 +1156,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/role/update": {
       "put": {
         "tags": [
           "Role"
@@ -1124,7 +1187,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/role/delete": {
       "delete": {
         "tags": [
           "Role"
@@ -1155,10 +1220,22 @@
         }
       }
     },
-    "/api/role/{id}": {
+    "/software-license/get-all": {
       "get": {
         "tags": [
-          "Role"
+          "SoftwareLicense"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/software-license/get-by-id/{id}": {
+      "get": {
+        "tags": [
+          "SoftwareLicense"
         ],
         "parameters": [
           {
@@ -1178,17 +1255,7 @@
         }
       }
     },
-    "/api/software-license": {
-      "get": {
-        "tags": [
-          "SoftwareLicense"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/software-license/create": {
       "post": {
         "tags": [
           "SoftwareLicense"
@@ -1219,28 +1286,7 @@
         }
       }
     },
-    "/api/software-license/{id}": {
-      "get": {
-        "tags": [
-          "SoftwareLicense"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/software-license/update/{id}": {
       "put": {
         "tags": [
           "SoftwareLicense"
@@ -1280,7 +1326,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/software-license/delete/{id}": {
       "delete": {
         "tags": [
           "SoftwareLicense"
@@ -1303,7 +1351,7 @@
         }
       }
     },
-    "/api/user": {
+    "/user/get-all": {
       "get": {
         "tags": [
           "User"
@@ -1313,67 +1361,9 @@
             "description": "OK"
           }
         }
-      },
-      "put": {
-        "tags": [
-          "User"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateUserCommand"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateUserCommand"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateUserCommand"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "User"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DeleteUserCommand"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DeleteUserCommand"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/DeleteUserCommand"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       }
     },
-    "/api/user/{id}": {
+    "/user/get-by-id/{id}": {
       "get": {
         "tags": [
           "User"
@@ -1396,7 +1386,69 @@
         }
       }
     },
-    "/api/user/remove-role": {
+    "/user/update": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/user/delete": {
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteUserCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteUserCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteUserCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/user/remove-role/remove-role": {
       "post": {
         "tags": [
           "User"
@@ -1427,7 +1479,7 @@
         }
       }
     },
-    "/api/user/add-role": {
+    "/user/add-role/add-role": {
       "post": {
         "tags": [
           "User"
@@ -1458,7 +1510,7 @@
         }
       }
     },
-    "/api/vendor": {
+    "/vendor/get-all": {
       "get": {
         "tags": [
           "Vendor"
@@ -1468,7 +1520,32 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/vendor/get-by-id/{id}": {
+      "get": {
+        "tags": [
+          "Vendor"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/vendor/create": {
       "post": {
         "tags": [
           "Vendor"
@@ -1497,7 +1574,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/vendor/update": {
       "put": {
         "tags": [
           "Vendor"
@@ -1526,7 +1605,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/vendor/delete": {
       "delete": {
         "tags": [
           "Vendor"
@@ -1557,8 +1638,31 @@
         }
       }
     },
-    "/api/vendor/{id}": {
-      "get": {
+    "/vendor/active/{id}": {
+      "delete": {
+        "tags": [
+          "Vendor"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/vendor/de-active/{id}": {
+      "delete": {
         "tags": [
           "Vendor"
         ],
