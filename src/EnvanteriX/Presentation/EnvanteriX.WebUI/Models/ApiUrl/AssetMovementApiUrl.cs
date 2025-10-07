@@ -6,7 +6,9 @@
         GetById,
         Create,
         Update,
-        Delete
+        Delete,
+        Active,
+        DeActive
     }
 
     public class AssetMovementApiUrl : BaseApiUrl
@@ -22,6 +24,8 @@
                 AssetMovementEndpoint.Create => $"{BasePath}/create",
                 AssetMovementEndpoint.Update => $"{BasePath}/update",
                 AssetMovementEndpoint.Delete => $"{BasePath}/delete",
+                AssetMovementEndpoint.Active => $"{BasePath}/active/{id}",
+                AssetMovementEndpoint.DeActive => $"{BasePath}/deactive/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

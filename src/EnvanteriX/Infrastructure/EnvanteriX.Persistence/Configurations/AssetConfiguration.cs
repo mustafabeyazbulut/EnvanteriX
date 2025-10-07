@@ -55,6 +55,9 @@ namespace EnvanteriX.Persistence.Configurations
                    .HasForeignKey(x => x.AssignedUserId)
                    .OnDelete(DeleteBehavior.SetNull);
 
+            builder.Property(x => x.CreatedDate)
+                    .HasDefaultValueSql("GETDATE()"); // SQL Server için
+
         }
     }
 }

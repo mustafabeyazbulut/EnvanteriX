@@ -81,5 +81,18 @@ namespace EnvanteriX.WebApi.Controllers
             var success = await _mediator.Send(new DeleteAssetMovementCommand (id));
             return StatusCode(StatusCodes.Status200OK);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Active(int id)
+        {
+            await _mediator.Send(new ActiveAssetMovementCommand { Id = id });
+            return StatusCode(StatusCodes.Status200OK);
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeActive(int id)
+        {
+            await _mediator.Send(new DeActiveAssetMovementCommand { Id = id });
+            return StatusCode(StatusCodes.Status200OK);
+        }
     }
 }

@@ -43,5 +43,18 @@ namespace EnvanteriX.WebApi.Controllers
             await _mediator.Send(request);
             return StatusCode(StatusCodes.Status200OK);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Active(int id)
+        {
+            await _mediator.Send(new ActiveLocationCommand { Id = id });
+            return StatusCode(StatusCodes.Status200OK);
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeActive(int id)
+        {
+            await _mediator.Send(new DeActiveLocationCommand { Id = id });
+            return StatusCode(StatusCodes.Status200OK);
+        }
     }
 }

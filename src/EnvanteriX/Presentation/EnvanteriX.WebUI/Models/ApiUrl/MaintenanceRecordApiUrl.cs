@@ -6,7 +6,9 @@
         GetById,
         Create,
         Update,
-        Delete
+        Delete,
+        Active,
+        DeActive
     }
 
     public class MaintenanceRecordApiUrl : BaseApiUrl
@@ -22,6 +24,8 @@
                 MaintenanceRecordEndpoint.Create => $"{BasePath}/create",
                 MaintenanceRecordEndpoint.Update => $"{BasePath}/update",
                 MaintenanceRecordEndpoint.Delete => $"{BasePath}/delete",
+                MaintenanceRecordEndpoint.Active => $"{BasePath}/active/{id}",
+                MaintenanceRecordEndpoint.DeActive => $"{BasePath}/deactive/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

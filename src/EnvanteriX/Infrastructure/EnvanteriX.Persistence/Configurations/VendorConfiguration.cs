@@ -37,6 +37,9 @@ namespace EnvanteriX.Persistence.Configurations
                 .OnDelete(DeleteBehavior.Restrict);
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
 
+            builder.Property(x => x.CreatedDate)
+                   .HasDefaultValueSql("GETDATE()"); // SQL Server için
+
         }
     }
 }

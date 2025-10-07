@@ -6,7 +6,9 @@
         GetById,
         Create,
         Update,
-        Delete
+        Delete,
+        Active,
+        DeActive
     }
 
     public class UserApiUrl : BaseApiUrl
@@ -22,6 +24,8 @@
                 UserEndpoint.Create => $"{BasePath}/create",
                 UserEndpoint.Update => $"{BasePath}/update",
                 UserEndpoint.Delete => $"{BasePath}/delete",
+                UserEndpoint.Active => $"{BasePath}/active/{id}",
+                UserEndpoint.DeActive => $"{BasePath}/de-active/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

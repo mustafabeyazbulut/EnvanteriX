@@ -6,7 +6,9 @@
         GetById,
         Create,
         Update,
-        Delete
+        Delete,
+        Active,
+        DeActive
     }
 
     public class RoleApiUrl : BaseApiUrl
@@ -22,6 +24,8 @@
                 RoleEndpoint.Create => $"{BasePath}/create",
                 RoleEndpoint.Update => $"{BasePath}/update",
                 RoleEndpoint.Delete => $"{BasePath}/delete",
+                RoleEndpoint.Active => $"{BasePath}/active",
+                RoleEndpoint.DeActive => $"{BasePath}/de-active",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

@@ -18,6 +18,9 @@ namespace EnvanteriX.Persistence.Configurations
                    .HasForeignKey(a => a.AssetTypeId);
 
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+
+            builder.Property(x => x.CreatedDate)
+                   .HasDefaultValueSql("GETDATE()"); // SQL Server için
         }
     }
 }

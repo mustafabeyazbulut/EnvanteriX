@@ -6,7 +6,9 @@
         GetById,
         Create,
         Update,
-        Delete
+        Delete,
+        Active,
+        DeActive
     }
 
     public class LocationApiUrl : BaseApiUrl
@@ -22,6 +24,8 @@
                 LocationEndpoint.Create => $"{BasePath}/create",
                 LocationEndpoint.Update => $"{BasePath}/update",
                 LocationEndpoint.Delete => $"{BasePath}/delete",
+                LocationEndpoint.Active => $"{BasePath}/active/{id}",
+                LocationEndpoint.DeActive => $"{BasePath}/de-active/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

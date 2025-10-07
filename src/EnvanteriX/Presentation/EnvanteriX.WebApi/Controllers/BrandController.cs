@@ -41,4 +41,17 @@ public class BrandController : ControllerBase
         await _mediator.Send(request);
         return StatusCode(StatusCodes.Status200OK);
     }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Active(int id)
+    {
+        await _mediator.Send(new ActiveBrandCommand { Id = id });
+        return StatusCode(StatusCodes.Status200OK);
+    }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeActive(int id)
+    {
+        await _mediator.Send(new DeActiveBrandCommand { Id = id });
+        return StatusCode(StatusCodes.Status200OK);
+    }
 }

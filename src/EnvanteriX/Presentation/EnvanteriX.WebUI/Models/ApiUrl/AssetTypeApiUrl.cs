@@ -6,7 +6,9 @@
         GetById,
         Create,
         Update,
-        Delete
+        Delete,
+        Active,
+        DeActive
     }
 
     public class AssetTypeApiUrl : BaseApiUrl
@@ -22,6 +24,8 @@
                 AssetTypeEndpoint.Create => $"{BasePath}/create",
                 AssetTypeEndpoint.Update => $"{BasePath}/update",
                 AssetTypeEndpoint.Delete => $"{BasePath}/delete",
+                AssetTypeEndpoint.Active => $"{BasePath}/active/{id}",
+                AssetTypeEndpoint.DeActive => $"{BasePath}/deactive/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

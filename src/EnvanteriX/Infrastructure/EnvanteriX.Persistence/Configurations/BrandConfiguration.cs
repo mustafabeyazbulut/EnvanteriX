@@ -14,6 +14,9 @@ namespace EnvanteriX.Persistence.Configurations
 
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
 
+            builder.Property(x => x.CreatedDate)
+                   .HasDefaultValueSql("GETDATE()"); // SQL Server için
+
         }
     }
 }

@@ -6,7 +6,9 @@
         GetById,
         Create,
         Update,
-        Delete
+        Delete,
+        Active,
+        DeActive
     }
 
     public class BrandApiUrl : BaseApiUrl
@@ -22,6 +24,8 @@
                 BrandEndpoint.Create => $"{BasePath}/create",
                 BrandEndpoint.Update => $"{BasePath}/update",
                 BrandEndpoint.Delete => $"{BasePath}/delete",
+                BrandEndpoint.Active => $"{BasePath}/active",
+                BrandEndpoint.DeActive => $"{BasePath}/deactive",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

@@ -13,6 +13,8 @@ namespace EnvanteriX.Persistence.Configurations
             builder.Property(x => x.Email).HasMaxLength(100);
             builder.Property(x => x.PasswordHash).HasMaxLength(100);
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+            builder.Property(x => x.CreatedDate)
+                   .HasDefaultValueSql("GETDATE()"); // SQL Server için
 
         }
     }

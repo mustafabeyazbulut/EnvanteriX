@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]/[action]")]
     [ApiController]
     public class AssetTypeController : ControllerBase
     {
@@ -41,6 +41,20 @@ namespace EnvanteriX.WebApi.Controllers
         public async Task<IActionResult> Delete(DeleteAssetTypeCommand request)
         {
             await _mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Active(int id)
+        {
+            await _mediator.Send(new ActiveAssetTypeCommand { Id = id });
+            return StatusCode(StatusCodes.Status200OK);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeActive(int id)
+        {
+            await _mediator.Send(new DeActiveAssetTypeCommand { Id = id });
             return StatusCode(StatusCodes.Status200OK);
         }
     }
