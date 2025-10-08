@@ -23,9 +23,9 @@
                 ModelEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 ModelEndpoint.Create => $"{BasePath}/create",
                 ModelEndpoint.Update => $"{BasePath}/update",
-                ModelEndpoint.Delete => $"{BasePath}/delete",
-                ModelEndpoint.Active => $"{BasePath}/activate",
-                ModelEndpoint.DeActive => $"{BasePath}/deactivate",
+                ModelEndpoint.Delete => $"{BasePath}/delete/{id}",
+                ModelEndpoint.Active => $"{BasePath}/active/{id}",
+                ModelEndpoint.DeActive => $"{BasePath}/de-active/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

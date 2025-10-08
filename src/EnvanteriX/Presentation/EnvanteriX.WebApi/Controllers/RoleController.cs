@@ -22,7 +22,9 @@ namespace EnvanteriX.WebApi.Controllers
             var roles = await _mediator.Send(new GetAllRolesQuery());
             return Ok(roles);
         }
-
+        [HttpGet]
+        public async Task<IActionResult> GetAllActive() =>
+         Ok(await _mediator.Send(new GetAllActiveRolesQuery()));
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -44,10 +46,10 @@ namespace EnvanteriX.WebApi.Controllers
             return StatusCode(StatusCodes.Status200OK);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(DeleteRoleCommand request)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            await _mediator.Send(request);
+            await _mediator.Send(new DeleteRoleCommand(id));
             return StatusCode(StatusCodes.Status200OK);
         }
 

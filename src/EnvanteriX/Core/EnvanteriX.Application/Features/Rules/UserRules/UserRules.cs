@@ -11,6 +11,13 @@ namespace EnvanteriX.Application.Features.Rules.UserRules
             if (user is null) throw new UserNotFoundException();
             return Task.CompletedTask;
         }
+        public Task PasswordsShouldMatch(string password, string confirmPassword)
+        {
+            if (password != confirmPassword)
+                throw new PasswordsDoNotMatchException();
+
+            return Task.CompletedTask;
+        }
         public Task UserAlreadyExists(User? model)
         {
             if (model is not null) throw new UserAlreadyExistsException(model.UserName);

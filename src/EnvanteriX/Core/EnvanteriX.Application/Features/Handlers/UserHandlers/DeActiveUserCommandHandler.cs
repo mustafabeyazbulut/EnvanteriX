@@ -25,7 +25,7 @@ namespace EnvanteriX.Application.Features.Handlers.UserHandlers
         {
             var user = await _userManager.FindByIdAsync(request.Id.ToString());
             await _userRules.UserShouldExist(user); //kullanıcı var mı yok mu kontrolü
-            user.IsDeleted = false;
+            user.IsDeleted = true;
             await _userManager.UpdateAsync(user);
             return Unit.Value;
         }

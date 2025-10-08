@@ -36,6 +36,16 @@ namespace EnvanteriX.Application.Features.Handlers.UserHandlers
             {
                 throw new Exception($"{request.RoleName} isimli Rol zaten kullanıcıya tanımlıdır");
             }
+
+            // Kullanıcının mevcut rollerini sil
+            var existingRoles = await _userManager.GetRolesAsync(user);
+            if (existingRoles.Any())
+            {
+                var removeResult = await _userManager.RemoveFromRolesAsync(user, existingRoles);
+                if (!removeResult.Succeeded)
+                    throw new InvalidOperationException($"Önceki roller silinirken hata oluştu: {string.Join(", ", removeResult.Errors.Select(e => e.Description))}");
+            }
+
             var result = await _userManager.AddToRoleAsync(user, request.RoleName);
             if (!result.Succeeded)
             {

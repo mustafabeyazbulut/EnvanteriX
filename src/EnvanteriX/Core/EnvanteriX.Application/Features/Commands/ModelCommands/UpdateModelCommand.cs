@@ -1,5 +1,4 @@
-﻿using EnvanteriX.Application.Features.Results.ModelResults;
-using MediatR;
+﻿using MediatR;
 
 namespace EnvanteriX.Application.Features.Commands.ModelCommands
 {

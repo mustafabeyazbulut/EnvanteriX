@@ -1,18 +1,22 @@
-﻿using EnvanteriX.Application.Features.Queries.RoleQueries;
+﻿using EnvanteriX.Application.Bases;
+using EnvanteriX.Application.Features.Queries.RoleQueries;
 using EnvanteriX.Application.Features.Results.RoleResults;
 using EnvanteriX.Application.Features.Rules.RoleRules;
+using EnvanteriX.Application.Interfaces.AutoMapper;
+using EnvanteriX.Application.Interfaces.UnitOfWorks;
 using EnvanteriX.Domain.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-
 
 namespace EnvanteriX.Application.Features.Handlers.RoleHandlers
 {
-    public class GetRoleByIdQueryHandler : IRequestHandler<GetRoleByIdQuery, GetRoleByIdQueryResult>
+    public class GetRoleByIdQueryHandler :BaseHandler, IRequestHandler<GetRoleByIdQuery, GetRoleByIdQueryResult>
     {
         private readonly RoleManager<Role> _roleManager;
         private readonly RoleRules _roleRules;
-        public GetRoleByIdQueryHandler(RoleManager<Role> roleManager, RoleRules roleRules)
+
+        public GetRoleByIdQueryHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, RoleManager<Role> roleManager, RoleRules roleRules) : base(mapper, unitOfWork, httpContextAccessor)
         {
             _roleManager = roleManager;
             _roleRules = roleRules;
@@ -22,12 +26,7 @@ namespace EnvanteriX.Application.Features.Handlers.RoleHandlers
         {
             var role = await _roleManager.FindByIdAsync(request.RoleId.ToString());
             await _roleRules.RoleShouldExistRule(role);
-
-            return new GetRoleByIdQueryResult
-            {
-                RoleId = role.Id,
-                RoleName = role.Name
-            };
+            return _mapper.Map<GetRoleByIdQueryResult, Role>(role);
         }
     }
 }

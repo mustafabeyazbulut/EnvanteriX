@@ -14,6 +14,11 @@ public class BrandController : ControllerBase
     public async Task<IActionResult> GetAll() =>
         Ok(await _mediator.Send(new GetAllBrandsQuery()));
 
+    [HttpGet]
+    public async Task<IActionResult> GetAllActive() =>
+    Ok(await _mediator.Send(new GetAllActiveBrandsQuery()));
+
+
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById( int id)
     {
@@ -35,10 +40,10 @@ public class BrandController : ControllerBase
         return StatusCode(StatusCodes.Status200OK);
     }
 
-    [HttpDelete]
-    public async Task<IActionResult> Delete(DeleteBrandCommand request)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
     {
-        await _mediator.Send(request);
+        await _mediator.Send(new DeleteBrandCommand(id));
         return StatusCode(StatusCodes.Status200OK);
     }
 

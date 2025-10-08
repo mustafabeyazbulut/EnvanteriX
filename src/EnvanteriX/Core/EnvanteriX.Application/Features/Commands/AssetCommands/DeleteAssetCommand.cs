@@ -5,5 +5,9 @@ namespace EnvanteriX.Application.Features.Commands.AssetCommands
     public class DeleteAssetCommand : IRequest<Unit>
     {
         public int Id { get; set; }
+        public DeleteAssetCommand(int id)
+        {
+            Id = id;
+        }
     }
 }

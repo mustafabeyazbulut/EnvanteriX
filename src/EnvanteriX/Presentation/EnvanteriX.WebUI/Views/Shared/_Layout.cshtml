@@ -10,6 +10,8 @@
             <div class="container-fluid">
             </div>
             <div class="col-12" style="padding-left:2%;padding-right:2%;">
+                <script src="@Url.Content("~/libs/jquery/jquery.min.js")"></script>
+
                 @RenderBody()
                 @await Component.InvokeAsync("_Footer_Layout_ComponentPartial")
             </div>

@@ -23,9 +23,9 @@
                 MaintenanceRecordEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 MaintenanceRecordEndpoint.Create => $"{BasePath}/create",
                 MaintenanceRecordEndpoint.Update => $"{BasePath}/update",
-                MaintenanceRecordEndpoint.Delete => $"{BasePath}/delete",
+                MaintenanceRecordEndpoint.Delete => $"{BasePath}/delete/{id}",
                 MaintenanceRecordEndpoint.Active => $"{BasePath}/active/{id}",
-                MaintenanceRecordEndpoint.DeActive => $"{BasePath}/deactive/{id}",
+                MaintenanceRecordEndpoint.DeActive => $"{BasePath}/de-active/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

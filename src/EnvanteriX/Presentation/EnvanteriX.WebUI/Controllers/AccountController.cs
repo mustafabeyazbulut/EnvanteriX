@@ -1,11 +1,11 @@
-﻿using EnvanteriX.WebUI.Models;
-using EnvanteriX.WebUI.Models.ApiUrl;
-using EnvanteriX.WebUI.Services;
+﻿using EnvanteriX.WebUI.Services;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class AccountController : BaseController
     {
         private readonly ITokenService _tokenService;

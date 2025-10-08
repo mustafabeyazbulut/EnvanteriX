@@ -21,9 +21,23 @@ namespace EnvanteriX.Application.Features.Handlers.UserHandlers
 
         public async Task<List<GetAllUsersQueryResult>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
         {
-            var result=await _userManager.Users.ToListAsync();
-            var map = _mapper.Map<GetAllUsersQueryResult, User>(result);
-            return map.ToList();
+
+            var users = await _userManager.Users.ToListAsync(cancellationToken);
+            var userResults = new List<GetAllUsersQueryResult>();
+
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+                var roleName = roles.FirstOrDefault(); // sadece ilk (tek) rol alınır
+
+                var mappedUser = _mapper.Map<GetAllUsersQueryResult, User>(user);
+
+                mappedUser.Role = roleName; // result modeline rol adı yazılır
+
+                userResults.Add(mappedUser);
+            }
+
+            return userResults;
         }
     }
 }

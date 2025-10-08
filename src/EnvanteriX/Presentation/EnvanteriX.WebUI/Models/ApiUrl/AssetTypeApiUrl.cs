@@ -23,9 +23,9 @@
                 AssetTypeEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 AssetTypeEndpoint.Create => $"{BasePath}/create",
                 AssetTypeEndpoint.Update => $"{BasePath}/update",
-                AssetTypeEndpoint.Delete => $"{BasePath}/delete",
+                AssetTypeEndpoint.Delete => $"{BasePath}/delete/{id}",
                 AssetTypeEndpoint.Active => $"{BasePath}/active/{id}",
-                AssetTypeEndpoint.DeActive => $"{BasePath}/deactive/{id}",
+                AssetTypeEndpoint.DeActive => $"{BasePath}/de-active/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

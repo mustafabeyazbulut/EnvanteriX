@@ -1,7 +1,6 @@
 ﻿using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Vendor;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebUI.Controllers
@@ -15,7 +14,6 @@ namespace EnvanteriX.WebUI.Controllers
             _vendorApiUrl = vendorApiUrl;
         }
 
-        [Authorize(Roles = "user")]
         [HttpGet("")]
         public async Task<IActionResult> Index()
         {
@@ -31,14 +29,12 @@ namespace EnvanteriX.WebUI.Controllers
             return View(new List<VendorViewModel>());
         }
 
-        [Authorize(Roles = "user")]
         [HttpGet("Add")]
         public IActionResult Add()
         {
             return View();
         }
 
-        [Authorize(Roles = "user")]
         [HttpPost("Add")]
         public async Task<IActionResult> Add(CreateVendorViewModel model)
         {
@@ -53,7 +49,6 @@ namespace EnvanteriX.WebUI.Controllers
             return RedirectToAction("Index", "Vendor");
         }
 
-        [Authorize(Roles = "user")]
         [HttpGet("Edit/{id}")]
         public async Task<IActionResult> Edit(int id)
         {
@@ -69,7 +64,6 @@ namespace EnvanteriX.WebUI.Controllers
             return RedirectToAction("Index", "Vendor");
         }
 
-        [Authorize(Roles = "user")]
         [HttpPost("Edit")]
         public async Task<IActionResult> Edit(UpdateVendorViewModel model)
         {
@@ -84,7 +78,6 @@ namespace EnvanteriX.WebUI.Controllers
             return RedirectToAction("Index", "Vendor");
         }
 
-        [Authorize(Roles = "user")]
         [HttpGet("Remove/{id}")]
         public async Task<IActionResult> Remove(int id)
         {
@@ -99,7 +92,6 @@ namespace EnvanteriX.WebUI.Controllers
             return RedirectToAction("Index", "Vendor");
         }
 
-        [Authorize(Roles = "user")]
         [HttpGet("Active/{id}")]
         public async Task<IActionResult> Active(int id)
         {
@@ -113,7 +105,7 @@ namespace EnvanteriX.WebUI.Controllers
             }
             return RedirectToAction("Index", "Vendor");
         }
-        [Authorize(Roles = "user")]
+
         [HttpGet("DeActive/{id}")]
         public async Task<IActionResult> DeActive(int id)
         {

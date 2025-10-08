@@ -15,5 +15,7 @@ namespace EnvanteriX.Application.Features.Results.MaintenanceRecordResults
         public decimal Cost { get; set; }
         public int VendorId { get; set; }
         public string VendorName { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

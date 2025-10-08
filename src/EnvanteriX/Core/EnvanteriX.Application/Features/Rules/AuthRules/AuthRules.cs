@@ -16,6 +16,14 @@ namespace EnvanteriX.Application.Features.Rules.AuthRules
             if (user is null) throw new UserNotFoundException();
             return Task.CompletedTask;
         }
+        public Task PasswordsShouldMatch(string password, string confirmPassword)
+        {
+            if (password != confirmPassword)
+                throw new PasswordsDoNotMatchException();
+
+            return Task.CompletedTask;
+        }
+
         public Task EmailOrPasswordShouldNotBeInvalid(User? user, bool checkPassword)
         {
             if (user is null || !checkPassword) throw new EmailOrPasswordShouldNotBeInvalidException();

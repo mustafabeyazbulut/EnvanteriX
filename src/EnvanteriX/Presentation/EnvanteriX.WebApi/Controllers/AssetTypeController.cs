@@ -37,10 +37,10 @@ namespace EnvanteriX.WebApi.Controllers
             return StatusCode(StatusCodes.Status200OK);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(DeleteAssetTypeCommand request)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete( int id)
         {
-            await _mediator.Send(request);
+            await _mediator.Send(new DeleteAssetTypeCommand(id));
             return StatusCode(StatusCodes.Status200OK);
         }
 

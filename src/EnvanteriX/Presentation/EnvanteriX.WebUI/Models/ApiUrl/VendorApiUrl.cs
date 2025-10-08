@@ -23,7 +23,7 @@
                 VendorEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 VendorEndpoint.Create => $"{BasePath}/create",
                 VendorEndpoint.Update => $"{BasePath}/update",
-                VendorEndpoint.Delete => $"{BasePath}/delete",
+                VendorEndpoint.Delete => $"{BasePath}/delete/{id}",
                 VendorEndpoint.Active => $"{BasePath}/active/{id}",
                 VendorEndpoint.DeActive => $"{BasePath}/de-active/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)

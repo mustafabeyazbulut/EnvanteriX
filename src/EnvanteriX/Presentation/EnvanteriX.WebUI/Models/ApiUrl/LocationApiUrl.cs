@@ -23,7 +23,7 @@
                 LocationEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 LocationEndpoint.Create => $"{BasePath}/create",
                 LocationEndpoint.Update => $"{BasePath}/update",
-                LocationEndpoint.Delete => $"{BasePath}/delete",
+                LocationEndpoint.Delete => $"{BasePath}/delete/{id}",
                 LocationEndpoint.Active => $"{BasePath}/active/{id}",
                 LocationEndpoint.DeActive => $"{BasePath}/de-active/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)

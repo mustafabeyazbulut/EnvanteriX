@@ -4,11 +4,14 @@
     {
         GetAll,
         GetById,
+        GetByEmail,
         Create,
         Update,
         Delete,
         Active,
-        DeActive
+        DeActive,
+        AddRole,
+        RemoveRole
     }
 
     public class UserApiUrl : BaseApiUrl
@@ -21,11 +24,14 @@
             {
                 UserEndpoint.GetAll => $"{BasePath}/get-all",
                 UserEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
+                UserEndpoint.GetByEmail => $"{BasePath}/get-by-email/",
                 UserEndpoint.Create => $"{BasePath}/create",
                 UserEndpoint.Update => $"{BasePath}/update",
-                UserEndpoint.Delete => $"{BasePath}/delete",
+                UserEndpoint.Delete => $"{BasePath}/delete/{id}",
                 UserEndpoint.Active => $"{BasePath}/active/{id}",
                 UserEndpoint.DeActive => $"{BasePath}/de-active/{id}",
+                UserEndpoint.AddRole => $"{BasePath}/add-role/{id}",
+                UserEndpoint.RemoveRole => $"{BasePath}/remove-role/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

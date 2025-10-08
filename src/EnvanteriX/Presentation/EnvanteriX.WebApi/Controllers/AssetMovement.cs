@@ -75,7 +75,7 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         // Hareketi sil
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var success = await _mediator.Send(new DeleteAssetMovementCommand (id));

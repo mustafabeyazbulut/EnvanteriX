@@ -36,8 +36,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Brand/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Brand/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Brand/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Home/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Model/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Model/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Model/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Role/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Role/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Role/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Shared/Components/_Footer_Layout_ComponentPartial/Default.cshtml]
@@ -58,6 +94,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Shared/Components/_Script_Layout_ComponentPartial/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1NjcmlwdF9MYXlvdXRfQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/User/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/src/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Vendor/Add.cshtml]

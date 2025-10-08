@@ -14,8 +14,10 @@ namespace EnvanteriX.Application.Features.Handlers.RoleHandlers
     {
         private readonly RoleManager<Role> _roleManager;
         private readonly RoleRules _roleRules;
-        public DeActiveRoleCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public DeActiveRoleCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, RoleManager<Role> roleManager, RoleRules roleRules) : base(mapper, unitOfWork, httpContextAccessor)
         {
+            _roleManager = roleManager;
+            _roleRules = roleRules;
         }
 
         public async Task<Unit> Handle(DeActiveRoleCommand request, CancellationToken cancellationToken)

@@ -3,6 +3,7 @@
     public enum RoleEndpoint
     {
         GetAll,
+        GetAllActive,
         GetById,
         Create,
         Update,
@@ -20,12 +21,13 @@
             return endpoint switch
             {
                 RoleEndpoint.GetAll => $"{BasePath}/get-all",
+                RoleEndpoint.GetAllActive => $"{BasePath}/get-all-active",
                 RoleEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 RoleEndpoint.Create => $"{BasePath}/create",
                 RoleEndpoint.Update => $"{BasePath}/update",
-                RoleEndpoint.Delete => $"{BasePath}/delete",
-                RoleEndpoint.Active => $"{BasePath}/active",
-                RoleEndpoint.DeActive => $"{BasePath}/de-active",
+                RoleEndpoint.Delete => $"{BasePath}/delete/{id}",
+                RoleEndpoint.Active => $"{BasePath}/active/{id}",
+                RoleEndpoint.DeActive => $"{BasePath}/de-active/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

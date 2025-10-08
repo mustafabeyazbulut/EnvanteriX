@@ -28,6 +28,7 @@ namespace EnvanteriX.Application.Features.Handlers.AuthHandlers
 
         public async Task<Unit> Handle(RegisterCommand request, CancellationToken cancellationToken)
         {
+            await authRules.PasswordsShouldMatch(request.Password,request.ConfirmPassword);
             await authRules.UserShouldNotBeExist(await userManager.FindByEmailAsync(request.Email));// kullanıcı var mı kontrol ediyoruz
 
             User user = _mapper.Map<User, RegisterCommand>(request); // kullanıcıyı map ediyoruz

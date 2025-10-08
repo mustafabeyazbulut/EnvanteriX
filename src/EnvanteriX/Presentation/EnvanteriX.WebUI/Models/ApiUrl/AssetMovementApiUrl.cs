@@ -23,9 +23,9 @@
                 AssetMovementEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 AssetMovementEndpoint.Create => $"{BasePath}/create",
                 AssetMovementEndpoint.Update => $"{BasePath}/update",
-                AssetMovementEndpoint.Delete => $"{BasePath}/delete",
+                AssetMovementEndpoint.Delete => $"{BasePath}/delete/{id}",
                 AssetMovementEndpoint.Active => $"{BasePath}/active/{id}",
-                AssetMovementEndpoint.DeActive => $"{BasePath}/deactive/{id}",
+                AssetMovementEndpoint.DeActive => $"{BasePath}/de-active/{id}",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

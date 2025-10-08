@@ -380,6 +380,8 @@ wwwroot\libs\jquery\jquery.min.map
 wwwroot\libs\jquery\jquery.slim.js
 wwwroot\libs\jquery\jquery.slim.min.js
 wwwroot\libs\jquery\jquery.slim.min.map
+wwwroot\js\select2.min.js
+wwwroot\libs\bootstrap\css\select2-bootstrap-5-theme.min.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\fonts.min.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\icons\tabler-icons\fonts\tabler-icons.svg
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\icons\tabler-icons\tabler-icons.css
@@ -486,3 +488,5 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\Env
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\jquery\jquery.slim.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\jquery\jquery.slim.min.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\jquery\jquery.slim.min.map
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\select2.min.js
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\bootstrap\css\select2-bootstrap-5-theme.min.css

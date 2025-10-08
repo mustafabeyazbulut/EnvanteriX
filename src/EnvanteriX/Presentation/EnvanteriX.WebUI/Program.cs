@@ -1,6 +1,8 @@
 using EnvanteriX.WebUI.Models;
 using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,6 +47,8 @@ builder.Services.AddAuthentication("Cookies")
         options.LogoutPath = "/Account/Logout"; // Çýkýþ yapma URL'si
         options.AccessDeniedPath = "/Account/AccessDenied";
     });
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
