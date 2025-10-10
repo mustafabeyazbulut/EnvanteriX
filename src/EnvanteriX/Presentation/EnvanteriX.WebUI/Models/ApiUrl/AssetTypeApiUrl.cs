@@ -3,6 +3,7 @@
     public enum AssetTypeEndpoint
     {
         GetAll,
+        GetAllActive,
         GetById,
         Create,
         Update,
@@ -20,6 +21,7 @@
             return endpoint switch
             {
                 AssetTypeEndpoint.GetAll => $"{BasePath}/get-all",
+                AssetTypeEndpoint.GetAllActive => $"{BasePath}/get-all-active",
                 AssetTypeEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 AssetTypeEndpoint.Create => $"{BasePath}/create",
                 AssetTypeEndpoint.Update => $"{BasePath}/update",

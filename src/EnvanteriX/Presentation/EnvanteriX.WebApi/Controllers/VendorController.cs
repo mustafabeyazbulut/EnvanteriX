@@ -1,5 +1,4 @@
-﻿using EnvanteriX.Application.Features.Commands.AssetCommands;
-using EnvanteriX.Application.Features.Commands.VendorCommands;
+﻿using EnvanteriX.Application.Features.Commands.VendorCommands;
 using EnvanteriX.Application.Features.Queries.VendorQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +15,10 @@ namespace EnvanteriX.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll() =>
             Ok(await _mediator.Send(new GetAllVendorsQuery()));
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllActive() =>
+        Ok(await _mediator.Send(new GetAllActiveVendorsQuery()));
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)

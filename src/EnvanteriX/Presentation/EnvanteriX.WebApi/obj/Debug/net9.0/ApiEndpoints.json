@@ -229,6 +229,16 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.AssetTypeController",
+    "Method": "GetAllActive",
+    "RelativePath": "asset-type/get-all-active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetTypeController",
     "Method": "GetById",
     "RelativePath": "asset-type/get-by-id/{id}",
     "HttpMethod": "GET",
@@ -631,6 +641,16 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
+    "Method": "GetAllActive",
+    "RelativePath": "location/get-all-active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
     "Method": "GetById",
     "RelativePath": "location/get-by-id/{id}",
     "HttpMethod": "GET",
@@ -839,6 +859,32 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.ModelController",
+    "Method": "GetAllActive",
+    "RelativePath": "model/get-all-active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.ModelController",
+    "Method": "GetAllActiveByBrandId",
+    "RelativePath": "model/get-all-active-by-brand-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1081,6 +1127,16 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
+    "Method": "GetAllActive",
+    "RelativePath": "user/get-all-active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
     "Method": "GetByEmail",
     "RelativePath": "user/get-by-email/{Email}",
     "HttpMethod": "GET",
@@ -1211,6 +1267,16 @@
     "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
     "Method": "GetAll",
     "RelativePath": "vendor/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.VendorController",
+    "Method": "GetAllActive",
+    "RelativePath": "vendor/get-all-active",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -419,6 +419,18 @@
         }
       }
     },
+    "/asset-type/get-all-active": {
+      "get": {
+        "tags": [
+          "AssetType"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/asset-type/get-by-id/{id}": {
       "get": {
         "tags": [
@@ -899,6 +911,18 @@
         }
       }
     },
+    "/location/get-all-active": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/location/get-by-id/{id}": {
       "get": {
         "tags": [
@@ -1223,6 +1247,41 @@
       "get": {
         "tags": [
           "Model"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/model/get-all-active": {
+      "get": {
+        "tags": [
+          "Model"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/model/get-all-active-by-brand-id/{id}": {
+      "get": {
+        "tags": [
+          "Model"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -1575,6 +1634,18 @@
         }
       }
     },
+    "/user/get-all-active": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/user/get-by-id/{id}": {
       "get": {
         "tags": [
@@ -1814,6 +1885,18 @@
       }
     },
     "/vendor/get-all": {
+      "get": {
+        "tags": [
+          "Vendor"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/vendor/get-all-active": {
       "get": {
         "tags": [
           "Vendor"

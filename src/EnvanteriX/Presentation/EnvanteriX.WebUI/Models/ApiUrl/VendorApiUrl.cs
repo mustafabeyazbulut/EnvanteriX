@@ -3,6 +3,7 @@
     public enum VendorEndpoint
     {
         GetAll,
+        GetAllActive,
         GetById,
         Create,
         Update,
@@ -20,6 +21,7 @@
             return endpoint switch
             {
                 VendorEndpoint.GetAll => $"{BasePath}/get-all",
+                VendorEndpoint.GetAllActive => $"{BasePath}/get-all-active",
                 VendorEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 VendorEndpoint.Create => $"{BasePath}/create",
                 VendorEndpoint.Update => $"{BasePath}/update",

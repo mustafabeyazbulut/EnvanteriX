@@ -1,4 +1,5 @@
 ﻿using EnvanteriX.Application.Features.Commands.ModelCommands;
+using EnvanteriX.Application.Features.Queries.BrandQueries;
 using EnvanteriX.Application.Features.Queries.ModelQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,17 @@ namespace EnvanteriX.WebApi.Controllers
         public async Task<IActionResult> GetAll()
         {
             var result = await _mediator.Send(new GetAllModelsQuery());
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllActive() =>
+                    Ok(await _mediator.Send(new GetAllActiveModelsQuery()));
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAllActiveByBrandId(int id)
+        {
+            var result = await _mediator.Send(new GetAllActiveModelByBrandIdQuery(id));
             return Ok(result);
         }
 

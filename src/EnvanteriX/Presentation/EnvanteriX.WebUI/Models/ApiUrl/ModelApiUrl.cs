@@ -3,6 +3,8 @@
     public enum ModelEndpoint
     {
         GetAll,
+        GetAllActive,
+        GetAllActiveByBrandId,
         GetById,
         Create,
         Update,
@@ -20,6 +22,8 @@
             return endpoint switch
             {
                 ModelEndpoint.GetAll => $"{BasePath}/get-all",
+                ModelEndpoint.GetAllActive => $"{BasePath}/get-all-active",
+                ModelEndpoint.GetAllActiveByBrandId => $"{BasePath}/get-all-active-by-brand-id/{id}",
                 ModelEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 ModelEndpoint.Create => $"{BasePath}/create",
                 ModelEndpoint.Update => $"{BasePath}/update",

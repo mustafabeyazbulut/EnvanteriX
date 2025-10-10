@@ -3,6 +3,7 @@
     public enum UserEndpoint
     {
         GetAll,
+        GetAllActive,
         GetById,
         GetByEmail,
         Create,
@@ -24,6 +25,7 @@
             return endpoint switch
             {
                 UserEndpoint.GetAll => $"{BasePath}/get-all",
+                UserEndpoint.GetAllActive => $"{BasePath}/get-all-active",
                 UserEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 UserEndpoint.GetByEmail => $"{BasePath}/get-by-email/",
                 UserEndpoint.Create => $"{BasePath}/create",

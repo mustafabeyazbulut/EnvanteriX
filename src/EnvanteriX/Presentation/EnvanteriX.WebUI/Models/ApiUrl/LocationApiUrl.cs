@@ -3,6 +3,7 @@
     public enum LocationEndpoint
     {
         GetAll,
+        GetAllActive,
         GetById,
         Create,
         Update,
@@ -20,6 +21,7 @@
             return endpoint switch
             {
                 LocationEndpoint.GetAll => $"{BasePath}/get-all",
+                LocationEndpoint.GetAllActive => $"{BasePath}/get-all-active",
                 LocationEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 LocationEndpoint.Create => $"{BasePath}/create",
                 LocationEndpoint.Update => $"{BasePath}/update",

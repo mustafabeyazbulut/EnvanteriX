@@ -16,6 +16,10 @@ namespace EnvanteriX.WebApi.Controllers
         public async Task<IActionResult> GetAll() =>
             Ok(await _mediator.Send(new GetAllAssetTypesQuery()));
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllActive() =>
+        Ok(await _mediator.Send(new GetAllActiveAssetTypesQuery()));
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {

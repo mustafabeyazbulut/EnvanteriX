@@ -25,6 +25,10 @@ namespace EnvanteriX.WebApi.Controllers
             return Ok(result);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllActive() =>
+                    Ok(await _mediator.Send(new GetAllActiveUsersQuery()));
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
