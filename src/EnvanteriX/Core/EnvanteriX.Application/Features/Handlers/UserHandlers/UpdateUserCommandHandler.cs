@@ -19,7 +19,6 @@ namespace EnvanteriX.Application.Features.Handlers.UserHandlers
 
         public async Task<Unit> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
-            await _userRules.PasswordsShouldMatch(request.Password,request.ConfirmPassword);
             var user = await _userManager.FindByIdAsync(request.Id.ToString());
             await _userRules.UserShouldExist(user); //kullanıcı var mı yok mu kontrolü
 
@@ -36,11 +35,7 @@ namespace EnvanteriX.Application.Features.Handlers.UserHandlers
             user.FullName = request.FullName;
             user.UserName = request.UserName;
             user.Email = request.Email;
-            // Şifreyi güncelle
-            if (!string.IsNullOrWhiteSpace(request.Password))
-            {
-                user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, request.Password);
-            }
+           
             var result = await _userManager.UpdateAsync(user);
             if (!result.Succeeded)
                 throw new System.Exception(string.Join(", ", result.Errors));

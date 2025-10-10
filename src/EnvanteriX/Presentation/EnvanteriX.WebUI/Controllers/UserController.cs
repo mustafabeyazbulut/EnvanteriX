@@ -142,5 +142,34 @@ namespace EnvanteriX.WebUI.Controllers
             }
             return RedirectToAction("Index", "User");
         }
+
+        [HttpGet("ChangePassword/{id}")]
+        public async Task<IActionResult> ChangePassword(int id)
+        {
+            try
+            {
+                var value = await _apiClientService.GetAsync<ChangePasswordViewModel>(_UserApiUrl.GetUrl(UserEndpoint.GetById, id));
+                return View(value);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"{ex.Message}";
+            }
+            return RedirectToAction("Index", "User");
+        }
+
+        [HttpPost("ChangePassword")]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            try
+            {
+                await _apiClientService.PutAsync<object>(_UserApiUrl.GetUrl(UserEndpoint.ChangePassword), model);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"{ex.Message}";
+            }
+            return RedirectToAction("Index", "User");
+        }
     }
 }

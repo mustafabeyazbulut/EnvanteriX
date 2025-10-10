@@ -1023,6 +1023,22 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
+    "Method": "ChangePassword",
+    "RelativePath": "user/change-password",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.UserCommands.ChangePasswordCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.UserController",
     "Method": "DeActive",
     "RelativePath": "user/de-active/{id}",
     "HttpMethod": "DELETE",

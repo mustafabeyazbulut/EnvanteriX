@@ -65,48 +65,55 @@
                                     }
                                 </td>
                                 <td>
-                                    <div class="form-button-action">
+                                   <div class="d-flex gap-2">
+                                        <!-- Edit Button -->
                                         <button type="button"
+                                                class="btn btn-primary btn-sm"
                                                 data-bs-toggle="tooltip"
                                                 title="Edit"
-                                                class="btn btn-link btn-primary btn-lg"
-                                                data-original-title="Edit Task"
                                                 onclick="window.location.href='@Url.Content("~/User/Edit/" + item.Id)';">
                                             <i class="fa fa-edit"></i>
                                         </button>
-                                       
-                                        @if (!item.IsDeleted)
-                                            {
-                                                 <button type="button"
-                                                        id="confirm-btn"
-                                                        data-bs-toggle="tooltip"
-                                                        title="DeActive"
-                                                        class="btn btn-link btn-danger confirm-btn"
-                                                        data-url="@Url.Content("~/User/DeActive/" + item.Id)">
-                                                    <i class="fa fa-times"></i>
-                                                </button>
-                                            }
-                                            else
-                                            {
-                                                 <button type="button"
-                                                        id="confirm-btn"
-                                                        data-bs-toggle="tooltip"
-                                                        title="Active"
-                                                        class="btn btn-link btn-danger confirm-btn"
-                                                        data-url="@Url.Content("~/User/Active/" + item.Id)">
-                                                    <i class="fa fa-check"></i>
-                                                </button>
-                                            }
-                                             <button type="button"
-                                                        id="confirm-btn"
-                                                        data-bs-toggle="tooltip"
-                                                        title="Remove"
-                                                        class="btn btn-link btn-danger confirm-btn"
-                                                        data-url="@Url.Content("~/User/Remove/" + item.Id)">
-                                                    <i class="fa fa-trash-alt"></i>
 
-                                                </button>
-                                       
+                                        <!-- Active / DeActive Button -->
+                                        @if (!item.IsDeleted)
+                                        {
+                                            <button type="button"
+                                                    class="btn btn-danger btn-sm confirm-btn"
+                                                    data-bs-toggle="tooltip"
+                                                    title="DeActive"
+                                                    data-url="@Url.Content("~/User/DeActive/" + item.Id)">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <button type="button"
+                                                    class="btn btn-success btn-sm confirm-btn"
+                                                    data-bs-toggle="tooltip"
+                                                    title="Active"
+                                                    data-url="@Url.Content("~/User/Active/" + item.Id)">
+                                                <i class="fa fa-check"></i>
+                                            </button>
+                                        }
+
+                                        <!-- Remove Button -->
+                                        <button type="button"
+                                                class="btn btn-outline-danger btn-sm confirm-btn"
+                                                data-bs-toggle="tooltip"
+                                                title="Remove"
+                                                data-url="@Url.Content("~/User/Remove/" + item.Id)">
+                                            <i class="fa fa-trash-alt"></i>
+                                        </button>
+
+                                        <!-- Change Password Button -->
+                                        <button type="button"
+                                                class="btn btn-warning btn-sm change-password-btn"
+                                                data-bs-toggle="tooltip"
+                                                title="Şifreyi Değiştir"
+                                                onclick="window.location.href='@Url.Content("~/User/ChangePassword/" + item.Id)';">
+                                            <i class="fa fa-key"></i>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>
@@ -118,3 +125,9 @@
     </div>
 </div>
 
+    <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>

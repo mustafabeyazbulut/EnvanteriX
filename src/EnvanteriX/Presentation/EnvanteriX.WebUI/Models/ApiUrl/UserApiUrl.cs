@@ -11,7 +11,8 @@
         Active,
         DeActive,
         AddRole,
-        RemoveRole
+        RemoveRole,
+        ChangePassword
     }
 
     public class UserApiUrl : BaseApiUrl
@@ -32,6 +33,7 @@
                 UserEndpoint.DeActive => $"{BasePath}/de-active/{id}",
                 UserEndpoint.AddRole => $"{BasePath}/add-role/{id}",
                 UserEndpoint.RemoveRole => $"{BasePath}/remove-role/{id}",
+                UserEndpoint.ChangePassword => $"{BasePath}/change-password",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

@@ -21,14 +21,17 @@ namespace EnvanteriX.Application.Features.Validators.AuthValidators
                 .WithName("E-posta Adresi");
 
             RuleFor(x => x.Password)
-                .NotEmpty()
-                .MinimumLength(6)
-                .WithName("Parola");
+           .NotEmpty().WithMessage("Yeni parola boş olamaz.")
+           .MinimumLength(8).WithMessage("Parola en az 8 karakter olmalıdır.")
+           .Matches("[A-Z]").WithMessage("Parola en az bir büyük harf içermelidir.")
+           .Matches("[a-z]").WithMessage("Parola en az bir küçük harf içermelidir.")
+           .Matches("[0-9]").WithMessage("Parola en az bir rakam içermelidir.")
+           .Matches("[^a-zA-Z0-9]").WithMessage("Parola en az bir özel karakter içermelidir.")
+           .WithName("Yeni Parola");
 
             RuleFor(x => x.ConfirmPassword)
-                .NotEmpty()
-                .MinimumLength(6)
-                .Equal(x => x.Password)
+                .NotEmpty().WithMessage("Parola tekrarı boş olamaz.")
+                .Equal(x => x.Password).WithMessage("Parolalar uyuşmuyor.")
                 .WithName("Parola Tekrarı");
 
             RuleFor(x => x.Role)

@@ -79,5 +79,11 @@ namespace EnvanteriX.WebApi.Controllers
             await _mediator.Send(new DeActiveUserCommand { Id = id });
             return StatusCode(StatusCodes.Status200OK);
         }
+        [HttpPut]
+        public async Task<IActionResult> ChangePassword(ChangePasswordCommand command)
+        {
+            await _mediator.Send(command);
+            return StatusCode(StatusCodes.Status200OK);
+        }
     }
 }
