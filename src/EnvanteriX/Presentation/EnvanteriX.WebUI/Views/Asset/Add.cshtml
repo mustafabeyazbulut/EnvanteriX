@@ -1,0 +1,117 @@
+﻿@model CreateAssetViewModel
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h1 class="mb-4 card-title">Yeni Asset Bilgilerini Giriniz.</h1>
+                @using (Html.BeginForm("Add", "Asset", FormMethod.Post))
+                {
+                    <div class="row mb-3">
+                        <label for="AssetTag" class="col-sm-2 col-form-label">Varlık Tag</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(Asset => Asset.AssetTag, new { @class = "form-control", type = "text", placeholder = "Varlık Tag Girin" })
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="SerialNumber" class="col-sm-2 col-form-label">Seri No</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(Asset => Asset.SerialNumber, new { @class = "form-control", type = "text", placeholder = "SerialNumber Girin" })
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="AssetTypeId" class="col-sm-2 col-form-label">Varlık Tipi</label>
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(model => model.AssetTypeId, ViewBag.AssetTypes as SelectList, "-- Varlık Tipi Seçiniz --", new { @class = "select2 form-control", id = "assetTypeSelect" })
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-3">
+                        <label for="BrandId" class="col-sm-2 col-form-label">Marka Adı</label>
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(model => model.BrandId, ViewBag.Brands as SelectList, "-- Marka Seçiniz --", new { @class = "select2 form-control", id = "brandSelect" })
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="ModelId" class="col-sm-2 col-form-label">Model Adı</label>
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(model => model.ModelId, ViewBag.Models as SelectList, "-- Model Seçiniz --", new { @class = "select2 form-control", id = "modelSelect" })
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="VendorId" class="col-sm-2 col-form-label">Tedarikçi</label>
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(model => model.VendorId, ViewBag.Vendors as SelectList, "-- Tedarikçi Seçiniz --", new { @class = "select2 form-control", id = "vendorSelect" })
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="PurchaseDate" class="col-sm-2 col-form-label">Satın Alma Tarihi</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(Asset => Asset.PurchaseDate, new { @class = "form-control", type = "date", placeholder = "Satın Alma Tarihi Girin" })
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="WarrantyEndDate" class="col-sm-2 col-form-label">Garanti Bitiş Tarihi</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(Asset => Asset.WarrantyEndDate, new { @class = "form-control", type = "date", placeholder = "Garanti Bitiş Tarihi Girin" })
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="Cost" class="col-sm-2 col-form-label">Maliyet</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(Asset => Asset.Cost, new { @class = "form-control", type = "number", placeholder = "Maliyeti Girin" })
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="LocationId" class="col-sm-2 col-form-label">Lokasyon</label>
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(model => model.LocationId, ViewBag.Locations as SelectList, "-- Lokasyon Seçiniz --", new { @class = "select2 form-control", id = "locationSelect" })
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="LocationId" class="col-sm-2 col-form-label">Atanan Kullanıcı</label>
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(model => model.AssignedUserId, ViewBag.Users as SelectList, "-- Atanan Kullanıcı Seçiniz --", new { @class = "select2 form-control", id = "userSelect" })
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="Description" class="col-sm-2 col-form-label">Açıklama</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(Asset => Asset.Description, new { @class = "form-control", type = "text", placeholder = "Açıklama Girin" })
+                        </div>
+                    </div>
+                    <div class="row mb-3 mt-4">
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-lg btn-primary me-2">Kaydet</button>
+                            <button type="button" class="btn btn-lg btn-secondary" onclick="history.back();">Geri Dön</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#brandSelect').select2({
+             theme: 'bootstrap-5',
+            placeholder: "Marka seçiniz",
+            allowClear: true
+        });
+    });
+</script>
