@@ -13,7 +13,7 @@
 
     public class AssetMovementApiUrl : BaseApiUrl
     {
-        private const string BasePath = "assetmovement";
+        private const string BasePath = "asset-movement";
 
         public string GetUrl(AssetMovementEndpoint endpoint, int? id = null)
         {

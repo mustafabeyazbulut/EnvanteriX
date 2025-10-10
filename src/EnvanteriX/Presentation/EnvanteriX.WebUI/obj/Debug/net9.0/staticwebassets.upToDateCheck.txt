@@ -319,7 +319,6 @@ wwwroot\images\undraw\undraw_upgrade_06a0.svg
 wwwroot\js\app.min.js
 wwwroot\js\dashboard.js
 wwwroot\js\datatables\datatables.min.js
-wwwroot\js\select2.min.js
 wwwroot\js\sidebarmenu.js
 wwwroot\js\simplebar.esm.js
 wwwroot\js\simplebar.esm.js.map
@@ -362,7 +361,6 @@ wwwroot\libs\bootstrap\css\bootstrap.rtl.css
 wwwroot\libs\bootstrap\css\bootstrap.rtl.css.map
 wwwroot\libs\bootstrap\css\bootstrap.rtl.min.css
 wwwroot\libs\bootstrap\css\bootstrap.rtl.min.css.map
-wwwroot\libs\bootstrap\css\select2-bootstrap-5-theme.min.css
 wwwroot\libs\bootstrap\js\bootstrap.bundle.js
 wwwroot\libs\bootstrap\js\bootstrap.bundle.js.map
 wwwroot\libs\bootstrap\js\bootstrap.bundle.min.js
@@ -382,6 +380,8 @@ wwwroot\libs\jquery\jquery.min.map
 wwwroot\libs\jquery\jquery.slim.js
 wwwroot\libs\jquery\jquery.slim.min.js
 wwwroot\libs\jquery\jquery.slim.min.map
+wwwroot\js\select2.min.js
+wwwroot\libs\bootstrap\css\select2-bootstrap-5-theme.min.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\fonts.min.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\icons\tabler-icons\fonts\tabler-icons.svg
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\src\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\icons\tabler-icons\tabler-icons.css

@@ -13,7 +13,7 @@
 
     public class MaintenanceRecordApiUrl : BaseApiUrl
     {
-        private const string BasePath = "maintenancerecord";
+        private const string BasePath = "maintenance-record";
 
         public string GetUrl(MaintenanceRecordEndpoint endpoint, int? id = null)
         {

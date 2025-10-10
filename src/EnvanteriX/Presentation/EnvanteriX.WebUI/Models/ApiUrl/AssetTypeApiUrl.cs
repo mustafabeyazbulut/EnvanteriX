@@ -13,7 +13,7 @@
 
     public class AssetTypeApiUrl : BaseApiUrl
     {
-        private const string BasePath = "assettype";
+        private const string BasePath = "asset-type";
 
         public string GetUrl(AssetTypeEndpoint endpoint, int? id = null)
         {
