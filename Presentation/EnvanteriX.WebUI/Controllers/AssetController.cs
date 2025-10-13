@@ -1,4 +1,5 @@
-﻿using EnvanteriX.WebUI.Models.ApiUrl;
+﻿using EnvanteriX.WebUI.Enums;
+using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Asset;
 using EnvanteriX.WebUI.ViewModels.AssetType;
@@ -9,6 +10,7 @@ using EnvanteriX.WebUI.ViewModels.User;
 using EnvanteriX.WebUI.ViewModels.Vendor;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel;
 
 namespace EnvanteriX.WebUI.Controllers
 {
@@ -32,7 +34,7 @@ namespace EnvanteriX.WebUI.Controllers
             _locationApiUrl = locationApiUrl;
             _userApiUrl = userApiUrl;
         }
-        private void PopulateBrands()
+        private void Populate()
         {
             var Brands = _apiClientService.GetAsync<List<BrandViewModel>>(_brandApiUrl.GetUrl(BrandEndpoint.GetAllActive)).Result;
             ViewBag.Brands = new SelectList(Brands, "Id", "BrandName");
@@ -52,32 +54,53 @@ namespace EnvanteriX.WebUI.Controllers
                 Id = x.Id,
                 Name = $"{x.Building} - {x.Floor} - {x.Room}"
             }).ToList();
-
             ViewBag.Locations = new SelectList(locationList, "Id", "Name");
 
+            // Enum değerlerini ve Description'larını al
+            ViewBag.Status = Enum.GetValues(typeof(StatusEnum))
+                                 .Cast<StatusEnum>()
+                                 .Select(s => new SelectListItem
+                                 {
+                                     Value = ((int)s).ToString(),
+                                     Text = GetEnumDescription(s)
+                                 }).ToList();
+
             var Users = _apiClientService.GetAsync<List<UserViewModel>>(_userApiUrl.GetUrl(UserEndpoint.GetAllActive)).Result;
-            ViewBag.Users = new SelectList(Users, "Id", "VendorName");
+            ViewBag.Users = new SelectList(Users, "Id", "FullName");
+        }
+        private string GetEnumDescription(Enum value)
+        {
+            var fi = value.GetType().GetField(value.ToString());
+            var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            return attributes.Length > 0 ? attributes[0].Description : value.ToString();
         }
 
-        [HttpGet("")]
-        public async Task<IActionResult> Index()
+        [HttpGet("GetModelsByBrand")]
+        public JsonResult GetModelsByBrand(int brandId)
         {
-            try
-            {
-                var values = await _apiClientService.GetAsync<List<AssetViewModel>>(_AssetApiUrl.GetUrl(AssetEndpoint.GetAll));
-                return View(values.OrderByDescending(x => x.Id).ToList());
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = $"{ex.Message}";
-            }
-            return View(new List<AssetViewModel>());
+            var models = _apiClientService.GetAsync<List<ModelViewModel>>(_modelApiUrl.GetUrl(ModelEndpoint.GetAllActiveByBrandId,brandId)).Result;
+            ViewBag.Models = new SelectList(models, "Id", "ModelName");
+
+            return Json(models);
+        }
+
+
+        [HttpGet("")]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpGet("Details/{id}")]
+        public IActionResult Details(int id)
+        {
+            return View(new DetailAssetViewModel { Id=id});
         }
 
         [HttpGet("Add")]
         public IActionResult Add()
         {
-            PopulateBrands();
+            Populate();
             return View();
         }
 
@@ -87,7 +110,7 @@ namespace EnvanteriX.WebUI.Controllers
             try
             {
                 var result = await _apiClientService.PostAsync<object>(_AssetApiUrl.GetUrl(AssetEndpoint.Create), model);
-                PopulateBrands();
+                Populate();
             }
             catch (Exception ex)
             {
@@ -102,7 +125,9 @@ namespace EnvanteriX.WebUI.Controllers
             try
             {
                 var value = await _apiClientService.GetAsync<UpdateAssetViewModel>(_AssetApiUrl.GetUrl(AssetEndpoint.GetById, id));
-                PopulateBrands();
+                Populate();
+                var models = _apiClientService.GetAsync<List<ModelViewModel>>(_modelApiUrl.GetUrl(ModelEndpoint.GetAllActiveByBrandId, value.BrandId)).Result;
+                ViewBag.Models = new SelectList(models, "Id", "ModelName");
                 return View(value);
             }
             catch (Exception ex)
@@ -118,7 +143,7 @@ namespace EnvanteriX.WebUI.Controllers
             try
             {
                 var result = await _apiClientService.PutAsync<object>(_AssetApiUrl.GetUrl(AssetEndpoint.Update), model);
-                PopulateBrands();
+                Populate();
             }
             catch (Exception ex)
             {

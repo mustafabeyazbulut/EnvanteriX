@@ -1,5 +1,6 @@
 ﻿using EnvanteriX.Application.Features.Commands.AssetMovementCommands;
 using EnvanteriX.Application.Features.Queries.AssetMovementQueries;
+using EnvanteriX.Application.Features.Queries.MaintenanceRecordQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +22,13 @@ namespace EnvanteriX.WebApi.Controllers
         public async Task<IActionResult> GetAll()
         {
             var result = await _mediator.Send(new GetAllAssetMovementsQuery());
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAllByAssetId(int id)
+        {
+            var result = await _mediator.Send(new GetAllMaintenanceRecordByAssetIdQuery(id));
             return Ok(result);
         }
 

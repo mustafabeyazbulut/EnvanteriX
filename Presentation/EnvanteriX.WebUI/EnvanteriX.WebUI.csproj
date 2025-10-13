@@ -6,7 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
 	<PrepareForBuildDependsOn>BundleMinify;</PrepareForBuildDependsOn>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="FontAwesome" Version="4.7.0" />
@@ -14,6 +13,10 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.7.0" />
     <PackageReference Include="System.Text.Json" Version="9.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\AssetMovement\" />
+    <Folder Include="Views\MaintenanceRecord\" />
   </ItemGroup>
 
 </Project>

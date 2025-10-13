@@ -1,0 +1,86 @@
+﻿@model List<MaintenanceRecordViewModel>
+
+<div class="container mt-4">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-header bg-primary text-white rounded-top-4 d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">
+                <i class="bi bi-tools me-2"></i> Bakım Kayıtları
+            </h5>
+            <a href="@Url.Action("Add", "MaintenanceRecord")" class="btn btn-light btn-sm">
+                <i class="bi bi-plus-circle"></i> Yeni Kayıt
+            </a>
+        </div>
+
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>#</th>
+                            <th>Varlık</th>
+                            <th>Başlangıç Tarihi</th>
+                            <th>Bitiş Tarihi</th>
+                            <th>Yapan Kişi</th>
+                            <th>Tedarikçi</th>
+                            <th>Maliyet</th>
+                            <th>Durum</th>
+                            <th class="text-end">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.AssetName</td>
+                                    <td>@item.StartDate.ToShortDateString()</td>
+                                    <td>@(item.EndDate.HasValue? item.EndDate.Value.ToShortDateString() : "-")</td>
+                                    <td>@item.PerformedBy</td>
+                                    <td>@item.VendorName</td>
+                                    <td>@item.Cost.ToString("C")</td>
+                                    <td>
+                                        @if (item.EndDate == null)
+                                        {
+                                            <span class="badge bg-warning text-dark">Devam Ediyor</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-success">Tamamlandı</span>
+                                        }
+                                    </td>
+                                    <td class="text-end">
+                                        <div class="btn-group">
+                                            <a href="@Url.Action("Detail", "MaintenanceRecord", new { id = item.Id })"
+                                               class="btn btn-outline-primary btn-sm" title="Detay">
+                                                <i class="bi bi-eye"></i>
+                                            </a>
+                                            <a href="@Url.Action("Edit", "MaintenanceRecord", new { id = item.Id })"
+                                               class="btn btn-outline-secondary btn-sm" title="Düzenle">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
+                                            <a href="@Url.Action("Delete", "MaintenanceRecord", new { id = item.Id })"
+                                               class="btn btn-outline-danger btn-sm" title="Sil"
+                                               onclick="return confirm('Bu kaydı silmek istediğine emin misin?');">
+                                                <i class="bi bi-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="9" class="text-center text-muted py-4">
+                                    <i class="bi bi-info-circle"></i> Henüz bakım kaydı bulunmamaktadır.
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

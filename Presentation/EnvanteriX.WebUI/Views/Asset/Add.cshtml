@@ -10,13 +10,13 @@
 
         <div class="card">
             <div class="card-body">
-                <h1 class="mb-4 card-title">Yeni Asset Bilgilerini Giriniz.</h1>
+                <h1 class="mb-4 card-title">Yeni Varlık Bilgilerini Giriniz.</h1>
                 @using (Html.BeginForm("Add", "Asset", FormMethod.Post))
                 {
                     <div class="row mb-3">
                         <label for="AssetTag" class="col-sm-2 col-form-label">Varlık Tag</label>
                         <div class="col-sm-10">
-                            @Html.TextBoxFor(Asset => Asset.AssetTag, new { @class = "form-control", type = "text", placeholder = "Varlık Tag Girin" })
+                            @Html.TextBoxFor(Asset => Asset.AssetTag, new { @class = "form-control", type = "text", placeholder = "Varlık Tagını Girin" })
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -28,7 +28,7 @@
                     <div class="row mb-3">
                         <label for="AssetTypeId" class="col-sm-2 col-form-label">Varlık Tipi</label>
                         <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.AssetTypeId, ViewBag.AssetTypes as SelectList, "-- Varlık Tipi Seçiniz --", new { @class = "select2 form-control", id = "assetTypeSelect" })
+                            @Html.DropDownListFor(model => model.AssetTypeId, ViewBag.AssetTypes as SelectList, "-- Varlık Tipini Seçiniz --", new { @class = "select2 form-control", id = "assetTypeSelect" })
                         </div>
                     </div>
 
@@ -108,10 +108,70 @@
 
 <script>
     $(document).ready(function() {
-        $('#brandSelect').select2({
+        $('#assetTypeSelect').select2({
+             theme: 'bootstrap-5',
+            placeholder: "Varlık Tipini seçiniz",
+            allowClear: true
+        });
+
+        $('#vendorSelect').select2({
+             theme: 'bootstrap-5',
+            placeholder: "Tedarikçi seçiniz",
+            allowClear: true
+        });
+        $('#locationSelect').select2({
+             theme: 'bootstrap-5',
+            placeholder: "Lokasyon seçiniz",
+            allowClear: true
+        });
+        $('#userSelect').select2({
+             theme: 'bootstrap-5',
+            placeholder: "Atanan Kullanıcıyı seçiniz",
+            allowClear: true
+        });
+
+         $('#brandSelect').select2({
              theme: 'bootstrap-5',
             placeholder: "Marka seçiniz",
             allowClear: true
         });
+        $('#modelSelect').select2({
+             theme: 'bootstrap-5',
+            placeholder: "Model seçiniz",
+            allowClear: true
+        });
+
+            $('#brandSelect').change(function () {
+        var brandId = $(this).val();
+        var $modelSelect = $('#modelSelect');
+
+        $modelSelect.empty(); // önce modeli temizle
+        $modelSelect.append($('<option>', {
+            value: '',
+            text: '-- Model Seçiniz --'
+        }));
+
+        if (brandId) {
+            $.ajax({
+                url: '/Asset/GetModelsByBrand',
+                type: 'GET',
+                data: { brandId: brandId },
+                success: function (models) {
+                    $.each(models, function (i, model) {
+                        $modelSelect.append($('<option>', {
+                            value: model.id,
+                            text: model.modelName
+                        }));
+                    });
+                    // select2 yeniden başlat
+                    $modelSelect.trigger('change');
+                },
+                error: function () {
+                    alert('Modeller yüklenirken bir hata oluştu.');
+                }
+            });
+        }
+    });
+
     });
 </script>

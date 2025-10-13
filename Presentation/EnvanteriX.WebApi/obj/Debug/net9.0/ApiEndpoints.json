@@ -75,6 +75,22 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
+    "Method": "GetAllByAssetId",
+    "RelativePath": "asset-movement/get-all-by-asset-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetMovementController",
     "Method": "GetByAssetId",
     "RelativePath": "asset-movement/get-by-asset-id/asset/{assetId}",
     "HttpMethod": "GET",
@@ -753,6 +769,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
+    "Method": "GetAllByAssetId",
+    "RelativePath": "maintenance-record/get-all-by-asset-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

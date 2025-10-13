@@ -1,5 +1,4 @@
 ﻿using EnvanteriX.Application.Features.Commands.ModelCommands;
-using EnvanteriX.Application.Features.Queries.BrandQueries;
 using EnvanteriX.Application.Features.Queries.ModelQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

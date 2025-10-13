@@ -8,6 +8,7 @@ namespace EnvanteriX.WebUI.ViewModels.Asset
         public string AssetTag { get; set; }
         public string SerialNumber { get; set; }
         public int AssetTypeId { get; set; }
+        public int BrandId { get; set; }
         public int ModelId { get; set; }
         public int VendorId { get; set; }
         public DateTime PurchaseDate { get; set; }
