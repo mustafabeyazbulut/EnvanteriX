@@ -38,9 +38,8 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
             asset.AssetTypeId = request.AssetTypeId;
             asset.ModelId = request.ModelId;
             asset.VendorId = request.VendorId;
-            asset.PurchaseDate = request.PurchaseDate;
-            asset.WarrantyEndDate = request.WarrantyEndDate;
-            asset.Cost = request.Cost;
+            asset.RentalStartDate = request.RentalStartDate;
+            asset.IsRented= request.IsRented;
             asset.LocationId = request.LocationId;
             asset.AssignedUserId = request.AssignedUserId;
             asset.Description = request.Description;

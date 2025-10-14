@@ -27,6 +27,19 @@ namespace EnvanteriX.Persistence.Configurations
                    .IsRequired()
                    .HasDefaultValue(false);
 
+            builder.Property(x => x.IsRented)
+                   .IsRequired()
+                   .HasDefaultValue(false);
+
+            builder.Property(x => x.RentalStartDate)
+                   .HasColumnType("datetime")
+                   .IsRequired(false);
+
+            builder.Property(x => x.Description)
+               .IsRequired(false)
+               .HasMaxLength(255);
+
+
             // bu alttaki kod
             // AssetType, Model, Vendor, Location ve AssignedUser ile ilişkileri tanımlıyoruz
 
@@ -53,6 +66,7 @@ namespace EnvanteriX.Persistence.Configurations
             builder.HasOne(x => x.AssignedUser)
                    .WithMany()
                    .HasForeignKey(x => x.AssignedUserId)
+                   .IsRequired(false)
                    .OnDelete(DeleteBehavior.SetNull);
 
             builder.Property(x => x.CreatedDate)

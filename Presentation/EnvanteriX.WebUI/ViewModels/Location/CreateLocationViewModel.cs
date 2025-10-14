@@ -1,10 +1,12 @@
-﻿namespace EnvanteriX.WebUI.ViewModels.Location
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EnvanteriX.WebUI.ViewModels.Location
 {
     public class CreateLocationViewModel
     {
         public string Building { get; set; }
-        public string Floor { get; set; }
-        public string Room { get; set; }
+
+        [Required(AllowEmptyStrings = true)]
         public string Description { get; set; }
     }
 }

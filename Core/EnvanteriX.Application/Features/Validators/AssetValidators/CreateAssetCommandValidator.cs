@@ -41,16 +41,10 @@ namespace EnvanteriX.Application.Features.Validators.AssetValidators
             RuleFor(x => x.AssignedUserId)
                 .MustAsync(AssignedUserExistsOrNull).WithMessage("Geçersiz AssignedUserId.");
 
-            RuleFor(x => x.PurchaseDate)
+            RuleFor(x => x.RentalStartDate)
                 .NotEmpty().WithMessage("Satın alma tarihi boş olamaz.")
-                .LessThanOrEqualTo(DateTime.Today).WithMessage("Satın alma tarihi bugünden büyük olamaz.");
-
-            RuleFor(x => x.WarrantyEndDate)
-                .NotEmpty().WithMessage("Garanti bitiş tarihi boş olamaz.")
-                .GreaterThanOrEqualTo(x => x.PurchaseDate).WithMessage("Garanti bitiş tarihi satın alma tarihinden küçük olamaz.");
-
-            RuleFor(x => x.Cost)
-                .GreaterThanOrEqualTo(0).WithMessage("Maliyet negatif olamaz.");
+                .LessThanOrEqualTo(DateTime.Today).WithMessage("Satın alma tarihi bugünden büyük olamaz.")
+                 .When(x => x.IsRented);
 
             RuleFor(x => x.Description)
                 .MaximumLength(255).WithMessage("Açıklama en fazla 255 karakter olabilir.");

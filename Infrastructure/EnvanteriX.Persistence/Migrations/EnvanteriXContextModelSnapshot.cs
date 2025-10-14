@@ -41,20 +41,21 @@ namespace EnvanteriX.Persistence.Migrations
                     b.Property<int?>("AssignedUserId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Cost")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("IsRented")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
@@ -65,8 +66,8 @@ namespace EnvanteriX.Persistence.Migrations
                     b.Property<int>("ModelId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("PurchaseDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime?>("RentalStartDate")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("SerialNumber")
                         .IsRequired()
@@ -81,9 +82,6 @@ namespace EnvanteriX.Persistence.Migrations
 
                     b.Property<int>("VendorId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("WarrantyEndDate")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -228,24 +226,13 @@ namespace EnvanteriX.Persistence.Migrations
                         .HasDefaultValueSql("GETDATE()");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("Floor")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
-
-                    b.Property<string>("Room")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 

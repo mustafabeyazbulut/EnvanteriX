@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EnvanteriX.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3eb5caa8976bc3921b3ec31318720d080d13ea14")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3bef39536a420a390a4cb2b0d406dad6ec54a1d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("EnvanteriX.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EnvanteriX.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

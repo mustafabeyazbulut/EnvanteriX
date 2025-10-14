@@ -13,12 +13,11 @@
         public string BrandName { get; set; }
         public int VendorId { get; set; }
         public string VendorName { get; set; }
-        public DateTime PurchaseDate { get; set; }
-        public DateTime WarrantyEndDate { get; set; }
-        public decimal Cost { get; set; }
+        public bool IsRented { get; set; }
+        public DateTime? RentalStartDate { get; set; }
         public int LocationId { get; set; }
         public string LocationName { get; set; }
-        public int AssignedUserId { get; set; }
+        public int? AssignedUserId { get; set; }
         public string AssignedUserName { get; set; }
         public string Description { get; set; }
         public string Status { get; set; }

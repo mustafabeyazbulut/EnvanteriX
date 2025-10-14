@@ -901,8 +901,6 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\o
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\isr4gneznj-i2h1amezd4.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\awt5oodi8l-lf0ephw4z0.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\n8nu2zzqrx-aju0v6idaa.gz
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\l75cxu2pt6-1uu4sszcwt.gz
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\nq7imnh70e-8ijcekn386.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\hvdqqq73xp-61n19gt1b8.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\j4isflv7t5-a2dbb9x29j.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\t134seufs1-thgv8runu5.gz
@@ -945,8 +943,6 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\o
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\46v30ewqg0-7fd6p7a54o.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\bvsqcqumk4-dqqfs0d2l4.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\uivfpxcbb3-vmbbbis9hl.gz
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\auw8678h2a-jzqizw1lll.gz
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\3ylodu22rv-xwox34h9ck.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\5lqfiswbsl-ubh1qcdtep.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\wsy7g3cfbo-v7ocp7jau9.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\eh117vx7x2-vjmypxxjlv.gz
@@ -1012,3 +1008,7 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\o
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\EnvanteriX.WebUI.pdb
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\EnvanteriX.WebUI.genruntimeconfig.cache
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\ref\EnvanteriX.WebUI.dll
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\l75cxu2pt6-o916j8hfoy.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\nq7imnh70e-8ijcekn386.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\auw8678h2a-levegcoxa6.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\3ylodu22rv-lqetnl0p63.gz

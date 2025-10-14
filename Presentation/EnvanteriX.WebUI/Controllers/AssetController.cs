@@ -2,6 +2,7 @@
 using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Asset;
+using EnvanteriX.WebUI.ViewModels.AssetMovement;
 using EnvanteriX.WebUI.ViewModels.AssetType;
 using EnvanteriX.WebUI.ViewModels.Brand;
 using EnvanteriX.WebUI.ViewModels.Location;
@@ -10,6 +11,7 @@ using EnvanteriX.WebUI.ViewModels.User;
 using EnvanteriX.WebUI.ViewModels.Vendor;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 
 namespace EnvanteriX.WebUI.Controllers
@@ -18,13 +20,14 @@ namespace EnvanteriX.WebUI.Controllers
     public class AssetController : BaseController
     {
         private readonly AssetApiUrl _AssetApiUrl;
+        private readonly AssetMovementApiUrl _assetMovementApiUrl;
         private readonly AssetTypeApiUrl _assetTypeApiUrl;
         private readonly BrandApiUrl _brandApiUrl;
         private readonly ModelApiUrl _modelApiUrl;
         private readonly VendorApiUrl _vendorApiUrl;
         private readonly LocationApiUrl _locationApiUrl;
         private readonly UserApiUrl _userApiUrl;
-        public AssetController(IApiClientService apiClientService, AssetApiUrl AssetApiUrl, AssetTypeApiUrl assetTypeApiUrl, BrandApiUrl brandApiUrl, ModelApiUrl modelApiUrl, VendorApiUrl vendorApiUrl, LocationApiUrl locationApiUrl, UserApiUrl userApiUrl) : base(apiClientService)
+        public AssetController(IApiClientService apiClientService, AssetApiUrl AssetApiUrl, AssetTypeApiUrl assetTypeApiUrl, BrandApiUrl brandApiUrl, ModelApiUrl modelApiUrl, VendorApiUrl vendorApiUrl, LocationApiUrl locationApiUrl, UserApiUrl userApiUrl, AssetMovementApiUrl assetMovementApiUrl) : base(apiClientService)
         {
             _AssetApiUrl = AssetApiUrl;
             _assetTypeApiUrl = assetTypeApiUrl;
@@ -33,6 +36,7 @@ namespace EnvanteriX.WebUI.Controllers
             _vendorApiUrl = vendorApiUrl;
             _locationApiUrl = locationApiUrl;
             _userApiUrl = userApiUrl;
+            _assetMovementApiUrl = assetMovementApiUrl;
         }
         private void Populate()
         {
@@ -52,7 +56,7 @@ namespace EnvanteriX.WebUI.Controllers
             var locationList = Locations.Select(x => new
             {
                 Id = x.Id,
-                Name = $"{x.Building} - {x.Floor} - {x.Room}"
+                Name = $"{x.Building}"
             }).ToList();
             ViewBag.Locations = new SelectList(locationList, "Id", "Name");
 
@@ -109,15 +113,35 @@ namespace EnvanteriX.WebUI.Controllers
         {
             try
             {
-                var result = await _apiClientService.PostAsync<object>(_AssetApiUrl.GetUrl(AssetEndpoint.Create), model);
+               
+                var result = await _apiClientService.PostAsync<CreateAssetResultViewModel>(
+                    _AssetApiUrl.GetUrl(AssetEndpoint.Create), model);
+
+                if (result != null)
+                {
+                   
+                    var movement = new CreateAssetMovementViewModel
+                    {
+                        AssetId = result.Id,
+                        ToLocationId = model.LocationId,
+                        ToUserId = model.AssignedUserId, // boşsa null olarak kalır
+                        Note = "Yeni varlık eklendi."
+                    };
+                    
+                    await _apiClientService.PostAsync<object>(
+                        _assetMovementApiUrl.GetUrl(AssetMovementEndpoint.Create), movement);
+                }
+
                 Populate();
             }
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"Hata: {ex.Message}";
             }
+
             return RedirectToAction("Index", "Asset");
         }
+
 
         [HttpGet("Edit/{id}")]
         public async Task<IActionResult> Edit(int id)
@@ -142,7 +166,20 @@ namespace EnvanteriX.WebUI.Controllers
         {
             try
             {
+                var current =  await _apiClientService.GetAsync<UpdateAssetViewModel>(_AssetApiUrl.GetUrl(AssetEndpoint.GetById, model.Id));
                 var result = await _apiClientService.PutAsync<object>(_AssetApiUrl.GetUrl(AssetEndpoint.Update), model);
+                var movement = new CreateAssetMovementViewModel
+                {
+                    AssetId = model.Id,
+                    FromLocationId=current.LocationId,
+                    FromUserId=current.AssignedUserId,
+                    ToLocationId = model.LocationId,
+                    ToUserId = model.AssignedUserId, // boşsa null olarak kalır
+                    Note = "Varlık Düzenleme işlemi yapıldı."
+                };
+
+                await _apiClientService.PostAsync<object>(
+                    _assetMovementApiUrl.GetUrl(AssetMovementEndpoint.Create), movement);
                 Populate();
             }
             catch (Exception ex)

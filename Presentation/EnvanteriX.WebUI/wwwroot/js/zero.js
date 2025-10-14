@@ -46,6 +46,8 @@ WebFont.load({
     },
 });
 
+
+
 //document.addEventListener("DOMContentLoaded", function () {
 //    var buttons = document.querySelectorAll(".confirm-btn");
 //    buttons.forEach(function (btn) {
@@ -89,3 +91,9 @@ $(document).ready(function () {
 });
 
 
+$(document).ready(function () {
+    $('.select2').select2({
+        theme: 'bootstrap', // istersen bootstrap-5 veya default
+        width: '100%'
+    });
+});

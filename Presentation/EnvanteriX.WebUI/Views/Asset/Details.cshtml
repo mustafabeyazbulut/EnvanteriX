@@ -6,8 +6,8 @@
 
 @await Component.InvokeAsync("_Detail_Asset_ComponentPartial", new { id = Model.Id })
 
+@await Component.InvokeAsync("_GetAllByAssetId_MaintenanceRecord_ComponentPartial", new { id = Model.Id })
 @await Component.InvokeAsync("_GetAllByAssetId_AssetMovement_ComponentPartial", new { id = Model.Id })
 
-@await Component.InvokeAsync("_GetAllByAssetId_MaintenanceRecord_ComponentPartial", new { id = Model.Id })
 
 

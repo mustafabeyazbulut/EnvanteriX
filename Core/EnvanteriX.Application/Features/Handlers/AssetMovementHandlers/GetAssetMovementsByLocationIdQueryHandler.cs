@@ -34,8 +34,8 @@ namespace EnvanteriX.Application.Features.Handlers.AssetMovementHandlers
                     $"Model: {src.Asset.Model.ModelName}, SeriNo: {src.Asset.SerialNumber}, Key: {src.Asset.AssetTag}"))
                    .ForMember(dest => dest.FromUserFullName, opt => opt.MapFrom(src => src.FromUser.FullName))
                    .ForMember(dest => dest.ToUserFullName, opt => opt.MapFrom(src => src.ToUser.FullName))
-                   .ForMember(dest => dest.FromLocationName, opt => opt.MapFrom(src => $"Bina: {src.FromLocation.Building}, Kat: {src.FromLocation.Floor}, Oda: {src.FromLocation.Room}"))
-                   .ForMember(dest => dest.ToLocationName, opt => opt.MapFrom(src => $"Bina: {src.ToLocation.Building}, Kat: {src.ToLocation.Floor}, Oda: {src.ToLocation.Room}"));
+                   .ForMember(dest => dest.FromLocationName, opt => opt.MapFrom(src => $"{src.FromLocation.Building}"))
+                   .ForMember(dest => dest.ToLocationName, opt => opt.MapFrom(src => $"{src.ToLocation.Building}"));
             });
             return map.ToList();
         }

@@ -33,7 +33,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
                    .ForMember(dest => dest.ModelName, opt => opt.MapFrom(src => src.Model.ModelName))
                    .ForMember(dest => dest.BrandName, opt => opt.MapFrom(src => src.Model.Brand.BrandName))
                    .ForMember(dest => dest.VendorName, opt => opt.MapFrom(src => src.Vendor.VendorName))
-                   .ForMember(dest => dest.LocationName, opt => opt.MapFrom(src => $"Bina: {src.Location.Building}, Kat: {src.Location.Floor}, Oda: {src.Location.Room}"))
+                   .ForMember(dest => dest.LocationName, opt => opt.MapFrom(src => $"{src.Location.Building}"))
                    .ForMember(dest => dest.AssignedUserName, opt => opt.MapFrom(src => src.AssignedUser.FullName))
                    .ForMember(dest => dest.BrandId, opt => opt.MapFrom(src => src.Model.Brand.Id));
             });

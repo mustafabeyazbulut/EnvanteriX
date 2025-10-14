@@ -27,6 +27,10 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
             await _assetRules.AssetAlreadyExists(assetExists, $"AssetTag: {assetTag}, SerialNumber: {serialNumber}");
 
             var asset = _mapper.Map<Asset, CreateAssetCommand>(request);
+            if (asset.AssignedUserId!=null && asset.AssignedUserId>0)
+            {
+                asset.Status = Domain.Enums.StatusEnum.Kullanimda;
+            }
             await _unitOfWork.GetWriteRepository<Asset>().AddAsync(asset);
             await _unitOfWork.SaveAsync();
 

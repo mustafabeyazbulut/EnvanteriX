@@ -62,25 +62,49 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label for="PurchaseDate" class="col-sm-2 col-form-label">Satın Alma Tarihi</label>
+                        <label for="IsRented" class="col-sm-2 col-form-label">Kiralık mı?</label>
                         <div class="col-sm-10">
-                            @Html.TextBox("PurchaseDate", Model.PurchaseDate.ToString("yyyy-MM-dd"), new { @class = "form-control", type = "date" })
+                            @Html.CheckBoxFor(model => model.IsRented, new { @class = "form-check-input", id = "IsRentedCheckbox" })
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <label for="WarrantyEndDate" class="col-sm-2 col-form-label">Garanti Bitiş Tarihi</label>
-                        <div class="col-sm-10">
-                            @Html.TextBox("WarrantyEndDate", Model.WarrantyEndDate.ToString("yyyy-MM-dd"), new { @class = "form-control", type = "date" })
+                    <div id="rentalStartDateField" style="display:none;">
+                        <div class="row mb-3">
+                            <label for="RentalStartDate" class="col-sm-2 col-form-label">Kiralama Başlangıç Tarihi</label>
+                            <div class="col-sm-10">
+                                <input type="date"
+                                       id="RentalStartDate"
+                                       name="RentalStartDate"
+                                       class="form-control"
+                                       value="@(Model.RentalStartDate.HasValue? Model.RentalStartDate.Value.ToString("yyyy-MM-dd") : "")" />
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <label for="Cost" class="col-sm-2 col-form-label">Maliyet</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(Asset => Asset.Cost, new { @class = "form-control", type = "number", placeholder = "Maliyeti Girin" })
-                        </div>
-                    </div>
+
+
+                    @section Scripts {
+                        <script>
+                            $(document).ready(function () {
+                                function toggleRentalDate() {
+                                    if ($('#IsRentedCheckbox').is(':checked')) {
+                                        $('#rentalStartDateField').slideDown();
+                                    } else {
+                                        $('#rentalStartDateField').slideUp();
+                                        // Kiralık değilse tarihi temizlemek istersen:
+                                        // $('#RentalStartDate').val('');
+                                    }
+                                }
+
+                                // Sayfa ilk yüklendiğinde durumu kontrol et
+                                toggleRentalDate();
+
+                                // Checkbox değiştiğinde tetiklenir
+                                $('#IsRentedCheckbox').change(toggleRentalDate);
+                            });
+                        </script>
+                    }
+
 
                     <div class="row mb-3">
                         <label for="LocationId" class="col-sm-2 col-form-label">Lokasyon</label>
@@ -122,43 +146,6 @@
 
 <script>
     $(document).ready(function() {
-        $('#statusSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Durum seçiniz",
-            allowClear: true
-        });
-        $('#assetTypeSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Varlık Tipini seçiniz",
-            allowClear: true
-        });
-
-        $('#vendorSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Tedarikçi seçiniz",
-            allowClear: true
-        });
-        $('#locationSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Lokasyon seçiniz",
-            allowClear: true
-        });
-        $('#userSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Atanan Kullanıcıyı seçiniz",
-            allowClear: true
-        });
-
-         $('#brandSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Marka seçiniz",
-            allowClear: true
-        });
-        $('#modelSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Model seçiniz",
-            allowClear: true
-        });
 
             $('#brandSelect').change(function () {
         var brandId = $(this).val();

@@ -22,10 +22,8 @@ namespace EnvanteriX.Application.Features.Handlers.LocationHandlers
         public async Task<CreateLocationCommandResult> Handle(CreateLocationCommand request, CancellationToken cancellationToken)
         {
             bool locationExists = await _unitOfWork.GetReadRepository<Location>()
-                                        .AnyAsync(l => l.Building.ToUpper() == request.Building.ToUpper() &&
-                                                  l.Floor.ToUpper() == request.Floor.ToUpper() &&
-                                                  l.Room.ToUpper() == request.Room.ToUpper());
-            await _locationRules.LocationAlreadyExists( locationExists, $"Bina: {request.Building}, Kat: {request.Floor}, Oda: {request.Room}");
+                                        .AnyAsync(l => l.Building.ToUpper() == request.Building.ToUpper());
+            await _locationRules.LocationAlreadyExists( locationExists, $"{request.Building}");
 
             var location = _mapper.Map<Location, CreateLocationCommand>(request);
             await _unitOfWork.GetWriteRepository<Location>().AddAsync(location);

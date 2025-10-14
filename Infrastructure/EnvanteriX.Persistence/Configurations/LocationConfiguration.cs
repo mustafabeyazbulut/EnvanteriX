@@ -11,13 +11,8 @@ namespace EnvanteriX.Persistence.Configurations
             builder.Property(x => x.Building)
                 .HasMaxLength(100);
 
-            builder.Property(x => x.Floor)
-                .HasMaxLength(50);
-
-            builder.Property(x => x.Room)
-                .HasMaxLength(100);
-
             builder.Property(x => x.Description)
+                .IsRequired(false)
                 .HasMaxLength(255);
 
             // Location birçok varlığa sahip olabilir, bu nedenle varlıkların Location ile ilişkisini tanımlıyoruz.

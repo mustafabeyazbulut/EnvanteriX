@@ -28,7 +28,7 @@
                     <div class="row mb-3">
                         <label for="AssetTypeId" class="col-sm-2 col-form-label">Varlık Tipi</label>
                         <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.AssetTypeId, ViewBag.AssetTypes as SelectList, "-- Varlık Tipini Seçiniz --", new { @class = "select2 form-control", id = "assetTypeSelect" })
+                            @Html.DropDownListFor(model => model.AssetTypeId, ViewBag.AssetTypes as SelectList, "-- Varlık Tipini Seçiniz --", new { @class = "select2 form-control", style = "width: 100%", id = "assetTypeSelect" })
                         </div>
                     </div>
 
@@ -36,56 +36,73 @@
                     <div class="row mb-3">
                         <label for="BrandId" class="col-sm-2 col-form-label">Marka Adı</label>
                         <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.BrandId, ViewBag.Brands as SelectList, "-- Marka Seçiniz --", new { @class = "select2 form-control", id = "brandSelect" })
+                            @Html.DropDownListFor(model => model.BrandId, ViewBag.Brands as SelectList, "-- Marka Seçiniz --", new { @class = "select2 form-control", style = "width: 100%", id = "brandSelect" })
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="ModelId" class="col-sm-2 col-form-label">Model Adı</label>
                         <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.ModelId, ViewBag.Models as SelectList, "-- Model Seçiniz --", new { @class = "select2 form-control", id = "modelSelect" })
+                            @Html.DropDownListFor(model => model.ModelId, ViewBag.Models as SelectList, "-- Model Seçiniz --", new { @class = "select2 form-control", style = "width: 100%", id = "modelSelect" })
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="VendorId" class="col-sm-2 col-form-label">Tedarikçi</label>
                         <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.VendorId, ViewBag.Vendors as SelectList, "-- Tedarikçi Seçiniz --", new { @class = "select2 form-control", id = "vendorSelect" })
+                            @Html.DropDownListFor(model => model.VendorId, ViewBag.Vendors as SelectList, "-- Tedarikçi Seçiniz --", new { @class = "select2 form-control", style = "width: 100%", id = "vendorSelect" })
                         </div>
                     </div>
 
                     <div class="row mb-3">
-                        <label for="PurchaseDate" class="col-sm-2 col-form-label">Satın Alma Tarihi</label>
+                        <label for="IsRented" class="col-sm-2 col-form-label">Kiralık mı?</label>
                         <div class="col-sm-10">
-                            @Html.TextBoxFor(Asset => Asset.PurchaseDate, new { @class = "form-control", type = "date", placeholder = "Satın Alma Tarihi Girin" })
+                            @Html.CheckBoxFor(model => model.IsRented, new { @class = "form-check-input", id = "IsRentedCheckbox" })
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <label for="WarrantyEndDate" class="col-sm-2 col-form-label">Garanti Bitiş Tarihi</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(Asset => Asset.WarrantyEndDate, new { @class = "form-control", type = "date", placeholder = "Garanti Bitiş Tarihi Girin" })
+                    <div id="rentalStartDateField" style="display:none;">
+                        <div class="row mb-3">
+                            <label for="RentalStartDate" class="col-sm-2 col-form-label">Kiralama Başlangıç Tarihi</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.RentalStartDate, new { @class = "form-control", type = "date", id = "RentalStartDate" })
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <label for="Cost" class="col-sm-2 col-form-label">Maliyet</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(Asset => Asset.Cost, new { @class = "form-control", type = "number", placeholder = "Maliyeti Girin" })
-                        </div>
-                    </div>
+                    @section Scripts {
+                        <script>
+                            $(document).ready(function () {
+                                function toggleRentalDate() {
+                                    if ($('#IsRentedCheckbox').is(':checked')) {
+                                        $('#rentalStartDateField').slideDown();
+                                    } else {
+                                        $('#rentalStartDateField').slideUp();
+                                        // Kiralık değilse tarihi temizlemek istersen:
+                                        // $('#RentalStartDate').val('');
+                                    }
+                                }
+
+                                // Sayfa ilk yüklendiğinde durumu kontrol et
+                                toggleRentalDate();
+
+                                // Checkbox değiştiğinde tetiklenir
+                                $('#IsRentedCheckbox').change(toggleRentalDate);
+                            });
+                        </script>
+                    }
 
                     <div class="row mb-3">
                         <label for="LocationId" class="col-sm-2 col-form-label">Lokasyon</label>
                         <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.LocationId, ViewBag.Locations as SelectList, "-- Lokasyon Seçiniz --", new { @class = "select2 form-control", id = "locationSelect" })
+                            @Html.DropDownListFor(model => model.LocationId, ViewBag.Locations as SelectList, "-- Lokasyon Seçiniz --", new { @class = "select2 form-control", style = "width: 100%", id = "locationSelect" })
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="LocationId" class="col-sm-2 col-form-label">Atanan Kullanıcı</label>
                         <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.AssignedUserId, ViewBag.Users as SelectList, "-- Atanan Kullanıcı Seçiniz --", new { @class = "select2 form-control", id = "userSelect" })
+                            @Html.DropDownListFor(model => model.AssignedUserId, ViewBag.Users as SelectList, "-- Atanacak Kullanıcıyı Seçiniz --", new { @class = "select2 form-control", style = "width: 100%", id = "userSelect" })
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -108,40 +125,7 @@
 
 <script>
     $(document).ready(function() {
-        $('#assetTypeSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Varlık Tipini seçiniz",
-            allowClear: true
-        });
-
-        $('#vendorSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Tedarikçi seçiniz",
-            allowClear: true
-        });
-        $('#locationSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Lokasyon seçiniz",
-            allowClear: true
-        });
-        $('#userSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Atanan Kullanıcıyı seçiniz",
-            allowClear: true
-        });
-
-         $('#brandSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Marka seçiniz",
-            allowClear: true
-        });
-        $('#modelSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Model seçiniz",
-            allowClear: true
-        });
-
-            $('#brandSelect').change(function () {
+           $('#brandSelect').change(function () {
         var brandId = $(this).val();
         var $modelSelect = $('#modelSelect');
 
@@ -150,7 +134,6 @@
             value: '',
             text: '-- Model Seçiniz --'
         }));
-
         if (brandId) {
             $.ajax({
                 url: '/Asset/GetModelsByBrand',

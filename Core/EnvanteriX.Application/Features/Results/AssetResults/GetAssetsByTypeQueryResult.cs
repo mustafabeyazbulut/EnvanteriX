@@ -12,11 +12,10 @@ namespace EnvanteriX.Application.Features.Results.AssetResults
         public string ModelName { get; set; }
         public string BrandName { get; set; }
         public string VendorName { get; set; }
-        public DateTime PurchaseDate { get; set; }
-        public DateTime WarrantyEndDate { get; set; }
-        public decimal Cost { get; set; }
+        public bool IsRented { get; set; }
+        public DateTime? RentalStartDate { get; set; }
         public string LocationName { get; set; }
-        public string AssignedUserName { get; set; }
+        public string? AssignedUserName { get; set; }
         public string Description { get; set; }
         public StatusEnum Status { get; set; }
 
@@ -29,10 +28,9 @@ namespace EnvanteriX.Application.Features.Results.AssetResults
             ModelName = asset.Model?.ModelName;
             BrandName = asset.Model?.Brand?.BrandName;
             VendorName = asset.Vendor?.VendorName;
-            PurchaseDate = asset.PurchaseDate;
-            WarrantyEndDate = asset.WarrantyEndDate;
-            Cost = asset.Cost;
-            LocationName = $"{asset.Location?.Building} {asset.Location?.Room}";
+           IsRented = asset.IsRented;
+            RentalStartDate = asset.RentalStartDate;
+            LocationName = $"{asset.Location?.Building}";
             AssignedUserName = asset.AssignedUser?.FullName;
             Description = asset.Description;
             Status = asset.Status;

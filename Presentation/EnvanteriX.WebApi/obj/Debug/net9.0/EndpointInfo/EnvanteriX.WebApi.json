@@ -2166,17 +2166,13 @@
             "type": "integer",
             "format": "int32"
           },
-          "purchaseDate": {
-            "type": "string",
-            "format": "date-time"
+          "isRented": {
+            "type": "boolean"
           },
-          "warrantyEndDate": {
+          "rentalStartDate": {
             "type": "string",
-            "format": "date-time"
-          },
-          "cost": {
-            "type": "number",
-            "format": "double"
+            "format": "date-time",
+            "nullable": true
           },
           "locationId": {
             "type": "integer",
@@ -2252,14 +2248,6 @@
         "type": "object",
         "properties": {
           "building": {
-            "type": "string",
-            "nullable": true
-          },
-          "floor": {
-            "type": "string",
-            "nullable": true
-          },
-          "room": {
             "type": "string",
             "nullable": true
           },
@@ -2451,17 +2439,13 @@
             "type": "integer",
             "format": "int32"
           },
-          "purchaseDate": {
-            "type": "string",
-            "format": "date-time"
+          "isRented": {
+            "type": "boolean"
           },
-          "warrantyEndDate": {
+          "rentalStartDate": {
             "type": "string",
-            "format": "date-time"
-          },
-          "cost": {
-            "type": "number",
-            "format": "double"
+            "format": "date-time",
+            "nullable": true
           },
           "locationId": {
             "type": "integer",
@@ -2556,14 +2540,6 @@
             "format": "int32"
           },
           "building": {
-            "type": "string",
-            "nullable": true
-          },
-          "floor": {
-            "type": "string",
-            "nullable": true
-          },
-          "room": {
             "type": "string",
             "nullable": true
           },

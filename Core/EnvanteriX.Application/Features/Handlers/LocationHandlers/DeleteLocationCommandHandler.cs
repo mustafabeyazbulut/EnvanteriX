@@ -22,7 +22,7 @@ namespace EnvanteriX.Application.Features.Handlers.LocationHandlers
             var location = await _unitOfWork.GetReadRepository<Location>().GetAsync(x => x.Id == request.Id );
             await _locationRules.LocationShouldExist(location);
             var hasAnyLocation = await _unitOfWork.GetReadRepository<Asset>().AnyAsync(x=>x.LocationId==request.Id && !x.IsDeleted);
-            await _locationRules.LocationShouldNotHaveAnyAsset(hasAnyLocation, $"Bina: {location.Building}, Kat: {location.Floor}, Oda: {location.Room}");
+            await _locationRules.LocationShouldNotHaveAnyAsset(hasAnyLocation, $"{location.Building}");
             await _unitOfWork.GetWriteRepository<Location>().HardDeleteAsync(location);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

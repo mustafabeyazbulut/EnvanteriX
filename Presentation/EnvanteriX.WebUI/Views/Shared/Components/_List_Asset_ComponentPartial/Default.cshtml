@@ -25,6 +25,7 @@
                             <th>Lokasyon</th>
                             <th>Atanan Personel</th>
                             <th>Statüsü</th>
+                            <th>Kiralık Mı</th>
                             <th>Aktif Mi</th>
                             <th style="width: 15%">İşlemler</th>
                         </tr>
@@ -39,6 +40,7 @@
                             <th>Lokasyon</th>
                             <th>Atanan Personel</th>
                             <th>Statüsü</th>
+                            <th>Kiralık Mı</th>
                             <th>Aktif Mi</th>
                             <th>İşlemler</th>
                         </tr>
@@ -55,6 +57,17 @@
                                 <td>@item.LocationName</td>
                                 <td>@item.AssignedUserName</td>
                                 <td>@item.Status</td>
+                                 <td class="text-center">
+                                   @if (item.IsRented)
+                                        {
+                                            <i class="fas fa-handshake text-warning" title="Kiralık"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fas fa-box text-success" title="Satın Alınmış"></i>
+                                        }
+                                </td>
+
                                 <td>
                                     @if (!item.IsDeleted)
                                     {
