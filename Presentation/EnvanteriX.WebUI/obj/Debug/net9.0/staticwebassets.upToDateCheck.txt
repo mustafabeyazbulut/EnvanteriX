@@ -12,8 +12,8 @@ wwwroot\css\simplebar.css
 wwwroot\css\simplebar.min.css
 wwwroot\css\styles.css
 wwwroot\css\styles.min.css
-wwwroot\js\zero.js
-wwwroot\js\zero.min.js
+wwwroot\css\zero.css
+wwwroot\css\zero.min.css
 wwwroot\favicon.ico
 wwwroot\fonts\fontawesome\fa-brands-400.eot
 wwwroot\fonts\fontawesome\fa-brands-400.svg
@@ -328,8 +328,8 @@ wwwroot\js\simplebar.min.js
 wwwroot\js\simplebar.umd.js
 wwwroot\js\sweetalert\sweetalert.min.js
 wwwroot\js\webfont\webfont.min.js
-wwwroot\css\zero.min.css
-wwwroot\css\zero.css
+wwwroot\js\zero.js
+wwwroot\js\zero.min.js
 wwwroot\libs\bootstrap\css\bootstrap-grid.css
 wwwroot\libs\bootstrap\css\bootstrap-grid.css.map
 wwwroot\libs\bootstrap\css\bootstrap-grid.min.css

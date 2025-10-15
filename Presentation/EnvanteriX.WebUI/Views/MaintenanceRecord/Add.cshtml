@@ -1,0 +1,45 @@
+﻿@model CreateMaintenanceRecordViewModel
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="mb-4 card-title">Yeni Bakım Bilgilerini Giriniz.</h1>
+                @using (Html.BeginForm("SendToMaintenance", "MaintenanceRecord", FormMethod.Post))
+                {
+                    <div class="row mb-3">
+                        <label for="AssetId" class="col-sm-2 col-form-label">Varlık Id</label>
+                        <div class="col-sm-10">
+                            <input type="hidden" asp-for="AssetId" />
+                            <label class="form-control" id="Id" asp-for="AssetId">@Model.AssetId </label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="SerialNumber" class="col-sm-2 col-form-label">Bakıma Gönderilme Sebebi</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(Asset => Asset.PreServiceDescription, new { @class = "form-control", type = "text", placeholder = "Bakıma Gönderilme Sebebini Girin" })
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="VendorId" class="col-sm-2 col-form-label">Tedarikçi</label>
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(model => model.VendorId, ViewBag.Vendors as SelectList, "-- Tedarikçi Seçiniz --", new { @class = "select2 form-control", style = "width: 100%", id = "vendorSelect" })
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 mt-4">
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-lg btn-primary me-2">Kaydet</button>
+                            <button type="button" class="btn btn-lg btn-secondary" onclick="goBack()">Geri Dön</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

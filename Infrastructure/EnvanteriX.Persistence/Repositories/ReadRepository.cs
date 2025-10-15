@@ -49,16 +49,29 @@ namespace EnvanteriX.Persistence.Repositories
                                    .Take(pageSize)
                                    .ToListAsync();
         }
-        public async Task<T> GetAsync(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null, bool enableTracking = false)
+        public async Task<T> GetAsync(
+    Expression<Func<T, bool>> predicate,
+    Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
+    Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
+    bool enableTracking = false)
         {
             IQueryable<T> queryable = Table;
-            if (!enableTracking) queryable = queryable.AsNoTracking(); // performans için sadece veriyi çekiyoruz
-            if (include is not null) queryable = include(queryable);
 
-            //queryable.Where(predicate);
+            if (!enableTracking)
+                queryable = queryable.AsNoTracking();
 
-            return await queryable.FirstOrDefaultAsync(predicate);
+            if (include is not null)
+                queryable = include(queryable);
+
+            if (predicate is not null)
+                queryable = queryable.Where(predicate);
+
+            if (orderBy is not null)
+                queryable = orderBy(queryable);
+
+            return await queryable.FirstOrDefaultAsync();
         }
+
         public async Task<int> CountAsync(Expression<Func<T, bool>>? predicate = null)
         {
             Table.AsNoTracking();

@@ -4,6 +4,7 @@
     {
         GetAll,
         GetAllByAssetId,
+        GetLastOpenMaintenanceRecordByAssetId,
         GetById,
         Create,
         Update,
@@ -22,6 +23,7 @@
             {
                 MaintenanceRecordEndpoint.GetAll => $"{BasePath}/get-all",
                 MaintenanceRecordEndpoint.GetAllByAssetId => $"{BasePath}/get-all-by-asset-id/{id}",
+                MaintenanceRecordEndpoint.GetLastOpenMaintenanceRecordByAssetId => $"{BasePath}/get-last-open-maintenance-record-by-asset-id/{id}",
                 MaintenanceRecordEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 MaintenanceRecordEndpoint.Create => $"{BasePath}/create",
                 MaintenanceRecordEndpoint.Update => $"{BasePath}/update",

@@ -78,6 +78,43 @@
                     <a href="@Url.Action("Assign", "Asset", new { id = Model.Id })" class="btn btn-secondary">
                         <i class="fa fa-user-plus"></i> Kullanıcı Ataması Yap
                     </a>
+                    @if (Model.Status == StatusEnum.Tamirde.ToString())
+                    {
+                        <a href="@Url.Action("AssignAfterRepair", "MaintenanceRecord", new { assetId = Model.Id })"
+                           class="btn btn-success "
+                           data-bs-toggle="tooltip"
+                           title="Tamirden Geldi olarak işaretle">
+                            <i class="fa fa-wrench"></i> Tamirden Geldi
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("SendToMaintenance", "MaintenanceRecord", new { assetId = Model.Id })"
+                           class="btn btn-warning"
+                           data-bs-toggle="tooltip"
+                           title="Bakım / Tamire Gönder">
+                            <i class="fa fa-wrench"></i> Bakıma Gönder
+                        </a>
+                    }
+                    @if (Model.Status == StatusEnum.KullanimDisi.ToString())
+                    {
+                        <a href="@Url.Action("SendToStock", "Asset", new { assetId = Model.Id })"
+                           class="btn btn-success "
+                           data-bs-toggle="tooltip"
+                           title="Stoğa Geri Çek">
+                            <i class="fa fa-box"></i> Stoğa Geri Çek
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("SendToDeactivate", "Asset", new { assetId = Model.Id })"
+                           class="btn btn-warning"
+                           data-bs-toggle="tooltip"
+                           title="Kullanım Dışı İşaretle">
+                            <i class="fa fa-ban"></i> Kullanım Dışı İşaretle
+                        </a>
+                    }
+                  
                     @if (!Model.IsDeleted)
                     {
                         

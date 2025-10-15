@@ -16,7 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\AssetMovement\" />
-    <Folder Include="Views\MaintenanceRecord\" />
   </ItemGroup>
 
 </Project>

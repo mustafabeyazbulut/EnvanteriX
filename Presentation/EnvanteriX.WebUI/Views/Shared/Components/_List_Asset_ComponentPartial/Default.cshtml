@@ -108,6 +108,47 @@
                                             <i class="fa fa-user-plus"></i>
                                         </button>
 
+                                         @if (item.Status == StatusEnum.Tamirde.ToString())
+                                        {
+                                             <button type="button"
+                                                class="btn btn-warning btn-sm"
+                                                data-bs-toggle="tooltip"
+                                                title="Tamirden Geldi olarak işaretle"
+                                                onclick="window.location.href='@Url.Content("~/MaintenanceRecord/AssignAfterRepair/" + item.Id)'">
+                                                    <i class="fa fa-wrench"></i>
+                                             </button> 
+                                        }else
+                                        {
+                                            <button type="button"
+                                                class="btn btn-warning btn-sm"
+                                                data-bs-toggle="tooltip"
+                                                title="Bakım / Tamire Gönder"
+                                                onclick="window.location.href='@Url.Content("~/MaintenanceRecord/SendToMaintenance/" + item.Id)'">
+                                                <i class="fa fa-wrench" ></i>
+                                            </button> 
+                                        } 
+                                        @if (item.Status==StatusEnum.KullanimDisi.ToString())
+                                        {
+                                                <!-- Stoğa Geri Çek Butonu -->
+                                                <button type="button"
+                                                        class="btn btn-success btn-sm action-btn"
+                                                        data-bs-toggle="tooltip"
+                                                        title="Stoğa Geri Çek"
+                                                        data-url="@Url.Content("~/Asset/SendToStock/" + item.Id)">
+                                                    <i class="fa fa-box"></i>
+                                                </button>
+                                        }else
+                                        {
+                                             <!-- Kullanım Dışı Butonu -->
+                                                <button type="button"
+                                                        class="btn btn-secondary btn-sm action-btn"
+                                                        data-bs-toggle="tooltip"
+                                                        title="Kullanım Dışı İşaretle"
+                                                        data-url="@Url.Content("~/Asset/SendToDeactivate/" + item.Id)">
+                                                    <i class="fa fa-ban"></i>
+                                                </button>
+                                        }
+                                       
 
                                         <!-- Active / DeActive Button -->
                                         @if (!item.IsDeleted)

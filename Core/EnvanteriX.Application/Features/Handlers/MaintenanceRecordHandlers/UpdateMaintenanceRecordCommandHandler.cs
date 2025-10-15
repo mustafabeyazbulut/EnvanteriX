@@ -27,6 +27,22 @@ namespace EnvanteriX.Application.Features.Handlers.MaintenanceRecordHandlers
             model.VendorId = request.VendorId;
             model.PreServiceDescription = request.PreServiceDescription;
             model.PostServiceDescription = request.PostServiceDescription;
+            if (!string.IsNullOrEmpty(model.PostServiceDescription))
+            {
+                model.EndDate = DateTime.UtcNow;
+                var asset = await _unitOfWork.GetReadRepository<Asset>().GetAsync(a => a.Id == model.AssetId);
+                if (asset != null)
+                {
+                    if (asset.AssignedUserId!=null)
+                    {
+                        asset.Status = Domain.Enums.StatusEnum.Kullanimda;
+                    }else
+                    {
+                        asset.Status = Domain.Enums.StatusEnum.Stokta;
+                    }
+                    await _unitOfWork.GetWriteRepository<Asset>().UpdateAsync(asset);
+                }
+            }
             await _unitOfWork.GetWriteRepository<MaintenanceRecord>().UpdateAsync(model);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

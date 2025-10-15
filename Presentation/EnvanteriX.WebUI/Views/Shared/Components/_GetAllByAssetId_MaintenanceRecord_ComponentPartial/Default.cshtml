@@ -21,7 +21,7 @@
                             <th>Yapan Kişi</th>
                             <th>Tedarikçi</th>
                             <th>Durum</th>
-                            <th class="text-end">İşlemler</th>
+                            @* <th class="text-end">İşlemler</th> *@
                         </tr>
                     </thead>
                     <tbody>
@@ -46,7 +46,7 @@
                                             <span class="badge bg-success">Tamamlandı</span>
                                         }
                                     </td>
-                                    <td class="text-end">
+                                   @*  <td class="text-end">
                                         <div class="btn-group">
                                             <a href="@Url.Action("Detail", "MaintenanceRecord", new { id = item.Id })"
                                                class="btn btn-outline-primary btn-sm" title="Detay">
@@ -62,7 +62,7 @@
                                                 <i class="bi bi-trash"></i>
                                             </a>
                                         </div>
-                                    </td>
+                                    </td> *@
                                 </tr>
                             }
                         }

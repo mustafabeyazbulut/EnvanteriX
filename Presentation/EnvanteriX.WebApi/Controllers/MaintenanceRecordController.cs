@@ -30,6 +30,13 @@ namespace EnvanteriX.WebApi.Controllers
             return Ok(result);
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetLastOpenMaintenanceRecordByAssetId(int id)
+        {
+            var result = await _mediator.Send(new GetLastOpenMaintenanceRecordByAssetIdQuery(id));
+            return Ok(result);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Create(CreateMaintenanceRecordCommand command)
         {

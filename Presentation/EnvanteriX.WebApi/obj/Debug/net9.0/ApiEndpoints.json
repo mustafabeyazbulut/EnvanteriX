@@ -805,6 +805,22 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
+    "Method": "GetLastOpenMaintenanceRecordByAssetId",
+    "RelativePath": "maintenance-record/get-last-open-maintenance-record-by-asset-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.MaintenanceRecordController",
     "Method": "Update",
     "RelativePath": "maintenance-record/update",
     "HttpMethod": "PUT",

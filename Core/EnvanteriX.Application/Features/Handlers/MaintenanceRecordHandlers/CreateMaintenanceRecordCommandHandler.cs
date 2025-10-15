@@ -27,10 +27,17 @@ namespace EnvanteriX.Application.Features.Handlers.MaintenanceRecordHandlers
                         );
             await _maintenanceRecordRules.MaintenanceRecordAlreadyExists(existingRecord);
 
-            var model= _mapper.Map<MaintenanceRecord, CreateMaintenanceRecordCommand>(request);
+            var model = _mapper.Map<MaintenanceRecord, CreateMaintenanceRecordCommand>(request);
 
             model.StartDate = DateTime.UtcNow;
-           
+
+            var asset = await _unitOfWork.GetReadRepository<Asset>().GetAsync(a => a.Id == request.AssetId);
+            if (asset != null)
+            {
+                asset.Status = Domain.Enums.StatusEnum.Tamirde;
+                await _unitOfWork.GetWriteRepository<Asset>().UpdateAsync(asset);
+            }
+
             await _unitOfWork.GetWriteRepository<MaintenanceRecord>().AddAsync(model);
             await _unitOfWork.SaveAsync();
 

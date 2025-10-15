@@ -96,6 +96,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/MaintenanceRecord/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRlbmFuY2VSZWNvcmRcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/MaintenanceRecord/AssignAfterRepair.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRlbmFuY2VSZWNvcmRcQXNzaWduQWZ0ZXJSZXBhaXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/MaintenanceRecord/SendToMaintenance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRlbmFuY2VSZWNvcmRcU2VuZFRvTWFpbnRlbmFuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MBEYAZBULUT/Documents/GitHub/EnvanteriX/Presentation/EnvanteriX.WebUI/Views/Model/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
