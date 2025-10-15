@@ -9,7 +9,6 @@ namespace EnvanteriX.Application.Features.Commands.MaintenanceRecordCommands
         public string PerformedBy { get; set; }
         public string PreServiceDescription { get; set; }
         public string PostServiceDescription { get; set; }
-        public decimal Cost { get; set; }
         public int VendorId { get; set; }
     }
 }

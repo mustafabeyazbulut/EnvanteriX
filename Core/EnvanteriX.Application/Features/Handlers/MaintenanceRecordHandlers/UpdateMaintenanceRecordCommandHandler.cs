@@ -24,7 +24,6 @@ namespace EnvanteriX.Application.Features.Handlers.MaintenanceRecordHandlers
 
             model.AssetId = request.AssetId;
             model.PerformedBy = request.PerformedBy;
-            model.Cost = request.Cost;
             model.VendorId = request.VendorId;
             model.PreServiceDescription = request.PreServiceDescription;
             model.PostServiceDescription = request.PostServiceDescription;

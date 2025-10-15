@@ -11,7 +11,6 @@ using EnvanteriX.WebUI.ViewModels.User;
 using EnvanteriX.WebUI.ViewModels.Vendor;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 
 namespace EnvanteriX.WebUI.Controllers
@@ -40,18 +39,42 @@ namespace EnvanteriX.WebUI.Controllers
         }
         private void Populate()
         {
+            PopulateBrands();
+
+            PopulateModels();
+
+            PopulateAssetTypes();
+
+            PopulateVendors();
+
+            PopulateLocations();
+
+            PopulateStatus();
+
+            PopulateUsers();
+        }
+        private void PopulateBrands()
+        {
             var Brands = _apiClientService.GetAsync<List<BrandViewModel>>(_brandApiUrl.GetUrl(BrandEndpoint.GetAllActive)).Result;
             ViewBag.Brands = new SelectList(Brands, "Id", "BrandName");
-
+        }
+        private void PopulateModels()
+        {
             var Models = _apiClientService.GetAsync<List<ModelViewModel>>(_modelApiUrl.GetUrl(ModelEndpoint.GetAllActive)).Result;
             ViewBag.Models = new SelectList(Models, "Id", "ModelName");
-
+        }
+        private void PopulateAssetTypes()
+        {
             var AssetTypes = _apiClientService.GetAsync<List<AssetTypeViewModel>>(_assetTypeApiUrl.GetUrl(AssetTypeEndpoint.GetAllActive)).Result;
             ViewBag.AssetTypes = new SelectList(AssetTypes, "Id", "TypeName");
-
+        }
+        private void PopulateVendors()
+        {
             var Vendors = _apiClientService.GetAsync<List<VendorViewModel>>(_vendorApiUrl.GetUrl(VendorEndpoint.GetAllActive)).Result;
             ViewBag.Vendors = new SelectList(Vendors, "Id", "VendorName");
-
+        }
+        private void PopulateLocations()
+        {
             var Locations = _apiClientService.GetAsync<List<LocationViewModel>>(_locationApiUrl.GetUrl(LocationEndpoint.GetAllActive)).Result;
             var locationList = Locations.Select(x => new
             {
@@ -59,7 +82,9 @@ namespace EnvanteriX.WebUI.Controllers
                 Name = $"{x.Building}"
             }).ToList();
             ViewBag.Locations = new SelectList(locationList, "Id", "Name");
-
+        }
+        private void PopulateStatus()
+        {
             // Enum değerlerini ve Description'larını al
             ViewBag.Status = Enum.GetValues(typeof(StatusEnum))
                                  .Cast<StatusEnum>()
@@ -68,10 +93,13 @@ namespace EnvanteriX.WebUI.Controllers
                                      Value = ((int)s).ToString(),
                                      Text = GetEnumDescription(s)
                                  }).ToList();
-
+        }
+        private void PopulateUsers()
+        {
             var Users = _apiClientService.GetAsync<List<UserViewModel>>(_userApiUrl.GetUrl(UserEndpoint.GetAllActive)).Result;
             ViewBag.Users = new SelectList(Users, "Id", "FullName");
         }
+
         private string GetEnumDescription(Enum value)
         {
             var fi = value.GetType().GetField(value.ToString());
@@ -82,7 +110,7 @@ namespace EnvanteriX.WebUI.Controllers
         [HttpGet("GetModelsByBrand")]
         public JsonResult GetModelsByBrand(int brandId)
         {
-            var models = _apiClientService.GetAsync<List<ModelViewModel>>(_modelApiUrl.GetUrl(ModelEndpoint.GetAllActiveByBrandId,brandId)).Result;
+            var models = _apiClientService.GetAsync<List<ModelViewModel>>(_modelApiUrl.GetUrl(ModelEndpoint.GetAllActiveByBrandId, brandId)).Result;
             ViewBag.Models = new SelectList(models, "Id", "ModelName");
 
             return Json(models);
@@ -98,7 +126,7 @@ namespace EnvanteriX.WebUI.Controllers
         [HttpGet("Details/{id}")]
         public IActionResult Details(int id)
         {
-            return View(new DetailAssetViewModel { Id=id});
+            return View(new DetailAssetViewModel { Id = id });
         }
 
         [HttpGet("Add")]
@@ -113,13 +141,13 @@ namespace EnvanteriX.WebUI.Controllers
         {
             try
             {
-               
+
                 var result = await _apiClientService.PostAsync<CreateAssetResultViewModel>(
                     _AssetApiUrl.GetUrl(AssetEndpoint.Create), model);
 
                 if (result != null)
                 {
-                   
+
                     var movement = new CreateAssetMovementViewModel
                     {
                         AssetId = result.Id,
@@ -127,21 +155,97 @@ namespace EnvanteriX.WebUI.Controllers
                         ToUserId = model.AssignedUserId, // boşsa null olarak kalır
                         Note = "Yeni varlık eklendi."
                     };
-                    
+
                     await _apiClientService.PostAsync<object>(
                         _assetMovementApiUrl.GetUrl(AssetMovementEndpoint.Create), movement);
                 }
 
-                Populate();
             }
             catch (Exception ex)
             {
-                TempData["ErrorMessage"] = $"Hata: {ex.Message}";
+                TempData["ErrorMessage"] = $"{ex.Message}";
+                Populate();
+                return RedirectAfterPost(true,model);
             }
-
-            return RedirectToAction("Index", "Asset");
+            return RedirectAfterPost(false);
         }
 
+
+        [HttpGet("Assign/{id}")]
+        public async Task<IActionResult> Assign(int id)
+        {
+            try
+            {
+                var value = await _apiClientService.GetAsync<UpdateAssetAssignViewModel>(_AssetApiUrl.GetUrl(AssetEndpoint.GetById, id));
+                if (value == null)
+                {
+                    throw new Exception("Varlık bulunamadı");
+                }
+                if (value.IsDeleted)
+                {
+                    throw new Exception("Varlık pasif olduğu için zimmetlemesi yapılamamaktadır.");
+                }
+                if (value.Status == StatusEnum.KullanimDisi || value.Status == StatusEnum.Tamirde)
+                {
+                    throw new Exception("Varlık durumu " + value.Status + " olduğu için zimmetlemesi yapılamamaktadır.");
+                }
+                PopulateUsers();
+                return View(value);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
+            }
+            return RedirectAfterPost(false);
+        }
+
+        [HttpPost("Assign")]
+        public async Task<IActionResult> Assign(UpdateAssetAssignViewModel model)
+        {
+            try
+            {
+
+                var current = await _apiClientService.GetAsync<UpdateAssetViewModel>(_AssetApiUrl.GetUrl(AssetEndpoint.GetById, model.Id));
+                if (current == null)
+                {
+                    throw new Exception("Varlık bulunamadı");
+                }
+                if (current.Status == StatusEnum.KullanimDisi || current.Status == StatusEnum.Tamirde)
+                {
+                    throw new Exception("Varlık durumu " + current.Status + " olduğu için zimmetlemesi yapılamamaktadır.");
+                }
+                current.AssignedUserId = model.AssignedUserId;
+                if (current.AssignedUserId != null)
+                {
+                    current.Status = StatusEnum.Kullanimda; // Atama yapıldığında durumu "Kullanımda" olarak güncelle
+                }
+                else
+                {
+                    current.Status = StatusEnum.Stokta; // Atama yapıldığında durumu "Kullanımda" olarak güncelle
+                }
+                var result = await _apiClientService.PutAsync<object>(_AssetApiUrl.GetUrl(AssetEndpoint.Update), current);
+                var movement = new CreateAssetMovementViewModel
+                {
+                    AssetId = model.Id,
+                    FromLocationId = current.LocationId,
+                    FromUserId = current.AssignedUserId,
+                    ToLocationId = current.LocationId,
+                    ToUserId = model.AssignedUserId, // boşsa null olarak kalır
+                    Note = "Varlık Personele Atandı"
+                };
+
+                await _apiClientService.PostAsync<object>(
+                    _assetMovementApiUrl.GetUrl(AssetMovementEndpoint.Create), movement);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"{ex.Message}";
+                PopulateUsers();
+                return RedirectAfterPost(true,model);
+            }
+            return RedirectAfterPost(false);
+        }
 
         [HttpGet("Edit/{id}")]
         public async Task<IActionResult> Edit(int id)
@@ -157,8 +261,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "Asset");
+            return RedirectAfterPost(false);
         }
 
         [HttpPost("Edit")]
@@ -166,13 +271,14 @@ namespace EnvanteriX.WebUI.Controllers
         {
             try
             {
-                var current =  await _apiClientService.GetAsync<UpdateAssetViewModel>(_AssetApiUrl.GetUrl(AssetEndpoint.GetById, model.Id));
+                var current = await _apiClientService.GetAsync<UpdateAssetViewModel>(_AssetApiUrl.GetUrl(AssetEndpoint.GetById, model.Id));
+                model.Status = current.Status;
                 var result = await _apiClientService.PutAsync<object>(_AssetApiUrl.GetUrl(AssetEndpoint.Update), model);
                 var movement = new CreateAssetMovementViewModel
                 {
                     AssetId = model.Id,
-                    FromLocationId=current.LocationId,
-                    FromUserId=current.AssignedUserId,
+                    FromLocationId = current.LocationId,
+                    FromUserId = current.AssignedUserId,
                     ToLocationId = model.LocationId,
                     ToUserId = model.AssignedUserId, // boşsa null olarak kalır
                     Note = "Varlık Düzenleme işlemi yapıldı."
@@ -180,13 +286,14 @@ namespace EnvanteriX.WebUI.Controllers
 
                 await _apiClientService.PostAsync<object>(
                     _assetMovementApiUrl.GetUrl(AssetMovementEndpoint.Create), movement);
-                Populate();
             }
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                Populate();
+                return RedirectAfterPost(true,model);
             }
-            return RedirectToAction("Index", "Asset");
+            return RedirectAfterPost(false);
         }
 
         [HttpGet("Remove/{id}")]
@@ -199,8 +306,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "Asset");
+            return RedirectAfterPost(false);
         }
 
         [HttpGet("Active/{id}")]
@@ -213,8 +321,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "Asset");
+            return RedirectAfterPost(false);
         }
 
         [HttpGet("DeActive/{id}")]
@@ -227,8 +336,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "Asset");
+            return RedirectAfterPost(false);
         }
     }
 }

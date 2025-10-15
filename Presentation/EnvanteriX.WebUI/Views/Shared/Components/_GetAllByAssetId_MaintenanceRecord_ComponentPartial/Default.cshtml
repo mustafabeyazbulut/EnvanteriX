@@ -15,12 +15,11 @@
                     <thead class="table-light">
                         <tr>
                             <th>#</th>
-                            <th>Varlık</th>
+                            @* <th>Varlık</th> *@
                             <th>Başlangıç Tarihi</th>
                             <th>Bitiş Tarihi</th>
                             <th>Yapan Kişi</th>
                             <th>Tedarikçi</th>
-                            <th>Maliyet</th>
                             <th>Durum</th>
                             <th class="text-end">İşlemler</th>
                         </tr>
@@ -32,12 +31,11 @@
                             {
                                 <tr>
                                     <td>@item.Id</td>
-                                    <td>@item.AssetName</td>
+                                    @* <td>@item.AssetName</td> *@
                                     <td>@item.StartDate.ToShortDateString()</td>
                                     <td>@(item.EndDate.HasValue? item.EndDate.Value.ToShortDateString() : "-")</td>
                                     <td>@item.PerformedBy</td>
                                     <td>@item.VendorName</td>
-                                    <td>@item.Cost.ToString("C")</td>
                                     <td>
                                         @if (item.EndDate == null)
                                         {

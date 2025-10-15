@@ -6,22 +6,26 @@
 <script src="@Url.Content("~/js/webfont/webfont.min.js")"></script>
 <script src="@Url.Content("~/js/zero.min.js")"></script>
 <script src="@Url.Content("~/js/select2.min.js")"></script>
-
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-           // TempData'dan gelen mesajları JSON formatında al
-           var successMessage = '@Html.Raw(Json.Serialize(TempData["SuccessMessage"]))';
-           var errorMessage = '@Html.Raw(Json.Serialize(TempData["ErrorMessage"]))';
+        var successMessage = '@Html.Raw(Json.Serialize(TempData["SuccessMessage"]))';
+        var errorMessage = '@Html.Raw(Json.Serialize(TempData["ErrorMessage"]))';
 
-           // Success mesajı varsa ve null/boş değilse göster
-           if (successMessage && successMessage.trim() !== "null" && successMessage.trim() !== '') {
-               swal("Başarılı!", successMessage, "success");
-           }
+        // Başarılı mesaj
+        if (successMessage && successMessage.trim() !== "null" && successMessage.trim() !== '') {
+            swal("Başarılı!", successMessage, "success").then(function () {
+                fetch('/Home/ClearTempMessages', { method: 'POST' }); // mesajları temizle
+            });
+        }
 
-           // Error mesajı varsa ve null/boş değilse göster
-           if (errorMessage && errorMessage.trim() !== "null" && errorMessage.trim() !== '') {
-               swal("Hata!", errorMessage, "error");
-           }
-       });
+        // Hata mesajı
+        if (errorMessage && errorMessage.trim() !== "null" && errorMessage.trim() !== '') {
+            swal("Hata!", errorMessage, "error").then(function () {
+                fetch('/Home/ClearTempMessages', { method: 'POST' }); // mesajları temizle
+            });
+        }
+    });
 </script>
+
+
 <!-- Bootstrap Bundle should be loaded LAST -->

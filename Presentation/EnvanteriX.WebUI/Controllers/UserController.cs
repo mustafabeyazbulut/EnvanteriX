@@ -55,13 +55,14 @@ namespace EnvanteriX.WebUI.Controllers
                 var role = await _apiClientService.GetAsync<RoleViewModel>(_roleApiUrl.GetUrl(RoleEndpoint.GetById, User.RoleId));
                 User.Role = role.Name;
                 var result = await _apiClientService.PostAsync<object>(_authApiUrl.GetUrl(AuthEndpoint.Register), User);
-                PopulateRoles();
             }
             catch (Exception ex)
             {
-                TempData["ErrorMessage"] = $"Hata: {ex.Message}";
+                TempData["ErrorMessage"] = $"{ex.Message}";
+                PopulateRoles();
+                return RedirectAfterPost(true,User);
             }
-            return RedirectToAction("Index", "User");
+            return RedirectAfterPost(false);
         }
 
         [HttpGet("Edit/{id}")]
@@ -76,8 +77,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "User");
+            return RedirectAfterPost(false);
         }
 
         [HttpPost("Edit")]
@@ -92,13 +94,14 @@ namespace EnvanteriX.WebUI.Controllers
                     RoleName = role.Name,
                     UserId = User.Id
                 });
-                PopulateRoles();
             }
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                PopulateRoles();
+                return RedirectAfterPost(true,User);
             }
-            return RedirectToAction("Index", "User");
+            return RedirectAfterPost(false);
         }
 
         [HttpGet("Remove/{id}")]
@@ -111,8 +114,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "User");
+            return RedirectAfterPost(false);
         }
 
         [HttpGet("Active/{id}")]
@@ -125,8 +129,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "User");
+            return RedirectAfterPost(false);
         }
 
         [HttpGet("DeActive/{id}")]
@@ -139,8 +144,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "User");
+            return RedirectAfterPost(false);
         }
 
         [HttpGet("ChangePassword/{id}")]
@@ -154,8 +160,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "User");
+            return RedirectAfterPost(false);
         }
 
         [HttpPost("ChangePassword")]
@@ -168,8 +175,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true, User);
             }
-            return RedirectToAction("Index", "User");
+            return RedirectAfterPost(false);
         }
     }
 }

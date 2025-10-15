@@ -16,7 +16,7 @@
                         <thead class="table-light">
                             <tr>
                                 <th>#</th>
-                                <th>Varlık Adı</th>
+                                @* <th>Varlık Adı</th> *@
                                 <th>Gönderen Kullanıcı</th>
                                 <th>Alan Kullanıcı</th>
                                 <th>Kaynak Lokasyon</th>
@@ -31,7 +31,7 @@
                             {
                                 <tr>
                                     <td>@item.Id</td>
-                                    <td>@(item.AssetName ?? "-")</td>
+                                    @* <td>@(item.AssetName ?? "-")</td> *@
                                     <td>@(item.FromUserFullName ?? "-")</td>
                                     <td>@(item.ToUserFullName ?? "-")</td>
                                     <td>@(item.FromLocationName ?? "-")</td>

@@ -1010,5 +1010,5 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\o
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\ref\EnvanteriX.WebUI.dll
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\l75cxu2pt6-o916j8hfoy.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\nq7imnh70e-8ijcekn386.gz
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\auw8678h2a-levegcoxa6.gz
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\3ylodu22rv-lqetnl0p63.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\auw8678h2a-indkj8lj1y.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\3ylodu22rv-bk4vpsxlsx.gz

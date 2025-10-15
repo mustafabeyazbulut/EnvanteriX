@@ -46,7 +46,14 @@ WebFont.load({
     },
 });
 
-
+function goBack() {
+    // Önce TempData mesajlarını temizle
+    fetch('/Home/ClearTempMessages', { method: 'POST' })
+        .then(() => {
+            // Sonra güvenli şekilde bir önceki sayfaya yönlendir
+            window.location.href = document.referrer || '/';
+        });
+}
 
 //document.addEventListener("DOMContentLoaded", function () {
 //    var buttons = document.querySelectorAll(".confirm-btn");
@@ -72,7 +79,6 @@ WebFont.load({
 $(document).ready(function () {
     // Sayfa yüklendiğinde, ve her sayfa geçişinde aşağıdaki kod çalışacak
     $(document).on("click", ".confirm-btn", function (e) {
-        console.log("selam");
         e.preventDefault();
         var url = $(this).data("url");  // jQuery ile data-url'yi alıyoruz
 

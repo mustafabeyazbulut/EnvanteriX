@@ -25,9 +25,9 @@ namespace EnvanteriX.Application.Features.Validators.MaintenanceRecordValidators
             RuleFor(x => x.PostServiceDescription)
                 .MaximumLength(255).WithMessage("Servis sonrası açıklama en fazla 255 karakter olabilir.");
 
-            RuleFor(x => x.Cost)
-                .GreaterThanOrEqualTo(0).When(x => x.Cost != default)
-                .WithMessage("Bakım maliyeti negatif olamaz.");
+            //RuleFor(x => x.Cost)
+            //    .GreaterThanOrEqualTo(0).When(x => x.Cost != default)
+            //    .WithMessage("Bakım maliyeti negatif olamaz.");
 
             RuleFor(x => x.AssetId)
                 .GreaterThan(0).WithMessage("AssetId geçerli olmalıdır.")

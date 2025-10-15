@@ -2573,10 +2573,6 @@
             "type": "string",
             "nullable": true
           },
-          "cost": {
-            "type": "number",
-            "format": "double"
-          },
           "vendorId": {
             "type": "integer",
             "format": "int32"

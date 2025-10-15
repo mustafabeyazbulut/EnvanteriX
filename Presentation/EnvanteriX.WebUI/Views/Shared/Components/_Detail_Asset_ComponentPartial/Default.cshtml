@@ -70,10 +70,29 @@
 
                 <div class="col-md-12 text-end mt-3">
                     <a href="@Url.Action("Index", "Asset")" class="btn btn-outline-secondary me-2">
-                        <i class="bi bi-arrow-left"></i> Listeye Dön
+                        <i class="fa fa-arrow-left"></i> Listeye Dön
                     </a>
                     <a href="@Url.Action("Edit", "Asset", new { id = Model.Id })" class="btn btn-primary">
-                        <i class="bi bi-pencil"></i> Düzenle
+                        <i class="fa fa-edit"></i> Düzenle
+                    </a>
+                    <a href="@Url.Action("Assign", "Asset", new { id = Model.Id })" class="btn btn-secondary">
+                        <i class="fa fa-user-plus"></i> Kullanıcı Ataması Yap
+                    </a>
+                    @if (!Model.IsDeleted)
+                    {
+                        
+                        <a href="@Url.Action("DeActive", "Asset", new { id = Model.Id })" class="btn btn-info">
+                            <i class="fa fa-times"></i> Pasif Et
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Active", "Asset", new { id = Model.Id })" class="btn btn-info">
+                            <i class="fa fa-check"></i> Aktif Et
+                        </a>
+                    }
+                    <a href="@Url.Action("Remove", "Asset", new { id = Model.Id })" class="btn btn-danger">
+                        <i class="fa fa-trash-alt"></i> Sil
                     </a>
                 </div>
 

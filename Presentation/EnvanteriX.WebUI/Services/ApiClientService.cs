@@ -39,83 +39,133 @@ namespace EnvanteriX.WebUI.Services
         public async Task<T> GetAsync<T>(string endpoint)
         {
             var client = await GetHttpClientWithTokenAsync();
-            var response = await client.GetAsync(_apiSettings.BaseUrl + endpoint);
+            var url = $"{_apiSettings.BaseUrl.TrimEnd('/')}/{endpoint.TrimStart('/')}";
+            var response = await client.GetAsync(url);
+
+            var responseContent = await response.Content.ReadAsStringAsync();
 
             if (response.IsSuccessStatusCode)
             {
-                var responseContent = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<T>(responseContent);
             }
             else
             {
-                throw new Exception($"Status code: {response.StatusCode} {Environment.NewLine} {string.Join("\n", response.RequestMessage.RequestUri)}{Environment.NewLine} {response.ReasonPhrase}");
-
+                try
+                {
+                    // API tarafındaki ExceptionModel'i çözümle
+                    var errorModel = JsonConvert.DeserializeObject<ExceptionModel>(responseContent);
+                    var errorMessage = string.Join(Environment.NewLine, errorModel.Errors);
+                    throw new Exception($"API Hatası ({response.StatusCode}): {errorMessage}");
+                }
+                catch (JsonException)
+                {
+                    // JSON parse edilemezse ham metni göster
+                    throw new Exception($"Status code: {response.StatusCode}{Environment.NewLine}{responseContent}");
+                }
             }
         }
+
         public async Task<T> PostAsync<T>(string endpoint, object data)
         {
             var client = await GetHttpClientWithTokenAsync();
             var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 
-            var response = await client.PostAsync(_apiSettings.BaseUrl + endpoint, content);
+            var url = $"{_apiSettings.BaseUrl.TrimEnd('/')}/{endpoint.TrimStart('/')}";
+            var response = await client.PostAsync(url, content);
+
             var responseContent = await response.Content.ReadAsStringAsync();
+
             if (response.IsSuccessStatusCode)
             {
                 return JsonConvert.DeserializeObject<T>(responseContent);
             }
             else
             {
-                var errorResponse = JsonConvert.DeserializeObject<ErrorResponse>(responseContent);
-                if (errorResponse.status == 400)
+                try
                 {
-                    throw new Exception($"Status code: {errorResponse.status} {Environment.NewLine} {string.Join("\n", errorResponse.errors.Select(e => $"{e.Key}: {string.Join(", ", e.Value)}"))}");
+                    // API'den dönen hata yapısını (ExceptionModel) çözümle
+                    var errorModel = JsonConvert.DeserializeObject<ExceptionModel>(responseContent);
+                    var errorMessage = string.Join(Environment.NewLine, errorModel.Errors);
+                    throw new Exception($"API Hatası ({response.StatusCode}): {errorMessage}");
                 }
-                else
+                catch (JsonException)
                 {
-                    throw new Exception($"Status code: {errorResponse.status} {Environment.NewLine} {string.Join("\n", errorResponse.Errors[0])}");
+                    // JSON parse edilemezse ham metni göster
+                    throw new Exception($"Status code: {response.StatusCode}{Environment.NewLine}{responseContent}");
                 }
             }
         }
+
         public async Task<T> PutAsync<T>(string endpoint, object data)
         {
             var client = await GetHttpClientWithTokenAsync();
             var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 
-            var response = await client.PutAsync(_apiSettings.BaseUrl + endpoint, content);
+            var url = $"{_apiSettings.BaseUrl.TrimEnd('/')}/{endpoint.TrimStart('/')}";
+            var response = await client.PutAsync(url, content);
 
             var responseContent = await response.Content.ReadAsStringAsync();
+
             if (response.IsSuccessStatusCode)
             {
                 return JsonConvert.DeserializeObject<T>(responseContent);
             }
             else
             {
-                var errorResponse = JsonConvert.DeserializeObject<ErrorResponse>(responseContent);
-                if (errorResponse.status == 400)
+                try
                 {
-                    throw new Exception($"Status code: {errorResponse.status} {Environment.NewLine} {string.Join("\n", errorResponse.errors.Select(e => $"{e.Key}: {string.Join(", ", e.Value)}"))}");
+                    // API'nin ExceptionModel yapısına göre deserialize et
+                    var errorModel = JsonConvert.DeserializeObject<ExceptionModel>(responseContent);
+                    var errorMessage = string.Join(Environment.NewLine, errorModel.Errors);
+                    throw new Exception($"API Hatası ({response.StatusCode}): {errorMessage}");
                 }
-                else
+                catch (JsonException)
                 {
-                    throw new Exception($"Status code: {errorResponse.status} {Environment.NewLine} {string.Join("\n", errorResponse.Errors[0])}");
+                    // JSON parse edilemiyorsa ham içerik ile hata fırlat
+                    throw new Exception($"Status code: {response.StatusCode}{Environment.NewLine}{responseContent}");
                 }
             }
         }
+
         public async Task<T> DeleteAsync<T>(string endpoint)
         {
             var client = await GetHttpClientWithTokenAsync();
             var url = $"{_apiSettings.BaseUrl.TrimEnd('/')}/{endpoint.TrimStart('/')}";
             var response = await client.DeleteAsync(url);
 
+            var responseContent = await response.Content.ReadAsStringAsync();
+
             if (response.IsSuccessStatusCode)
             {
-                var responseContent = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<T>(responseContent);
             }
             else
             {
-                throw new Exception($"Status code: {response.StatusCode} {Environment.NewLine} {string.Join("\n", response.RequestMessage.RequestUri)}{Environment.NewLine} {response.ReasonPhrase}");
+                // API'den dönen hatayı yakala ve içeriği fırlat
+                try
+                {
+                    var errorModel = JsonConvert.DeserializeObject<ExceptionModel>(responseContent);
+                    var errorMessage = string.Join(Environment.NewLine, errorModel.Errors);
+                    throw new Exception($"API Hatası ({response.StatusCode}): {errorMessage}");
+                }
+                catch (JsonException)
+                {
+                    // JSON çözümlenemiyorsa ham mesajı at
+                    throw new Exception($"Status code: {response.StatusCode}{Environment.NewLine}{responseContent}");
+                }
             }
         }
+        public class ExceptionModel
+        {
+            public IEnumerable<string> Errors { get; set; }
+            public int Status { get; set; }
+
+            public override string ToString()
+            {
+                return JsonConvert.SerializeObject(this);
+            }
+        }
+
+
     }
 }

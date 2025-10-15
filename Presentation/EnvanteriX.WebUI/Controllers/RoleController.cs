@@ -47,9 +47,10 @@ namespace EnvanteriX.WebUI.Controllers
             }
             catch (Exception ex)
             {
-                TempData["ErrorMessage"] = $"Hata: {ex.Message}";
+                TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true,model);
             }
-            return RedirectToAction("Index", "Role");
+            return RedirectAfterPost(false);
         }
 
         [HttpGet("Edit/{id}")]
@@ -63,8 +64,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "Role");
+            return RedirectAfterPost(false);
         }
 
         [HttpPost("Edit")]
@@ -77,8 +79,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true, model);
             }
-            return RedirectToAction("Index", "Role");
+            return RedirectAfterPost(false);
         }
 
         [HttpGet("Remove/{id}")]
@@ -91,8 +94,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "Role");
+            return RedirectAfterPost(false);
         }
 
         [HttpGet("Active/{id}")]
@@ -105,8 +109,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "Role");
+            return RedirectAfterPost(false);
         }
 
         [HttpGet("DeActive/{id}")]
@@ -119,8 +124,9 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
-            return RedirectToAction("Index", "Role");
+            return RedirectAfterPost(false);
         }
     }
 }

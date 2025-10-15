@@ -91,14 +91,23 @@
                                         </button>
 
 
-                                        <!-- Edit Button -->
+                                       @*  <!-- Edit Button -->
                                         <button type="button"
                                                 class="btn btn-primary btn-sm"
                                                 data-bs-toggle="tooltip"
                                                 title="Edit"
                                                 onclick="window.location.href='@Url.Content("~/Asset/Edit/" + item.Id)';">
                                             <i class="fa fa-edit"></i>
+                                        </button> *@
+
+                                        <button type="button"
+                                                class="btn btn-success btn-sm"
+                                                data-bs-toggle="tooltip"
+                                                title="Zimmetle"
+                                                onclick="window.location.href='@Url.Content("~/Asset/Assign/" + item.Id)';">
+                                            <i class="fa fa-user-plus"></i>
                                         </button>
+
 
                                         <!-- Active / DeActive Button -->
                                         @if (!item.IsDeleted)

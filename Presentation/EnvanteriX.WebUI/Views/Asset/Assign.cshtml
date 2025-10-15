@@ -1,8 +1,9 @@
-﻿@model CreateModelViewModel
+﻿@model UpdateAssetAssignViewModel
 @{
-    ViewData["Title"] = "Add";
+    ViewData["Title"] = "Assign";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 <div class="row justify-content-center">
 
@@ -10,21 +11,24 @@
 
         <div class="card">
             <div class="card-body">
-                <h1 class="mb-4 card-title">Yeni Model Bilgilerini Giriniz.</h1>
-                @using (Html.BeginForm("Add", "Model", FormMethod.Post))
+                <h1 class="mb-4 card-title">Rol Bilgilerini Güncelleyebilirsiniz.</h1>
+                @using (Html.BeginForm("Assign", "Asset", FormMethod.Post, new { @action = "/Asset/Assign" }))
                 {
                     <div class="row mb-3">
-                        <label for="Name" class="col-sm-2 col-form-label">Model Adı</label>
+                        <label for="Id" class="col-sm-2 col-form-label">Varlık Id</label>
                         <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.ModelName, new { @class = "form-control", type = "text", placeholder = "Model Adını Girin" })
+                            <input type="hidden" asp-for="Id" />
+                            <label class="form-control" id="Id" asp-for="Id">@Model.Id </label>
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="ModelName" class="col-sm-2 col-form-label">Marka Adı</label>
+                        <label for="AssignedUserId" class="col-sm-2 col-form-label">Atanan Kullanıcı</label>
                         <div class="col-sm-10">
-                            @Html.DropDownList("BrandId", ViewBag.Brands as SelectList, new { @class = " select2 form-control", id = "brandSelect" })
+                            @Html.DropDownListFor(model => model.AssignedUserId, ViewBag.Users as SelectList, "-- Atanacak Kullanıcıyı Seçiniz --", new { @class = "select2 form-control", style = "width: 100%", id = "userSelect" })
                         </div>
                     </div>
+
+
                     <div class="row mb-3 mt-4">
                         <div class="col-12 text-center">
                             <button type="submit" class="btn btn-lg btn-primary me-2">Kaydet</button>
@@ -37,12 +41,4 @@
     </div>
 </div>
 
-<script>
-    $(document).ready(function() {
-        $('#brandSelect').select2({
-             theme: 'bootstrap-5',
-            placeholder: "Marka seçiniz",
-            allowClear: true
-        });
-    });
-</script>
+

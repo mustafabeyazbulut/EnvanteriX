@@ -17,4 +17,13 @@ public class HomeController : BaseController
         return View();
     }
 
+    [HttpPost("ClearTempMessages")]
+    public IActionResult ClearTempMessages()
+    {
+        TempData["SuccessMessage"] = null;
+        TempData["ErrorMessage"] = null;
+        return Ok();
+    }
+
+
 }

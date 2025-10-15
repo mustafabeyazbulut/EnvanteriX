@@ -20,8 +20,8 @@ namespace EnvanteriX.Persistence.Configurations
             builder.Property(x => x.PostServiceDescription)
                .HasMaxLength(255);
 
-            builder.Property(x => x.Cost)
-                .HasColumnType("decimal(18,2)");
+            //builder.Property(x => x.Cost)
+            //    .HasColumnType("decimal(18,2)");
 
             builder.Property(x => x.StartDate)
                 .IsRequired();
