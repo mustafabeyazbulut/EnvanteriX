@@ -377,6 +377,16 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
+    "Method": "GetSummary",
+    "RelativePath": "asset/get-summary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
     "Method": "Update",
     "RelativePath": "asset/update",
     "HttpMethod": "PUT",

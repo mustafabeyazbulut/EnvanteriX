@@ -4,6 +4,7 @@
     {
         GetAll,
         GetById,
+        GetSummary,
         Create,
         Update,
         Delete,
@@ -21,6 +22,7 @@
             {
                 AssetEndpoint.GetAll => $"{BasePath}/get-all",
                 AssetEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
+                AssetEndpoint.GetSummary => $"{BasePath}/get-summary",
                 AssetEndpoint.Create => $"{BasePath}/create",
                 AssetEndpoint.Update => $"{BasePath}/update",
                 AssetEndpoint.Delete => $"{BasePath}/delete/{id}",

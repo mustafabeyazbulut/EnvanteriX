@@ -197,7 +197,6 @@ namespace EnvanteriX.WebUI.Controllers
                 TempData["ErrorMessage"] = $"{ex.Message}";
                 return RedirectAfterPost(true);
             }
-            return RedirectAfterPost(false);
         }
 
         [HttpPost("Assign")]
@@ -263,7 +262,6 @@ namespace EnvanteriX.WebUI.Controllers
                 TempData["ErrorMessage"] = $"{ex.Message}";
                 return RedirectAfterPost(true);
             }
-            return RedirectAfterPost(false);
         }
 
         [HttpPost("Edit")]
@@ -336,7 +334,7 @@ namespace EnvanteriX.WebUI.Controllers
                 {
                     throw new Exception("Varlık bulunamadı");
                 }
-                if (current.Status != StatusEnum.Stokta || current.Status != StatusEnum.KullanimDisi)
+                if (!(current.Status == StatusEnum.Stokta || current.Status == StatusEnum.KullanimDisi))
                 {
                     throw new Exception("Varlık durumu " + current.Status + " olduğu için pasif yapılamamaktadır.");
                 }
@@ -386,7 +384,7 @@ namespace EnvanteriX.WebUI.Controllers
                 }
                 if (current.Status != StatusEnum.Stokta)
                 {
-                    throw new Exception("Varlık durumu " + current.Status + " olduğu için stoğa çekilemez. Stokta olmalıdır.");
+                    throw new Exception("Varlık durumu " + current.Status + " olduğu için Kullanım Dışı yapılamaz. Önce durumunu stokta yapınız.");
                 }
                 current.Status = StatusEnum.KullanimDisi;
                 var result = await _apiClientService.PutAsync<object>(_AssetApiUrl.GetUrl(AssetEndpoint.Update), current);

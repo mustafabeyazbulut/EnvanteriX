@@ -1012,3 +1012,6 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\o
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\nq7imnh70e-8ijcekn386.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\auw8678h2a-indkj8lj1y.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\3ylodu22rv-bk4vpsxlsx.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\1k9zkivad4-gef3zaap5m.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\cb1jovh3kv-f8gx6pky8k.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\5x74q0n3vx-351yyt7gaq.gz

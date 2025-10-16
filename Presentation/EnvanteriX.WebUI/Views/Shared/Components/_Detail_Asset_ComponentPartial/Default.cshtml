@@ -98,7 +98,7 @@
                     }
                     @if (Model.Status == StatusEnum.KullanimDisi.ToString())
                     {
-                        <a href="@Url.Action("SendToStock", "Asset", new { assetId = Model.Id })"
+                        <a href="@Url.Action("SendToStock", "Asset", new { id = Model.Id })"
                            class="btn btn-success "
                            data-bs-toggle="tooltip"
                            title="Stoğa Geri Çek">
@@ -107,7 +107,7 @@
                     }
                     else
                     {
-                        <a href="@Url.Action("SendToDeactivate", "Asset", new { assetId = Model.Id })"
+                        <a href="@Url.Action("SendToDeactivate", "Asset", new { id = Model.Id })"
                            class="btn btn-warning"
                            data-bs-toggle="tooltip"
                            title="Kullanım Dışı İşaretle">

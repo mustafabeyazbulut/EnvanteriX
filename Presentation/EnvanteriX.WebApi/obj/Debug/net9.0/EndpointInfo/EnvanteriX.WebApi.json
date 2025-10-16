@@ -41,6 +41,18 @@
         }
       }
     },
+    "/asset/get-summary": {
+      "get": {
+        "tags": [
+          "Asset"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/asset/create": {
       "post": {
         "tags": [

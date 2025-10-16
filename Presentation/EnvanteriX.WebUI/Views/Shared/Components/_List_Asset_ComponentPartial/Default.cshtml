@@ -131,20 +131,20 @@
                                         {
                                                 <!-- Stoğa Geri Çek Butonu -->
                                                 <button type="button"
-                                                        class="btn btn-success btn-sm action-btn"
+                                                        class="btn btn-success btn-sm "
                                                         data-bs-toggle="tooltip"
                                                         title="Stoğa Geri Çek"
-                                                        data-url="@Url.Content("~/Asset/SendToStock/" + item.Id)">
+                                                        onclick="window.location.href='@Url.Content("~/Asset/SendToStock/" + item.Id)'">
                                                     <i class="fa fa-box"></i>
                                                 </button>
                                         }else
                                         {
                                              <!-- Kullanım Dışı Butonu -->
                                                 <button type="button"
-                                                        class="btn btn-secondary btn-sm action-btn"
+                                                        class="btn btn-secondary btn-sm"
                                                         data-bs-toggle="tooltip"
                                                         title="Kullanım Dışı İşaretle"
-                                                        data-url="@Url.Content("~/Asset/SendToDeactivate/" + item.Id)">
+                                                       onclick="window.location.href='@Url.Content("~/Asset/SendToDeactivate/" + item.Id)'">
                                                     <i class="fa fa-ban"></i>
                                                 </button>
                                         }

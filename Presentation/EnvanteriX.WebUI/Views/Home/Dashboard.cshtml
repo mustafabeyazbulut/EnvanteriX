@@ -1,8 +1,184 @@
-﻿
+﻿@model AssetSummaryViewModel
 @{
     ViewData["Title"] = "Dashboard";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Dashboard</h1>
+<div class="container-fluid mt-4">
+    <h1 class="mb-4">Dashboard</h1>
+
+    <!-- 🔹 Genel Sayılar Kartları -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-2">
+            <div class="card text-bg-primary h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Toplam Envanter</h5>
+                    <p class="card-text fs-3">@Model.TotalAssets</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card text-bg-success h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Kullanımda</h5>
+                    <p class="card-text fs-3">@Model.InUseCount</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card text-bg-warning h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Stokta</h5>
+                    <p class="card-text fs-3">@Model.InStockCount</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card text-bg-danger h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Serviste</h5>
+                    <p class="card-text fs-3">@Model.InServiceCount</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card text-bg-secondary h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Hurda</h5>
+                    <p class="card-text fs-3">@Model.RetiredCount</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔹 Zaman Bazlı İstatistikler -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="card h-100 border-info">
+                <div class="card-body">
+                    <h6 class="card-title">Son 30 Günde Eklenen</h6>
+                    <p class="card-text fs-4">@Model.AddedLast30Days</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 border-warning">
+                <div class="card-body">
+                    <h6 class="card-title">Son 30 Günde Servise Giden</h6>
+                    <p class="card-text fs-4">@Model.ServiceLast30Days</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 border-success">
+                <div class="card-body">
+                    <h6 class="card-title">Ortalama Servis Süresi (Gün)</h6>
+                    <p class="card-text fs-4">@Model.AverageServiceDurationDays</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 border-secondary">
+                <div class="card-body">
+                    <h6 class="card-title">Son 30 Günde Zimmet Hareketi</h6>
+                    <p class="card-text fs-4">@Model.MovementCountLast30Days</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔹 Dağılım Grafikleri -->
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header">Kategoriye Göre Dağılım</div>
+                <div class="card-body">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header">Lokasyona Göre Dağılım</div>
+                <div class="card-body">
+                    <canvas id="locationChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔹 Kullanıcıya Göre Dağılım -->
+    <div class="row g-3 mt-4">
+        <div class="col-md-12">
+            <div class="card h-100">
+                <div class="card-header">Kullanıcıya Göre Envanter</div>
+                <div class="card-body">
+                    <canvas id="userChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        // Kategori Grafiği
+        const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+        new Chart(categoryCtx, {
+            type: 'doughnut',
+            data: {
+                labels: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.AssetsByCategory.Keys)),
+                datasets: [{
+                    data: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.AssetsByCategory.Values)),
+                    backgroundColor: ['#0d6efd','#198754','#ffc107','#dc3545','#6c757d','#6610f2','#fd7e14'],
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        // Lokasyon Grafiği
+        const locationCtx = document.getElementById('locationChart').getContext('2d');
+        new Chart(locationCtx, {
+            type: 'bar',
+            data: {
+                labels: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.AssetsByLocation.Keys)),
+                datasets: [{
+                    label: 'Envanter Sayısı',
+                    data: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.AssetsByLocation.Values)),
+                    backgroundColor: '#0d6efd'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Kullanıcı Grafiği
+        const userCtx = document.getElementById('userChart').getContext('2d');
+        new Chart(userCtx, {
+            type: 'bar',
+            data: {
+                labels: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.AssetsByUser.Keys)),
+                datasets: [{
+                    label: 'Zimmetli Envanter',
+                    data: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.AssetsByUser.Values)),
+                    backgroundColor: '#198754'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+}
+
 

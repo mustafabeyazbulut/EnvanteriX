@@ -1,4 +1,6 @@
+using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
+using EnvanteriX.WebUI.ViewModels.Asset;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebUI.Controllers;
@@ -6,15 +8,18 @@ namespace EnvanteriX.WebUI.Controllers;
 [Route("Home")]
 public class HomeController : BaseController
 {
-    public HomeController(IApiClientService apiClientService) : base(apiClientService)
+    private readonly AssetApiUrl _assetApiUrl;
+    public HomeController(IApiClientService apiClientService, AssetApiUrl assetApiUrl) : base(apiClientService)
     {
+        _assetApiUrl = assetApiUrl;
     }
 
     [HttpGet("")]
     [HttpGet("Dashboard")]
-    public IActionResult Dashboard()
+    public async Task<IActionResult> Dashboard()
     {
-        return View();
+        var value=await _apiClientService.GetAsync<AssetSummaryViewModel>(_assetApiUrl.GetUrl(AssetEndpoint.GetSummary));
+        return View(value);
     }
 
     [HttpPost("ClearTempMessages")]

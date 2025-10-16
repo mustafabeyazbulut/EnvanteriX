@@ -15,10 +15,10 @@
 
                 @RenderBody()
                 @await Component.InvokeAsync("_Footer_Layout_ComponentPartial")
-                @RenderSection("Scripts", required: false)
             </div>
         </div>
         @await Component.InvokeAsync("_Script_Layout_ComponentPartial")
+        @RenderSection("Scripts", required: false)
     </div>
 
 </body>

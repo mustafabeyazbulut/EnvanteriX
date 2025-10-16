@@ -317,10 +317,13 @@ wwwroot\images\undraw\undraw_Taken_if77.svg
 wwwroot\images\undraw\undraw_update_uxn2.svg
 wwwroot\images\undraw\undraw_upgrade_06a0.svg
 wwwroot\js\app.min.js
+wwwroot\js\chart.js
+wwwroot\js\chart.min.js
 wwwroot\js\dashboard.js
 wwwroot\js\datatables\datatables.min.js
 wwwroot\js\select2.min.js
 wwwroot\js\sidebarmenu.js
+wwwroot\js\sidebarmenu.min.js
 wwwroot\js\simplebar.esm.js
 wwwroot\js\simplebar.esm.js.map
 wwwroot\js\simplebar.js
@@ -490,3 +493,6 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\w
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\jquery\jquery.slim.min.map
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\select2.min.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\bootstrap\css\select2-bootstrap-5-theme.min.css
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\chart.js
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\chart.min.js
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\sidebarmenu.min.js

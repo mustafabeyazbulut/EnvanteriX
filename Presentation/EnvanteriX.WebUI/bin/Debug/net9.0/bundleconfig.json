@@ -3,20 +3,30 @@
     "outputFileName": "wwwroot/css/zero.min.css",
     "inputFiles": [
       "wwwroot/css/zero.css"
-    ],
-    "minify": { "enabled": true }
+    ]
   },
   {
     "outputFileName": "wwwroot/css/plugins.min.css",
     "inputFiles": [
       "wwwroot/css/plugins.css"
-    ],
-    "minify": { "enabled": true }
+    ]
   },
   {
     "outputFileName": "wwwroot/js/zero.min.js",
     "inputFiles": [
       "wwwroot/js/zero.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/chart.min.js",
+    "inputFiles": [
+      "wwwroot/js/chart.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/sidebarmenu.min.js",
+    "inputFiles": [
+      "wwwroot/js/sidebarmenu.js"
     ]
   }
 ]

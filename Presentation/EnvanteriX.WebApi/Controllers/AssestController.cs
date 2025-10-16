@@ -23,6 +23,12 @@ namespace EnvanteriX.WebApi.Controllers
             return Ok(result);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetSummary()
+        {
+            var result = await _mediator.Send(new GetAssetSummaryQuery());
+            return Ok(result);
+        }
         [HttpPost]
         public async Task<IActionResult> Create(CreateAssetCommand command)
         {
