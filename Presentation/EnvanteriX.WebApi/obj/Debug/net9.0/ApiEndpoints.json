@@ -978,6 +978,122 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.Portal365Controller",
+    "Method": "Active",
+    "RelativePath": "portal365/active/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.Portal365Controller",
+    "Method": "Create",
+    "RelativePath": "portal365/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.Portal365Commands.CreatePortal365Command",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.Portal365Controller",
+    "Method": "DeActive",
+    "RelativePath": "portal365/de-active/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.Portal365Controller",
+    "Method": "Delete",
+    "RelativePath": "portal365/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.Portal365Controller",
+    "Method": "GetAll",
+    "RelativePath": "portal365/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.Portal365Controller",
+    "Method": "GetAllActive",
+    "RelativePath": "portal365/get-all-active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.Portal365Controller",
+    "Method": "GetById",
+    "RelativePath": "portal365/get-by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.Portal365Controller",
+    "Method": "Update",
+    "RelativePath": "portal365/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.Portal365Commands.UpdatePortal365Command",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EnvanteriX.WebApi.Controllers.RoleController",
     "Method": "Active",
     "RelativePath": "role/active/{id}",

@@ -26,6 +26,8 @@ namespace EnvanteriX.Persistence.Context
         public DbSet<Asset> Assets { get; set; }
         public DbSet<AssetMovement> AssetMovements { get; set; }
         public DbSet<MaintenanceRecord> MaintenanceRecords { get; set; }
+        public DbSet<Portal365> Portal365Settings { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

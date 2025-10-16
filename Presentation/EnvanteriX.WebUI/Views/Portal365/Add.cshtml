@@ -1,0 +1,51 @@
+﻿@model CreatePortal365ViewModel
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h1 class="mb-4 card-title">Yeni Portal 365 Entegrasyon Bilgilerini Giriniz.</h1>
+                @using (Html.BeginForm("Add", "Portal365", FormMethod.Post))
+                {
+                    <div class="row mb-3">
+                        <label for="TenantId" class="col-sm-2 col-form-label">TenantId</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(Model => Model.TenantId, new { @class = "form-control", type = "text", placeholder = "TenantId Girin" })
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="ClientId" class="col-sm-2 col-form-label">ClientId</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(Model => Model.ClientId, new { @class = "form-control", type = "text", placeholder = "ClientId Girin" })
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="ClientSecret" class="col-sm-2 col-form-label">ClientSecret</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(Model => Model.ClientSecret, new { @class = "form-control", type = "text", placeholder = "ClientSecret Girin" })
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="SenderEmail" class="col-sm-2 col-form-label">SenderEmail</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(Model => Model.SenderEmail, new { @class = "form-control", type = "text", placeholder = "SenderEmail Girin" })
+                        </div>
+                    </div>
+                    <div class="row mb-3 mt-4">
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-lg btn-primary me-2">Kaydet</button>
+                            <button type="button" class="btn btn-lg btn-secondary" onclick="goBack()">Geri Dön</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
