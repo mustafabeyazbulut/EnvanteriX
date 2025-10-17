@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
 {
@@ -32,41 +33,130 @@ namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
         public async Task<Unit> Handle(SyncPortal365UsersQuery request, CancellationToken cancellationToken)
         {
             var portal365Config = await _unitOfWork.GetReadRepository<Portal365>().GetAsync(
-                  predicate:x=>x.IsDeleted==false,
-                  orderBy:q=>q.OrderByDescending(x=>x.CreatedDate)
-                );
+                predicate: x => !x.IsDeleted,
+                orderBy: q => q.OrderByDescending(x => x.CreatedDate)
+            );
+
             await _portal365Rules.Portal365ShouldExist(portal365Config);
+
             var portal365Users = await _portal365Service.GetAllUsersAsync(portal365Config);
+
+            var distinctCompanies = portal365Users
+                .Where(x => !string.IsNullOrWhiteSpace(x.CompanyName))
+                .Select(x => x.CompanyName.Trim())
+                .Distinct()
+                .ToList();
+
+            var distinctDepartments = portal365Users
+                .Where(x => !string.IsNullOrWhiteSpace(x.Department))
+                .Select(x => x.Department.Trim())
+                .Distinct()
+                .ToList();
+
+            // 🔹 Kullanıcı Senkronizasyonu
             foreach (var user in portal365Users)
             {
-                string email = user.Mail;
-                string displayName = user.DisplayName;
-                string phoneNumber = user.PhoneNumber;
-                var exists = await _userManager.Users.Where(u =>  u.Email == email).FirstOrDefaultAsync();
-                if (exists != null)
+                try
                 {
+                    string email = user.Mail;
+                    if (string.IsNullOrEmpty(email))
+                        continue;
+
+                    var exists = await _userManager.Users.FirstOrDefaultAsync(u => u.Email == email, cancellationToken);
+                    if (exists != null)
+                        continue;
+
+                    var newUser = new User
+                    {
+                        UserName = email.Split("@")[0],
+                        Email = email,
+                        NormalizedEmail = email.ToUpperInvariant(),
+                        NormalizedUserName = email.Split("@")[0].ToUpperInvariant(),
+                        FullName = user.DisplayName,
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        PhoneNumber = user.PhoneNumber
+                    };
+
+                    var password = _passwordGenerator.Generate(8);
+                    var resultUser = await _userManager.CreateAsync(newUser, password);
+
+                    if (resultUser.Succeeded)
+                    {
+                        await _userManager.AddToRoleAsync(newUser, "user");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"❌ Kullanıcı oluşturulamadı: {email} -> {string.Join(", ", resultUser.Errors.Select(e => e.Description))}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"⚠️ Kullanıcı eklenirken hata oluştu: {user.Mail} -> {ex.Message}");
+                    continue; // hata olsa bile sıradaki kullanıcıya geç
+                }
+            }
+
+            // 🔹 Şirket Senkronizasyonu
+            foreach (var company in distinctCompanies)
+            {
+                try
+                {
+                    string value = company; 
+                    var exists = await _unitOfWork.GetReadRepository<Location>().GetAsync(x => x.Building == value);
+                    if (exists != null)
+                        continue;
+
+                    var newLocation = new Location
+                    {
+                        Building = company,
+                        CreatedDate = DateTime.UtcNow,
+                        IsDeleted = false,
+                        LastModifiedByEmail = _userEmail
+                    };
+
+                    await _unitOfWork.GetWriteRepository<Location>().AddAsync(newLocation);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"⚠️ Şirket eklenirken hata oluştu: {company} -> {ex.Message}");
                     continue;
                 }
-                var newUser = new User
-                {
-                    UserName = email.Split("@")[0],
-                    Email = email,
-                    NormalizedEmail=email,
-                    NormalizedUserName = email.Split("@")[0],
-                    FullName = displayName,
-                    SecurityStamp = Guid.NewGuid().ToString(),
-                    PhoneNumber= phoneNumber
-                };
-               var result = await _userManager.CreateAsync(newUser, _passwordGenerator.Generate(8));
-                if (result.Succeeded) // kullanıcı oluşturulduysa
-                {
-                    await _userManager.AddToRoleAsync(newUser,"user");
-                }
-
             }
+
+            // 🔹 Departman Senkronizasyonu
+            foreach (var dept in distinctDepartments)
+            {
+                try
+                {
+                    string value = dept;
+                    var exists = await _unitOfWork.GetReadRepository<Department>().GetAsync(x => x.Name == value);
+                    if (exists != null)
+                        continue;
+
+                    var newDepartment = new Department
+                    {
+                        Name = dept,
+                        CreatedDate = DateTime.UtcNow,
+                        IsDeleted = false,
+                        LastModifiedByEmail=_userEmail
+                    };
+
+                    await _unitOfWork.GetWriteRepository<Department>().AddAsync(newDepartment);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"⚠️ Departman eklenirken hata oluştu: {dept} -> {ex.Message}");
+                    continue;
+                }
+            }
+
+            await _unitOfWork.SaveAsync(); // varsa
+
+            Console.WriteLine("✅ Portal365 senkronizasyon işlemi tamamlandı.");
 
             return Unit.Value;
         }
+
 
         //public class PortalUser
         //{

@@ -20,6 +20,10 @@ namespace EnvanteriX.Domain.Entities
         public Location Location { get; set; } //+
         public int? AssignedUserId { get; set; }
         public User AssignedUser { get; set; } //+
+
+        public int? AssignedDepartmentId { get; set; }
+        public Department? AssignedDepartment { get; set; }
+
         public string? Description { get; set; }
         public StatusEnum Status { get; set; }
 

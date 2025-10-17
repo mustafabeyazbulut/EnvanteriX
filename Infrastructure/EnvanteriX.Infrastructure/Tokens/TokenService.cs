@@ -22,19 +22,20 @@ namespace EnvanteriX.Infrastructure.Tokens
 
         public async Task<JwtSecurityToken> CreateToken(User user, IList<string> roles)
         {
-            var claims = new List<Claim>()
+            var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.Email, user.Email)
-            }; // bir kullanıcının adı, soyadı, email adresi, telefon numarası gibi bilgileri bir claims nesnesinde tutulabilir.
+                new Claim(ClaimTypes.Email, user.Email ?? ""), // ✅ Değiştirildi
+                new Claim(ClaimTypes.Name, user.UserName ?? "") // ✅ Ekledik
+            };
 
             foreach (var role in roles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));
-            } // bir kullanıcının birden fazla rolü olabilir. Bu rolleri claims nesnesine ekleyerek bir kullanıcının rollerini tutabiliriz.
+            }
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenSettings.Secret)); // token'ı oluşturmak Secreti kullanarak bir key oluşturuyoruz.
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenSettings.Secret));
 
             var token = new JwtSecurityToken(
                 issuer: tokenSettings.Issuer,
@@ -42,11 +43,14 @@ namespace EnvanteriX.Infrastructure.Tokens
                 expires: DateTime.Now.AddMinutes(tokenSettings.TokenValidityInMunitues),
                 claims: claims,
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
-                );
+            );
 
+            // Bu satırı kaldır istersen (gerekli değil):
             await _userManager.AddClaimsAsync(user, claims);
+
             return token;
         }
+
 
         public string GenerateRefreshToken()
         {

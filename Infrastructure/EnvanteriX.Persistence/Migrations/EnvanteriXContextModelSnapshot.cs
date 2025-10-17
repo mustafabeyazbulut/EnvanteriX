@@ -38,6 +38,9 @@ namespace EnvanteriX.Persistence.Migrations
                     b.Property<int>("AssetTypeId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("AssignedDepartmentId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("AssignedUserId")
                         .HasColumnType("int");
 
@@ -90,6 +93,8 @@ namespace EnvanteriX.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AssetTypeId");
+
+                    b.HasIndex("AssignedDepartmentId");
 
                     b.HasIndex("AssignedUserId");
 
@@ -221,6 +226,42 @@ namespace EnvanteriX.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Brands");
+                });
+
+            modelBuilder.Entity("EnvanteriX.Domain.Entities.Department", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("LastModifiedByEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("EnvanteriX.Domain.Entities.Location", b =>
@@ -689,6 +730,11 @@ namespace EnvanteriX.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("EnvanteriX.Domain.Entities.Department", "AssignedDepartment")
+                        .WithMany("Assets")
+                        .HasForeignKey("AssignedDepartmentId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
                     b.HasOne("EnvanteriX.Domain.Entities.User", "AssignedUser")
                         .WithMany()
                         .HasForeignKey("AssignedUserId")
@@ -713,6 +759,8 @@ namespace EnvanteriX.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("AssetType");
+
+                    b.Navigation("AssignedDepartment");
 
                     b.Navigation("AssignedUser");
 
@@ -858,6 +906,11 @@ namespace EnvanteriX.Persistence.Migrations
             modelBuilder.Entity("EnvanteriX.Domain.Entities.Brand", b =>
                 {
                     b.Navigation("Models");
+                });
+
+            modelBuilder.Entity("EnvanteriX.Domain.Entities.Department", b =>
+                {
+                    b.Navigation("Assets");
                 });
 
             modelBuilder.Entity("EnvanteriX.Domain.Entities.Location", b =>

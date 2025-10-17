@@ -592,6 +592,122 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.DepartmentController",
+    "Method": "Active",
+    "RelativePath": "department/active/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.DepartmentController",
+    "Method": "Create",
+    "RelativePath": "department/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.DepartmentCommands.CreateDepartmentCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.DepartmentController",
+    "Method": "DeActive",
+    "RelativePath": "department/de-active/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.DepartmentController",
+    "Method": "Delete",
+    "RelativePath": "department/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.DepartmentController",
+    "Method": "GetAll",
+    "RelativePath": "department/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.DepartmentController",
+    "Method": "GetAllActive",
+    "RelativePath": "department/get-all-active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.DepartmentController",
+    "Method": "GetById",
+    "RelativePath": "department/get-by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.DepartmentController",
+    "Method": "Update",
+    "RelativePath": "department/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "EnvanteriX.Application.Features.Commands.DepartmentCommands.UpdateDepartmentCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EnvanteriX.WebApi.Controllers.LocationController",
     "Method": "Active",
     "RelativePath": "location/active/{id}",

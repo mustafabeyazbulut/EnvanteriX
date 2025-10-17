@@ -1,6 +1,7 @@
 ﻿using EnvanteriX.Application.Features.Commands.AssetCommands;
 using EnvanteriX.Application.Features.Queries.AssetQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebApi.Controllers
@@ -12,6 +13,7 @@ namespace EnvanteriX.WebApi.Controllers
         private readonly IMediator _mediator;
         public AssetController(IMediator mediator) => _mediator = mediator;
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll() =>
             Ok(await _mediator.Send(new GetAllAssetsQuery()));

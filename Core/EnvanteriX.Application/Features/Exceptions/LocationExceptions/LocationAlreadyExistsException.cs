@@ -2,7 +2,6 @@
 
 namespace EnvanteriX.Application.Features.Exceptions.LocationExceptions
 {
-
     public class LocationAlreadyExistsException : BaseException
     {
         public LocationAlreadyExistsException(string location)

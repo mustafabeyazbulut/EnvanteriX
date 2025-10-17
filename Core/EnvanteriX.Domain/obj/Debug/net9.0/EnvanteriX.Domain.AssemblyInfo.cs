@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EnvanteriX.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea8799086c18a205401fac470832720ea0517ef5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d7ec7a8325e7441afe6ebd55152a2550ed99b68")]
 [assembly: System.Reflection.AssemblyProductAttribute("EnvanteriX.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EnvanteriX.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

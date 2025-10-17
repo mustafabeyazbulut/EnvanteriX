@@ -71,6 +71,12 @@ namespace EnvanteriX.Persistence.Configurations
                    .IsRequired(false)
                    .OnDelete(DeleteBehavior.SetNull);
 
+            builder.HasOne(x => x.AssignedDepartment)
+             .WithMany()
+             .HasForeignKey(x => x.AssignedDepartmentId)
+             .IsRequired(false)
+             .OnDelete(DeleteBehavior.SetNull);
+
             builder.Property(x => x.CreatedDate)
                     .HasDefaultValueSql("GETDATE()"); // SQL Server için
 
