@@ -24,6 +24,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetTypeHandlers
             var hasAnyAsset = await _unitOfWork.GetReadRepository<Asset>()
                                                .AnyAsync(x => x.AssetTypeId == request.Id && !x.IsDeleted);
             await _assetTypeRules.AssetTypeShouldNotHaveAnyAsset(hasAnyAsset, assetType.TypeName);
+            assetType.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<AssetType>().HardDeleteAsync(assetType);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

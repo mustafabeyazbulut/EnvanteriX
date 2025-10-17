@@ -23,7 +23,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
         {
             var asset = await _unitOfWork.GetReadRepository<Asset>().GetAsync(x => x.Id == request.Id);
             await _assetRules.AssetShouldExist(asset);
-
+            asset.LastModifiedByEmail=_userEmail;
             asset.IsDeleted = false;
             await _unitOfWork.GetWriteRepository<Asset>().UpdateAsync(asset);
             await _unitOfWork.SaveAsync();

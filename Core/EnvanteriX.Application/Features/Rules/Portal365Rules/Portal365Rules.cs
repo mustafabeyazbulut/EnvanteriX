@@ -21,5 +21,13 @@ namespace EnvanteriX.Application.Features.Rules.Portal365Rules
             if (Portal365Exists) throw new Portal365AlreadyExistsException(name);
             return Task.CompletedTask;
         }
+        public Task AccessTokenMustExist(string accessToken)
+        {
+            if (string.IsNullOrEmpty(accessToken))
+                throw new InvalidAccessTokenException();
+
+            return Task.CompletedTask;
+        }
+
     }
 }

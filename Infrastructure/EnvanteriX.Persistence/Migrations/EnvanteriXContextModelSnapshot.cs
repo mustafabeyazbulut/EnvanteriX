@@ -60,6 +60,10 @@ namespace EnvanteriX.Persistence.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<string>("LastModifiedByEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("LocationId")
                         .HasColumnType("int");
 
@@ -125,6 +129,10 @@ namespace EnvanteriX.Persistence.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<string>("LastModifiedByEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Note")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -169,6 +177,10 @@ namespace EnvanteriX.Persistence.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<string>("LastModifiedByEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("TypeName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -202,6 +214,10 @@ namespace EnvanteriX.Persistence.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<string>("LastModifiedByEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Brands");
@@ -234,6 +250,10 @@ namespace EnvanteriX.Persistence.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<string>("LastModifiedByEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Locations");
@@ -262,6 +282,10 @@ namespace EnvanteriX.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
+
+                    b.Property<string>("LastModifiedByEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PerformedBy")
                         .HasMaxLength(100)
@@ -313,6 +337,10 @@ namespace EnvanteriX.Persistence.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<string>("LastModifiedByEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ModelName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -350,6 +378,10 @@ namespace EnvanteriX.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
+
+                    b.Property<string>("LastModifiedByEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SenderEmail")
                         .IsRequired()
@@ -526,6 +558,10 @@ namespace EnvanteriX.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
+
+                    b.Property<string>("LastModifiedByEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()

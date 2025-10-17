@@ -20,8 +20,10 @@ namespace EnvanteriX.Persistence.Configurations
             .HasMaxLength(255);
 
             builder.Property(a => a.Status)
-                   .HasConversion<string>()
-                   .HasDefaultValue(StatusEnum.Stokta);
+       .HasConversion<string>()
+       .HasDefaultValue(StatusEnum.Stokta)
+       .HasSentinel(StatusEnum.None);
+
 
             builder.Property(x => x.IsDeleted)
                    .IsRequired()

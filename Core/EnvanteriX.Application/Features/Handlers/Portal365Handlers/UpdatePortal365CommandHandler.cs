@@ -33,6 +33,7 @@ namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
             modelExits.ClientSecret = request.ClientSecret;
             modelExits.TenantId = request.TenantId;
             modelExits.SenderEmail = request.SenderEmail;
+            modelExits.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Portal365>().UpdateAsync(modelExits);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

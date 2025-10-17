@@ -23,8 +23,9 @@ namespace EnvanteriX.Application.Features.Handlers.MaintenanceRecordHandlers
             var model = await _unitOfWork.GetReadRepository<MaintenanceRecord>().GetAsync(x => x.Id == request.Id);
             await _maintenanceRecordRules.MaintenanceRecordShouldExist(model);
             model.IsDeleted = true;
+            model.LastModifiedByEmail = _userEmail;
            await _unitOfWork.GetWriteRepository<MaintenanceRecord>().UpdateAsync(model);
-              await _unitOfWork.SaveAsync();
+            await _unitOfWork.SaveAsync();
             return Unit.Value;
         }
     }

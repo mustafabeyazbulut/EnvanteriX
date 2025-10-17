@@ -1079,6 +1079,32 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.Portal365Controller",
+    "Method": "SyncUsers",
+    "RelativePath": "portal365/sync-users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.Portal365Controller",
+    "Method": "TestConnection",
+    "RelativePath": "portal365/test-connection/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.Portal365Controller",
     "Method": "Update",
     "RelativePath": "portal365/update",
     "HttpMethod": "PUT",

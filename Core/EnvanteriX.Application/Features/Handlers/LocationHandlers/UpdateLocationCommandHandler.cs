@@ -31,6 +31,7 @@ namespace EnvanteriX.Application.Features.Handlers.LocationHandlers
             }
             location.Building = request.Building;
             location.Description = request.Description;
+            location.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Location>().UpdateAsync(location);
             await _unitOfWork.SaveAsync();
 

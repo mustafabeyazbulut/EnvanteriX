@@ -31,6 +31,7 @@ namespace EnvanteriX.Application.Features.Handlers.VendorHandlers
             vendor.ContactPerson = request.ContactPerson;
             vendor.PhoneNumber = request.PhoneNumber;
             vendor.Email = request.Email;
+            vendor.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Vendor>().UpdateAsync(vendor);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

@@ -44,7 +44,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
             asset.AssignedUserId = request.AssignedUserId;
             asset.Description = request.Description;
             asset.Status = request.Status;
-
+            asset.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Asset>().UpdateAsync(asset);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

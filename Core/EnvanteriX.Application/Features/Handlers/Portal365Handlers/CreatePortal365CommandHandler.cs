@@ -23,6 +23,7 @@ namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
             await _portal365Rules.Portal365AlreadyExists(modelExits);
 
             var model = _mapper.Map<Portal365, CreatePortal365Command>(request);
+            model.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Portal365>().AddAsync(model);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

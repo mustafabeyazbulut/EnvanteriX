@@ -26,6 +26,7 @@ namespace EnvanteriX.Application.Features.Handlers.VendorHandlers
             await _vendorRules.VendorAlreadyExists(vendorExists, request.VendorName);
             var vendor= _mapper.Map<Vendor, CreateVendorCommand>(request);
 
+            vendor.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Vendor>().AddAsync(vendor);
             await _unitOfWork.SaveAsync();
             return _mapper.Map<CreateVendorCommandResult, Vendor>(vendor);

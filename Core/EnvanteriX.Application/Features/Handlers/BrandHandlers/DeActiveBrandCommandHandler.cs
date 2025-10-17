@@ -28,6 +28,7 @@ namespace EnvanteriX.Application.Features.Handlers.BrandHandlers
                             );
             await _brandRules.BrandShouldExist(brand);
             brand.IsDeleted = true;
+            brand.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Brand>().UpdateAsync(brand);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

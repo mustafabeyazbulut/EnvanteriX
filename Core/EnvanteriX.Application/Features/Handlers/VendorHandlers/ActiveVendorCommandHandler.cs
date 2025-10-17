@@ -24,6 +24,7 @@ namespace EnvanteriX.Application.Features.Handlers.VendorHandlers
             await _vendorRules.VendorShouldExist(vendor);
 
             vendor.IsDeleted = false;
+            vendor.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Vendor>().UpdateAsync(vendor);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

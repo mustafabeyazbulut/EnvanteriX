@@ -1,11 +1,15 @@
 ﻿using EnvanteriX.Application.Interfaces.AutoMapper;
+using EnvanteriX.Application.Interfaces.PasswordGenerator;
+using EnvanteriX.Application.Interfaces.Portal365Interfaces;
 using EnvanteriX.Application.Interfaces.Tokens;
+using EnvanteriX.Infrastructure.Portal365Services;
 using EnvanteriX.Infrastructure.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using EnvanteriX.Infrastructure.PasswordGenerators;
 
 namespace EnvanteriX.Infrastructure
 {
@@ -35,8 +39,11 @@ namespace EnvanteriX.Infrastructure
                     ClockSkew = TimeSpan.Zero,
                 };
             });
-
             services.AddSingleton<IMapper, AutoMapper.Mapper>();
+            services.AddHttpClient<IPortal365Service, Portal365Service>();
+            services.AddSingleton<IPasswordGenerator, PasswordGenerator>();
+
+
         }
     }
 }

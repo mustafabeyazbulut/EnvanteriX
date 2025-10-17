@@ -1,5 +1,6 @@
 ﻿using EnvanteriX.Application.Features.Commands.Portal365Commands;
 using EnvanteriX.Application.Features.Queries.Portal365Queries;
+using EnvanteriX.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -60,5 +61,20 @@ namespace EnvanteriX.WebApi.Controllers
             await _mediator.Send(new DeActivePortal365Command { Id = id });
             return StatusCode(StatusCodes.Status200OK);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> TestConnection(int id)
+        {
+            var token = await _mediator.Send(new TestPortal365ConnectionQuery { Id = id });
+            return Ok(token);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SyncUsers()
+        {
+            var result = await _mediator.Send(new SyncPortal365UsersQuery());
+            return Ok(result);
+        }
+
     }
 }

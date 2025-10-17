@@ -23,6 +23,7 @@ namespace EnvanteriX.Application.Features.Handlers.ModelHandlers
             var model = await _unitOfWork.GetReadRepository<Model>().GetAsync(x => x.Id == request.Id);
             await _modelRules.ModelShouldExist(model);
             model.IsDeleted = true;
+            model.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Model>().UpdateAsync(model);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

@@ -22,6 +22,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetMovementHandlers
         public async Task<CreateAssetMovementCommandResult> Handle(CreateAssetMovementCommand request, CancellationToken cancellationToken)
         {
             var model= _mapper.Map<AssetMovement, CreateAssetMovementCommand>(request);
+            model.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<AssetMovement>().AddAsync(model);
             await _unitOfWork.SaveAsync();
             return _mapper.Map<CreateAssetMovementCommandResult, AssetMovement>(model);

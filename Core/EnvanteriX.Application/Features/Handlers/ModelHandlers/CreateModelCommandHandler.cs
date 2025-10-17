@@ -33,6 +33,7 @@ namespace EnvanteriX.Application.Features.Handlers.ModelHandlers
             await _brandRules.BrandShouldExist(brand);
 
             var model =_mapper.Map<Model, CreateModelCommand>(request);
+            model.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Model>().AddAsync(model);
             await _unitOfWork.SaveAsync();
             var map = _mapper.Map<CreateModelCommandResult, Model>(model);

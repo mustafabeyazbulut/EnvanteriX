@@ -29,6 +29,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetTypeHandlers
                 await _assetTypeRules.AssetTypeAlreadyExists(assetTypeExists, $"Varlık Türü: {request.TypeName}");
             }
             assetType.TypeName = request.TypeName;
+            assetType.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<AssetType>().UpdateAsync(assetType);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

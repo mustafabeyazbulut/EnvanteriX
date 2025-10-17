@@ -22,6 +22,7 @@ namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
             var model =await _unitOfWork.GetReadRepository<Portal365>().GetAsync(x=>x.Id== request.Id);
             await _portal365Rules.Portal365ShouldExist(model);
             model.IsDeleted = false;
+            model.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Portal365>().UpdateAsync(model);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

@@ -21,6 +21,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetMovementHandlers
         {
             var model = await _unitOfWork.GetReadRepository<AssetMovement>().GetAsync(x => x.Id == request.Id);
             await _assetMovementRules.AssetMovementShouldExist(model);
+            model.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<AssetMovement>().HardDeleteAsync(model);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

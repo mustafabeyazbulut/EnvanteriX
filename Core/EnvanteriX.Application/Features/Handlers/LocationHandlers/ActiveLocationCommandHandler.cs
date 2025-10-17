@@ -22,6 +22,7 @@ namespace EnvanteriX.Application.Features.Handlers.LocationHandlers
             var location = await _unitOfWork.GetReadRepository<Location>().GetAsync(x => x.Id == request.Id);
             await _locationRules.LocationShouldExist(location);
             location.IsDeleted = false;
+            location.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Location>().UpdateAsync(location);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

@@ -11,6 +11,8 @@ namespace EnvanteriX.Application.Bases
         public readonly IUnitOfWork _unitOfWork;
         public readonly IHttpContextAccessor _httpContextAccessor;
         public readonly string _userId;
+        public readonly string _userEmail;
+
 
         public BaseHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
         {
@@ -18,6 +20,8 @@ namespace EnvanteriX.Application.Bases
             this._unitOfWork = unitOfWork;
             this._httpContextAccessor = httpContextAccessor;
             _userId = httpContextAccessor.HttpContext.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            _userEmail = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.Email)?.Value?? httpContextAccessor.HttpContext?.User?.FindFirst("email")?.Value?? httpContextAccessor.HttpContext?.User?.FindFirst("preferred_username")?.Value;
+
         }
     }
 }

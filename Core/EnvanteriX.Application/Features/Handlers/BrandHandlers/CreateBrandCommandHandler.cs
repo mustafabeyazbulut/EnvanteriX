@@ -25,6 +25,7 @@ namespace EnvanteriX.Application.Features.Handlers.BrandHandlers
                 .GetAsync(b => b.BrandName.ToLower() == request.BrandName.ToLower());
             await _brandRules.BrandAlreadyExists(existingBrand);
             var brand = _mapper.Map<Brand, CreateBrandCommand>(request);
+            brand.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Brand>().AddAsync(brand);
             await _unitOfWork.SaveAsync();
             var map = _mapper.Map<CreateBrandCommandResult, Brand>(brand);

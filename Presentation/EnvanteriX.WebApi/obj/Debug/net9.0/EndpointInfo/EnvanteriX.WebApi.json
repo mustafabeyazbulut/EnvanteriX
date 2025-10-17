@@ -1703,6 +1703,41 @@
         }
       }
     },
+    "/portal365/test-connection/{id}": {
+      "get": {
+        "tags": [
+          "Portal365"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/portal365/sync-users": {
+      "get": {
+        "tags": [
+          "Portal365"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/role/get-all": {
       "get": {
         "tags": [
@@ -2639,6 +2674,7 @@
       },
       "StatusEnum": {
         "enum": [
+          0,
           1,
           2,
           3,

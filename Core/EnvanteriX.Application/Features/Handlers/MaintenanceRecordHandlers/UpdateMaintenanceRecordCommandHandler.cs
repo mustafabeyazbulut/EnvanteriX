@@ -33,16 +33,19 @@ namespace EnvanteriX.Application.Features.Handlers.MaintenanceRecordHandlers
                 var asset = await _unitOfWork.GetReadRepository<Asset>().GetAsync(a => a.Id == model.AssetId);
                 if (asset != null)
                 {
-                    if (asset.AssignedUserId!=null)
+                    if (asset.AssignedUserId != null)
                     {
                         asset.Status = Domain.Enums.StatusEnum.Kullanimda;
-                    }else
+                    }
+                    else
                     {
                         asset.Status = Domain.Enums.StatusEnum.Stokta;
                     }
+                    asset.LastModifiedByEmail = _userEmail;
                     await _unitOfWork.GetWriteRepository<Asset>().UpdateAsync(asset);
                 }
             }
+            model.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<MaintenanceRecord>().UpdateAsync(model);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

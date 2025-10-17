@@ -39,6 +39,7 @@ namespace EnvanteriX.Application.Features.Handlers.ModelHandlers
 
             model.ModelName = request.ModelName;
             model.BrandId = request.BrandId;
+            model.LastModifiedByEmail = _userEmail;
 
             await _unitOfWork.GetWriteRepository<Model>().UpdateAsync(model);
             await _unitOfWork.SaveAsync();

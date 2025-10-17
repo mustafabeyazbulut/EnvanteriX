@@ -25,6 +25,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
             await _assetRules.AssetShouldExist(asset);
 
             asset.IsDeleted = true;
+           asset.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Asset>().UpdateAsync(asset);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

@@ -4,6 +4,7 @@ namespace EnvanteriX.Domain.Enums
 {
     public enum StatusEnum
     {
+        None = 0,      // sentinel value
         [Description("Ürün stokta mevcut.")]
         Stokta = 1,
 

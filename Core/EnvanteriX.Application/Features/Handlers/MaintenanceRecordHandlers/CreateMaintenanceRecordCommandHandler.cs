@@ -35,9 +35,11 @@ namespace EnvanteriX.Application.Features.Handlers.MaintenanceRecordHandlers
             if (asset != null)
             {
                 asset.Status = Domain.Enums.StatusEnum.Tamirde;
+                asset.LastModifiedByEmail = _userEmail;
                 await _unitOfWork.GetWriteRepository<Asset>().UpdateAsync(asset);
             }
 
+            model.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<MaintenanceRecord>().AddAsync(model);
             await _unitOfWork.SaveAsync();
 

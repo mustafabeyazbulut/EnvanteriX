@@ -26,6 +26,7 @@ namespace EnvanteriX.Application.Features.Handlers.LocationHandlers
             await _locationRules.LocationAlreadyExists( locationExists, $"{request.Building}");
 
             var location = _mapper.Map<Location, CreateLocationCommand>(request);
+            location.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Location>().AddAsync(location);
             await _unitOfWork.SaveAsync();
             var result = _mapper.Map<CreateLocationCommandResult, Location>(location);

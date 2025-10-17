@@ -31,6 +31,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
             {
                 asset.Status = Domain.Enums.StatusEnum.Kullanimda;
             }
+            asset.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Asset>().AddAsync(asset);
             await _unitOfWork.SaveAsync();
 

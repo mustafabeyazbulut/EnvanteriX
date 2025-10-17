@@ -1015,3 +1015,4 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\o
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\1k9zkivad4-gef3zaap5m.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\cb1jovh3kv-f8gx6pky8k.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\5x74q0n3vx-351yyt7gaq.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\c8b9kedbqp-c10vs48hyd.gz

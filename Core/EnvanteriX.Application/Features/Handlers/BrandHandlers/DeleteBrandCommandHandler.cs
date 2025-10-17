@@ -28,6 +28,7 @@ namespace EnvanteriX.Application.Features.Handlers.BrandHandlers
                             );
             await _brandRules.BrandShouldExist(brand);
             await _brandRules.BrandShouldNotHaveAnyModel(brand); //eğer bir modelle eşlenmişse hata fırlatıyoruz. Önce modeller silinmelidir.
+            brand.LastModifiedByEmail = _userEmail;
             await _unitOfWork.GetWriteRepository<Brand>().HardDeleteAsync(brand);
             await _unitOfWork.SaveAsync();
             return Unit.Value;

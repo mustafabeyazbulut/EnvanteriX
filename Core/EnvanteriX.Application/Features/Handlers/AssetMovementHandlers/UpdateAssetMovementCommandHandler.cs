@@ -29,6 +29,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetMovementHandlers
             model.FromLocationId = request.FromLocationId;
             model.ToLocationId = request.ToLocationId;
             model.Note = request.Note;
+            model.LastModifiedByEmail = _userEmail;
 
             await _unitOfWork.GetWriteRepository<AssetMovement>().UpdateAsync(model);
             await _unitOfWork.SaveAsync();
