@@ -19,6 +19,12 @@
         public int? ToLocationId { get; set; }
         public string ToLocationName { get; set; }
 
+        public int? FromDepartmentId { get; set; }
+        public string FromDepartmentName { get; set; }
+
+        public int? ToDepartmentId { get; set; }
+        public string ToDepartmentName { get; set; }
+
         public string Note { get; set; }
 
         public DateTime CreatedDate { get; set; }

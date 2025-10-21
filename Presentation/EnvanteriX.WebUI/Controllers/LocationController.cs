@@ -9,9 +9,10 @@ namespace EnvanteriX.WebUI.Controllers
     public class LocationController : BaseController
     {
         private readonly LocationApiUrl _LocationApiUrl;
-        public LocationController(IApiClientService apiClientService, LocationApiUrl LocationApiUrl) : base(apiClientService)
+
+        public LocationController(IApiClientService apiClientService, ILogger<BaseController> logger, LocationApiUrl locationApiUrl) : base(apiClientService, logger)
         {
-            _LocationApiUrl = LocationApiUrl;
+            _LocationApiUrl = locationApiUrl;
         }
 
         [HttpGet("")]

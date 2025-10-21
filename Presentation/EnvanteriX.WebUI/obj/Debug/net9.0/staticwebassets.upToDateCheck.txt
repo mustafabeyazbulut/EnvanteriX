@@ -328,8 +328,8 @@ wwwroot\js\simplebar.min.js
 wwwroot\js\simplebar.umd.js
 wwwroot\js\sweetalert\sweetalert.min.js
 wwwroot\js\webfont\webfont.min.js
-wwwroot\css\zero.min.css
 wwwroot\css\zero.css
+wwwroot\css\zero.min.css
 wwwroot\libs\bootstrap\css\bootstrap-grid.css
 wwwroot\libs\bootstrap\css\bootstrap-grid.css.map
 wwwroot\libs\bootstrap\css\bootstrap-grid.min.css
@@ -439,8 +439,8 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\w
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\simplebar.umd.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\sweetalert\sweetalert.min.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\webfont\webfont.min.js
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\zero.min.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\zero.css
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\zero.min.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\bootstrap\css\bootstrap-grid.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\bootstrap\css\bootstrap-grid.css.map
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\bootstrap\css\bootstrap-grid.min.css

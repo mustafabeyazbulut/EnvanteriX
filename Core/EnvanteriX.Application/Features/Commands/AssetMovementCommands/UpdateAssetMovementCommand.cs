@@ -10,6 +10,8 @@ namespace EnvanteriX.Application.Features.Commands.AssetMovementCommands
         public int? ToUserId { get; set; }
         public int? FromLocationId { get; set; }
         public int? ToLocationId { get; set; }
+        public int? FromDepartmentId { get; set; }
+        public int? ToDepartmentId { get; set; }
         public string Note { get; set; }
     }
 }

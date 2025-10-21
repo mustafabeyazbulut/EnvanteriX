@@ -13,12 +13,13 @@ namespace EnvanteriX.WebUI.Controllers
         private readonly UserApiUrl _UserApiUrl;
         private readonly RoleApiUrl _roleApiUrl;
         private readonly AuthApiUrl _authApiUrl;
-        public UserController(IApiClientService apiClientService, UserApiUrl UserApiUrl, RoleApiUrl roleApiUrl, AuthApiUrl authApiUrl) : base(apiClientService)
+        public UserController(IApiClientService apiClientService, ILogger<BaseController> logger, UserApiUrl userApiUrl, RoleApiUrl roleApiUrl, AuthApiUrl authApiUrl) : base(apiClientService, logger)
         {
-            _UserApiUrl = UserApiUrl;
+            _UserApiUrl = userApiUrl;
             _roleApiUrl = roleApiUrl;
             _authApiUrl = authApiUrl;
         }
+
         private void PopulateRoles()
         {
             var roles = _apiClientService.GetAsync<List<RoleViewModel>>(_roleApiUrl.GetUrl(RoleEndpoint.GetAllActive)).Result;

@@ -1,7 +1,11 @@
 ﻿using EnvanteriX.Application.Interfaces.Portal365Interfaces;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 using EnvanteriX.Domain.Entities;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using SendGrid;
+using System.DirectoryServices;
+using System.Reflection.PortableExecutable;
+using System.Text;
 
 namespace EnvanteriX.Infrastructure.Portal365Services
 {
@@ -176,6 +180,101 @@ namespace EnvanteriX.Infrastructure.Portal365Services
             var targetOUs = new[] { "TS-PortalUser", "YONETIM-PC", "YONETIM-PC-AT2", "YONETIM-PC-ESTEBAN" }; // Örnek değerler
             return targetOUs.Any(ou => PortalUser.OU.Contains(ou, StringComparison.OrdinalIgnoreCase));
         }
+
+        public async Task SendEmailAsync(Portal365 model, string toMail, string subject, string emailBody)
+        {
+            try
+            {
+                var accessToken = await GetAccessTokenAsync(model);
+                if (string.IsNullOrEmpty(accessToken))
+                {
+                    throw new Exception("Access token alınamadı");
+                }
+
+                string _senderEmail = "aundesmtp@aundeteknik.com";
+                var emailMessage = new
+                {
+                    message = new
+                    {
+                        subject = subject,
+                        body = new
+                        {
+                            contentType = "HTML",
+                            content = emailBody
+                        },
+                        toRecipients = new[]
+                        {
+                    new
+                    {
+                        emailAddress = new
+                        {
+                            address = toMail,
+                            name = toMail
+                        }
+                    }
+                }
+                    },
+                    saveToSentItems = true
+                };
+
+                var json = JsonConvert.SerializeObject(emailMessage);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                _httpClient.DefaultRequestHeaders.Clear();
+                _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+
+                var response = await _httpClient.PostAsync($"https://graph.microsoft.com/v1.0/users/{_senderEmail}/sendMail", content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception($"Mail gönderme hatası: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Mail gönderme hatası: {ex.Message}");
+            }
+        }
+
+        public async Task<bool> LoginAsync( string username, string password)
+        {
+            string ldapPath = "LDAP://192.168.7.2"; // Active Directory'nin LDAP yolu
+            string domain = "aundeteknik.com"; // Domain adı
+            username = username.Substring(0, username.IndexOf("@"));
+            try
+            {
+                // Kullanıcı kimlik doğrulama
+                System.DirectoryServices.DirectoryEntry entry = new System.DirectoryServices.DirectoryEntry(ldapPath, $"{domain}\\{username}", password);
+                object obj = entry.NativeObject; // Bağlantı kurma işlemi
+
+                // Kullanıcı bilgilerini alma
+                DirectorySearcher searcher = new DirectorySearcher(entry)
+                {
+                    Filter = $"(samAccountName={username})" // Kullanıcı adı filtreleme
+                };
+                searcher.PropertiesToLoad.Add("title"); // Unvan bilgisini yükle
+                searcher.PropertiesToLoad.Add("displayName"); // Görünen adı yükle (isteğe bağlı)
+
+                SearchResult result = searcher.FindOne();
+
+                if (result != null)
+                {
+                    if (result.Properties.Contains("title"))
+                    {
+                        //userTitle = result.Properties["title"][0].ToString(); // Kullanıcının unvanı
+                    }
+                }
+
+                return true; // Başarılı giriş
+            }
+            catch (Exception)
+            {
+                return false; // Hatalı giriş
+            }
+        }
+
+
+
         public class PortalUser
         {
             public string Id { get; set; }

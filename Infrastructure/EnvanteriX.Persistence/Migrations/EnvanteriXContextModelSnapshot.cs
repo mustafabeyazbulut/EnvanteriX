@@ -123,6 +123,9 @@ namespace EnvanteriX.Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
+                    b.Property<int?>("FromDepartmentId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("FromLocationId")
                         .HasColumnType("int");
 
@@ -143,6 +146,9 @@ namespace EnvanteriX.Persistence.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<int?>("ToDepartmentId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("ToLocationId")
                         .HasColumnType("int");
 
@@ -153,9 +159,13 @@ namespace EnvanteriX.Persistence.Migrations
 
                     b.HasIndex("AssetId");
 
+                    b.HasIndex("FromDepartmentId");
+
                     b.HasIndex("FromLocationId");
 
                     b.HasIndex("FromUserId");
+
+                    b.HasIndex("ToDepartmentId");
 
                     b.HasIndex("ToLocationId");
 
@@ -779,6 +789,10 @@ namespace EnvanteriX.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("EnvanteriX.Domain.Entities.Department", "FromDepartment")
+                        .WithMany()
+                        .HasForeignKey("FromDepartmentId");
+
                     b.HasOne("EnvanteriX.Domain.Entities.Location", "FromLocation")
                         .WithMany()
                         .HasForeignKey("FromLocationId")
@@ -788,6 +802,10 @@ namespace EnvanteriX.Persistence.Migrations
                         .WithMany()
                         .HasForeignKey("FromUserId")
                         .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("EnvanteriX.Domain.Entities.Department", "ToDepartment")
+                        .WithMany()
+                        .HasForeignKey("ToDepartmentId");
 
                     b.HasOne("EnvanteriX.Domain.Entities.Location", "ToLocation")
                         .WithMany()
@@ -801,9 +819,13 @@ namespace EnvanteriX.Persistence.Migrations
 
                     b.Navigation("Asset");
 
+                    b.Navigation("FromDepartment");
+
                     b.Navigation("FromLocation");
 
                     b.Navigation("FromUser");
+
+                    b.Navigation("ToDepartment");
 
                     b.Navigation("ToLocation");
 

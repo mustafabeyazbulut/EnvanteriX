@@ -40,89 +40,85 @@
                     </div>
 
 
-                    <div class="row mb-3">
+                    <div class="row mb-3 align-items-center">
                         <label for="BrandId" class="col-sm-2 col-form-label">Marka Adı</label>
                         <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.BrandId, ViewBag.Brands as SelectList, "-- Marka Seçiniz --", new { @class = "select2 form-control", id = "brandSelect" })
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="ModelId" class="col-sm-2 col-form-label">Model Adı</label>
-                        <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.ModelId, ViewBag.Models as SelectList, "-- Model Seçiniz --", new { @class = "select2 form-control", id = "modelSelect" })
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="VendorId" class="col-sm-2 col-form-label">Tedarikçi</label>
-                        <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.VendorId, ViewBag.Vendors as SelectList, "-- Tedarikçi Seçiniz --", new { @class = "select2 form-control", id = "vendorSelect" })
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="IsRented" class="col-sm-2 col-form-label">Kiralık mı?</label>
-                        <div class="col-sm-10">
-                            @Html.CheckBoxFor(model => model.IsRented, new { @class = "form-check-input", id = "IsRentedCheckbox" })
-                        </div>
-                    </div>
-
-                    <div id="rentalStartDateField" style="display:none;">
-                        <div class="row mb-3">
-                            <label for="RentalStartDate" class="col-sm-2 col-form-label">Kiralama Başlangıç Tarihi</label>
-                            <div class="col-sm-10">
-                                <input type="date"
-                                       id="RentalStartDate"
-                                       name="RentalStartDate"
-                                       class="form-control"
-                                       value="@(Model.RentalStartDate.HasValue? Model.RentalStartDate.Value.ToString("yyyy-MM-dd") : "")" />
+                            <div class="input-group">
+                                <div class="flex-grow-1">
+                                    @Html.DropDownListFor(model => model.BrandId, ViewBag.Brands as SelectList,
+                                    "-- Marka Seçiniz --",
+                                                                new { @class = "form-select select2 w-100", id = "brandSelect" })
                             </div>
+                            <button type="button" class="btn btn-success" onclick="openBrandModal()">
+                                <i class="fas fa-plus"></i>
+                            </button>
                         </div>
                     </div>
+                </div>
 
-                    @section Scripts {
-                        <script>
-                            $(document).ready(function () {
-                                function toggleRentalDate() {
-                                    if ($('#IsRentedCheckbox').is(':checked')) {
-                                        $('#rentalStartDateField').slideDown();
-                                    } else {
-                                        $('#rentalStartDateField').slideUp();
-                                        // Kiralık değilse tarihi temizlemek istersen:
-                                        // $('#RentalStartDate').val('');
-                                    }
-                                }
-
-                                // Sayfa ilk yüklendiğinde durumu kontrol et
-                                toggleRentalDate();
-
-                                // Checkbox değiştiğinde tetiklenir
-                                $('#IsRentedCheckbox').change(toggleRentalDate);
-                            });
-                        </script>
-                    }
-
-
-                    <div class="row mb-3">
-                        <label for="LocationId" class="col-sm-2 col-form-label">Lokasyon</label>
-                        <div class="col-sm-10">
-                            @Html.DropDownListFor(model => model.LocationId, ViewBag.Locations as SelectList, "-- Lokasyon Seçiniz --", new { @class = "select2 form-control", id = "locationSelect" })
+                <div class="row mb-3 align-items-center">
+                    <label for="ModelId" class="col-sm-2 col-form-label">Model Adı</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <div class="flex-grow-1">
+                                @Html.DropDownListFor(model => model.ModelId, ViewBag.Models as SelectList,
+                                                                "-- Model Seçiniz --",
+                                                                new { @class = "form-select select2 w-100", id = "modelSelect" })
+                            </div>
+                            <button type="button" class="btn btn-success" onclick="openModelModal()">
+                                <i class="fas fa-plus"></i>
+                            </button>
                         </div>
                     </div>
+                </div>
 
-                   
+                <div class="row mb-3">
+                    <label for="VendorId" class="col-sm-2 col-form-label">Tedarikçi</label>
+                    <div class="col-sm-10">
+                        @Html.DropDownListFor(model => model.VendorId, ViewBag.Vendors as SelectList, "-- Tedarikçi Seçiniz --", new { @class = "select2 form-control", id = "vendorSelect" })
+                    </div>
+                </div>
 
+                <div class="row mb-3">
+                    <label for="IsRented" class="col-sm-2 col-form-label">Kiralık mı?</label>
+                    <div class="col-sm-10">
+                        @Html.CheckBoxFor(model => model.IsRented, new { @class = "form-check-input", id = "IsRentedCheckbox" })
+                    </div>
+                </div>
+
+                <div id="rentalStartDateField" style="display:none;">
                     <div class="row mb-3">
-                        <label for="Description" class="col-sm-2 col-form-label">Açıklama</label>
+                        <label for="RentalStartDate" class="col-sm-2 col-form-label">Kiralama Başlangıç Tarihi</label>
                         <div class="col-sm-10">
-                            @Html.TextBoxFor(Asset => Asset.Description, new { @class = "form-control", type = "text", placeholder = "Açıklama Girin" })
+                            <input type="date"
+                                   id="RentalStartDate"
+                                   name="RentalStartDate"
+                                   class="form-control"
+                                   value="@(Model.RentalStartDate.HasValue? Model.RentalStartDate.Value.ToString("yyyy-MM-dd") : "")" />
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label for="LocationId" class="col-sm-2 col-form-label">Atanan Kullanıcı</label>
-                        <div class="col-sm-10">
-                            @{
+                </div>
+
+
+                <div class="row mb-3">
+                    <label for="LocationId" class="col-sm-2 col-form-label">Lokasyon</label>
+                    <div class="col-sm-10">
+                        @Html.DropDownListFor(model => model.LocationId, ViewBag.Locations as SelectList, "-- Lokasyon Seçiniz --", new { @class = "select2 form-control", id = "locationSelect" })
+                    </div>
+                </div>
+
+
+
+                <div class="row mb-3">
+                    <label for="Description" class="col-sm-2 col-form-label">Açıklama</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(Asset => Asset.Description, new { @class = "form-control", type = "text", placeholder = "Açıklama Girin" })
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="LocationId" class="col-sm-2 col-form-label">Atanan Kullanıcı</label>
+                    <div class="col-sm-10">
+                        @{
                                 // ViewBag.Users: SelectList veya List<SelectListItem> olmalı
                                 var assignedUserName = "";
                                 if (ViewBag.Users != null)
@@ -153,40 +149,235 @@
     </div>
 </div>
 
-<script>
-    $(document).ready(function() {
 
+<!-- Brand Modal -->
+<div class="modal fade" id="brandModal" tabindex="-1" aria-labelledby="brandModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="brandModalLabel">Yeni Marka Ekle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="brandForm">
+                    <div class="mb-3">
+                        <label for="newBrandName" class="form-label">Marka Adı</label>
+                        <input type="text" class="form-control" id="newBrandName" placeholder="Marka adını girin" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-primary" onclick="saveBrand()">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Model Modal -->
+<div class="modal fade" id="modelModal" tabindex="-1" aria-labelledby="modelModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modelModalLabel">Yeni Model Ekle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="modelForm">
+                    <div class="mb-3">
+                        <label for="modalBrandSelect" class="form-label">Marka</label>
+                        <select class="form-select" id="modalBrandSelect" required>
+                            <option value="">-- Marka Seçiniz --</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newModelName" class="form-label">Model Adı</label>
+                        <input type="text" class="form-control" id="newModelName" placeholder="Model adını girin" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-primary" onclick="saveModel()">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            function toggleRentalDate() {
+                if ($('#IsRentedCheckbox').is(':checked')) {
+                    $('#rentalStartDateField').slideDown();
+                } else {
+                    $('#rentalStartDateField').slideUp();
+                }
+            }
+
+            toggleRentalDate();
+            $('#IsRentedCheckbox').change(toggleRentalDate);
+
+            // Brand değiştiğinde modelleri getir
             $('#brandSelect').change(function () {
-        var brandId = $(this).val();
-        var $modelSelect = $('#modelSelect');
+                var brandId = $(this).val();
+                var $modelSelect = $('#modelSelect');
 
-        $modelSelect.empty(); // önce modeli temizle
-        $modelSelect.append($('<option>', {
-            value: '',
-            text: '-- Model Seçiniz --'
-        }));
+                $modelSelect.empty();
+                $modelSelect.append($('<option>', {
+                    value: '',
+                    text: '-- Model Seçiniz --'
+                }));
 
-        if (brandId) {
-                            $.ajax({
-                                url: '/Asset/GetModelsByBrand',
-                                type: 'GET',
-                                data: { brandId: brandId },
-                                success: function (models) {
-                                    $.each(models, function (i, model) {
-                                        $modelSelect.append($('<option>', {
-                                            value: model.id,
-                                            text: model.modelName
-                                        }));
-                                    });
-                                    // select2 yeniden başlat
-                                    $modelSelect.trigger('change');
-                                },
-                                error: function () {
-                                    alert('Modeller yüklenirken bir hata oluştu.');
-                                }
+                if (brandId) {
+                    $.ajax({
+                        url: '/Asset/GetModelsByBrand',
+                        type: 'GET',
+                        data: { brandId: brandId },
+                        success: function (models) {
+                            $.each(models, function (i, model) {
+                                $modelSelect.append($('<option>', {
+                                    value: model.id,
+                                    text: model.modelName
+                                }));
                             });
+                            $modelSelect.trigger('change');
+                        },
+                        error: function () {
+                            alert('Modeller yüklenirken bir hata oluştu.');
                         }
                     });
+                }
+            });
+        });
 
-    });
-</script>
+        // Brand Modal Fonksiyonları
+        function openBrandModal() {
+            var brandModal = new bootstrap.Modal(document.getElementById('brandModal'));
+            $('#newBrandName').val('');
+            brandModal.show();
+        }
+
+        function saveBrand() {
+            var brandName = $('#newBrandName').val().trim();
+
+            if (!brandName) {
+                alert('Lütfen marka adını girin!');
+                return;
+            }
+
+            $.ajax({
+                url: '/Brand/AddJson',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ BrandName: brandName }),
+                success: function (response) {
+                    if (response.success) {
+                        // Dropdown'ı güncelle
+                        $('#brandSelect').append($('<option>', {
+                            value: response.id,
+                            text: brandName,
+                            selected: true
+                        }));
+
+                        // Modal'ı kapat
+                        var brandModal = bootstrap.Modal.getInstance(document.getElementById('brandModal'));
+                        brandModal.hide();
+
+                        // Select2'yi güncelle
+                        $('#brandSelect').trigger('change');
+
+                        alert('Marka başarıyla eklendi!');
+                    } else {
+                        alert('Hata: ' + (response.message || 'Marka eklenirken bir hata oluştu.'));
+                    }
+                },
+                error: function (xhr) {
+                    alert('Marka eklenirken bir hata oluştu: ' + xhr.responseText);
+                }
+            });
+        }
+
+        // Model Modal Fonksiyonları
+        function openModelModal() {
+            var brandId = $('#brandSelect').val();
+
+            if (!brandId) {
+                alert('Lütfen önce bir marka seçin!');
+                return;
+            }
+
+            // Modal içindeki brand dropdown'ını doldur
+            var $modalBrandSelect = $('#modalBrandSelect');
+            $modalBrandSelect.empty();
+            $modalBrandSelect.append($('<option>', {
+                value: '',
+                text: '-- Marka Seçiniz --'
+            }));
+
+            // Ana formdaki tüm markaları modal'a kopyala
+            $('#brandSelect option').each(function() {
+                if ($(this).val()) {
+                    $modalBrandSelect.append($('<option>', {
+                        value: $(this).val(),
+                        text: $(this).text(),
+                        selected: $(this).val() == brandId
+                    }));
+                }
+            });
+
+            $('#newModelName').val('');
+            var modelModal = new bootstrap.Modal(document.getElementById('modelModal'));
+            modelModal.show();
+        }
+
+        function saveModel() {
+            var modelName = $('#newModelName').val().trim();
+            var brandId = $('#modalBrandSelect').val();
+
+            if (!brandId) {
+                alert('Lütfen bir marka seçin!');
+                return;
+            }
+
+            if (!modelName) {
+                alert('Lütfen model adını girin!');
+                return;
+            }
+
+            $.ajax({
+                url: '/Model/AddJson',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    ModelName: modelName,
+                    BrandId: parseInt(brandId)
+                }),
+                success: function (response) {
+                    if (response.success) {
+                        // Model dropdown'ını güncelle
+                        $('#modelSelect').append($('<option>', {
+                            value: response.id,
+                            text: modelName,
+                            selected: true
+                        }));
+
+                        // Modal'ı kapat
+                        var modelModal = bootstrap.Modal.getInstance(document.getElementById('modelModal'));
+                        modelModal.hide();
+
+                        // Select2'yi güncelle
+                        $('#modelSelect').trigger('change');
+
+                        alert('Model başarıyla eklendi!');
+                    } else {
+                        alert('Hata: ' + (response.message || 'Model eklenirken bir hata oluştu.'));
+                    }
+                },
+                error: function (xhr) {
+                    alert('Model eklenirken bir hata oluştu: ' + xhr.responseText);
+                }
+            });
+        }
+    </script>
+}

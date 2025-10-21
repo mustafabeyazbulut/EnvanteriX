@@ -1,4 +1,5 @@
-﻿using EnvanteriX.WebUI.Models.ApiUrl;
+﻿using EnvanteriX.WebUI.Attributes;
+using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Brand;
 using Microsoft.AspNetCore.Mvc;
@@ -9,9 +10,10 @@ namespace EnvanteriX.WebUI.Controllers
     public class BrandController : BaseController
     {
         private readonly BrandApiUrl _BrandApiUrl;
-        public BrandController(IApiClientService apiClientService, BrandApiUrl BrandApiUrl) : base(apiClientService)
+
+        public BrandController(IApiClientService apiClientService, ILogger<BaseController> logger, BrandApiUrl brandApiUrl) : base(apiClientService, logger)
         {
-            _BrandApiUrl = BrandApiUrl;
+            _BrandApiUrl = brandApiUrl;
         }
 
         [HttpGet("")]
@@ -48,6 +50,26 @@ namespace EnvanteriX.WebUI.Controllers
                 return RedirectAfterPost(true,model);
             }
             return RedirectAfterPost(false);
+        }
+        [HttpPost("AddJson")]
+        [SkipBaseActionFilter]
+        public async Task<IActionResult> AddJson([FromBody]  CreateBrandViewModel model)
+        {
+            try
+            {
+                var result = await _apiClientService.PostAsync<CreateBrandResultViewModel>(_BrandApiUrl.GetUrl(BrandEndpoint.Create), model);
+                return Json(new
+                {
+                    success = true,
+                    id = result.Id,
+                    name = model.BrandName,
+                    message = "Marka başarıyla eklendi."
+                });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "Bir hata oluştu: " + ex.Message });
+            }
         }
 
         [HttpGet("Edit/{id}")]

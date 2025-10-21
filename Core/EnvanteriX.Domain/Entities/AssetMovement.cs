@@ -19,6 +19,12 @@ namespace EnvanteriX.Domain.Entities
 
         public int? ToLocationId { get; set; }
         public Location ToLocation { get; set; }
+
+        public int? FromDepartmentId { get; set; }
+        public Department FromDepartment { get; set; }
+
+        public int? ToDepartmentId { get; set; }
+        public Department ToDepartment { get; set; }
         public string Note { get; set; }
     }
 

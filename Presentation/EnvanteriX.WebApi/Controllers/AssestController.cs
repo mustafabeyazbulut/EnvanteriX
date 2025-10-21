@@ -13,7 +13,7 @@ namespace EnvanteriX.WebApi.Controllers
         private readonly IMediator _mediator;
         public AssetController(IMediator mediator) => _mediator = mediator;
 
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll() =>
             Ok(await _mediator.Send(new GetAllAssetsQuery()));

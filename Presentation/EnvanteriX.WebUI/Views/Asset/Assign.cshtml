@@ -11,7 +11,7 @@
 
         <div class="card">
             <div class="card-body">
-                <h1 class="mb-4 card-title">Rol Bilgilerini Güncelleyebilirsiniz.</h1>
+                <h1 class="mb-4 card-title">Atanan Zimmet Bilgilerini Güncelleyebilirsiniz.</h1>
                 @using (Html.BeginForm("Assign", "Asset", FormMethod.Post, new { @action = "/Asset/Assign" }))
                 {
                     <div class="row mb-3">
@@ -27,7 +27,12 @@
                             @Html.DropDownListFor(model => model.AssignedUserId, ViewBag.Users as SelectList, "-- Atanacak Kullanıcıyı Seçiniz --", new { @class = "select2 form-control", style = "width: 100%", id = "userSelect" })
                         </div>
                     </div>
-
+                    <div class="row mb-3">
+                        <label for="AssignedDepartmentId" class="col-sm-2 col-form-label">Atanan Departman</label>
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(model => model.AssignedDepartmentId, ViewBag.Departments as SelectList, "-- Atanacak Departmanı Seçiniz --", new { @class = "select2 form-control", style = "width: 100%", id = "departmentSelect" })
+                        </div>
+                    </div>
 
                     <div class="row mb-3 mt-4">
                         <div class="col-12 text-center">

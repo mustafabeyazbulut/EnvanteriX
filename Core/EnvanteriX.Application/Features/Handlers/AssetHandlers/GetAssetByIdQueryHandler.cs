@@ -23,7 +23,12 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
         {
             var asset = await _unitOfWork.GetReadRepository<Asset>().GetAsync(
                 predicate: x => x.Id == request.AssetId,
-                include: x => x.Include(c => c.AssetType).Include(b => b.Model).ThenInclude(b => b.Brand).Include(b => b.Vendor).Include(b => b.Location).Include(b => b.AssignedUser));
+                include: x => x.Include(c => c.AssetType)
+                .Include(b => b.Model).ThenInclude(b => b.Brand)
+                .Include(b => b.Vendor).Include(b => b.Location)
+                .Include(b => b.AssignedUser)
+                .Include(b => b.AssignedDepartment)
+                );
             await _assetRules.AssetShouldExist(asset);
 
             var map = _mapper.Map<GetAssetByIdQueryResult, Asset>(asset, config: cfg =>
@@ -35,6 +40,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
                    .ForMember(dest => dest.VendorName, opt => opt.MapFrom(src => src.Vendor.VendorName))
                    .ForMember(dest => dest.LocationName, opt => opt.MapFrom(src => $"{src.Location.Building}"))
                    .ForMember(dest => dest.AssignedUserName, opt => opt.MapFrom(src => src.AssignedUser.FullName))
+                   .ForMember(dest => dest.AssignedDepartmentName, opt => opt.MapFrom(src => src.AssignedDepartment.Name))
                    .ForMember(dest => dest.BrandId, opt => opt.MapFrom(src => src.Model.Brand.Id));
             });
             return map;

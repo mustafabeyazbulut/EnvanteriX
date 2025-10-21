@@ -33,7 +33,7 @@ namespace EnvanteriX.Application.Features.Handlers.MaintenanceRecordHandlers
                 var asset = await _unitOfWork.GetReadRepository<Asset>().GetAsync(a => a.Id == model.AssetId);
                 if (asset != null)
                 {
-                    if (asset.AssignedUserId != null)
+                    if (asset.AssignedUserId != null ||asset.AssignedDepartmentId!=null)
                     {
                         asset.Status = Domain.Enums.StatusEnum.Kullanimda;
                     }

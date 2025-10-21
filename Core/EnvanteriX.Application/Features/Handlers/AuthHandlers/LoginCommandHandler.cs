@@ -1,8 +1,10 @@
 ﻿using EnvanteriX.Application.Bases;
 using EnvanteriX.Application.Features.Commands.AuthCommands;
+using EnvanteriX.Application.Features.Exceptions.AuthExceptions;
 using EnvanteriX.Application.Features.Results.AuthResults;
 using EnvanteriX.Application.Features.Rules.AuthRules;
 using EnvanteriX.Application.Interfaces.AutoMapper;
+using EnvanteriX.Application.Interfaces.Portal365Interfaces;
 using EnvanteriX.Application.Interfaces.Tokens;
 using EnvanteriX.Application.Interfaces.UnitOfWorks;
 using EnvanteriX.Domain.Entities;
@@ -21,14 +23,17 @@ namespace EnvanteriX.Application.Features.Handlers.AuthHandlers
         private readonly IConfiguration configuration;
         private readonly ITokenService tokenService;
         private readonly AuthRules authRules;
+        private readonly IPortal365Service _portal365Service;
+
         public LoginCommandHandler(UserManager<User> userManager, IConfiguration configuration, ITokenService tokenService, AuthRules authRules,
-            IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
+            IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IPortal365Service portal365Service)
             : base(mapper, unitOfWork, httpContextAccessor)
         {
             this._userManager = userManager;
             this.configuration = configuration;
             this.tokenService = tokenService;
             this.authRules = authRules;
+            _portal365Service = portal365Service;
         }
 
         public async Task<LoginCommandResult> Handle(LoginCommand request, CancellationToken cancellationToken)
@@ -41,7 +46,31 @@ namespace EnvanteriX.Application.Features.Handlers.AuthHandlers
             await authRules.UserShouldBeActive(user); // kullanıcı aktif değilse hata fırlatıyoruz
             bool checkPassword = await _userManager.CheckPasswordAsync(user, request.Password); // kullanıcının şifresini kontrol ediyoruz
 
-            await authRules.EmailOrPasswordShouldNotBeInvalid(user, checkPassword); // email veya şifre hatalı ise hata fırlatıyoruz
+            var portal365Config = await _unitOfWork.GetReadRepository<Portal365>().GetAsync(
+               predicate: x => !x.IsDeleted,
+               orderBy: q => q.OrderByDescending(x => x.CreatedDate)
+           );
+            if (portal365Config is not null)
+            {
+                var loginPortal365 = await _portal365Service.LoginAsync( request.Email, request.Password);
+                if (loginPortal365)
+                {
+                    // Portal365 doğrulaması başarılı ise kullanıcıyı güncelle
+                    if (user is not null && !checkPassword)
+                    {
+                        user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, request.Password);
+                        await _userManager.UpdateAsync(user);
+                        user = await _userManager.Users
+                            .Where(u => !u.IsDeleted && u.Email == request.Email)
+                            .FirstOrDefaultAsync();
+                    }
+                }
+                else
+                {
+                    await authRules.EmailOrPasswordShouldNotBeInvalid(user, checkPassword); // email veya şifre hatalı ise hata fırlatıyoruz
+                }
+            }
+
 
             IList<string> roles = await _userManager.GetRolesAsync(user); // kullanıcının rollerini alıyoruz
 

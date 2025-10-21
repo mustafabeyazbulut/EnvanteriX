@@ -269,6 +269,10 @@
             "Microsoft.Extensions.Options.ConfigurationExtensions": {
               "target": "Package",
               "version": "[9.0.3, )"
+            },
+            "System.DirectoryServices": {
+              "target": "Package",
+              "version": "[9.0.10, )"
             }
           },
           "imports": [

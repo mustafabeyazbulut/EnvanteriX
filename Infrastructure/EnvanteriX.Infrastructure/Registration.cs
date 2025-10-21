@@ -1,7 +1,9 @@
 ﻿using EnvanteriX.Application.Interfaces.AutoMapper;
+using EnvanteriX.Application.Interfaces.Email;
 using EnvanteriX.Application.Interfaces.PasswordGenerator;
 using EnvanteriX.Application.Interfaces.Portal365Interfaces;
 using EnvanteriX.Application.Interfaces.Tokens;
+using EnvanteriX.Infrastructure.Email;
 using EnvanteriX.Infrastructure.PasswordGenerators;
 using EnvanteriX.Infrastructure.Portal365Services;
 using EnvanteriX.Infrastructure.Tokens;
@@ -39,12 +41,12 @@ namespace EnvanteriX.Infrastructure
                     ValidAudience = configuration["JWT:Audience"],
                     ClockSkew = TimeSpan.Zero,
 
-                    // 🔽 EKLE: Claim eşlemeleri
                     NameClaimType = ClaimTypes.NameIdentifier,
                     RoleClaimType = ClaimTypes.Role
                 };
             });
             services.AddSingleton<IMapper, AutoMapper.Mapper>();
+            services.AddSingleton<IEmailTemplateProvider, FileEmailTemplateProvider>();
             services.AddHttpClient<IPortal365Service, Portal365Service>();
             services.AddSingleton<IPasswordGenerator, PasswordGenerator>();
 

@@ -53,7 +53,11 @@
                         <strong>Kullanıcı:</strong> @Model.AssignedUserName
                     </div>
                 </div>
-
+                <div class="col-md-6">
+                    <div class="p-2 border rounded-3 bg-light">
+                        <strong>Departman:</strong> @Model.AssignedDepartmentName
+                    </div>
+                </div>
                 <div class="col-md-6">
                     <div class="p-2 border rounded-3 bg-light">
                         <strong>Kiralama Tarihi:</strong> @Model.RentalStartDate
@@ -76,7 +80,7 @@
                         <i class="fa fa-edit"></i> Düzenle
                     </a>
                     <a href="@Url.Action("Assign", "Asset", new { id = Model.Id })" class="btn btn-secondary">
-                        <i class="fa fa-user-plus"></i> Kullanıcı Ataması Yap
+                        <i class="fa fa-user-plus"></i>Atama Yap
                     </a>
                     @if (Model.Status == StatusEnum.Tamirde.ToString())
                     {

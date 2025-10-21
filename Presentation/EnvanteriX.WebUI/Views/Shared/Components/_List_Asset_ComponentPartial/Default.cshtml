@@ -5,7 +5,7 @@
         <div class="card-header">
             <div class="d-flex align-items-center">
                 <h4 class="card-title">Varlık Listesi</h4>
-                <button class="btn btn-primary btn-round ms-auto" onclick="window.location.href='/Asset/Add';">
+                <button class="btn btn-primary btn-round ms-auto" onclick="navigateWithLoading('/Asset/Add');">
                     <i class="fa fa-plus"></i>
                     Yeni Varlık Ekle
                 </button>
@@ -24,6 +24,7 @@
                             <th>Model</th>
                             <th>Lokasyon</th>
                             <th>Atanan Personel</th>
+                            <th>Atanan Departman</th>
                             <th>Statüsü</th>
                             <th>Kiralık Mı</th>
                             <th>Aktif Mi</th>
@@ -39,6 +40,7 @@
                             <th>Model</th>
                             <th>Lokasyon</th>
                             <th>Atanan Personel</th>
+                            <th>Atanan Departman</th>
                             <th>Statüsü</th>
                             <th>Kiralık Mı</th>
                             <th>Aktif Mi</th>
@@ -56,6 +58,7 @@
                                 <td>@item.ModelName</td>
                                 <td>@item.LocationName</td>
                                 <td>@item.AssignedUserName</td>
+                                <td>@item.AssignedDepartmentName</td>
                                 <td>@item.Status</td>
                                  <td class="text-center">
                                    @if (item.IsRented)
@@ -86,7 +89,7 @@
                                                 class="btn btn-info btn-sm"
                                                 data-bs-toggle="tooltip"
                                                 title="Details"
-                                                onclick="window.location.href='@Url.Content("~/Asset/Details/" + item.Id)';">
+                                                onclick="navigateWithLoading('@Url.Content("~/Asset/Details/" + item.Id)');">
                                             <i class="fa fa-eye"></i>
                                         </button>
 
@@ -103,8 +106,8 @@
                                         <button type="button"
                                                 class="btn btn-success btn-sm"
                                                 data-bs-toggle="tooltip"
-                                                title="Zimmetle"
-                                                onclick="window.location.href='@Url.Content("~/Asset/Assign/" + item.Id)';">
+                                                title="Atama Yap"
+                                                onclick="navigateWithLoading('@Url.Content("~/Asset/Assign/" + item.Id)');">
                                             <i class="fa fa-user-plus"></i>
                                         </button>
 
@@ -114,7 +117,7 @@
                                                 class="btn btn-warning btn-sm"
                                                 data-bs-toggle="tooltip"
                                                 title="Tamirden Geldi olarak işaretle"
-                                                onclick="window.location.href='@Url.Content("~/MaintenanceRecord/AssignAfterRepair/" + item.Id)'">
+                                                onclick="navigateWithLoading('@Url.Content("~/MaintenanceRecord/AssignAfterRepair/" + item.Id)')">
                                                     <i class="fa fa-wrench"></i>
                                              </button> 
                                         }else
@@ -123,7 +126,7 @@
                                                 class="btn btn-warning btn-sm"
                                                 data-bs-toggle="tooltip"
                                                 title="Bakım / Tamire Gönder"
-                                                onclick="window.location.href='@Url.Content("~/MaintenanceRecord/SendToMaintenance/" + item.Id)'">
+                                                onclick="navigateWithLoading('@Url.Content("~/MaintenanceRecord/SendToMaintenance/" + item.Id)')">
                                                 <i class="fa fa-wrench" ></i>
                                             </button> 
                                         } 
@@ -134,7 +137,7 @@
                                                         class="btn btn-success btn-sm "
                                                         data-bs-toggle="tooltip"
                                                         title="Stoğa Geri Çek"
-                                                        onclick="window.location.href='@Url.Content("~/Asset/SendToStock/" + item.Id)'">
+                                                        onclick="navigateWithLoading('@Url.Content("~/Asset/SendToStock/" + item.Id)')">
                                                     <i class="fa fa-box"></i>
                                                 </button>
                                         }else
@@ -144,7 +147,7 @@
                                                         class="btn btn-secondary btn-sm"
                                                         data-bs-toggle="tooltip"
                                                         title="Kullanım Dışı İşaretle"
-                                                       onclick="window.location.href='@Url.Content("~/Asset/SendToDeactivate/" + item.Id)'">
+                                                       onclick="navigateWithLoading('@Url.Content("~/Asset/SendToDeactivate/" + item.Id)')">
                                                     <i class="fa fa-ban"></i>
                                                 </button>
                                         }

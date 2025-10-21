@@ -7,13 +7,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Email\Templates\AssetAssignmentNotification.html" />
+    <None Remove="Email\Templates\RegisterEmailTemplate.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.3" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.3" />
+    <PackageReference Include="System.DirectoryServices" Version="9.0.10" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\EnvanteriX.Application\EnvanteriX.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Email\Templates\AssetAssignmentNotification.html">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email\Templates\RegisterEmailTemplate.html" />
   </ItemGroup>
 
 </Project>

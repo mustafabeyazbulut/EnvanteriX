@@ -75,6 +75,5 @@ namespace EnvanteriX.WebApi.Controllers
             var result = await _mediator.Send(new SyncPortal365UsersQuery());
             return Ok(result);
         }
-
     }
 }

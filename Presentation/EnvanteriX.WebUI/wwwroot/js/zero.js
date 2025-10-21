@@ -46,12 +46,80 @@ WebFont.load({
     },
 });
 
+
+//loading
+// Global Loading Fonksiyonları
+function showLoading() {
+    document.getElementById('loadingOverlay').classList.add('active');
+}
+
+function hideLoading() {
+    document.getElementById('loadingOverlay').classList.remove('active');
+}
+
+// Sayfa yüklendiğinde loading'i gizle
+window.addEventListener('load', function () {
+    hideLoading();
+});
+// Navigate fonksiyonu - button'lar için
+function navigateWithLoading(url) {
+    showLoading();
+    window.location.href = url;
+}
+// Sayfa geri geldiğinde loading'i gizle (browser back button)
+window.addEventListener('pageshow', function (event) {
+    hideLoading();
+});
+
+// DOM hazır olduğunda
+$(document).ready(function () {
+    // Tüm formları yakala
+    $('form').on('submit', function (e) {
+        // Form validation kontrolü (varsa)
+        var form = $(this)[0];
+        if (form.checkValidity && !form.checkValidity()) {
+            return; // Form geçersizse loading gösterme
+        }
+        showLoading();
+    });
+
+    // AJAX istekleri için
+    $(document).ajaxStart(function () {
+        showLoading();
+    }).ajaxStop(function () {
+        hideLoading();
+    }).ajaxError(function () {
+        hideLoading();
+    });
+
+    // Tüm linklere tıklandığında (isteğe bağlı)
+    $('a:not([target="_blank"])').on('click', function (e) {
+        if ($(this).attr('href') && $(this).attr('href') !== '#') {
+            showLoading();
+        }
+    });
+});
+
+///loading sonu
+
 function goBack() {
+    showLoading();
     // Önce TempData mesajlarını temizle
     fetch('/Home/ClearTempMessages', { method: 'POST' })
-        .then(() => {
-            // Sonra güvenli şekilde bir önceki sayfaya yönlendir
-            window.location.href = document.referrer || '/';
+        .then(response => response.json())
+        .then(data => {
+            // Backend'den dönen PreviousUrl'i kullan
+            const previousUrl = data.previousUrl;
+            if (previousUrl) {
+                window.location.href = previousUrl;
+            } else {
+                // Eğer PreviousUrl yoksa browser'ın geri butonunu kullan
+                window.history.back();
+            }
+        })
+        .catch(() => {
+            // Hata durumunda browser'ın geri butonunu kullan
+            window.history.back();
         });
 }
 
@@ -90,6 +158,7 @@ $(document).ready(function () {
             dangerMode: true
         }).then(function (willDelete) {
             if (willDelete) {
+                showLoading();
                 window.location.href = url;  // Kullanıcı silmeyi onaylarsa yönlendirme yapıyoruz
             }
         });

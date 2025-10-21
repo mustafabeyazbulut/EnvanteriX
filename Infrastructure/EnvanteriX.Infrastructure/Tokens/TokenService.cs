@@ -45,7 +45,6 @@ namespace EnvanteriX.Infrastructure.Tokens
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
             );
 
-            // Bu satırı kaldır istersen (gerekli değil):
             await _userManager.AddClaimsAsync(user, claims);
 
             return token;

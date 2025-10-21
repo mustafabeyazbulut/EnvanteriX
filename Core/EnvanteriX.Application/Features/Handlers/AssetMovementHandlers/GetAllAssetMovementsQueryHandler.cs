@@ -24,17 +24,20 @@ namespace EnvanteriX.Application.Features.Handlers.AssetMovementHandlers
                                .Include(y => y.ToUser)
                                .Include(y => y.FromLocation)
                                .Include(y => y.ToLocation)
+                               .Include(y => y.FromDepartment)
+                               .Include(y => y.ToDepartment)
                 );
 
             var map = _mapper.Map<GetAllAssetMovementsQueryResult, AssetMovement>(models, config: cfg =>
             {
                 cfg.CreateMap<AssetMovement, GetAllAssetMovementsQueryResult>()
-                   .ForMember(dest => dest.AssetName, opt => opt.MapFrom(src => $"Marka: {src.Asset.Model.Brand.BrandName}, " +
-                    $"Model: {src.Asset.Model.ModelName}, SeriNo: {src.Asset.SerialNumber}, Key: {src.Asset.AssetTag}"))
+                   .ForMember(dest => dest.AssetName, opt => opt.MapFrom(src => $"Marka: {src.Asset.Model.Brand.BrandName}, " + $"Model: {src.Asset.Model.ModelName}, SeriNo: {src.Asset.SerialNumber}, Key: {src.Asset.AssetTag}"))
                    .ForMember(dest => dest.FromUserFullName, opt => opt.MapFrom(src => src.FromUser.FullName))
                    .ForMember(dest => dest.ToUserFullName, opt => opt.MapFrom(src => src.ToUser.FullName))
                    .ForMember(dest => dest.FromLocationName, opt => opt.MapFrom(src => $"{src.FromLocation.Building}"))
-                   .ForMember(dest => dest.ToLocationName, opt => opt.MapFrom(src => $"{src.ToLocation.Building}"));
+                   .ForMember(dest => dest.ToLocationName, opt => opt.MapFrom(src => $"{src.ToLocation.Building}"))
+                   .ForMember(dest => dest.FromDepartmentName, opt => opt.MapFrom(src => $"{src.FromDepartment.Name}"))
+                   .ForMember(dest => dest.ToDepartmentName, opt => opt.MapFrom(src => $"{src.ToDepartment.Name}"));
             });
             return map.ToList();
         }

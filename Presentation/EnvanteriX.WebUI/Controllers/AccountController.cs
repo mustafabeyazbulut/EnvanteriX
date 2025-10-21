@@ -9,7 +9,8 @@ namespace EnvanteriX.WebUI.Controllers
     public class AccountController : BaseController
     {
         private readonly ITokenService _tokenService;
-        public AccountController(IApiClientService apiClientService,  ITokenService tokenService) : base(apiClientService)
+
+        public AccountController(IApiClientService apiClientService, ILogger<BaseController> logger, ITokenService tokenService) : base(apiClientService, logger)
         {
             _tokenService = tokenService;
         }

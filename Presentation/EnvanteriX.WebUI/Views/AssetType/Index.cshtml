@@ -9,7 +9,7 @@
         <div class="card-header">
             <div class="d-flex align-items-center">
                 <h4 class="card-title">Varlık Türü Listesi</h4>
-                <button class="btn btn-primary btn-round ms-auto" onclick="window.location.href='/AssetType/Add';">
+                <button class="btn btn-primary btn-round ms-auto" onclick="navigateWithLoading('/AssetType/Add');">
                     <i class="fa fa-plus"></i>
                     Yeni Varlık Türü Ekle
                 </button>
@@ -62,7 +62,7 @@
                                                 class="btn btn-primary btn-sm"
                                                 data-bs-toggle="tooltip"
                                                 title="Edit"
-                                                onclick="window.location.href='@Url.Content("~/AssetType/Edit/" + item.Id)';">
+                                                onclick="navigateWithLoading('@Url.Content("~/AssetType/Edit/" + item.Id)');">
                                             <i class="fa fa-edit"></i>
                                         </button>
 

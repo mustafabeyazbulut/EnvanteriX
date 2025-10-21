@@ -28,6 +28,8 @@ namespace EnvanteriX.Application.Features.Handlers.AssetMovementHandlers
             model.ToUserId = request.ToUserId;
             model.FromLocationId = request.FromLocationId;
             model.ToLocationId = request.ToLocationId;
+            model.FromDepartmentId = request.FromDepartmentId;
+            model.ToDepartmentId = request.ToDepartmentId;
             model.Note = request.Note;
             model.LastModifiedByEmail = _userEmail;
 

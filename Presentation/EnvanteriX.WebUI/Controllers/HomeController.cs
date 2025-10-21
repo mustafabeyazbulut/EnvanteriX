@@ -9,7 +9,8 @@ namespace EnvanteriX.WebUI.Controllers;
 public class HomeController : BaseController
 {
     private readonly AssetApiUrl _assetApiUrl;
-    public HomeController(IApiClientService apiClientService, AssetApiUrl assetApiUrl) : base(apiClientService)
+
+    public HomeController(IApiClientService apiClientService, ILogger<BaseController> logger, AssetApiUrl assetApiUrl) : base(apiClientService, logger)
     {
         _assetApiUrl = assetApiUrl;
     }
@@ -27,7 +28,12 @@ public class HomeController : BaseController
     {
         TempData["SuccessMessage"] = null;
         TempData["ErrorMessage"] = null;
-        return Ok();
+
+        // PreviousUrl'i geri döndür
+        var previousUrl = TempData["PreviousUrl"]?.ToString() ?? "/";
+        TempData.Keep("PreviousUrl"); // Bir sonraki istek için koru
+
+        return Json(new { previousUrl });
     }
 
 

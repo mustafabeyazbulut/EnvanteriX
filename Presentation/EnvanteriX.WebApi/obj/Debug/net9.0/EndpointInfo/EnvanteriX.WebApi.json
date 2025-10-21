@@ -15,12 +15,7 @@
           "200": {
             "description": "OK"
           }
-        },
-        "security": [
-          {
-            "Bearer": [ ]
-          }
-        ]
+        }
       }
     },
     "/asset/get-by-id/{id}": {
@@ -2614,6 +2609,11 @@
             "format": "int32",
             "nullable": true
           },
+          "assignedDepartmentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
           "description": {
             "type": "string",
             "nullable": true
@@ -2644,6 +2644,16 @@
             "nullable": true
           },
           "toLocationId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fromDepartmentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "toDepartmentId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -2924,6 +2934,11 @@
             "format": "int32",
             "nullable": true
           },
+          "assignedDepartmentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
           "description": {
             "type": "string",
             "nullable": true
@@ -2961,6 +2976,16 @@
             "nullable": true
           },
           "toLocationId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fromDepartmentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "toDepartmentId": {
             "type": "integer",
             "format": "int32",
             "nullable": true

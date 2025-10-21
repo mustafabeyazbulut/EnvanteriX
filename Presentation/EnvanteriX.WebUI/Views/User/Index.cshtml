@@ -9,7 +9,7 @@
         <div class="card-header">
             <div class="d-flex align-items-center">
                 <h4 class="card-title">Kullanıcı Listesi</h4>
-                <button class="btn btn-primary btn-round ms-auto" onclick="window.location.href='/User/Add';">
+                <button class="btn btn-primary btn-round ms-auto" onclick="navigateWithLoading('/User/Add');">
                     <i class="fa fa-plus"></i>
                     Yeni Kullanıcı
                 </button>
@@ -71,7 +71,7 @@
                                                 class="btn btn-primary btn-sm"
                                                 data-bs-toggle="tooltip"
                                                 title="Edit"
-                                                onclick="window.location.href='@Url.Content("~/User/Edit/" + item.Id)';">
+                                                onclick="navigateWithLoading('@Url.Content("~/User/Edit/" + item.Id)');">
                                             <i class="fa fa-edit"></i>
                                         </button>
 

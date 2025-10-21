@@ -9,7 +9,7 @@
         <div class="card-header">
             <div class="d-flex align-items-center">
                 <h4 class="card-title">Marka Listesi</h4>
-                <button class="btn btn-primary btn-round ms-auto" onclick="window.location.href='/Brand/Add';">
+                <button class="btn btn-primary btn-round ms-auto" onclick="navigateWithLoading('/Brand/Add');">
                     <i class="fa fa-plus"></i>
                     Yeni Marka
                 </button>
@@ -62,7 +62,7 @@
                                                 title="Edit"
                                                 class="btn btn-link btn-primary btn-lg"
                                                 data-original-title="Edit Task"
-                                                onclick="window.location.href='@Url.Content("~/Brand/Edit/" + item.Id)';">
+                                                onclick="navigateWithLoading('@Url.Content("~/Brand/Edit/" + item.Id)');">
                                             <i class="fa fa-edit"></i>
                                         </button>
                                        

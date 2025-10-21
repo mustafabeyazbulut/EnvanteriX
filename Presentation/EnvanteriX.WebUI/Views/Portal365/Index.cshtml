@@ -6,15 +6,29 @@
 
 <div class="col-md-12">
     <div class="card">
-        <div class="card-header">
-            <div class="d-flex align-items-center">
-                <h4 class="card-title">Portal 365 Entegrasyon Listesi</h4>
-                <button class="btn btn-primary btn-round ms-auto" onclick="window.location.href='/Portal365/Add';">
-                    <i class="fa fa-plus"></i>
-                    Yeni Portal 365 Entegrasyon
-                </button>
-            </div>
-        </div>
+        <div class="card-header bg-light d-flex align-items-center justify-content-between">
+    <h4 class="card-title mb-0">
+        <i class="fa fa-link text-primary me-2"></i> Portal 365 Entegrasyon Listesi
+    </h4>
+
+    <div class="d-flex gap-2">
+        <button class="btn btn-success btn-sm"
+                onclick="navigateWithLoading('/Portal365/Add');"
+                data-bs-toggle="tooltip"
+                title="Yeni Entegrasyon Ekle">
+            <i class="fa fa-plus me-1"></i> Yeni Entegrasyon
+        </button>
+
+        <button type="button"
+                class="btn btn-danger btn-sm confirm-btn"
+                data-bs-toggle="tooltip"
+                title="Senkronizasyonu Başlat"
+                data-url="@Url.Content("~/Portal365/Sync/")">
+            <i class="fa fa-plug me-1"></i> Senkronizasyonu Başlat
+        </button>
+    </div>
+</div>
+
         <div class="card-body">
             <div class="table-responsive">
                 <table id="multi-filter-select"
@@ -71,8 +85,17 @@
                                                 class="btn btn-primary btn-sm"
                                                 data-bs-toggle="tooltip"
                                                 title="Edit"
-                                                onclick="window.location.href='@Url.Content("~/Portal365/Edit/" + item.Id)';">
+                                                onclick="navigateWithLoading('@Url.Content("~/Portal365/Edit/" + item.Id)');">
                                             <i class="fa fa-edit"></i>
+                                        </button>
+
+
+                                        <button type="button"
+                                                class="btn btn-primary btn-sm"
+                                                data-bs-toggle="tooltip"
+                                                title="TestConnection"
+                                                onclick="navigateWithLoading('@Url.Content("~/Portal365/TestConnection/" + item.Id)');">
+                                            <i class="fa fa-plug"></i>
                                         </button>
 
                                         <!-- Active / DeActive Button -->

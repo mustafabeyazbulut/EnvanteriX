@@ -40,6 +40,11 @@ namespace EnvanteriX.Application.Features.Validators.AssetValidators
             RuleFor(x => x.AssignedUserId)
                 .MustAsync(AssignedUserExistsOrNull).WithMessage("Geçersiz AssignedUserId.");
 
+            RuleFor(x => x)
+              .Must(x =>
+                  !(x.AssignedUserId.HasValue && x.AssignedDepartmentId.HasValue))
+              .WithMessage("AssignedUserId ve AssignedDepartmentId aynı anda dolu olamaz.");
+
             RuleFor(x => x.RentalStartDate)
                 .NotEmpty().WithMessage("Satın alma tarihi boş olamaz.")
                 .LessThanOrEqualTo(DateTime.Today).WithMessage("Satın alma tarihi bugünden büyük olamaz.")

@@ -9,9 +9,10 @@ namespace EnvanteriX.WebUI.Controllers
     public class AssetTypeController : BaseController
     {
         private readonly AssetTypeApiUrl _AssetTypeApiUrl;
-        public AssetTypeController(IApiClientService apiClientService, AssetTypeApiUrl AssetTypeApiUrl) : base(apiClientService)
+
+        public AssetTypeController(IApiClientService apiClientService, ILogger<BaseController> logger, AssetTypeApiUrl assetTypeApiUrl) : base(apiClientService, logger)
         {
-            _AssetTypeApiUrl = AssetTypeApiUrl;
+            _AssetTypeApiUrl = assetTypeApiUrl;
         }
 
         [HttpGet("")]

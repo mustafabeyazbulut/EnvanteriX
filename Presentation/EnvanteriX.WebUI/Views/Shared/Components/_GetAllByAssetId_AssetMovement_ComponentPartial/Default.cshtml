@@ -19,6 +19,8 @@
                                 @* <th>Varlık Adı</th> *@
                                 <th>Gönderen Kullanıcı</th>
                                 <th>Alan Kullanıcı</th>
+                                <th>Gönderen Departman</th>
+                                <th>Alan Departman</th>
                                 <th>Kaynak Lokasyon</th>
                                 <th>Hedef Lokasyon</th>
                                 <th>Not</th>
@@ -34,6 +36,8 @@
                                     @* <td>@(item.AssetName ?? "-")</td> *@
                                     <td>@(item.FromUserFullName ?? "-")</td>
                                     <td>@(item.ToUserFullName ?? "-")</td>
+                                    <td>@(item.FromDepartmentName ?? "-")</td>
+                                    <td>@(item.ToDepartmentName ?? "-")</td>
                                     <td>@(item.FromLocationName ?? "-")</td>
                                     <td>@(item.ToLocationName ?? "-")</td>
 

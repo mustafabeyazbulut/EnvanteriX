@@ -9,7 +9,7 @@ namespace EnvanteriX.WebUI.Controllers
     public class VendorController : BaseController
     {
         private readonly VendorApiUrl _vendorApiUrl;
-        public VendorController(IApiClientService apiClientService, VendorApiUrl vendorApiUrl) : base(apiClientService)
+        public VendorController(IApiClientService apiClientService, ILogger<BaseController> logger, VendorApiUrl vendorApiUrl) : base(apiClientService, logger)
         {
             _vendorApiUrl = vendorApiUrl;
         }

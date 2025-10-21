@@ -16,7 +16,7 @@ namespace EnvanteriX.WebUI.Controllers
         private readonly MaintenanceRecordApiUrl _maintenanceRecordApiUrl;
         private readonly VendorApiUrl _vendorApiUrl;
 
-        public MaintenanceRecordController(IApiClientService apiClientService, AssetApiUrl assetApiUrl, MaintenanceRecordApiUrl maintenanceRecordApiUrl, VendorApiUrl vendorApiUrl) : base(apiClientService)
+        public MaintenanceRecordController(IApiClientService apiClientService, ILogger<BaseController> logger, AssetApiUrl assetApiUrl, MaintenanceRecordApiUrl maintenanceRecordApiUrl, VendorApiUrl vendorApiUrl) : base(apiClientService, logger)
         {
             _AssetApiUrl = assetApiUrl;
             _maintenanceRecordApiUrl = maintenanceRecordApiUrl;

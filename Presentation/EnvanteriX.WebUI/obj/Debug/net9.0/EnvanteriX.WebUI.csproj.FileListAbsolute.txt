@@ -1008,11 +1008,11 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\o
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\EnvanteriX.WebUI.pdb
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\EnvanteriX.WebUI.genruntimeconfig.cache
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\ref\EnvanteriX.WebUI.dll
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\l75cxu2pt6-o916j8hfoy.gz
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\nq7imnh70e-8ijcekn386.gz
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\auw8678h2a-indkj8lj1y.gz
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\3ylodu22rv-bk4vpsxlsx.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\1k9zkivad4-gef3zaap5m.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\cb1jovh3kv-f8gx6pky8k.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\5x74q0n3vx-351yyt7gaq.gz
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\c8b9kedbqp-c10vs48hyd.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\l75cxu2pt6-3ygv3gq66g.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\nq7imnh70e-pp9u13e8sm.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\auw8678h2a-2ip3dy9yv3.gz
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\obj\Debug\net9.0\compressed\3ylodu22rv-qhxkyvni3z.gz

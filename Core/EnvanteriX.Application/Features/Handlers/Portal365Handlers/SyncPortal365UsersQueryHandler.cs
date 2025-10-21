@@ -2,6 +2,7 @@
 using EnvanteriX.Application.Features.Queries.Portal365Queries;
 using EnvanteriX.Application.Features.Rules.Portal365Rules;
 using EnvanteriX.Application.Interfaces.AutoMapper;
+using EnvanteriX.Application.Interfaces.Email;
 using EnvanteriX.Application.Interfaces.PasswordGenerator;
 using EnvanteriX.Application.Interfaces.Portal365Interfaces;
 using EnvanteriX.Application.Interfaces.UnitOfWorks;
@@ -11,7 +12,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
 {
@@ -21,13 +21,14 @@ namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
         private readonly IPortal365Service _portal365Service;
         private readonly UserManager<User> _userManager;
         private readonly IPasswordGenerator _passwordGenerator;
-
-        public SyncPortal365UsersQueryHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IPortal365Service portal365Service, Portal365Rules portal365Rules, UserManager<User> userManager, IPasswordGenerator passwordGenerator) : base(mapper, unitOfWork, httpContextAccessor)
+        private readonly IEmailTemplateProvider _emailTemplateProvider;
+        public SyncPortal365UsersQueryHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IPortal365Service portal365Service, Portal365Rules portal365Rules, UserManager<User> userManager, IPasswordGenerator passwordGenerator, IEmailTemplateProvider emailTemplateProvider) : base(mapper, unitOfWork, httpContextAccessor)
         {
             _portal365Service = portal365Service;
             _portal365Rules = portal365Rules;
             _userManager = userManager;
             _passwordGenerator = passwordGenerator;
+            _emailTemplateProvider = emailTemplateProvider;
         }
 
         public async Task<Unit> Handle(SyncPortal365UsersQuery request, CancellationToken cancellationToken)
@@ -65,6 +66,10 @@ namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
                     var exists = await _userManager.Users.FirstOrDefaultAsync(u => u.Email == email, cancellationToken);
                     if (exists != null)
                         continue;
+                    if (email!= "iaydin@aundeteknik.com")
+                    {
+                        continue;
+                    }
 
                     var newUser = new User
                     {
@@ -83,6 +88,16 @@ namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
                     if (resultUser.Succeeded)
                     {
                         await _userManager.AddToRoleAsync(newUser, "user");
+                        var emailTemplate = await _emailTemplateProvider.GetTemplateAsync("RegisterEmailTemplate");
+                        if (!string.IsNullOrEmpty(emailTemplate))
+                        {
+                            // Placeholder’ları doldur
+                            emailTemplate = emailTemplate.Replace("{{FullName}}", newUser.FullName)
+                                                         .Replace("{{Url}}", "https://envanter.aundeteknik.com");
+
+                            await _portal365Service.SendEmailAsync(portal365Config, newUser.Email,
+                                "Aunde Envanter Kaydınız Tamamlandı", emailTemplate);
+                        }
                     }
                     else
                     {

@@ -19,9 +19,10 @@ namespace EnvanteriX.Application.Bases
             this._mapper = mapper;
             this._unitOfWork = unitOfWork;
             this._httpContextAccessor = httpContextAccessor;
-            _userId = httpContextAccessor.HttpContext.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            _userEmail = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.Email)?.Value?? httpContextAccessor.HttpContext?.User?.FindFirst("email")?.Value?? httpContextAccessor.HttpContext?.User?.FindFirst("preferred_username")?.Value;
-
+            //_userId = httpContextAccessor.HttpContext.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            //_userEmail = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.Email)?.Value?? httpContextAccessor.HttpContext?.User?.FindFirst("email")?.Value?? httpContextAccessor.HttpContext?.User?.FindFirst("preferred_username")?.Value;
+            _userId = "1";
+            _userEmail = "mbeyazbulut@gmail.com";
         }
     }
 }

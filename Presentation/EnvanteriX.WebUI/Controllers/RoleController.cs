@@ -12,7 +12,7 @@ namespace EnvanteriX.WebUI.Controllers
     {
         private readonly RoleApiUrl _roleApiUrl;
 
-        public RoleController(IApiClientService apiClientService, RoleApiUrl roleApiUrl) : base(apiClientService)
+        public RoleController(IApiClientService apiClientService, ILogger<BaseController> logger, RoleApiUrl roleApiUrl) : base(apiClientService, logger)
         {
             _roleApiUrl = roleApiUrl;
         }

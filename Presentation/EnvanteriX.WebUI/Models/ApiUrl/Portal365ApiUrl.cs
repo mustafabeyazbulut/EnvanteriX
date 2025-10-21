@@ -9,7 +9,9 @@
         Update,
         Delete,
         Active,
-        DeActive
+        DeActive,
+        TestConnection,
+        SyncUsers
     }
 
     public class Portal365ApiUrl : BaseApiUrl
@@ -28,6 +30,8 @@
                 Portal365Endpoint.Delete => $"{BasePath}/delete/{id}",
                 Portal365Endpoint.Active => $"{BasePath}/active/{id}",
                 Portal365Endpoint.DeActive => $"{BasePath}/de-active/{id}",
+                Portal365Endpoint.TestConnection => $"{BasePath}/test-connection/{id}",
+                Portal365Endpoint.SyncUsers => $"{BasePath}/sync-users",
                 _ => throw new ArgumentOutOfRangeException(nameof(endpoint), endpoint, null)
             };
         }

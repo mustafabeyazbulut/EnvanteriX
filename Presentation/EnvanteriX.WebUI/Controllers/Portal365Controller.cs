@@ -9,9 +9,10 @@ namespace EnvanteriX.WebUI.Controllers
     public class Portal365Controller : BaseController
     {
         private readonly Portal365ApiUrl _Portal365ApiUrl;
-        public Portal365Controller(IApiClientService apiClientService, Portal365ApiUrl Portal365ApiUrl) : base(apiClientService)
+
+        public Portal365Controller(IApiClientService apiClientService, ILogger<BaseController> logger, Portal365ApiUrl portal365ApiUrl) : base(apiClientService, logger)
         {
-            _Portal365ApiUrl = Portal365ApiUrl;
+            _Portal365ApiUrl = portal365ApiUrl;
         }
 
         [HttpGet("")]
@@ -116,6 +117,36 @@ namespace EnvanteriX.WebUI.Controllers
             try
             {
                 var result = await _apiClientService.DeleteAsync<object>(_Portal365ApiUrl.GetUrl(Portal365Endpoint.DeActive, id));
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
+            }
+            return RedirectAfterPost(false);
+        }
+        [HttpGet("TestConnection/{id}")]
+        public async Task<IActionResult> TestConnection(int id)
+        {
+            try
+            {
+                var result = await _apiClientService.GetAsync<object>(_Portal365ApiUrl.GetUrl(Portal365Endpoint.TestConnection, id));
+                TempData["SuccessMessage"] = "Test bağlantısı başarılıdır.";
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
+            }
+            return RedirectAfterPost(false);
+        }
+        [HttpGet("Sync")]
+        public async Task<IActionResult> Sync()
+        {
+            try
+            {
+                var result = await _apiClientService.GetAsync<object>(_Portal365ApiUrl.GetUrl(Portal365Endpoint.SyncUsers));
+                TempData["SuccessMessage"] = "Senkronizasyon Tamamlandı. Herhangi bir hatayla karşılaşılmadı.";
             }
             catch (Exception ex)
             {

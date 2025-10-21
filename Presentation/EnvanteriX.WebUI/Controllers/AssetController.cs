@@ -1,10 +1,12 @@
-﻿using EnvanteriX.WebUI.Enums;
+﻿using EnvanteriX.WebUI.Attributes;
+using EnvanteriX.WebUI.Enums;
 using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Asset;
 using EnvanteriX.WebUI.ViewModels.AssetMovement;
 using EnvanteriX.WebUI.ViewModels.AssetType;
 using EnvanteriX.WebUI.ViewModels.Brand;
+using EnvanteriX.WebUI.ViewModels.Department;
 using EnvanteriX.WebUI.ViewModels.Location;
 using EnvanteriX.WebUI.ViewModels.Model;
 using EnvanteriX.WebUI.ViewModels.User;
@@ -26,17 +28,21 @@ namespace EnvanteriX.WebUI.Controllers
         private readonly VendorApiUrl _vendorApiUrl;
         private readonly LocationApiUrl _locationApiUrl;
         private readonly UserApiUrl _userApiUrl;
-        public AssetController(IApiClientService apiClientService, AssetApiUrl AssetApiUrl, AssetTypeApiUrl assetTypeApiUrl, BrandApiUrl brandApiUrl, ModelApiUrl modelApiUrl, VendorApiUrl vendorApiUrl, LocationApiUrl locationApiUrl, UserApiUrl userApiUrl, AssetMovementApiUrl assetMovementApiUrl) : base(apiClientService)
+        private readonly DepartmentApiUrl _departmentApiUrl;
+
+        public AssetController(IApiClientService apiClientService, ILogger<BaseController> logger, AssetApiUrl assetApiUrl, AssetMovementApiUrl assetMovementApiUrl, AssetTypeApiUrl assetTypeApiUrl, BrandApiUrl brandApiUrl, ModelApiUrl modelApiUrl, VendorApiUrl vendorApiUrl, LocationApiUrl locationApiUrl, UserApiUrl userApiUrl, DepartmentApiUrl departmentApiUrl) : base(apiClientService, logger)
         {
-            _AssetApiUrl = AssetApiUrl;
+            _AssetApiUrl = assetApiUrl;
+            _assetMovementApiUrl = assetMovementApiUrl;
             _assetTypeApiUrl = assetTypeApiUrl;
             _brandApiUrl = brandApiUrl;
             _modelApiUrl = modelApiUrl;
             _vendorApiUrl = vendorApiUrl;
             _locationApiUrl = locationApiUrl;
             _userApiUrl = userApiUrl;
-            _assetMovementApiUrl = assetMovementApiUrl;
+            _departmentApiUrl = departmentApiUrl;
         }
+
         private void Populate()
         {
             PopulateBrands();
@@ -52,6 +58,8 @@ namespace EnvanteriX.WebUI.Controllers
             PopulateStatus();
 
             PopulateUsers();
+
+            PopulateDepartments();
         }
         private void PopulateBrands()
         {
@@ -99,6 +107,11 @@ namespace EnvanteriX.WebUI.Controllers
             var Users = _apiClientService.GetAsync<List<UserViewModel>>(_userApiUrl.GetUrl(UserEndpoint.GetAllActive)).Result;
             ViewBag.Users = new SelectList(Users, "Id", "FullName");
         }
+        private void PopulateDepartments()
+        {
+            var Departments = _apiClientService.GetAsync<List<DepartmentViewModel>>(_departmentApiUrl.GetUrl(DepartmentEndpoint.GetAllActive)).Result;
+            ViewBag.Departments = new SelectList(Departments, "Id", "Name");
+        }
 
         private string GetEnumDescription(Enum value)
         {
@@ -108,6 +121,7 @@ namespace EnvanteriX.WebUI.Controllers
         }
 
         [HttpGet("GetModelsByBrand")]
+        [SkipBaseActionFilter]
         public JsonResult GetModelsByBrand(int brandId)
         {
             var models = _apiClientService.GetAsync<List<ModelViewModel>>(_modelApiUrl.GetUrl(ModelEndpoint.GetAllActiveByBrandId, brandId)).Result;
@@ -153,6 +167,7 @@ namespace EnvanteriX.WebUI.Controllers
                         AssetId = result.Id,
                         ToLocationId = model.LocationId,
                         ToUserId = model.AssignedUserId, // boşsa null olarak kalır
+                        ToDepartmentId = model.AssignedDepartmentId,
                         Note = "Yeni varlık eklendi."
                     };
 
@@ -176,6 +191,7 @@ namespace EnvanteriX.WebUI.Controllers
         {
             try
             {
+
                 var value = await _apiClientService.GetAsync<UpdateAssetAssignViewModel>(_AssetApiUrl.GetUrl(AssetEndpoint.GetById, id));
                 if (value == null)
                 {
@@ -190,6 +206,7 @@ namespace EnvanteriX.WebUI.Controllers
                     throw new Exception("Varlık durumu " + value.Status + " olduğu için zimmetlemesi yapılamamaktadır.");
                 }
                 PopulateUsers();
+                PopulateDepartments();
                 return View(value);
             }
             catch (Exception ex)
@@ -214,8 +231,11 @@ namespace EnvanteriX.WebUI.Controllers
                 {
                     throw new Exception("Varlık durumu " + current.Status + " olduğu için zimmetlemesi yapılamamaktadır.");
                 }
+                int? fromUserId = current.AssignedUserId;
+                int? fromDepartmentId = current.AssignedDepartmentId;
                 current.AssignedUserId = model.AssignedUserId;
-                if (current.AssignedUserId != null)
+                current.AssignedDepartmentId = model.AssignedDepartmentId;
+                if (current.AssignedUserId != null || current.AssignedDepartmentId!=null)
                 {
                     current.Status = StatusEnum.Kullanimda; // Atama yapıldığında durumu "Kullanımda" olarak güncelle
                 }
@@ -228,10 +248,12 @@ namespace EnvanteriX.WebUI.Controllers
                 {
                     AssetId = model.Id,
                     FromLocationId = current.LocationId,
-                    FromUserId = current.AssignedUserId,
                     ToLocationId = current.LocationId,
+                    FromUserId = fromUserId,
                     ToUserId = model.AssignedUserId, // boşsa null olarak kalır
-                    Note = "Varlık Personele Atandı"
+                    FromDepartmentId = fromDepartmentId,
+                    ToDepartmentId = model.AssignedDepartmentId,
+                    Note = "Varlık Zimmetlendi"
                 };
 
                 await _apiClientService.PostAsync<object>(
@@ -241,6 +263,7 @@ namespace EnvanteriX.WebUI.Controllers
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
                 PopulateUsers();
+                PopulateDepartments();
                 return RedirectAfterPost(true,model);
             }
             return RedirectAfterPost(false);
@@ -276,9 +299,11 @@ namespace EnvanteriX.WebUI.Controllers
                 {
                     AssetId = model.Id,
                     FromLocationId = current.LocationId,
-                    FromUserId = current.AssignedUserId,
                     ToLocationId = model.LocationId,
+                    FromUserId = current.AssignedUserId,
                     ToUserId = model.AssignedUserId, // boşsa null olarak kalır
+                    FromDepartmentId = current.AssignedDepartmentId,
+                    ToDepartmentId = model.AssignedDepartmentId,
                     Note = "Varlık Düzenleme işlemi yapıldı."
                 };
 

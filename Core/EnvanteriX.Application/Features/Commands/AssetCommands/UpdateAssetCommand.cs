@@ -15,6 +15,7 @@ namespace EnvanteriX.Application.Features.Commands.AssetCommands
         public DateTime? RentalStartDate { get; set; }
         public int LocationId { get; set; }
         public int? AssignedUserId { get; set; }
+        public int? AssignedDepartmentId { get; set; }
         public string? Description { get; set; }
         public StatusEnum Status { get; set; }
     }
