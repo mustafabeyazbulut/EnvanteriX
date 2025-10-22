@@ -12,8 +12,8 @@ wwwroot\css\simplebar.css
 wwwroot\css\simplebar.min.css
 wwwroot\css\styles.css
 wwwroot\css\styles.min.css
-wwwroot\js\zero.js
 wwwroot\js\zero.min.js
+wwwroot\js\zero.js
 wwwroot\favicon.ico
 wwwroot\fonts\fontawesome\fa-brands-400.eot
 wwwroot\fonts\fontawesome\fa-brands-400.svg
@@ -396,8 +396,8 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\w
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\simplebar.min.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\styles.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\styles.min.css
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\zero.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\zero.min.js
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\zero.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\favicon.ico
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\fonts\fontawesome\fa-brands-400.svg
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\fonts\fontawesome\fa-regular-400.svg

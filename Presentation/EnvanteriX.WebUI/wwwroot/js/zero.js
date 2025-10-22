@@ -94,10 +94,12 @@ $(document).ready(function () {
 
     // Tüm linklere tıklandığında (isteğe bağlı)
     $('a:not([target="_blank"])').on('click', function (e) {
-        if ($(this).attr('href') && $(this).attr('href') !== '#') {
+        var href = $(this).attr('href');
+        if (href && href !== '#' && !href.startsWith('javascript:')) {
             showLoading();
         }
     });
+
 });
 
 ///loading sonu
