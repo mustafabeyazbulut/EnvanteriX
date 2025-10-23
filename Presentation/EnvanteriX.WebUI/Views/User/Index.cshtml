@@ -66,6 +66,15 @@
                                 </td>
                                 <td>
                                    <div class="d-flex gap-2">
+
+                                        <button type="button"
+                                                class="btn btn-primary btn-sm"
+                                                data-bs-toggle="tooltip"
+                                                title="Profil"
+                                                onclick="navigateWithLoading('@Url.Content("~/User/Profile/" + item.Id)');">
+                                            <i class="ti ti-user"></i>
+                                        </button>
+
                                         <!-- Edit Button -->
                                         <button type="button"
                                                 class="btn btn-primary btn-sm"

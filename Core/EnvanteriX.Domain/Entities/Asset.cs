@@ -6,7 +6,7 @@ namespace EnvanteriX.Domain.Entities
     // +
     public class Asset : EntityBase, IEntityBase
     {
-        public string AssetTag { get; set; }
+        public string? AssetTag { get; set; }
         public string SerialNumber { get; set; }
         public int AssetTypeId { get; set; }
         public AssetType AssetType { get; set; } //+

@@ -15,8 +15,9 @@ namespace EnvanteriX.Application.Features.Validators.AssetValidators
             _unitOfWork = unitOfWork;
             _userManager = userManager;
             RuleFor(x => x.AssetTag)
-                .NotEmpty().WithMessage("Asset Tag boş olamaz.")
-                .MaximumLength(50).WithMessage("Asset Tag en fazla 50 karakter olabilir.");
+                         .MaximumLength(50)
+                         .When(x => !string.IsNullOrEmpty(x.AssetTag))
+                         .WithMessage("Asset Tag en fazla 50 karakter olabilir.");
 
             RuleFor(x => x.SerialNumber)
                 .MaximumLength(100).WithMessage("Seri numarası en fazla 100 karakter olabilir.");

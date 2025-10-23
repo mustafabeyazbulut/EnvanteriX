@@ -361,6 +361,22 @@
   },
   {
     "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
+    "Method": "GetAllActiveByEmail",
+    "RelativePath": "asset/get-all-active-by-email/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EnvanteriX.WebApi.Controllers.AssetController",
     "Method": "GetById",
     "RelativePath": "asset/get-by-id/{id}",
     "HttpMethod": "GET",

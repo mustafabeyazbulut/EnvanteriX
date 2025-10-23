@@ -42,16 +42,14 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
             var previousUserId = asset.AssignedUserId;
 
             // AssetTag veya SerialNumber değişiklik kontrolü
-            if (!string.Equals(request.AssetTag, asset.AssetTag, StringComparison.OrdinalIgnoreCase)
-                || !string.Equals(request.SerialNumber, asset.SerialNumber, StringComparison.OrdinalIgnoreCase))
+            if (!string.Equals(request.SerialNumber, asset.SerialNumber, StringComparison.OrdinalIgnoreCase))
             {
                 bool assetExists = await _unitOfWork.GetReadRepository<Asset>()
                     .AnyAsync(x => x.Id != asset.Id &&
-                                   (x.AssetTag.ToUpper() == request.AssetTag.ToUpper() ||
-                                    x.SerialNumber.ToUpper() == request.SerialNumber.ToUpper()));
+                                   (x.SerialNumber.ToUpper() == request.SerialNumber.ToUpper()));
 
                 await _assetRules.AssetAlreadyExists(assetExists,
-                    $"Varlık Etiketi: {request.AssetTag}, SerialNumber: {request.SerialNumber}");
+                    $" SerialNumber: {request.SerialNumber}");
             }
 
             // Asset alanlarını güncelle

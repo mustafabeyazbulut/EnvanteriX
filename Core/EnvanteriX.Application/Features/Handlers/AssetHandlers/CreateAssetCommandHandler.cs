@@ -37,8 +37,8 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
             var serialNumber = request.SerialNumber?.Trim();
 
             bool assetExists = await _unitOfWork.GetReadRepository<Asset>()
-                .AnyAsync(a => a.AssetTag == assetTag || a.SerialNumber == serialNumber);
-            await _assetRules.AssetAlreadyExists(assetExists, $"AssetTag: {assetTag}, SerialNumber: {serialNumber}");
+                .AnyAsync(a => a.SerialNumber == serialNumber);
+            await _assetRules.AssetAlreadyExists(assetExists, $"SerialNumber: {serialNumber}");
 
             var asset = _mapper.Map<Asset, CreateAssetCommand>(request);
             if (asset.AssignedUserId!=null && asset.AssignedUserId>0)

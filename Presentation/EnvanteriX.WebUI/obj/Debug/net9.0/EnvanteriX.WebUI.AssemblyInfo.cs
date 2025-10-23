@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EnvanteriX.WebUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b72bad28d2ce834e5ffd7bae88b86652bf4a40d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4412883298bed53066835bdaed1e70876ee2449")]
 [assembly: System.Reflection.AssemblyProductAttribute("EnvanteriX.WebUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EnvanteriX.WebUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

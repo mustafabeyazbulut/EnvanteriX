@@ -82,7 +82,8 @@ namespace EnvanteriX.Application.Features.Handlers.AuthHandlers
 
             user.RefreshToken = refreshToken; // kullanıcıya refresh token ekliyoruz
             user.RefreshTokenExpiryTime = DateTime.Now.AddDays(refreshTokenValidityInDays); // refresh token geçerlilik süresini ekliyoruz
-
+             user.LastLogin = DateTime.UtcNow;
+            user.LastLoginIp = _userIp;
             await _userManager.UpdateAsync(user); // kullanıcıyı güncelliyoruz
             await _userManager.UpdateSecurityStampAsync(user); // kullanıcı güvenlik damgasını güncelliyoruz
 

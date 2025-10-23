@@ -10,19 +10,19 @@ namespace EnvanteriX.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Asset> builder)
         {
             builder.Property(x => x.AssetTag)
-             .IsRequired()
              .HasMaxLength(50);
 
             builder.Property(x => x.SerialNumber)
+                .IsRequired()
                    .HasMaxLength(100);
 
             builder.Property(x => x.Description)
             .HasMaxLength(255);
 
             builder.Property(a => a.Status)
-       .HasConversion<string>()
-       .HasDefaultValue(StatusEnum.Stokta)
-       .HasSentinel(StatusEnum.None);
+                   .HasConversion<string>()
+                   .HasDefaultValue(StatusEnum.Stokta)
+                   .HasSentinel(StatusEnum.None);
 
 
             builder.Property(x => x.IsDeleted)

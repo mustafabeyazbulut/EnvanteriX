@@ -1,9 +1,11 @@
 ﻿using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
+using EnvanteriX.WebUI.ViewModels.Home;
 using EnvanteriX.WebUI.ViewModels.Role;
 using EnvanteriX.WebUI.ViewModels.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 
 namespace EnvanteriX.WebUI.Controllers
 {
@@ -62,6 +64,26 @@ namespace EnvanteriX.WebUI.Controllers
                 TempData["ErrorMessage"] = $"{ex.Message}";
                 PopulateRoles();
                 return RedirectAfterPost(true,User);
+            }
+            return RedirectAfterPost(false);
+        }
+
+        [HttpGet("Profile/{id}")]
+        public async Task<IActionResult> Profile(int id)
+        {
+            try
+            {
+                var value = await _apiClientService.GetAsync<UpdateUserViewModel>(_UserApiUrl.GetUrl(UserEndpoint.GetById, id));
+
+                return View(new ProfileViewModel
+                {
+                    email = value.Email,
+                });
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"{ex.Message}";
+                return RedirectAfterPost(true);
             }
             return RedirectAfterPost(false);
         }

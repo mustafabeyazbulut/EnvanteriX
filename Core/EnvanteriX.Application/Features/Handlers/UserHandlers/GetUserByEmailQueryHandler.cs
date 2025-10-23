@@ -36,14 +36,18 @@ namespace EnvanteriX.Application.Features.Handlers.UserHandlers
             if (!string.IsNullOrEmpty(roleName))
             {
                 var role = await _roleManager.FindByNameAsync(roleName);
+                
                 if (role != null)
-                    roleId = role.Id; // integer
+                {
+                    roleId = role.Id; 
+                    roleName = role.Name;
+                }
             }
 
             // Mapping
             var map = _mapper.Map<GetUserByEmailQueryResult, User>(user);
             map.RoleId = roleId;
-
+            map.Role = roleName;
             return map;
         }
     }

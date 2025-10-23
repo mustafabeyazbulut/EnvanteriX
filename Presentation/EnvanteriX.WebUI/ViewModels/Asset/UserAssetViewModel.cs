@@ -1,0 +1,23 @@
+﻿namespace EnvanteriX.WebUI.ViewModels.Asset
+{
+    public class UserAssetViewModel
+    {
+        public int Id { get; set; }
+        public string AssetTag { get; set; }
+        public string SerialNumber { get; set; }
+        public int AssetTypeId { get; set; }
+        public string TypeName { get; set; }
+        public int ModelId { get; set; }
+        public string ModelName { get; set; }
+        public int BrandId { get; set; }
+        public string BrandName { get; set; }
+        public int VendorId { get; set; }
+        public string VendorName { get; set; }
+        public bool IsRented { get; set; }
+        public DateTime? RentalStartDate { get; set; }
+        public int LocationId { get; set; }
+        public string LocationName { get; set; }
+        public string Status { get; set; }
+        public DateTime CreatedDate { get; set; }
+    }
+}

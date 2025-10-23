@@ -41,6 +41,28 @@
         }
       }
     },
+    "/asset/get-all-active-by-email/{email}": {
+      "get": {
+        "tags": [
+          "Asset"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/asset/get-summary": {
       "get": {
         "tags": [

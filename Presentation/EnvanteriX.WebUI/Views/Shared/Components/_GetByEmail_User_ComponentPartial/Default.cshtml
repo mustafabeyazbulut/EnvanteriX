@@ -1,0 +1,46 @@
+﻿@model UserViewModel
+
+@{
+    ViewData["Title"] = "User Profile";
+}
+
+<div class="container mt-1">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Bilgileriniz</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                       
+                        <div class="col-md-8">
+                            <h5 class="card-title">@Model.FullName</h5>
+                            <p class="text-muted mb-1"><strong>Username:</strong> @Model.UserName</p>
+                            <p class="text-muted mb-1"><strong>Email:</strong> @Model.Email</p>
+                            <p class="text-muted mb-1"><strong>Role:</strong> @Model.Role</p>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong>Last Login:</strong></p>
+                            <p>@(Model.LastLogin.HasValue ? Model.LastLogin.Value.ToString("dd MMM yyyy HH:mm") : "Never")</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong>Last Login IP:</strong></p>
+                            <p>@(!string.IsNullOrEmpty(Model.LastLoginIp) ? Model.LastLoginIp : "-")</p>
+                        </div>
+                    </div>
+
+                   @*  <div class="mt-4 text-center">
+                        <a href="@Url.Action("Edit", "User")" class="btn btn-outline-primary">Edit Profile</a>
+                        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary ms-2">Back</a>
+                    </div> *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

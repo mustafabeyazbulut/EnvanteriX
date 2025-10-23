@@ -25,6 +25,13 @@ namespace EnvanteriX.WebApi.Controllers
             return Ok(result);
         }
 
+        [HttpGet("{email}")]
+        public async Task<IActionResult> GetAllActiveByEmail(string email)
+        {
+            var result = await _mediator.Send(new GetAllActiveAssetByEmailQuery(email));
+            return Ok(result);
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetSummary()
         {

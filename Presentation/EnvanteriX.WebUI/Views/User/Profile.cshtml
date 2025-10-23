@@ -1,0 +1,9 @@
+﻿@model ProfileViewModel
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@await Component.InvokeAsync("_GetByEmail_User_ComponentPartial", new { email = Model.email })
+@await Component.InvokeAsync("_User_Asset_ComponentPartial", new { userEmail = Model.email })
+

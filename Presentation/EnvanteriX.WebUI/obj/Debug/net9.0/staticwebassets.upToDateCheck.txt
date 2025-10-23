@@ -12,8 +12,8 @@ wwwroot\css\simplebar.css
 wwwroot\css\simplebar.min.css
 wwwroot\css\styles.css
 wwwroot\css\styles.min.css
-wwwroot\js\zero.min.js
-wwwroot\js\zero.js
+wwwroot\css\zero.css
+wwwroot\css\zero.min.css
 wwwroot\favicon.ico
 wwwroot\fonts\fontawesome\fa-brands-400.eot
 wwwroot\fonts\fontawesome\fa-brands-400.svg
@@ -304,6 +304,7 @@ wwwroot\images\logos\EnvanterAunde.png
 wwwroot\images\logos\fav.png
 wwwroot\images\logos\Untitled-1.psd
 wwwroot\images\profile\user-1.jpg
+wwwroot\images\svg\microsoft.svg
 wwwroot\images\undraw\undraw_blank_canvas_3rbb.svg
 wwwroot\images\undraw\undraw_creative_team_r90h.svg
 wwwroot\images\undraw\undraw_empty_xct9.svg
@@ -317,10 +318,13 @@ wwwroot\images\undraw\undraw_Taken_if77.svg
 wwwroot\images\undraw\undraw_update_uxn2.svg
 wwwroot\images\undraw\undraw_upgrade_06a0.svg
 wwwroot\js\app.min.js
+wwwroot\js\chart.js
+wwwroot\js\chart.min.js
 wwwroot\js\dashboard.js
 wwwroot\js\datatables\datatables.min.js
 wwwroot\js\select2.min.js
 wwwroot\js\sidebarmenu.js
+wwwroot\js\sidebarmenu.min.js
 wwwroot\js\simplebar.esm.js
 wwwroot\js\simplebar.esm.js.map
 wwwroot\js\simplebar.js
@@ -328,8 +332,8 @@ wwwroot\js\simplebar.min.js
 wwwroot\js\simplebar.umd.js
 wwwroot\js\sweetalert\sweetalert.min.js
 wwwroot\js\webfont\webfont.min.js
-wwwroot\css\zero.css
-wwwroot\css\zero.min.css
+wwwroot\js\zero.js
+wwwroot\js\zero.min.js
 wwwroot\libs\bootstrap\css\bootstrap-grid.css
 wwwroot\libs\bootstrap\css\bootstrap-grid.css.map
 wwwroot\libs\bootstrap\css\bootstrap-grid.min.css
@@ -382,10 +386,6 @@ wwwroot\libs\jquery\jquery.min.map
 wwwroot\libs\jquery\jquery.slim.js
 wwwroot\libs\jquery\jquery.slim.min.js
 wwwroot\libs\jquery\jquery.slim.min.map
-wwwroot\js\chart.js
-wwwroot\js\chart.min.js
-wwwroot\js\sidebarmenu.min.js
-wwwroot\images\svg\microsoft.svg
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\fonts.min.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\icons\tabler-icons\fonts\tabler-icons.svg
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\icons\tabler-icons\tabler-icons.css
