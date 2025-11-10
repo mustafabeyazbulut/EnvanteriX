@@ -8,7 +8,7 @@ namespace EnvanteriX.WebApi.Controllers
 {
     [Route("[controller]/[action]")]
     [ApiController]
-    //[Authorize(Roles ="admin")]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -19,6 +19,8 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
+
         public async Task<IActionResult> GetAll()
         {
             var result = await _mediator.Send(new GetAllUsersQuery());
@@ -26,10 +28,14 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
+
         public async Task<IActionResult> GetAllActive() =>
                     Ok(await _mediator.Send(new GetAllActiveUsersQuery()));
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "admin")]
+
         public async Task<IActionResult> GetById(int id)
         {
             var result = await _mediator.Send(new GetUserByIdQuery(id));
@@ -37,6 +43,8 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpGet("{Email}")]
+        [Authorize(Roles = "user,admin")]
+
         public async Task<IActionResult> GetByEmail(string Email)
         {
             var result = await _mediator.Send(new GetUserByEmailQuery(Email));
@@ -44,6 +52,8 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "admin")]
+
         public async Task<IActionResult> Update(UpdateUserCommand command)
         {
             await _mediator.Send(command);
@@ -51,6 +61,8 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
+
         public async Task<IActionResult> Delete(int id)
         {
             await _mediator.Send(new DeleteUserCommand(id));
@@ -58,6 +70,8 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
+
         public async Task<IActionResult> RemoveRole(RemoveUserRoleCommand command)
         {
             await _mediator.Send(command);
@@ -65,6 +79,8 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
+
         public async Task<IActionResult> AddRole(AddUserRoleCommand command)
         {
             await _mediator.Send(command);
@@ -72,18 +88,22 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
+
         public async Task<IActionResult> Active(int id)
         {
             await _mediator.Send(new ActiveUserCommand { Id = id });
             return StatusCode(StatusCodes.Status200OK);
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeActive(int id)
         {
             await _mediator.Send(new DeActiveUserCommand { Id = id });
             return StatusCode(StatusCodes.Status200OK);
         }
         [HttpPut]
+        [Authorize(Roles = "admin,user")]
         public async Task<IActionResult> ChangePassword(ChangePasswordCommand command)
         {
             await _mediator.Send(command);

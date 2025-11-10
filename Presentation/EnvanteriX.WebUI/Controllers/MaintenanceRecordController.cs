@@ -4,12 +4,15 @@ using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Asset;
 using EnvanteriX.WebUI.ViewModels.MaintenanceRecord;
 using EnvanteriX.WebUI.ViewModels.Vendor;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EnvanteriX.WebUI.Controllers
 {
     [Route("MaintenanceRecord")]
+    [Authorize(Roles = "admin")]
+
     public class MaintenanceRecordController : BaseController
     {
         private readonly AssetApiUrl _AssetApiUrl;

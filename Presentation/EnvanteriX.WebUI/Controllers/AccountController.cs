@@ -21,7 +21,7 @@ namespace EnvanteriX.WebUI.Controllers
             // Kullanıcı oturum açmışsa Dashboard'a yönlendir
             if (User.Identity != null && User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Dashboard", "Home");
+                return RedirectToAction("Index", "Home");
             }
             return View(); // Oturum açmamışsa login ekranını göster
         }
@@ -32,7 +32,7 @@ namespace EnvanteriX.WebUI.Controllers
             try
             {
                 var tokenResponse = await _tokenService.LoginAsync(email, password,rememberMe);
-                return RedirectToAction("Dashboard", "Home");
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {

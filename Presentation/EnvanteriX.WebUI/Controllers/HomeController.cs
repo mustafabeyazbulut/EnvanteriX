@@ -4,7 +4,6 @@ using EnvanteriX.WebUI.ViewModels.Asset;
 using EnvanteriX.WebUI.ViewModels.Home;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace EnvanteriX.WebUI.Controllers;
 
@@ -21,6 +20,8 @@ public class HomeController : BaseController
 
     // Giriþ noktasý: role göre yönlendir
     [HttpGet("")]
+    [HttpGet("Index")]
+    [Authorize(Roles = "user,admin")]
     public IActionResult Index()
     {
         if (User.IsInRole("admin"))

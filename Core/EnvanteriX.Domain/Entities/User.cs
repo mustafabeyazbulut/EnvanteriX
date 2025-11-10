@@ -9,7 +9,7 @@ namespace EnvanteriX.Domain.Entities
         public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenExpiryTime { get; set; }
         public DateTime? LastLogin { get; set; }
-        public string LastLoginIp { get; set; }
+        public string? LastLoginIp { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public bool IsDeleted { get; set; } = false;
     }

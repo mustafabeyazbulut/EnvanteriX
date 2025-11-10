@@ -11,6 +11,7 @@ using EnvanteriX.WebUI.ViewModels.Location;
 using EnvanteriX.WebUI.ViewModels.Model;
 using EnvanteriX.WebUI.ViewModels.User;
 using EnvanteriX.WebUI.ViewModels.Vendor;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel;
@@ -18,6 +19,8 @@ using System.ComponentModel;
 namespace EnvanteriX.WebUI.Controllers
 {
     [Route("Asset")]
+    [Authorize(Roles = "admin")]
+
     public class AssetController : BaseController
     {
         private readonly AssetApiUrl _AssetApiUrl;

@@ -17,7 +17,12 @@ namespace EnvanteriX.Persistence
         {
             services.AddDbContext<EnvanteriXContext>(opt =>
             {
+#if DEBUG
+                opt.UseSqlServer(configuration.GetConnectionString("DebugConnection"));
+#else
                 opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+
+#endif
             });
 
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));

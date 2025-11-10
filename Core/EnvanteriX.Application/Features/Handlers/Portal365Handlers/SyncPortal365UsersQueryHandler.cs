@@ -20,15 +20,17 @@ namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
         private readonly Portal365Rules _portal365Rules;
         private readonly IPortal365Service _portal365Service;
         private readonly UserManager<User> _userManager;
+        private readonly RoleManager<Role> _roleManager;
         private readonly IPasswordGenerator _passwordGenerator;
         private readonly IEmailTemplateProvider _emailTemplateProvider;
-        public SyncPortal365UsersQueryHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IPortal365Service portal365Service, Portal365Rules portal365Rules, UserManager<User> userManager, IPasswordGenerator passwordGenerator, IEmailTemplateProvider emailTemplateProvider) : base(mapper, unitOfWork, httpContextAccessor)
+        public SyncPortal365UsersQueryHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IPortal365Service portal365Service, Portal365Rules portal365Rules, UserManager<User> userManager, IPasswordGenerator passwordGenerator, IEmailTemplateProvider emailTemplateProvider, RoleManager<Role> roleManager) : base(mapper, unitOfWork, httpContextAccessor)
         {
             _portal365Service = portal365Service;
             _portal365Rules = portal365Rules;
             _userManager = userManager;
             _passwordGenerator = passwordGenerator;
             _emailTemplateProvider = emailTemplateProvider;
+            _roleManager = roleManager;
         }
 
         public async Task<Unit> Handle(SyncPortal365UsersQuery request, CancellationToken cancellationToken)
@@ -66,10 +68,7 @@ namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
                     var exists = await _userManager.Users.FirstOrDefaultAsync(u => u.Email == email, cancellationToken);
                     if (exists != null)
                         continue;
-                    if (email!= "iaydin@aundeteknik.com")
-                    {
-                        continue;
-                    }
+
 
                     var newUser = new User
                     {
@@ -87,7 +86,32 @@ namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
 
                     if (resultUser.Succeeded)
                     {
-                        await _userManager.AddToRoleAsync(newUser, "user");
+                        var roleCheck = await _roleManager.FindByNameAsync("user");
+                        if (roleCheck == null)
+                        {
+                            var role = new Role();
+                            role.Name = "user";
+                            role.NormalizedName = "USER";
+                            role.ConcurrencyStamp = Guid.NewGuid().ToString();
+                            await _roleManager.CreateAsync(role);
+                        }
+                        var roleCheck2 = await _roleManager.FindByNameAsync("admin");
+                        if (roleCheck2 == null)
+                        {
+                            var role = new Role();
+                            role.Name = "admin";
+                            role.NormalizedName = "ADMIN";
+                            role.ConcurrencyStamp = Guid.NewGuid().ToString();
+                            await _roleManager.CreateAsync(role);
+                        }
+                        if (user.Department=="IT")
+                        {
+                            await _userManager.AddToRoleAsync(newUser, "admin");
+                        }
+                        else
+                        {
+                            await _userManager.AddToRoleAsync(newUser, "user");
+                        }
                         var emailTemplate = await _emailTemplateProvider.GetTemplateAsync("RegisterEmailTemplate");
                         if (!string.IsNullOrEmpty(emailTemplate))
                         {

@@ -1,6 +1,7 @@
 ﻿using EnvanteriX.Application.Features.Commands.RoleCommands;
 using EnvanteriX.Application.Features.Queries.RoleQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebApi.Controllers
@@ -17,12 +18,14 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> GetAll()
         {
             var roles = await _mediator.Send(new GetAllRolesQuery());
             return Ok(roles);
         }
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> GetAllActive() =>
          Ok(await _mediator.Send(new GetAllActiveRolesQuery()));
         [HttpGet("{id}")]
@@ -40,6 +43,7 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Update(UpdateRoleCommand command)
         {
             await _mediator.Send(command);
@@ -47,6 +51,7 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _mediator.Send(new DeleteRoleCommand(id));
@@ -54,12 +59,14 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Active(int id)
         {
             await _mediator.Send(new ActiveRoleCommand { Id = id });
             return StatusCode(StatusCodes.Status200OK);
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeActive(int id)
         {
             await _mediator.Send(new DeActiveRoleCommand { Id = id });

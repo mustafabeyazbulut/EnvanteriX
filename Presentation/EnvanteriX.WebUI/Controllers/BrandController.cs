@@ -2,11 +2,14 @@
 using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Brand;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebUI.Controllers
 {
     [Route("Brand")]
+    [Authorize(Roles = "admin")]
+
     public class BrandController : BaseController
     {
         private readonly BrandApiUrl _BrandApiUrl;

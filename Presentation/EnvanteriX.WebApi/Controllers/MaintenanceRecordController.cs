@@ -1,12 +1,14 @@
 ﻿using EnvanteriX.Application.Features.Commands.MaintenanceRecordCommands;
 using EnvanteriX.Application.Features.Queries.MaintenanceRecordQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebApi.Controllers
 {
     [Route("[controller]/[action]")]
     [ApiController]
+    [Authorize(Roles = "admin")]
     public class MaintenanceRecordController : ControllerBase
     {
         private readonly IMediator _mediator;

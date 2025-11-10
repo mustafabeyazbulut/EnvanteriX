@@ -1,11 +1,14 @@
 ﻿using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Portal365;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebUI.Controllers
 {
     [Route("Portal365")]
+    [Authorize(Roles = "admin")]
+
     public class Portal365Controller : BaseController
     {
         private readonly Portal365ApiUrl _Portal365ApiUrl;

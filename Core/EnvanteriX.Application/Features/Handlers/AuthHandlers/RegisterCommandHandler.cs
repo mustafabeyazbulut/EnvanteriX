@@ -36,7 +36,7 @@ namespace EnvanteriX.Application.Features.Handlers.AuthHandlers
             user.NormalizedUserName = request.Email.Split("@")[0];
             user.NormalizedEmail = request.Email;
             user.SecurityStamp = Guid.NewGuid().ToString(); // güvenlik damgası ekliyoruz
-
+            user.IsDeleted = true;
             var role = await roleManager.FindByNameAsync(request.Role); // rolü buluyoruz
             await _roleRules.RoleShouldExistRule(role); //rol yoksa hata fırlatıyoruz.
 

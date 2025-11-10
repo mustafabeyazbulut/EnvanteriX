@@ -1,10 +1,13 @@
 ﻿using EnvanteriX.Application.Features.Commands.BrandCommands;
 using EnvanteriX.Application.Features.Queries.BrandQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 [Route("[controller]/[action]")]
 [ApiController]
+[Authorize(Roles = "admin")]
+
 public class BrandController : ControllerBase
 {
     private readonly IMediator _mediator;

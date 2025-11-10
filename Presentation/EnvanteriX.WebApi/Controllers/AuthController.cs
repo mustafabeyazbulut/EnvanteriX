@@ -35,6 +35,7 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Revoke(RevokeCommand request)
         {
             var response = await mediator.Send(request);
@@ -42,6 +43,7 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> RevokeAll()
         {
             await mediator.Send(new RevokeAllCommand());

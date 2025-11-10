@@ -1,11 +1,14 @@
 ﻿using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Location;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebUI.Controllers
 {
     [Route("Location")]
+    [Authorize(Roles = "admin")]
+
     public class LocationController : BaseController
     {
         private readonly LocationApiUrl _LocationApiUrl;

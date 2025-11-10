@@ -1,11 +1,13 @@
 ﻿using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Vendor;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebUI.Controllers
 {
     [Route("Vendor")]
+    [Authorize(Roles = "admin")]
     public class VendorController : BaseController
     {
         private readonly VendorApiUrl _vendorApiUrl;

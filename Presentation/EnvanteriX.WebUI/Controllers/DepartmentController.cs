@@ -1,11 +1,14 @@
 ﻿using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Department;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebUI.Controllers
 {
     [Route("Department")]
+    [Authorize(Roles = "admin")]
+
     public class DepartmentController : BaseController
     {
         private readonly DepartmentApiUrl _DepartmentApiUrl;

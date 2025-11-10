@@ -532,7 +532,6 @@ namespace EnvanteriX.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastLoginIp")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")

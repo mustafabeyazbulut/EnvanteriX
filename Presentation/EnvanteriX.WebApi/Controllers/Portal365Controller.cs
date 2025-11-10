@@ -1,7 +1,7 @@
 ﻿using EnvanteriX.Application.Features.Commands.Portal365Commands;
 using EnvanteriX.Application.Features.Queries.Portal365Queries;
-using EnvanteriX.Domain.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebApi.Controllers
@@ -14,14 +14,19 @@ namespace EnvanteriX.WebApi.Controllers
         public Portal365Controller(IMediator mediator) => _mediator = mediator;
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
+
         public async Task<IActionResult> GetAll() =>
           Ok(await _mediator.Send(new GetAllPortal365sQuery()));
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> GetAllActive() =>
       Ok(await _mediator.Send(new GetAllActivePortal365sQuery()));
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "admin")]
+
         public async Task<IActionResult> GetById(int id)
         {
             var result = await _mediator.Send(new GetPortal365ByIdQuery(id));
@@ -36,6 +41,7 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Update(UpdatePortal365Command command)
         {
             await _mediator.Send(command);
@@ -43,6 +49,7 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _mediator.Send(new DeletePortal365Command(id));
@@ -50,12 +57,15 @@ namespace EnvanteriX.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Active(int id)
         {
             await _mediator.Send(new ActivePortal365Command { Id = id });
             return StatusCode(StatusCodes.Status200OK);
         }
+
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeActive(int id)
         {
             await _mediator.Send(new DeActivePortal365Command { Id = id });

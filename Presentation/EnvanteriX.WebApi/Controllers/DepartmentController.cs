@@ -1,12 +1,14 @@
 ﻿using EnvanteriX.Application.Features.Commands.DepartmentCommands;
 using EnvanteriX.Application.Features.Queries.DepartmentQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebApi.Controllers
 {
     [Route("[controller]/[action]")]
     [ApiController]
+    [Authorize(Roles = "admin")]
     public class DepartmentController : ControllerBase
     {
         private readonly IMediator _mediator;

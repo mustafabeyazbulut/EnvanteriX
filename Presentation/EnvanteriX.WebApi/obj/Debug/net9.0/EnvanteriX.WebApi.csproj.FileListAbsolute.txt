@@ -573,7 +573,6 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\Envanter.A39A8C90.Up2Date
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\EnvanteriX.WebApi.dll
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\refint\EnvanteriX.WebApi.dll

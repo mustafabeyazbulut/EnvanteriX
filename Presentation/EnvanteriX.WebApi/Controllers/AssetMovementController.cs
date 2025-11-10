@@ -1,12 +1,14 @@
 ﻿using EnvanteriX.Application.Features.Commands.AssetMovementCommands;
 using EnvanteriX.Application.Features.Queries.AssetMovementQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebApi.Controllers
 {
     [Route("[controller]/[action]")]
     [ApiController]
+    [Authorize(Roles = "admin")]
     public class AssetMovementController : ControllerBase
     {
         private readonly IMediator _mediator;

@@ -3,13 +3,14 @@ using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Home;
 using EnvanteriX.WebUI.ViewModels.Role;
 using EnvanteriX.WebUI.ViewModels.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 
 namespace EnvanteriX.WebUI.Controllers
 {
     [Route("User")]
+    [Authorize(Roles = "admin")]
     public class UserController : BaseController
     {
         private readonly UserApiUrl _UserApiUrl;

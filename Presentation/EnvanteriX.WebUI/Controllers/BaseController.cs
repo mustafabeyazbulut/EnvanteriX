@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace EnvanteriX.WebUI.Controllers
 {
-    [Authorize(Roles = "admin")]
+    [Authorize]
     public class BaseController : Controller
     {
         protected readonly IApiClientService _apiClientService;

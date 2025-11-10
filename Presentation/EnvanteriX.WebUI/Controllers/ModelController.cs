@@ -3,12 +3,15 @@ using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Brand;
 using EnvanteriX.WebUI.ViewModels.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EnvanteriX.WebUI.Controllers
 {
     [Route("Model")]
+    [Authorize(Roles = "admin")]
+
     public class ModelController : BaseController
     {
         private readonly ModelApiUrl _ModelApiUrl;

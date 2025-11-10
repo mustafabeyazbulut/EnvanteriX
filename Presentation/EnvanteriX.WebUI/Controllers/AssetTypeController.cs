@@ -1,11 +1,14 @@
 ﻿using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.AssetType;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvanteriX.WebUI.Controllers
 {
     [Route("AssetType")]
+    [Authorize(Roles = "admin")]
+
     public class AssetTypeController : BaseController
     {
         private readonly AssetTypeApiUrl _AssetTypeApiUrl;
