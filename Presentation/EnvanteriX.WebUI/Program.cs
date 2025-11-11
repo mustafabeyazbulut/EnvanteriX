@@ -1,8 +1,7 @@
 using EnvanteriX.WebUI.Models;
 using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Authorization;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

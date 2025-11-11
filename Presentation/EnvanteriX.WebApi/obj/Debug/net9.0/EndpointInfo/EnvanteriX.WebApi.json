@@ -1364,6 +1364,18 @@
         ]
       }
     },
+    "/": {
+      "get": {
+        "tags": [
+          "EnvanteriX.WebApi"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/location/get-all": {
       "get": {
         "tags": [
