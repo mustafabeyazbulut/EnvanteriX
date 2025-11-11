@@ -1,15 +1,18 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Globalization;
+using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Routing;
 
 public class CamelCaseParameterTransformer : IOutboundParameterTransformer
 {
     public string TransformOutbound(object value)
     {
-        if (value == null) { return null; }
+        if (value == null) return null;
 
-        // İlk harfi küçük yaparak camelCase formatına çevir
-        var result = Regex.Replace(value.ToString(), "([a-z])([A-Z])", "$1-$2").ToLower();
+        var result = Regex.Replace(value.ToString(), "([a-z])([A-Z])", "$1-$2");
 
-        // Sonuç çıktı: örneğin "MyAction" -> "myAction"
-        return char.ToLowerInvariant(result[0]) + result.Substring(1);
+        // Kültürden bağımsız olarak küçük harfe çevir (I -> i)
+        result = result.ToLower(CultureInfo.InvariantCulture);
+
+        return result;
     }
 }

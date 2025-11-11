@@ -40,7 +40,7 @@ namespace EnvanteriX.Application.Features.Handlers.AuthHandlers
         {
             //kod açıklamaları
             var user = await _userManager.Users
-                            .Where(u => !u.IsDeleted && u.Email == request.Email)
+                            .Where(u => !u.IsDeleted && u.Email.ToLower() == request.Email.ToLower())
                             .FirstOrDefaultAsync();
             await authRules.UserShouldExist(user); //kullanıcı yoksa hata fırlat
             await authRules.UserShouldBeActive(user); // kullanıcı aktif değilse hata fırlatıyoruz
