@@ -1,0 +1,55 @@
+
+@{
+    ViewData["Title"] = "Varlık Listesi (Sayfalama)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    // Query string'den parametreleri al
+    var pageNumber = int.TryParse(Context.Request.Query["pageNumber"], out var pn) ? pn : 1;
+    var pageSize = int.TryParse(Context.Request.Query["pageSize"], out var ps) ? ps : 10;
+    var searchTerm = Context.Request.Query["searchTerm"].ToString();
+    var assetTag = Context.Request.Query["assetTag"].ToString();
+    var serialNumber = Context.Request.Query["serialNumber"].ToString();
+    
+    int? assetTypeId = int.TryParse(Context.Request.Query["assetTypeId"], out var atId) ? atId : null;
+    int? brandId = int.TryParse(Context.Request.Query["brandId"], out var bId) ? bId : null;
+    int? modelId = int.TryParse(Context.Request.Query["modelId"], out var mId) ? mId : null;
+    int? locationId = int.TryParse(Context.Request.Query["locationId"], out var lId) ? lId : null;
+    int? vendorId = int.TryParse(Context.Request.Query["vendorId"], out var vId) ? vId : null;
+    int? assignedUserId = int.TryParse(Context.Request.Query["assignedUserId"], out var auId) ? auId : null;
+    int? assignedDepartmentId = int.TryParse(Context.Request.Query["assignedDepartmentId"], out var adId) ? adId : null;
+    
+    var status = Context.Request.Query["status"].ToString();
+    
+    bool? isRented = Context.Request.Query["isRented"].ToString() switch
+    {
+        "true" => true,
+        "false" => false,
+        _ => null
+    };
+    
+    bool? isDeleted = Context.Request.Query["isDeleted"].ToString() switch
+    {
+        "true" => true,
+        "false" => false,
+        _ => null
+    };
+}
+
+@await Component.InvokeAsync("_List_Asset_Paginated_ComponentPartial", new
+{
+    pageNumber,
+    pageSize,
+    searchTerm,
+    assetTag,
+    serialNumber,
+    assetTypeId,
+    brandId,
+    modelId,
+    locationId,
+    vendorId,
+    assignedUserId,
+    assignedDepartmentId,
+    status,
+    isRented,
+    isDeleted
+})

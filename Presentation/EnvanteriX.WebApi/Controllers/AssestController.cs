@@ -20,6 +20,14 @@ namespace EnvanteriX.WebApi.Controllers
         public async Task<IActionResult> GetAll() =>
             Ok(await _mediator.Send(new GetAllAssetsQuery()));
 
+        /// <summary>
+        /// Sayfalama ve filtreleme destekli varlık listesi
+        /// </summary>
+        [HttpGet]
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> GetAllPaginated([FromQuery] GetAllAssetsPaginatedQuery query) =>
+            Ok(await _mediator.Send(query));
+
         [HttpGet("{id}")]
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> GetById(int id)

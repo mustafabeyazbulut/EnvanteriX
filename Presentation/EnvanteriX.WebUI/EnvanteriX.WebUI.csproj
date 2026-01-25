@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	<PrepareForBuildDependsOn>BundleMinify;</PrepareForBuildDependsOn>
+	<!-- <PrepareForBuildDependsOn>BundleMinify;</PrepareForBuildDependsOn> -->
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />

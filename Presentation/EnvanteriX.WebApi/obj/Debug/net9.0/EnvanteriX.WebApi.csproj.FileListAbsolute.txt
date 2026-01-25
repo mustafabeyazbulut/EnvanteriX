@@ -581,4 +581,3 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\ref\EnvanteriX.WebApi.dll
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\bin\Debug\net9.0\System.DirectoryServices.dll
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.DirectoryServices.dll
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

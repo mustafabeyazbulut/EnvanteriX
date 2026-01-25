@@ -3,6 +3,7 @@
     public enum AssetEndpoint
     {
         GetAll,
+        GetAllPaginated,
         GetById,
         GetAllActiveByEmail,
         GetSummary,
@@ -22,6 +23,7 @@
             return endpoint switch
             {
                 AssetEndpoint.GetAll => $"{BasePath}/get-all",
+                AssetEndpoint.GetAllPaginated => $"{BasePath}/get-all-paginated",
                 AssetEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 AssetEndpoint.GetAllActiveByEmail => $"{BasePath}/get-all-active-by-email/",
                 AssetEndpoint.GetSummary => $"{BasePath}/get-summary",

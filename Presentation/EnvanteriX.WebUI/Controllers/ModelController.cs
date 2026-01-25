@@ -58,10 +58,10 @@ namespace EnvanteriX.WebUI.Controllers
             try
             {
                 var result = await _apiClientService.PostAsync<object>(_ModelApiUrl.GetUrl(ModelEndpoint.Create), model);
-                PopulateBrands();
             }
             catch (Exception ex)
             {
+                PopulateBrands();
                 TempData["ErrorMessage"] = $"{ex.Message}";
                 return RedirectAfterPost(true,model);
             }
@@ -85,6 +85,7 @@ namespace EnvanteriX.WebUI.Controllers
             }
             catch (Exception ex)
             {
+                PopulateBrands();
                 return Json(new { success = false, message = "Bir hata oluştu: " + ex.Message });
             }
         }

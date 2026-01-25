@@ -140,6 +140,17 @@ namespace EnvanteriX.WebUI.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Sayfalama ve filtreleme destekli varlık listesi sayfası
+        /// </summary>
+        [HttpGet("Paginated")]
+        public IActionResult IndexPaginated()
+        {
+            // Dropdown'lar için verileri hazırla
+            Populate();
+            return View();
+        }
+
         [HttpGet("Details/{id}")]
         public IActionResult Details(int id)
         {
