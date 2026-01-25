@@ -53,9 +53,9 @@
                         <label class="form-label">Varlık Tipi</label>
                         <select class="form-select" id="assetTypeId" name="assetTypeId">
                             <option value="">Tümü</option>
-                            @if (ViewBag.AssetTypes != null)
+                            @if (Model.AssetTypes != null)
                             {
-                                foreach (var item in ViewBag.AssetTypes as IEnumerable<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem>)
+                                foreach (var item in Model.AssetTypes)
                                 {
                                     var isSelected = currentFilters.ContainsKey("assetTypeId") && currentFilters["assetTypeId"] == item.Value;
                                     <option value="@item.Value" selected="@isSelected">@item.Text</option>
@@ -68,9 +68,9 @@
                         <label class="form-label">Marka</label>
                         <select class="form-select" id="brandId" name="brandId">
                             <option value="">Tümü</option>
-                            @if (ViewBag.Brands != null)
+                            @if (Model.Brands != null)
                             {
-                                foreach (var item in ViewBag.Brands as IEnumerable<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem>)
+                                foreach (var item in Model.Brands)
                                 {
                                     var isSelected = currentFilters.ContainsKey("brandId") && currentFilters["brandId"] == item.Value;
                                     <option value="@item.Value" selected="@isSelected">@item.Text</option>
@@ -83,9 +83,9 @@
                         <label class="form-label">Model</label>
                         <select class="form-select" id="modelId" name="modelId">
                             <option value="">Tümü</option>
-                            @if (ViewBag.Models != null)
+                            @if (Model.Models != null)
                             {
-                                foreach (var item in ViewBag.Models as IEnumerable<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem>)
+                                foreach (var item in Model.Models)
                                 {
                                     var isSelected = currentFilters.ContainsKey("modelId") && currentFilters["modelId"] == item.Value;
                                     <option value="@item.Value" selected="@isSelected">@item.Text</option>
@@ -98,9 +98,9 @@
                         <label class="form-label">Lokasyon</label>
                         <select class="form-select" id="locationId" name="locationId">
                             <option value="">Tümü</option>
-                            @if (ViewBag.Locations != null)
+                            @if (Model.Locations != null)
                             {
-                                foreach (var item in ViewBag.Locations as IEnumerable<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem>)
+                                foreach (var item in Model.Locations)
                                 {
                                     var isSelected = currentFilters.ContainsKey("locationId") && currentFilters["locationId"] == item.Value;
                                     <option value="@item.Value" selected="@isSelected">@item.Text</option>
@@ -126,11 +126,17 @@
                         <select class="form-select" id="isRented" name="isRented">
                             <option value="">Tümü</option>
                             @{
-                                var isRentedTrue = currentFilters.ContainsKey("isRented") && currentFilters["isRented"] == "true";
-                                var isRentedFalse = currentFilters.ContainsKey("isRented") && currentFilters["isRented"] == "false";
+                                var isRentedOptions = new List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem>
+                                {
+                                    new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Value = "true", Text = "Evet" },
+                                    new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Value = "false", Text = "Hayır" }
+                                };
                             }
-                            <option value="true" selected="@isRentedTrue">Evet</option>
-                            <option value="false" selected="@isRentedFalse">Hayır</option>
+                            @foreach (var item in isRentedOptions)
+                            {
+                                var isSelected = currentFilters.ContainsKey("isRented") && currentFilters["isRented"] == item.Value;
+                                <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                            }
                         </select>
                     </div>
 

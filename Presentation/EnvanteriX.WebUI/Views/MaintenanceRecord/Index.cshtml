@@ -1,0 +1,35 @@
+
+@{
+    ViewData["Title"] = "Bakım Kayıtları";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    // Query string'den parametreleri al
+    var pageNumber = int.TryParse(Context.Request.Query["pageNumber"], out var pn) ? pn : 1;
+    var pageSize = int.TryParse(Context.Request.Query["pageSize"], out var ps) ? ps : 10;
+    var searchTerm = Context.Request.Query["searchTerm"].ToString();
+    
+    int? assetId = int.TryParse(Context.Request.Query["assetId"], out var aId) ? aId : null;
+    int? vendorId = int.TryParse(Context.Request.Query["vendorId"], out var vId) ? vId : null;
+    
+    DateTime? startDateFrom = DateTime.TryParse(Context.Request.Query["startDateFrom"], out var sdf) ? sdf : null;
+    DateTime? startDateTo = DateTime.TryParse(Context.Request.Query["startDateTo"], out var sdt) ? sdt : null;
+    
+    bool? isCompleted = Context.Request.Query["isCompleted"].ToString() switch
+    {
+        "true" => true,
+        "false" => false,
+        _ => null
+    };
+}
+
+@await Component.InvokeAsync("_List_MaintenanceRecord_ComponentPartial", new
+{
+    pageNumber,
+    pageSize,
+    searchTerm,
+    assetId,
+    vendorId,
+    startDateFrom,
+    startDateTo,
+    isCompleted
+})

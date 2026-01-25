@@ -3,6 +3,7 @@
     public enum MaintenanceRecordEndpoint
     {
         GetAll,
+        GetAllPaginated,
         GetAllByAssetId,
         GetLastOpenMaintenanceRecordByAssetId,
         GetById,
@@ -22,6 +23,7 @@
             return endpoint switch
             {
                 MaintenanceRecordEndpoint.GetAll => $"{BasePath}/get-all",
+                MaintenanceRecordEndpoint.GetAllPaginated => $"{BasePath}/get-all-paginated",
                 MaintenanceRecordEndpoint.GetAllByAssetId => $"{BasePath}/get-all-by-asset-id/{id}",
                 MaintenanceRecordEndpoint.GetLastOpenMaintenanceRecordByAssetId => $"{BasePath}/get-last-open-maintenance-record-by-asset-id/{id}",
                 MaintenanceRecordEndpoint.GetById => $"{BasePath}/get-by-id/{id}",

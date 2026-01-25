@@ -55,14 +55,14 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
             var mappedAssets = _mapper.Map<GetAllAssetsQueryResult, Asset>(assets, config: cfg =>
             {
                 cfg.CreateMap<Asset, GetAllAssetsQueryResult>()
-                   .ForMember(dest => dest.TypeName, opt => opt.MapFrom(src => src.AssetType.TypeName))
-                   .ForMember(dest => dest.ModelName, opt => opt.MapFrom(src => src.Model.ModelName))
-                   .ForMember(dest => dest.BrandName, opt => opt.MapFrom(src => src.Model.Brand.BrandName))
-                   .ForMember(dest => dest.VendorName, opt => opt.MapFrom(src => src.Vendor.VendorName))
-                   .ForMember(dest => dest.LocationName, opt => opt.MapFrom(src => $"{src.Location.Building}"))
-                   .ForMember(dest => dest.AssignedUserName, opt => opt.MapFrom(src => src.AssignedUser.FullName))
-                   .ForMember(dest => dest.AssignedDepartmentName, opt => opt.MapFrom(src => src.AssignedDepartment.Name))
-                   .ForMember(dest => dest.BrandId, opt => opt.MapFrom(src => src.Model.Brand.Id));
+                   .ForMember(dest => dest.TypeName, opt => opt.MapFrom(src => src.AssetType != null ? src.AssetType.TypeName : "-"))
+                   .ForMember(dest => dest.ModelName, opt => opt.MapFrom(src => src.Model != null ? src.Model.ModelName : "-"))
+                   .ForMember(dest => dest.BrandName, opt => opt.MapFrom(src => src.Model != null && src.Model.Brand != null ? src.Model.Brand.BrandName : "-"))
+                   .ForMember(dest => dest.VendorName, opt => opt.MapFrom(src => src.Vendor != null ? src.Vendor.VendorName : "-"))
+                   .ForMember(dest => dest.LocationName, opt => opt.MapFrom(src => src.Location != null ? $"{src.Location.Building}" : "-"))
+                   .ForMember(dest => dest.AssignedUserName, opt => opt.MapFrom(src => src.AssignedUser != null ? src.AssignedUser.FullName : "-"))
+                   .ForMember(dest => dest.AssignedDepartmentName, opt => opt.MapFrom(src => src.AssignedDepartment != null ? src.AssignedDepartment.Name : "-"))
+                   .ForMember(dest => dest.BrandId, opt => opt.MapFrom(src => src.Model != null && src.Model.Brand != null ? src.Model.Brand.Id : 0));
             });
 
             // PaginatedList oluştur ve döndür

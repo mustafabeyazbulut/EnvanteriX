@@ -117,7 +117,7 @@ namespace EnvanteriX.Application.Features.Handlers.Portal365Handlers
                         {
                             // Placeholder’ları doldur
                             emailTemplate = emailTemplate.Replace("{{FullName}}", newUser.FullName)
-                                                         .Replace("{{Url}}", "https://envanter.aundeteknik.com");
+                                                         .Replace("{{Url}}", "https://itenvanter.aundeteknik.com/");
 
                             await _portal365Service.SendEmailAsync(portal365Config, newUser.Email,
                                 "Aunde Envanter Kaydınız Tamamlandı", emailTemplate);

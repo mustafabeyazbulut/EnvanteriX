@@ -90,7 +90,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
                                                          .Replace("{{ModelName}}", asset2.Model?.ModelName ?? "")
                                                          .Replace("{{VendorName}}", asset2.Vendor?.VendorName ?? "")
                                                          .Replace("{{LocationName}}", asset2.Location?.Building ?? "")
-                                                         .Replace("{{Url}}", "https://envanter.aundeteknik.com")
+                                                         .Replace("{{Url}}", "https://itenvanter.aundeteknik.com/")
                                                          .Replace("{{MessageBlock}}", "Size yeni bir varlık atandı");
 
                             await _portal365Service.SendEmailAsync(portal365Config, newUser.Email,

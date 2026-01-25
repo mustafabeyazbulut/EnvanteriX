@@ -44,5 +44,14 @@ namespace EnvanteriX.WebUI.ViewModels.Asset
         {
             Items = new List<AssetViewModel>();
         }
+
+        // UI Dropdowns
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> AssetTypes { get; set; } = new();
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> Brands { get; set; } = new();
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> Models { get; set; } = new();
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> Locations { get; set; } = new();
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> Vendors { get; set; } = new();
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> Users { get; set; } = new();
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> Departments { get; set; } = new();
     }
 }

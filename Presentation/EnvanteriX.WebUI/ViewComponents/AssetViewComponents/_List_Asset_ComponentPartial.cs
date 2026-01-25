@@ -12,13 +12,34 @@ namespace EnvanteriX.WebUI.ViewComponents.AssetViewComponents
     {
         private readonly IApiClientService _apiClientService;
         private readonly AssetApiUrl _assetApiUrl;
+        private readonly AssetTypeApiUrl _assetTypeApiUrl;
+        private readonly BrandApiUrl _brandApiUrl;
+        private readonly ModelApiUrl _modelApiUrl;
+        private readonly LocationApiUrl _locationApiUrl;
+        private readonly VendorApiUrl _vendorApiUrl;
+        private readonly DepartmentApiUrl _departmentApiUrl;
+        private readonly UserApiUrl _userApiUrl; // Varsayılan
 
         public _List_Asset_ComponentPartial(
             IApiClientService apiClientService, 
-            AssetApiUrl assetApiUrl)
+            AssetApiUrl assetApiUrl,
+            AssetTypeApiUrl assetTypeApiUrl,
+            BrandApiUrl brandApiUrl,
+            ModelApiUrl modelApiUrl,
+            LocationApiUrl locationApiUrl,
+            VendorApiUrl vendorApiUrl,
+            DepartmentApiUrl departmentApiUrl,
+            UserApiUrl userApiUrl)
         {
             _apiClientService = apiClientService;
             _assetApiUrl = assetApiUrl;
+            _assetTypeApiUrl = assetTypeApiUrl;
+            _brandApiUrl = brandApiUrl;
+            _modelApiUrl = modelApiUrl;
+            _locationApiUrl = locationApiUrl;
+            _vendorApiUrl = vendorApiUrl;
+            _departmentApiUrl = departmentApiUrl;
+            _userApiUrl = userApiUrl;
         }
 
         public async Task<IViewComponentResult> InvokeAsync(
@@ -91,7 +112,54 @@ namespace EnvanteriX.WebUI.ViewComponents.AssetViewComponents
 
                 var paginatedResult = await _apiClientService.GetAsync<PaginatedAssetViewModel>(url);
                 
-                return View(paginatedResult ?? new PaginatedAssetViewModel());
+                var viewModel = paginatedResult ?? new PaginatedAssetViewModel();
+
+                // Dropdownları Doldur
+                try
+                {
+                    // Asset Types
+                    var assetTypes = await _apiClientService.GetAsync<List<EnvanteriX.WebUI.ViewModels.AssetType.AssetTypeViewModel>>(_assetTypeApiUrl.GetUrl(AssetTypeEndpoint.GetAllActive));
+                    if(assetTypes != null)
+                        viewModel.AssetTypes = assetTypes.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.TypeName, Value = x.Id.ToString(), Selected = assetTypeId == x.Id }).ToList();
+
+                    // Brands
+                    var brands = await _apiClientService.GetAsync<List<EnvanteriX.WebUI.ViewModels.Brand.BrandViewModel>>(_brandApiUrl.GetUrl(BrandEndpoint.GetAllActive));
+                    if(brands != null)
+                        viewModel.Brands = brands.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.BrandName, Value = x.Id.ToString(), Selected = brandId == x.Id }).ToList();
+
+                    // Models
+                    // Modeller normalde marka seçilince gelir ama filtrelemede tüm modeller mi gelsin? 
+                    // İsterseniz tüm modelleri çekelim.
+                    var models = await _apiClientService.GetAsync<List<EnvanteriX.WebUI.ViewModels.Model.ModelViewModel>>(_modelApiUrl.GetUrl(ModelEndpoint.GetAllActive));
+                    if(models != null)
+                        viewModel.Models = models.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.ModelName, Value = x.Id.ToString(), Selected = modelId == x.Id }).ToList();
+                        
+                    // Locations
+                    var locations = await _apiClientService.GetAsync<List<EnvanteriX.WebUI.ViewModels.Location.LocationViewModel>>(_locationApiUrl.GetUrl(LocationEndpoint.GetAllActive));
+                    if(locations != null)
+                        viewModel.Locations = locations.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.Building, Value = x.Id.ToString(), Selected = locationId == x.Id }).ToList();
+
+                    // Vendors
+                    var vendors = await _apiClientService.GetAsync<List<EnvanteriX.WebUI.ViewModels.Vendor.VendorViewModel>>(_vendorApiUrl.GetUrl(VendorEndpoint.GetAllActive));
+                     if(vendors != null)
+                        viewModel.Vendors = vendors.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.VendorName, Value = x.Id.ToString(), Selected = vendorId == x.Id }).ToList();
+
+                    // Departments
+                    var departments = await _apiClientService.GetAsync<List<EnvanteriX.WebUI.ViewModels.Department.DepartmentViewModel>>(_departmentApiUrl.GetUrl(DepartmentEndpoint.GetAllActive));
+                     if(departments != null)
+                        viewModel.Departments = departments.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.Name, Value = x.Id.ToString(), Selected = assignedDepartmentId == x.Id }).ToList();
+
+                    // Users
+                     var users = await _apiClientService.GetAsync<List<EnvanteriX.WebUI.ViewModels.User.UserViewModel>>(_userApiUrl.GetUrl(UserEndpoint.GetAllActive));
+                     if(users != null)
+                        viewModel.Users = users.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.FullName, Value = x.Id.ToString(), Selected = assignedUserId == x.Id }).ToList();
+                }
+                catch
+                {
+                    // Dropdown yükleme hatası listeyi engellememeli
+                }
+                
+                return View(viewModel);
             }
             catch (Exception ex)
             {

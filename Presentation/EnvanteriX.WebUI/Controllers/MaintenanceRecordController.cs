@@ -26,6 +26,35 @@ namespace EnvanteriX.WebUI.Controllers
             _vendorApiUrl = vendorApiUrl;
         }
 
+        [HttpGet("Index")]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpGet("Details/{id}")]
+        public async Task<IActionResult> Details(int id)
+        {
+            try
+            {
+                var url = _maintenanceRecordApiUrl.GetUrl(MaintenanceRecordEndpoint.GetById, id);
+                var result = await _apiClientService.GetAsync<MaintenanceRecordDetailViewModel>(url);
+                
+                if (result == null)
+                {
+                    TempData["ErrorMessage"] = "Bakım kaydı bulunamadı.";
+                    return RedirectToAction("Index");
+                }
+
+                return View(result);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Detaylar yüklenirken hata oluştu: {ex.Message}";
+                return RedirectToAction("Index");
+            }
+        }
+
         private void PopulateVendors()
         {
             var Vendors = _apiClientService.GetAsync<List<VendorViewModel>>(_vendorApiUrl.GetUrl(VendorEndpoint.GetAllActive)).Result;

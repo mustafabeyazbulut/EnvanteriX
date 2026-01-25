@@ -18,6 +18,10 @@ namespace EnvanteriX.WebApi.Controllers
         public async Task<IActionResult> GetAll() =>
             Ok(await _mediator.Send(new GetAllMaintenanceRecordsQuery()));
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllPaginated([FromQuery] GetAllMaintenanceRecordsPaginatedQuery query) =>
+            Ok(await _mediator.Send(query));
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {

@@ -1,0 +1,163 @@
+
+@model EnvanteriX.WebUI.ViewModels.MaintenanceRecord.MaintenanceRecordDetailViewModel
+
+@{
+    ViewData["Title"] = "Bakım Detayı";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 mb-3">
+        <a href="@Url.Action("Index")" class="btn btn-secondary">
+            <i class="fa fa-arrow-left"></i> Listeye Dön
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Sol Kolon: Bakım ve Varlık Özeti -->
+    <div class="col-md-4">
+        <!-- Durum Kartı -->
+        <div class="card mb-3">
+            <div class="card-body text-center">
+                <h4 class="card-title">Bakım Durumu</h4>
+                <div class="mb-3">
+                    @if (Model.IsCompleted)
+                    {
+                        <i class="fa fa-check-circle fa-4x text-success mb-2"></i>
+                        <h3 class="text-success">Tamamlandı</h3>
+                        <p class="text-muted">Bitiş: @Model.EndDate.Value.ToShortDateString()</p>
+                    }
+                    else
+                    {
+                        <i class="fa fa-clock-o fa-4x text-warning mb-2"></i>
+                        <h3 class="text-warning">Devam Ediyor</h3>
+                        <p class="text-muted">Başlangıç: @Model.StartDate.ToShortDateString()</p>
+                    }
+                </div>
+                <hr>
+                <div class="row text-start">
+                    <div class="col-6">
+                        <strong>Süre:</strong><br>
+                        @(Model.DurationDays.HasValue ? $"{Model.DurationDays} gün" : (DateTime.Now - Model.StartDate).Days + " gün (devam)")
+                    </div>
+                    <div class="col-6">
+                        <strong>Kayıt Tarihi:</strong><br>
+                        @Model.CreatedDate.ToShortDateString()
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Varlık Bilgileri -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Varlık Bilgileri</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>Varlık Adı</strong>
+                        <span>@Model.AssetName</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>Tag</strong>
+                        <span class="badge bg-light text-dark">@Model.AssetTag</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>Seri No</strong>
+                        <span>@Model.SerialNumber</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>Marka/Model</strong>
+                        <span>@Model.Brand / @Model.Model</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>Lokasyon</strong>
+                        <span><i class="fa fa-map-marker text-info me-1"></i> @Model.LocationName</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>Tip</strong>
+                        <span>@Model.AssetType</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>Mevcut Durum</strong>
+                        <span>@Model.AssetStatus</span>
+                    </li>
+                </ul>
+                <div class="d-grid gap-2 mt-3">
+                    <a href="#" class="btn btn-outline-primary btn-sm disabled">Varlık Detayına Git</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tedarikçi Bilgileri -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Tedarikçi Bilgileri</h5>
+            </div>
+            <div class="card-body">
+                <h5>@Model.VendorName</h5>
+                <p class="mb-1"><i class="fa fa-phone me-2"></i> @(string.IsNullOrEmpty(Model.VendorPhone) ? "-" : Model.VendorPhone)</p>
+                <p class="mb-0"><i class="fa fa-envelope me-2"></i> @(string.IsNullOrEmpty(Model.VendorEmail) ? "-" : Model.VendorEmail)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sağ Kolon: Detaylar ve Timeline -->
+    <div class="col-md-8">
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Bakım Detayları</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <h6 class="text-uppercase text-muted small fw-bold">Bakıma Gönderilme Sebebi</h6>
+                    <div class="p-3 bg-light rounded border">
+                        @Model.PreServiceDescription
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h6 class="text-uppercase text-muted small fw-bold">Yapılan İşlemler / Sonuç</h6>
+                    @if (!string.IsNullOrEmpty(Model.PostServiceDescription))
+                    {
+                        <div class="p-3 bg-light rounded border">
+                            @Model.PostServiceDescription
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-muted fst-italic">Henüz işlem sonucu girilmemiş.</div>
+                    }
+                </div>
+
+                <div class="mb-4">
+                    <h6 class="text-uppercase text-muted small fw-bold">Bakımı Yapan / İlgilenen</h6>
+                    <p>@(string.IsNullOrEmpty(Model.PerformedBy) ? "-" : Model.PerformedBy)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- İşlemler -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">İşlemler</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex gap-2">
+                    @if (!Model.IsCompleted)
+                    {
+                        <a href="@Url.Action("AssignAfterRepair", "MaintenanceRecord", new { assetId = Model.AssetId })" 
+                           class="btn btn-success">
+                            <i class="fa fa-check"></i> Bakımı Tamamla
+                        </a>
+                    }
+                    <button class="btn btn-outline-danger disabled" title="Henüz aktif değil">
+                        <i class="fa fa-trash"></i> Kaydı Sil
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
