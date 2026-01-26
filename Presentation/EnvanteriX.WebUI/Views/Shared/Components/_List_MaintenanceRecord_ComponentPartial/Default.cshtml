@@ -124,7 +124,7 @@
                     <tbody>
                         @if (viewModel.Items != null && viewModel.Items.Any())
                         {
-                            foreach (var item in viewModel.Items)
+                            foreach (var item in viewModel.Items.OrderByDescending(y=>y.Id))
                             {
                                 <tr>
                                     <td>@item.Id</td>

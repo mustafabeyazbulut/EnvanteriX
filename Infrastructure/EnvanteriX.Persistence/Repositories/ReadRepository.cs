@@ -74,10 +74,10 @@ namespace EnvanteriX.Persistence.Repositories
 
         public async Task<int> CountAsync(Expression<Func<T, bool>>? predicate = null)
         {
-            Table.AsNoTracking();
-            if (predicate is not null) Table.Where(predicate);
+            IQueryable<T> query = Table.AsNoTracking();
+            if (predicate is not null) query = query.Where(predicate);
 
-            return await Table.CountAsync();
+            return await query.CountAsync();
         }
         public IQueryable<T> Find(Expression<Func<T, bool>> predicate, bool enableTracking = false)
         {

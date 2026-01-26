@@ -47,7 +47,7 @@ namespace EnvanteriX.Application.Features.Handlers.MaintenanceRecordHandlers
                     .Include(m => m.Asset)
                     .ThenInclude(a => a.Location)
                     .Include(m => m.Vendor),
-                orderby: x => x.OrderByDescending(m => m.StartDate),
+                orderby: x => x.OrderByDescending(m => m.Id),
                 enableTracking: false,
                 currentPage: request.PageNumber,
                 pageSize: request.PageSize

@@ -6,21 +6,9 @@
     ]
   },
   {
-    "outputFileName": "wwwroot/css/plugins.min.css",
-    "inputFiles": [
-      "wwwroot/css/plugins.css"
-    ]
-  },
-  {
     "outputFileName": "wwwroot/js/zero.min.js",
     "inputFiles": [
       "wwwroot/js/zero.js"
-    ]
-  },
-  {
-    "outputFileName": "wwwroot/js/chart.min.js",
-    "inputFiles": [
-      "wwwroot/js/chart.js"
     ]
   },
   {

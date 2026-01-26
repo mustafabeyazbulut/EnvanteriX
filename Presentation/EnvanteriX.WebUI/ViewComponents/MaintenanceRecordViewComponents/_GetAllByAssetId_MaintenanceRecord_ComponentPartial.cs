@@ -19,7 +19,7 @@ namespace EnvanteriX.WebUI.ViewComponents.MaintenanceRecordViewComponents
             try
             {
                 var values = await _apiClientService.GetAsync<List<MaintenanceRecordViewModel>>(_maintenanceRecordApiUrl.GetUrl(MaintenanceRecordEndpoint.GetAllByAssetId,id));
-                return View(values.OrderByDescending(x => x.Id).ToList());
+                return View(values.OrderByDescending(x => x.StartDate).ToList());
             }
             catch (Exception ex)
             {
