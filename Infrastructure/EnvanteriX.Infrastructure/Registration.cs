@@ -47,6 +47,7 @@ namespace EnvanteriX.Infrastructure
             });
             services.AddSingleton<IMapper, AutoMapper.Mapper>();
             services.AddSingleton<IEmailTemplateProvider, FileEmailTemplateProvider>();
+            services.Configure<Portal365Services.Portal365Settings>(configuration.GetSection("Portal365Settings"));
             services.AddHttpClient<IPortal365Service, Portal365Service>();
             services.AddSingleton<IPasswordGenerator, PasswordGenerator>();
 

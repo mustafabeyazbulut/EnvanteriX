@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EnvanteriX.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6bdad915801ce1a286cb4d173fbbaa8daf8f5779")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a05cc2d88c4d597d4f764fcd4fcb310dfb38c4f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("EnvanteriX.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EnvanteriX.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

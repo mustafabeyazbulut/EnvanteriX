@@ -1,5 +1,6 @@
 ﻿using EnvanteriX.Application.Interfaces.Portal365Interfaces;
 using EnvanteriX.Domain.Entities;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SendGrid;
@@ -12,10 +13,12 @@ namespace EnvanteriX.Infrastructure.Portal365Services
     public class Portal365Service : IPortal365Service
     {
         private readonly HttpClient _httpClient;
+        private readonly Portal365Settings _settings;
 
-        public Portal365Service(HttpClient httpClient)
+        public Portal365Service(HttpClient httpClient, IOptions<Portal365Settings> settings)
         {
             _httpClient = httpClient;
+            _settings = settings.Value;
         }
 
         public async Task<List<dynamic>> GetAllUsersAsync(Portal365 portalConfig)
@@ -176,8 +179,7 @@ namespace EnvanteriX.Infrastructure.Portal365Services
             if (string.IsNullOrEmpty(PortalUser.OU))
                 return false;
 
-            // Target OU'ları belirle (gerekirse ayarlardan çek)
-            var targetOUs = new[] { "TS-PortalUser", "YONETIM-PC", "YONETIM-PC-AT2", "YONETIM-PC-ESTEBAN" }; // Örnek değerler
+            var targetOUs = _settings.TargetOUs;
             return targetOUs.Any(ou => PortalUser.OU.Contains(ou, StringComparison.OrdinalIgnoreCase));
         }
 
