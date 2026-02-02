@@ -30,18 +30,9 @@ namespace EnvanteriX.WebUI.Controllers
         }
 
         [HttpGet("")]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            try
-            {
-                var values = await _apiClientService.GetAsync<List<UserViewModel>>(_UserApiUrl.GetUrl(UserEndpoint.GetAll));
-                return View(values.OrderByDescending(x => x.Id).ToList());
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = $"{ex.Message}";
-            }
-            return View(new List<RoleViewModel>());
+            return View();
         }
 
         [HttpGet("Add")]

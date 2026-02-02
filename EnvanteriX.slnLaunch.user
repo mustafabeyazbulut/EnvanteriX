@@ -5,12 +5,12 @@
       {
         "Path": "Presentation\\EnvanteriX.WebApi\\EnvanteriX.WebApi.csproj",
         "Action": "Start",
-        "DebugTarget": "EnvanteriX.Production"
+        "DebugTarget": "EnvanteriX.Development-Https"
       },
       {
         "Path": "Presentation\\EnvanteriX.WebUI\\EnvanteriX.WebUI.csproj",
         "Action": "Start",
-        "DebugTarget": "Development-Http"
+        "DebugTarget": "Development-Https"
       }
     ]
   }

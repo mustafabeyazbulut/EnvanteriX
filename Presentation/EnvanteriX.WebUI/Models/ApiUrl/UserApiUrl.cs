@@ -4,6 +4,7 @@
     {
         GetAll,
         GetAllActive,
+        GetAllPaginated,
         GetById,
         GetByEmail,
         Create,
@@ -26,6 +27,7 @@
             {
                 UserEndpoint.GetAll => $"{BasePath}/get-all",
                 UserEndpoint.GetAllActive => $"{BasePath}/get-all-active",
+                UserEndpoint.GetAllPaginated => $"{BasePath}/get-all-paginated",
                 UserEndpoint.GetById => $"{BasePath}/get-by-id/{id}",
                 UserEndpoint.GetByEmail => $"{BasePath}/get-by-email/",
                 UserEndpoint.Create => $"{BasePath}/create",

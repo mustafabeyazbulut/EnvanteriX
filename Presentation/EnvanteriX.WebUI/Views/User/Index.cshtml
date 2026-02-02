@@ -1,142 +1,26 @@
-﻿@model List<UserViewModel>
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Kullanıcı Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var pageNumber = int.TryParse(Context.Request.Query["pageNumber"], out var pn) ? pn : 1;
+    var pageSize = int.TryParse(Context.Request.Query["pageSize"], out var ps) ? ps : 10;
+    var searchTerm = Context.Request.Query["searchTerm"].ToString();
+    var role = Context.Request.Query["role"].ToString();
+
+    bool? isDeleted = Context.Request.Query["isDeleted"].ToString() switch
+    {
+        "true" => true,
+        "false" => false,
+        _ => null
+    };
 }
 
-<div class="col-md-12">
-    <div class="card">
-        <div class="card-header">
-            <div class="d-flex align-items-center">
-                <h4 class="card-title">Kullanıcı Listesi</h4>
-                <button class="btn btn-primary btn-round ms-auto" onclick="navigateWithLoading('/User/Add');">
-                    <i class="fa fa-plus"></i>
-                    Yeni Kullanıcı
-                </button>
-            </div>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table id="multi-filter-select"
-                       class="display table table-striped table-hover text-center">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Ad Soyad</th>
-                            <th>Kullanıcı Adı</th>
-                            <th>Mail</th>
-                            <th>Rol</th>
-                            <th>Oluşturma Tarihi</th>
-                            <th>Aktif Mi</th>
-                            <th style="width: 15%">İşlemler</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Id</th>
-                            <th>Ad Soyad</th>
-                            <th>Kullanıcı Adı</th>
-                            <th>Mail</th>
-                            <th>Rol</th>
-                            <th>Oluşturma Tarihi</th>
-                            <th>Aktif Mi</th>
-                            <th>İşlemler</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-
-                                <td>@item.Id</td>
-                                <td>@item.FullName</td>
-                                <td>@item.UserName</td>
-                                <td>@item.Email</td>
-                                <td>@item.Role</td>
-                                <td>@item.CreatedDate</td>
-                                <td>
-                                    @if (!item.IsDeleted)
-                                    {
-                                        <i class="fa fa-check"></i> <!-- "tick" simgesi -->
-                                    }
-                                    else
-                                    {
-                                        <i class="fa fa-times"></i> <!-- "x" simgesi -->
-                                    }
-                                </td>
-                                <td>
-                                   <div class="d-flex gap-2">
-
-                                        <button type="button"
-                                                class="btn btn-primary btn-sm"
-                                                data-bs-toggle="tooltip"
-                                                title="Profil"
-                                                onclick="navigateWithLoading('@Url.Content("~/User/Profile/" + item.Id)');">
-                                            <i class="ti ti-user"></i>
-                                        </button>
-
-                                        <!-- Edit Button -->
-                                        <button type="button"
-                                                class="btn btn-primary btn-sm"
-                                                data-bs-toggle="tooltip"
-                                                title="Edit"
-                                                onclick="navigateWithLoading('@Url.Content("~/User/Edit/" + item.Id)');">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-
-                                        <!-- Active / DeActive Button -->
-                                        @if (!item.IsDeleted)
-                                        {
-                                            <button type="button"
-                                                    class="btn btn-danger btn-sm confirm-btn"
-                                                    data-bs-toggle="tooltip"
-                                                    title="DeActive"
-                                                    data-url="@Url.Content("~/User/DeActive/" + item.Id)">
-                                                <i class="fa fa-times"></i>
-                                            </button>
-                                        }
-                                        else
-                                        {
-                                            <button type="button"
-                                                    class="btn btn-success btn-sm confirm-btn"
-                                                    data-bs-toggle="tooltip"
-                                                    title="Active"
-                                                    data-url="@Url.Content("~/User/Active/" + item.Id)">
-                                                <i class="fa fa-check"></i>
-                                            </button>
-                                        }
-
-                                        <!-- Remove Button -->
-                                        <button type="button"
-                                                class="btn btn-outline-danger btn-sm confirm-btn"
-                                                data-bs-toggle="tooltip"
-                                                title="Remove"
-                                                data-url="@Url.Content("~/User/Remove/" + item.Id)">
-                                            <i class="fa fa-trash-alt"></i>
-                                        </button>
-
-                                        <!-- Change Password Button -->
-                                        <button type="button"
-                                                class="btn btn-warning btn-sm change-password-btn"
-                                                data-bs-toggle="tooltip"
-                                                title="Şifreyi Değiştir"
-                                                onclick="window.location.href='@Url.Content("~/User/ChangePassword/" + item.Id)';">
-                                            <i class="fa fa-key"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <script>
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-</script>
+@await Component.InvokeAsync("_List_User_Paginated_ComponentPartial", new
+{
+    pageNumber,
+    pageSize,
+    searchTerm,
+    role,
+    isDeleted
+})

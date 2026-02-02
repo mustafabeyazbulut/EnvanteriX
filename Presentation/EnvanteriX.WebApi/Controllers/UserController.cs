@@ -33,6 +33,11 @@ namespace EnvanteriX.WebApi.Controllers
         public async Task<IActionResult> GetAllActive() =>
                     Ok(await _mediator.Send(new GetAllActiveUsersQuery()));
 
+        [HttpGet]
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> GetAllPaginated([FromQuery] GetAllUsersPaginatedQuery query) =>
+            Ok(await _mediator.Send(query));
+
         [HttpGet("{id}")]
         [Authorize(Roles = "admin")]
 

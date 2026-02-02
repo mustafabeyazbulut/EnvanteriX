@@ -7,11 +7,13 @@ wwwroot\css\icons\tabler-icons\fonts\tabler-icons.woff2
 wwwroot\css\icons\tabler-icons\tabler-icons.css
 wwwroot\css\plugins.css
 wwwroot\css\plugins.css.map
+wwwroot\css\plugins.min.css
 wwwroot\css\simplebar.css
 wwwroot\css\simplebar.min.css
 wwwroot\css\styles.css
 wwwroot\css\styles.min.css
 wwwroot\css\zero.css
+wwwroot\css\zero.min.css
 wwwroot\favicon.ico
 wwwroot\fonts\fontawesome\fa-brands-400.eot
 wwwroot\fonts\fontawesome\fa-brands-400.svg
@@ -321,6 +323,7 @@ wwwroot\js\dashboard.js
 wwwroot\js\datatables\datatables.min.js
 wwwroot\js\select2.min.js
 wwwroot\js\sidebarmenu.js
+wwwroot\js\sidebarmenu.min.js
 wwwroot\js\simplebar.esm.js
 wwwroot\js\simplebar.esm.js.map
 wwwroot\js\simplebar.js
@@ -329,6 +332,7 @@ wwwroot\js\simplebar.umd.js
 wwwroot\js\sweetalert\sweetalert.min.js
 wwwroot\js\webfont\webfont.min.js
 wwwroot\js\zero.js
+wwwroot\js\zero.min.js
 wwwroot\libs\bootstrap\css\bootstrap-grid.css
 wwwroot\libs\bootstrap\css\bootstrap-grid.css.map
 wwwroot\libs\bootstrap\css\bootstrap-grid.min.css
@@ -381,10 +385,6 @@ wwwroot\libs\jquery\jquery.min.map
 wwwroot\libs\jquery\jquery.slim.js
 wwwroot\libs\jquery\jquery.slim.min.js
 wwwroot\libs\jquery\jquery.slim.min.map
-wwwroot\css\plugins.min.css
-wwwroot\css\zero.min.css
-wwwroot\js\sidebarmenu.min.js
-wwwroot\js\zero.min.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\fonts.min.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\icons\tabler-icons\fonts\tabler-icons.svg
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\icons\tabler-icons\tabler-icons.css
@@ -395,6 +395,7 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\w
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\styles.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\styles.min.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\zero.css
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\zero.min.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\favicon.ico
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\fonts\fontawesome\fa-brands-400.svg
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\fonts\fontawesome\fa-regular-400.svg
@@ -428,10 +429,12 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\w
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\images\undraw\undraw_upgrade_06a0.svg
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\app.min.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\chart.js
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\sidebarmenu.min.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\dashboard.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\datatables\datatables.min.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\select2.min.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\sidebarmenu.js
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\zero.min.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\simplebar.esm.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\simplebar.esm.js.map
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\simplebar.js
@@ -440,6 +443,7 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\w
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\sweetalert\sweetalert.min.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\webfont\webfont.min.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\zero.js
+C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\plugins.min.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\bootstrap\css\bootstrap-grid.css
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\bootstrap\css\bootstrap-grid.css.map
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\bootstrap\css\bootstrap-grid.min.css
@@ -492,7 +496,3 @@ C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\w
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\jquery\jquery.slim.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\jquery\jquery.slim.min.js
 C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\libs\jquery\jquery.slim.min.map
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\plugins.min.css
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\css\zero.min.css
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\sidebarmenu.min.js
-C:\Users\MBEYAZBULUT\Documents\GitHub\EnvanteriX\Presentation\EnvanteriX.WebUI\wwwroot\js\zero.min.js
