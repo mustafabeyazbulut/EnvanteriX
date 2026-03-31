@@ -21,6 +21,8 @@
         currentFilters["status"] = Context.Request.Query["status"].ToString();
     if (Context.Request.Query.ContainsKey("isRented"))
         currentFilters["isRented"] = Context.Request.Query["isRented"].ToString();
+    if (Context.Request.Query.ContainsKey("isDeleted"))
+        currentFilters["isDeleted"] = Context.Request.Query["isDeleted"].ToString();
 }
 
 <div class="col-md-12">
@@ -118,6 +120,10 @@
                                 var isSelected = currentFilters.ContainsKey("status") && currentFilters["status"] == statusValue.ToString();
                                 <option value="@statusValue.ToString()" selected="@isSelected">@statusValue.ToString()</option>
                             }
+                            @{
+                                var isPasifSelected = currentFilters.ContainsKey("isDeleted") && currentFilters["isDeleted"] == "true";
+                            }
+                            <option value="Pasif" selected="@isPasifSelected">Pasif (Hurda)</option>
                         </select>
                     </div>
 
@@ -448,7 +454,11 @@
         if (locationId) params.append('locationId', locationId);
 
         var status = document.getElementById('status').value;
-        if (status) params.append('status', status);
+        if (status === 'Pasif') {
+            params.append('isDeleted', 'true');
+        } else if (status) {
+            params.append('status', status);
+        }
 
         var isRented = document.getElementById('isRented').value;
         if (isRented) params.append('isRented', isRented);
