@@ -435,19 +435,21 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-        $('#assignedUserId').select2({
-            theme: 'bootstrap-5',
-            placeholder: 'Tüm Personel',
-            allowClear: true,
-            width: '100%'
-        });
-        $('#assignedDepartmentId').select2({
-            theme: 'bootstrap-5',
-            placeholder: 'Tüm Departmanlar',
-            allowClear: true,
-            width: '100%'
-        });
+    window.addEventListener('load', function () {
+        if (typeof $.fn.select2 !== 'undefined') {
+            $('#assignedUserId').select2({
+                theme: 'bootstrap-5',
+                placeholder: 'Tüm Personel',
+                allowClear: true,
+                width: '100%'
+            });
+            $('#assignedDepartmentId').select2({
+                theme: 'bootstrap-5',
+                placeholder: 'Tüm Departmanlar',
+                allowClear: true,
+                width: '100%'
+            });
+        }
     });
 
     // Filtre formunu gönder

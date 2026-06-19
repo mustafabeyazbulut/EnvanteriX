@@ -48,15 +48,13 @@ namespace EnvanteriX.WebUI.Controllers
 
         private async Task PopulateAsync()
         {
-            await Task.WhenAll(
-                PopulateBrandsAsync(),
-                PopulateModelsAsync(),
-                PopulateAssetTypesAsync(),
-                PopulateVendorsAsync(),
-                PopulateLocationsAsync(),
-                PopulateUsersAsync(),
-                PopulateDepartmentsAsync()
-            );
+            await PopulateBrandsAsync();
+            await PopulateModelsAsync();
+            await PopulateAssetTypesAsync();
+            await PopulateVendorsAsync();
+            await PopulateLocationsAsync();
+            await PopulateUsersAsync();
+            await PopulateDepartmentsAsync();
             PopulateStatus();
         }
         private async Task PopulateBrandsAsync()
@@ -214,7 +212,8 @@ namespace EnvanteriX.WebUI.Controllers
                 {
                     throw new Exception("Varlık durumu " + value.Status + " olduğu için zimmetlemesi yapılamamaktadır.");
                 }
-                await Task.WhenAll(PopulateUsersAsync(), PopulateDepartmentsAsync());
+                await PopulateUsersAsync();
+                await PopulateDepartmentsAsync();
                 return View(value);
             }
             catch (Exception ex)
@@ -270,7 +269,8 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
-                await Task.WhenAll(PopulateUsersAsync(), PopulateDepartmentsAsync());
+                await PopulateUsersAsync();
+                await PopulateDepartmentsAsync();
                 return RedirectAfterPost(true,model);
             }
             return RedirectAfterPost(false);
