@@ -41,6 +41,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
             await _assetRules.AssetAlreadyExists(assetExists, $"SerialNumber: {serialNumber}");
 
             var asset = _mapper.Map<Asset, CreateAssetCommand>(request);
+            // Business rule: atama varsa Status her zaman Kullanimda — command.Status değeri göz ardı edilir
             if (asset.AssignedUserId!=null && asset.AssignedUserId>0)
             {
                 asset.Status = Domain.Enums.StatusEnum.Kullanimda;

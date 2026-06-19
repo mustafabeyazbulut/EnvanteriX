@@ -1,4 +1,6 @@
-﻿namespace EnvanteriX.WebUI.ViewModels.Asset
+﻿using EnvanteriX.WebUI.Enums;
+
+namespace EnvanteriX.WebUI.ViewModels.Asset
 {
     public class CreateAssetViewModel
     {
@@ -14,5 +16,6 @@
         public int? AssignedUserId { get; set; }
         public int? AssignedDepartmentId { get; set; }
         public string Description { get; set; }
+        public StatusEnum Status { get; set; } = StatusEnum.Stokta;
     }
 }

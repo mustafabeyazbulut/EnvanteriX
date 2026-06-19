@@ -9,9 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.Configure<ApiSettings>(builder.Configuration.GetSection("ApiSettings"));
 builder.Services.AddHttpClient();
-builder.Services.AddSingleton<ITokenService, TokenService>();
-builder.Services.AddSingleton<IApiClientService, ApiClientService>();
-builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IApiClientService, ApiClientService>();
 builder.Services.AddHttpContextAccessor();
 
 var baseType = typeof(BaseApiUrl);
@@ -22,7 +21,7 @@ var derivedTypes = AppDomain.CurrentDomain
 
 foreach (var type in derivedTypes)
 {
-    var sectionName = type.Name; // appsettings'le eþleþecek
+    var sectionName = type.Name; // appsettings'le eï¿½leï¿½ecek
     var instance = Activator.CreateInstance(type);
     builder.Configuration.GetSection(sectionName).Bind(instance);
     builder.Services.AddSingleton(type, instance);
@@ -31,19 +30,19 @@ foreach (var type in derivedTypes)
 // Session middleware'ini ekleyin
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(20); // Oturum süresi
-    options.Cookie.HttpOnly = true; // Güvenlik için HttpOnly cookie
-    options.Cookie.IsEssential = true; // Cookie'nin gerekli olduðunu belirtir
+    options.IdleTimeout = TimeSpan.FromMinutes(20); // Oturum sï¿½resi
+    options.Cookie.HttpOnly = true; // Gï¿½venlik iï¿½in HttpOnly cookie
+    options.Cookie.IsEssential = true; // Cookie'nin gerekli olduï¿½unu belirtir
     options.Cookie.MaxAge = TimeSpan.FromMinutes(20);
     options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
     options.Cookie.SameSite = SameSiteMode.Lax;
 });
-// Kimlik doðrulama þemasý ekleyin
+// Kimlik doï¿½rulama ï¿½emasï¿½ ekleyin
 builder.Services.AddAuthentication("Cookies")
     .AddCookie(options =>
     {
-        options.LoginPath = "/Account/Login";  // Giriþ yapmadan eriþilmeyecek sayfa
-        options.LogoutPath = "/Account/Logout"; // Çýkýþ yapma URL'si
+        options.LoginPath = "/Account/Login";  // Giriï¿½ yapmadan eriï¿½ilmeyecek sayfa
+        options.LogoutPath = "/Account/Logout"; // ï¿½ï¿½kï¿½ï¿½ yapma URL'si
         options.AccessDeniedPath = "/Account/AccessDenied";
     });
 

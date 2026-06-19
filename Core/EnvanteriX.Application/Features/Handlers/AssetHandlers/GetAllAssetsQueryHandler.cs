@@ -20,6 +20,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
         public async Task<List<GetAllAssetsQueryResult>> Handle(GetAllAssetsQuery request, CancellationToken cancellationToken)
         {
             var assets = await _unitOfWork.GetReadRepository<Asset>().GetAllAsync(
+                orderby: x => x.OrderByDescending(a => a.Id),
                 include: x => x.Include(c=>c.AssetType)
                 .Include(b => b.Model).ThenInclude(b=>b.Brand)
                 .Include(b=>b.Vendor)

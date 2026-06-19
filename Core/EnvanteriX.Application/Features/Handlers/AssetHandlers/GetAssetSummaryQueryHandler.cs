@@ -41,6 +41,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
             var inStock = assets.Count(a => a.Status == StatusEnum.Stokta);
             var inService = assets.Count(a => a.Status == StatusEnum.Tamirde);
             var retired = assets.Count(a => a.Status == StatusEnum.KullanimDisi);
+            var passive = assets.Count(a => a.Status == StatusEnum.Pasif);
 
             var now = DateTime.UtcNow;
             var last30 = now.AddDays(-30);
@@ -97,6 +98,7 @@ namespace EnvanteriX.Application.Features.Handlers.AssetHandlers
                 InStockCount = inStock,
                 InServiceCount = inService,
                 RetiredCount = retired,
+                PassiveCount = passive,
                 AddedLast30Days = addedLast30Days,
                 ServiceLast30Days = serviceLast30Days,
                 AssetsByCategory = byCategory,

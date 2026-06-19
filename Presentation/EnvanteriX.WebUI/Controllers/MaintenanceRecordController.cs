@@ -55,9 +55,9 @@ namespace EnvanteriX.WebUI.Controllers
             }
         }
 
-        private void PopulateVendors()
+        private async Task PopulateVendorsAsync()
         {
-            var Vendors = _apiClientService.GetAsync<List<VendorViewModel>>(_vendorApiUrl.GetUrl(VendorEndpoint.GetAllActive)).Result;
+            var Vendors = await _apiClientService.GetAsync<List<VendorViewModel>>(_vendorApiUrl.GetUrl(VendorEndpoint.GetAllActive));
             ViewBag.Vendors = new SelectList(Vendors, "Id", "VendorName");
         }
 
@@ -75,7 +75,7 @@ namespace EnvanteriX.WebUI.Controllers
                 {
                     throw new Exception("Varlık durumu " + assetValue.Status + " olduğu için bakıma gönderilememektedir.");
                 }
-                PopulateVendors();
+                await PopulateVendorsAsync();
                 return View(new CreateMaintenanceRecordViewModel
                 {
                     AssetId= assetValue.Id,
@@ -107,7 +107,7 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
-                PopulateVendors();
+                await PopulateVendorsAsync();
                 return RedirectAfterPost(true, model);
             }
             return RedirectAfterPost(false);
@@ -127,7 +127,7 @@ namespace EnvanteriX.WebUI.Controllers
                 {
                     throw new Exception("Varlık durumu " + assetValue.Status + " olduğu için bakımdan geldi olarak işaretlenememektedir.");
                 }
-                PopulateVendors();
+                await PopulateVendorsAsync();
                 var value=await _apiClientService.GetAsync<UpdateMaintenanceRecordViewModel>(_maintenanceRecordApiUrl.GetUrl(MaintenanceRecordEndpoint.GetLastOpenMaintenanceRecordByAssetId, assetId));
                 return View(value);
             }
@@ -158,7 +158,7 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
-                PopulateVendors();
+                await PopulateVendorsAsync();
                 return RedirectAfterPost(true, model);
             }
             return RedirectAfterPost(false);

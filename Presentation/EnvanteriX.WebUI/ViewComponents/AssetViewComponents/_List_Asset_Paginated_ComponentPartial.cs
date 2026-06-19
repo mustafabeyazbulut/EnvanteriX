@@ -2,6 +2,7 @@ using EnvanteriX.WebUI.Models.ApiUrl;
 using EnvanteriX.WebUI.Services;
 using EnvanteriX.WebUI.ViewModels.Asset;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EnvanteriX.WebUI.ViewComponents.AssetViewComponents
 {
@@ -36,8 +37,12 @@ namespace EnvanteriX.WebUI.ViewComponents.AssetViewComponents
             int? assignedDepartmentId = null,
             string? status = null,
             bool? isRented = null,
-            bool? isDeleted = null)
+            bool? isDeleted = null,
+            SelectList? users = null,
+            SelectList? departments = null)
         {
+            ViewBag.Users = users;
+            ViewBag.Departments = departments;
             try
             {
                 // Query string oluştur

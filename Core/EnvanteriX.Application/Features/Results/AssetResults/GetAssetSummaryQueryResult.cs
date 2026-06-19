@@ -8,7 +8,8 @@ namespace EnvanteriX.Application.Features.Results.AssetResults
         public int InUseCount { get; set; }           // Kullanımda olan
         public int InStockCount { get; set; }         // Stokta bekleyen
         public int InServiceCount { get; set; }       // Serviste olan
-        public int RetiredCount { get; set; }         // Kullanım dışı / hurda
+        public int RetiredCount { get; set; }         // Kullanım dışı
+        public int PassiveCount { get; set; }         // Pasif (hurda)
 
         // 🔹 2. Zaman bazlı istatistikler
         public int AddedLast30Days { get; set; }      // Son 30 günde eklenen envanter

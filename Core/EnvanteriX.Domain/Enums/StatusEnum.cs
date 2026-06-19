@@ -15,6 +15,9 @@ namespace EnvanteriX.Domain.Enums
         Tamirde = 3,
 
         [Description("Ürün artık kullanım dışı.")]
-        KullanimDisi = 4
+        KullanimDisi = 4,
+
+        [Description("Ürün hurda/pasif olarak işaretlendi.")]
+        Pasif = 5
     }
 }

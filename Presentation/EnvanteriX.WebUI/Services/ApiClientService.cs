@@ -46,7 +46,14 @@ namespace EnvanteriX.WebUI.Services
 
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<T>(responseContent);
+                try
+                {
+                    return JsonConvert.DeserializeObject<T>(responseContent);
+                }
+                catch (JsonException)
+                {
+                    throw new Exception($"API yanıtı çözümlenemedi ({response.StatusCode}): {responseContent}");
+                }
             }
             else
             {
@@ -77,7 +84,14 @@ namespace EnvanteriX.WebUI.Services
 
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<T>(responseContent);
+                try
+                {
+                    return JsonConvert.DeserializeObject<T>(responseContent);
+                }
+                catch (JsonException)
+                {
+                    throw new Exception($"API yanıtı çözümlenemedi ({response.StatusCode}): {responseContent}");
+                }
             }
             else
             {
@@ -108,7 +122,14 @@ namespace EnvanteriX.WebUI.Services
 
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<T>(responseContent);
+                try
+                {
+                    return JsonConvert.DeserializeObject<T>(responseContent);
+                }
+                catch (JsonException)
+                {
+                    throw new Exception($"API yanıtı çözümlenemedi ({response.StatusCode}): {responseContent}");
+                }
             }
             else
             {
@@ -137,7 +158,14 @@ namespace EnvanteriX.WebUI.Services
 
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<T>(responseContent);
+                try
+                {
+                    return JsonConvert.DeserializeObject<T>(responseContent);
+                }
+                catch (JsonException)
+                {
+                    throw new Exception($"API yanıtı çözümlenemedi ({response.StatusCode}): {responseContent}");
+                }
             }
             else
             {

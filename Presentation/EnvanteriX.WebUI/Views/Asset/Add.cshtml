@@ -116,6 +116,13 @@
                         @Html.TextBoxFor(Asset => Asset.Description, new { @class = "form-control", type = "text", placeholder = "Açıklama Girin" })
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <label for="Status" class="col-sm-2 col-form-label">Durum</label>
+                    <div class="col-sm-10">
+                        @Html.DropDownListFor(model => model.Status, ViewBag.Status as List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem>, "-- Durum Seçiniz --", new { @class = "form-select" })
+                        <small class="text-muted">Atama yapılırsa durum otomatik "Kullanımda" olarak ayarlanır.</small>
+                    </div>
+                </div>
                 <div class="row mb-3 mt-4">
                     <div class="col-12 text-center">
                         <button type="submit" class="btn btn-lg btn-primary me-2">Kaydet</button>

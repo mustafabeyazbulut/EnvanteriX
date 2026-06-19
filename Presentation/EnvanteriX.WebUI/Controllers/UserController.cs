@@ -23,9 +23,9 @@ namespace EnvanteriX.WebUI.Controllers
             _authApiUrl = authApiUrl;
         }
 
-        private void PopulateRoles()
+        private async Task PopulateRolesAsync()
         {
-            var roles = _apiClientService.GetAsync<List<RoleViewModel>>(_roleApiUrl.GetUrl(RoleEndpoint.GetAllActive)).Result;
+            var roles = await _apiClientService.GetAsync<List<RoleViewModel>>(_roleApiUrl.GetUrl(RoleEndpoint.GetAllActive));
             ViewBag.Roles = new SelectList(roles, "Id", "Name");
         }
 
@@ -36,9 +36,9 @@ namespace EnvanteriX.WebUI.Controllers
         }
 
         [HttpGet("Add")]
-        public IActionResult Add()
+        public async Task<IActionResult> Add()
         {
-            PopulateRoles();
+            await PopulateRolesAsync();
             return View();
         }
 
@@ -54,7 +54,7 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
-                PopulateRoles();
+                await PopulateRolesAsync();
                 return RedirectAfterPost(true,User);
             }
             return RedirectAfterPost(false);
@@ -86,7 +86,7 @@ namespace EnvanteriX.WebUI.Controllers
             try
             {
                 var value = await _apiClientService.GetAsync<UpdateUserViewModel>(_UserApiUrl.GetUrl(UserEndpoint.GetById, id));
-                PopulateRoles();
+                await PopulateRolesAsync();
                 return View(value);
             }
             catch (Exception ex)
@@ -113,7 +113,7 @@ namespace EnvanteriX.WebUI.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"{ex.Message}";
-                PopulateRoles();
+                await PopulateRolesAsync();
                 return RedirectAfterPost(true,User);
             }
             return RedirectAfterPost(false);

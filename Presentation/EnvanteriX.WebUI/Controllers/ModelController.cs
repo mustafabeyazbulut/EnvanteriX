@@ -24,9 +24,9 @@ namespace EnvanteriX.WebUI.Controllers
             _brandApiUrl = brandApiUrl;
         }
 
-        private void PopulateBrands()
+        private async Task PopulateBrandsAsync()
         {
-            var brands = _apiClientService.GetAsync<List<BrandViewModel>>(_brandApiUrl.GetUrl(BrandEndpoint.GetAllActive)).Result;
+            var brands = await _apiClientService.GetAsync<List<BrandViewModel>>(_brandApiUrl.GetUrl(BrandEndpoint.GetAllActive));
             ViewBag.Brands = new SelectList(brands, "Id", "BrandName");
         }
 
@@ -46,9 +46,9 @@ namespace EnvanteriX.WebUI.Controllers
         }
 
         [HttpGet("Add")]
-        public IActionResult Add()
+        public async Task<IActionResult> Add()
         {
-                PopulateBrands();
+            await PopulateBrandsAsync();
             return View();
         }
 
@@ -61,7 +61,7 @@ namespace EnvanteriX.WebUI.Controllers
             }
             catch (Exception ex)
             {
-                PopulateBrands();
+                await PopulateBrandsAsync();
                 TempData["ErrorMessage"] = $"{ex.Message}";
                 return RedirectAfterPost(true,model);
             }
@@ -85,7 +85,7 @@ namespace EnvanteriX.WebUI.Controllers
             }
             catch (Exception ex)
             {
-                PopulateBrands();
+                await PopulateBrandsAsync();
                 return Json(new { success = false, message = "Bir hata oluştu: " + ex.Message });
             }
         }
@@ -96,7 +96,7 @@ namespace EnvanteriX.WebUI.Controllers
             try
             {
                 var value = await _apiClientService.GetAsync<UpdateModelViewModel>(_ModelApiUrl.GetUrl(ModelEndpoint.GetById, id));
-                PopulateBrands();
+                await PopulateBrandsAsync();
                 return View(value);
             }
             catch (Exception ex)
@@ -113,7 +113,7 @@ namespace EnvanteriX.WebUI.Controllers
             try
             {
                 var result = await _apiClientService.PutAsync<object>(_ModelApiUrl.GetUrl(ModelEndpoint.Update), model);
-                PopulateBrands();
+                await PopulateBrandsAsync();
             }
             catch (Exception ex)
             {

@@ -39,11 +39,8 @@ namespace EnvanteriX.Persistence.Repositories
             if (include is not null) queryable = include(queryable);
             if (predicate is not null) queryable = queryable.Where(predicate);
 
-            // Eğer orderby sağlanmadıysa varsayılan bir sıralama uygulayın
-            if (orderby is null)
-            {
-                queryable = queryable.OrderBy(x => x); // Örnek sıralama (ID'ye göre)
-            }
+            if (orderby is not null)
+                queryable = orderby(queryable);
 
             return await queryable.Skip((currentPage - 1) * pageSize)
                                    .Take(pageSize)

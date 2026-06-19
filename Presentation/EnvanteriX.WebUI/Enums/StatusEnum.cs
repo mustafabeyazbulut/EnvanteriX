@@ -1,9 +1,10 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 
 namespace EnvanteriX.WebUI.Enums
 {
     public enum StatusEnum
     {
+        None = 0,      // sentinel value — dropdown'da gösterilmez
         [Description("Ürün stokta mevcut.")]
         Stokta = 1,
 
@@ -14,6 +15,9 @@ namespace EnvanteriX.WebUI.Enums
         Tamirde = 3,
 
         [Description("Ürün artık kullanım dışı.")]
-        KullanimDisi = 4
+        KullanimDisi = 4,
+
+        [Description("Ürün hurda/pasif olarak işaretlendi.")]
+        Pasif = 5
     }
 }
